@@ -68,9 +68,9 @@ And these problems are especially important for:
 </Details>
 
 <details>
-    <summary><b>Proposed solution: an open source tool continuous improvement of your MLOps/LLMOps</b></summary>
+    <summary><b>Proposed solution: an open source tool for continuous improvement of your MLOps/LLMOps + a copilot on top of it</b></summary>
 
-## __Proposed solution: an open source tool continuous improvement of your MLOps/LLMOps.__
+## __Proposed solution: an open source tool for continuous improvement of your MLOps/LLMOps + a copilot on top of it__
 
 <details>
     <summary><b>Core</b></summary>
@@ -109,9 +109,12 @@ __Freelunch is 4 things:__
 
 __Freelunch enables 2 embedded continuous ci/cd loops (B. and C.) with your DevOps ci/cd loop (A.).__
 
-→ __(A)  DevOps CI/CD Loop__: IT System Improvement using Base CI/CD. Software Engineers improve the IT System as to increase Business Metrics. This loop tests and deploys non-ML services and pipelines. This loop should not modify code related to the ML Lifecycle.
-→ __(B)  Outer MLOps CI/CD Loop__: ML Platform Improvement using Base CI/CD.  ML Platform Engineers improve the ML platform as to increase ML System metrics. They also debug the ML  platform in response to ML Practitioners’  complaints and include capabilities requested. This loop tests and deploys ML platform services and pipelines. This loop should only modify code related to the ML Platform. __Freelunch itself helps here.__
-    ↪ __(C)  Inner MLOps CI/CD Loop__: ML System Improvement using ML Platform CI/CD. ML Practitioners (lead/manager, engineers, data scientists, subject matter experts and/or annotators ) improve artifacts (e.g., docs, config, data, models, filters, context retrievers, etc) as to increase business metrics, using the ML  platform. They also post bugs to the ML platform team. This loop tests, evaluates and deploys ML Artifacts. This loop shouldn't modify any production code. __Freelunch-built ML platforms help here.__
+- __(A)  DevOps CI/CD Loop__: IT System Improvement using Base CI/CD. Software Engineers improve the IT System as to increase Business Metrics. This loop tests and deploys non-ML services and pipelines. This loop should not modify code related to the ML Lifecycle.
+
+- __(B)  Outer MLOps CI/CD Loop__: ML Platform Improvement using Base CI/CD.  ML Platform Engineers improve the ML platform as to increase ML System metrics. They also debug the ML  platform in response to ML Practitioners’  complaints and include capabilities requested. This loop tests and deploys ML platform services and pipelines. This loop should only modify code related to the ML 
+Platform. __Freelunch itself helps here.__
+
+    - __(C)  Inner MLOps CI/CD Loop__: ML System Improvement using ML Platform CI/CD. ML    Practitioners (lead/manager, engineers, data scientists, subject matter experts and/or annotators ) improve artifacts (e.g., docs, config, data, models, filters, context retrievers, etc) as to increase business metrics, using the ML  platform. They also post bugs to the ML platform team. This loop tests, evaluates and deploys ML Artifacts. This loop shouldn't modify any production code. __Freelunch-built ML platforms help here.__
 
 __For companies that already have an internal MLOps platform:__ we offer detailed documention, support and free help from our MLOps copilot (Virtual ML Engineer)  to help you make it Freelunch-compatible, so that you can start reaping systematic continuous improvement.
 
@@ -213,7 +216,7 @@ As evidence for the proposed solution (*Freelunch*):
                 1. *TFX*
                 2. *Xorbits*
             2. Platforms (Depends on specific tools)
-                1. Incomplete Platforms (No Monitoring/Observability)
+                1. Incomplete Platforms (at least no Monitoring/Observability)
                     1. *Kubeflow*
                     2. *MLFlow*
                     3. *SystemDS*
@@ -228,10 +231,11 @@ As evidence for the proposed solution (*Freelunch*):
                     2. *Polyaxon*
                     3. *MLRun*
             3. Frameworks (Largely tool-agnostic)
-                1. Incomplete Frameworks
+                1. Incomplete Frameworks (at least no Monitoring/Observability)
                     1. *CLAIMED*
                     2. *Dstack*
                     3. *FuseML*
+                    4. *Kedro*
                 2. Complete Frameworks
                     1. *ZenML*
         2. Specific
@@ -2120,7 +2124,7 @@ Yes, because of the following reasons:
                 3. __Offline Notebook Features & Model Experimentation Environment__
                     (1) Experimentation Services:
                         (1) All-in-one
-                            (1) Platform: ClearML, Polyaxon, SystemDS, SuperDuperDB
+                            (1) Platform: Kubeflow, MLFlow, ClearML, Polyaxon, SuperDuperDB
                             (2) Framework: ZenML, CLAIMED, Kedro, Dstack, FuseML
                         (2) Piecewise
                             (1) Experiment Tracking: (1.1) open source: sacred, Tensorboard, Aim, MLflow tracking, dvc/fds + CML, Pachyderm, truelens, fasttrackml, MLTRAQ; (1.2) paid: W&B, DagsHub
@@ -2527,9 +2531,9 @@ Yes, because of the following reasons:
 </details>
 
 <details>
-    <summary><b>Evaluation of MLOps platforms</b></summary>
+    <summary><b>Evaluation of your MLOps</b></summary>
 
-### :seedling: __Intro: on evaluation of MLOps platforms__
+### :seedling: __Intro: evaluation of your MLOps__
 
 ''If you cannot measure it, you cannot improve it''.
 
@@ -2539,7 +2543,7 @@ Yes, because of the following reasons:
 2. __Partially automated (human plays a role)__
 3. __Manual: Red teaming__
 
-#### __Evaluation Suite: Requirements and Benchmarks_
+#### __Evaluation Suite: Requirements and Benchmarks__
 
 Evaluations can be:
 
@@ -2723,11 +2727,11 @@ _Note:_ __these are all automated benchmarks, no humans involved__. In stages wh
     4. __Quality:__ High Bar. Users have low tolerance for errors & want fast systems. There are compeititors that can take your place if they offer higher quality.
 
 2. __Low-level Problems (our scope)__
-    1. __Benchmarking__
-        1. __Lack of Standards__: lack of standards for benchmarking ML Systems.
+    1. __Evaluating__
+        1. __Lack of Standards__: lack of standards for evaluating ML Systems and ML Platforms.
         2. __Lack of Tools__
-            1. __Lack of tools__: some types of benchmarking are being implemented systematically & thus dont have any tools.
-            2. __Lack of unified tool__: there isnt a central tool that can spin up all benchmarks to compare trade-offs & simplify UX.
+            1. __Lack of tools__: some types of evaluations are being implemented systematically & thus dont have any tools.
+            2. __Lack of unified tool__: there isnt a central tool that can spin up all evaluations to compare trade-offs & simplify UX.
     2. __Improvements (Experimentation)__
         1. __Lack of Time__: lack of time to do Experimentation: search for system improvement opportunities and good solutions takes a lot of time. Time which is mostly dedicated to maintanance of the ML System.
         2. __Lack of Awareness__
@@ -2937,7 +2941,7 @@ _Note:_ __these are all automated benchmarks, no humans involved__. In stages wh
 
 ### :microscope: __Our users__
 
-Our focus is with __companies with ML maturity or big companies__. Companies that fit this description want to solve multiple ML production problems, not just predictive power. They also value software engineering best practices. Therefore they tend to build their own MLOps platforms to improve ML infrastrcture. __We help them to continuously improve their MLOps platforms__
+Our focus is with __companies with ML maturity (generally big non-tech comapnies, medium-to-big tech companies and AI companies)__. Companies that fit this description want to solve multiple ML production problems, not just predictive power. They also value software engineering best practices. Therefore they tend to build their own MLOps platforms to improve ML infrastructure. __We help them to continuously improve their MLOps platforms and use their platforms to continously improve their ML Systems.__
 </details>
 
 <details>
@@ -3673,7 +3677,7 @@ Our focus is with __companies with ML maturity or big companies__. Companies tha
                                             2. Hardware Resource Usage (Per Machine)
                                                 1. Processor usage
                                                 2. Memory usage
-                                                3. Energy consumption (Tools: codecarbon, scaphandre)
+                                                3. Energy consumption & carbon footprint (Tools: codecarbon, scaphandre, mlco2)
                                             3. Errors: whcih error where encountered, where, which error handling polciy was used, status of the error (pending resolution or resolved)
                                             4. Application Performance (Per service)
                                                 1. Basic
@@ -6805,7 +6809,7 @@ Our focus is with __companies with ML maturity or big companies__. Companies tha
                                     2. Model removal (removig parts of the model, lowering computation. (e.g., removing layers of a depp learning model or removing models in an ensemble))
                                 3. Training Profiling Wrapper (should allow visualizations) (Fine grained measure of some resource through operators of the model). _Note:_ results for measuring this resources will vary do to uncertainty in hardware implementation (assuming same <machine, OS, processor used, cgroup>): branch prediction, threads, concurrent processes, process priority, etc. So these should be measured in a statistical sense: drawing a few samples then compute mean a std deviation.
                                     1. Time (time spent on each stage of model training epoch and generates report) (time per perator) (if one operator is a bottleneck you ca decide to modify it and train again)
-                                    2. Energy (measure energy consumption of each operator involved in training and generates report) (energy per perator) (if one operator is a bottleneck you ca decide to modify it and train again) (Tools: codecarbon, scaphandre)
+                                    2. Energy (measure energy consumption of each operator involved in training and generates report) (energy per perator) (if one operator is a bottleneck you ca decide to modify it and train again) (Tools: codecarbon, scaphandre, mlco2)
                                 4. Diagnosis Wrapper (Tools: WeightWatcher): tools that give you training-time interpretability into the behaviour of your model
                                 5. If there can be data privacy attacks: Differential Privacy Wrapper (Tools: google/differential-privacy, TF Privacy). Adding Noise to learning process in the way that guarantee that the output of the model will be aprox the same with or without any single input, degrading as less as prossible corrected predictive power --> this implies that specific datapoints cannot be memorized by the model and consequently that attackers exploit this memorization.
                                 6. If Featured Input must be encrypted: Homomorphic Encryption Wrapper (Tools: SEAL, HElib, tf-encrypted)
@@ -7144,8 +7148,8 @@ Our focus is with __companies with ML maturity or big companies__. Companies tha
             2. ML Experimentation (Tools: For builing features & Models (these tools are used wihtin the tasks of the "Experimentation Pipeline Framework/ML Workflow Orchestrator Wrapper"):
                 (1) Experimentation Services:
                     (1) All-in-one
-                        (1) Platform: MLFlow, ClearML, Polyaxon. SuperDuperDB
-                        (2) Framework: Kubeflow, ZenML, CLAIMED, Kedro, Dstack, FuseML
+                        (1) Platform: Kubeflow, MLFlow, ClearML, Polyaxon, SuperDuperDB
+                        (2) Framework: ZenML, CLAIMED, Kedro, Dstack, FuseML
                     (2) Piecewise
                         (1) Experiment Tracking: (1.1) open source: Tensorboard, Aim, MLflow tracking, dvc/fds + CML, Pachyderm, truelens, fasttrackml, MLTRAQ; (1.2) paid: W&B, DagsHub, Comet ML
                             (1) LLM Experiment Tracking: (1) open source: trulens
@@ -8465,12 +8469,14 @@ _Notice the following trends:_
 1. The # of ML-core (that need ML to survive) companies is increasing;
 2. Non-ML-core companies are entering and/or relying more on ML;
 3. Dataset sizes are increasing for aproximately all Companies.
+4. Companies are adopting Generative AI which depends on very large models.
 
 _These show, respectively, that:_
 
 1. The market for ML Systems getting larger and small improvements in these Systems can have major ROI for these types of companies;
 2. ML problems are getting higher priority across the board;
 3. ML is getting more powerfull (think of better accuracy) inside these companies by default, thus getting greater importance.
+4. ML problems are getting harder to solve due to increasing complexity on the ML side and performance & scalability requirements imposed by Generative AI.
 </details>
 
 <details>
