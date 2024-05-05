@@ -362,7 +362,7 @@ Our __target users__ are hardcore ML teams (working on the software-side), which
             Team of agents system for task G v2, 
             sql-based model workflow for task H, 
             Online learning for task I v4, 
-            edge-microcontroller deployment with background retraining for task J v3,
+            edge microcontroller deployment with cloud retraining for task J v3,
             hybrid fallback model deployment for task H v2,
             Internal LLM with small scale model experimentation v1, 
             LLM Gateaway with llm routing and caching v2, 
@@ -1481,7 +1481,7 @@ The stages of ci/cd are depicted below:
 
 46. __Equipped with Frontend Support__
     1. Content Management System (CMS) (important for: (1) automated frontend adaptation in response to backend changes; (2) easy UI/UX changes; (3) Automated UI testing;)
-    2. Frontend Mocker (a minimal frontend package with the mlops platform that emulates the real frontends. The frontends can be: (1) Browser; (2) Desktop; (2) Mobile; (3) Agent Simulation Environment; (4) VideoGame; (5) Custom Mocker)
+    2. Frontend Mocker (a minimal frontend package with the mlops platform that emulates the real frontends. The frontends can be: (1) Browser; (2) Desktop; (2) Mobile; (3) Agent Simulation Environment; (4) VideoGame; (5): Embedded System.)
     3. Screenshot-to-code (enables you to take a screnshot of a website ang get the code for it, usefull for getting started quickly with a nice solution)
 
 47. __Equipped with support for internal packages__ (an "Internal PyPi" for you to post and get internal packages)
@@ -1827,7 +1827,7 @@ Yes, because of the following reasons:
         Experiment ideas (that were not tried yet) are organized, stored and can be annotated in the experiment manager.
         2. __Comprehensive ML System Evaluation in background__
             1. __Requirements__
-                1. __Constrained environments__ (using Environment mimicking tools (e.g., Selenium or Cypress for browsers, EdgeCloudSim, EnvisEdge or Auptimizer for edge devices) to simulate hardware (computing & networking), OS (if any) & more constraints (if any; e.g., browser constraints). Uses cases: deployments on: mobile, embedded devices (microcontrollers with OS, microcontrollers without OS, FPGAs), browsers, and other devices (TVs, watches, glasses))
+                1. __Constrained environments__ (using Environment mimicking tools (e.g., Selenium or Cypress for browsers, EdgeCloudSim, EnvisEdge or Auptimizer for edge devices) to simulate hardware (computing & networking), OS (if any) & more constraints (if any; e.g., browser constraints such as no fs access). Uses cases: deployments on: mobile, embedded devices (microcontrollers with OS, microcontrollers without OS, FPGAs and ASICs), browsers, and other devices (TVs, watches, glasses))
                     1. __Inference__ (memory usage, power consumption, inference time) (contraints: discontonuos function, only need to be below treshold (memory usage in single-task microcontrollers (no OS)); goals: continuous function, need to optimize (e.g., power usage after treshold is reached)) (small models: Microcontrollers (memory, power, processing speed); medium models: Mobile (memory, processing speed); big models: any cloud instance (memory) (on a fixed high-performant instance: assuming same <machine, OS, processor used, cgroup>)). (_Note:_ has to do various runs and compute <mean, std deviation> because of stochasticity of hardware implementation)
                     2. __Training__ (memory usage, power consumption, training time) (on a fixed high-performant instance: assuming same <machine, OS, processor used, cgroup>) (_Note:_ has to do various runs and compute <mean, std deviation> because of stochasticity of hardware implementation)
                 2. __Security__
@@ -2598,7 +2598,7 @@ These differ from benchmarks in the sense that we need to solve them all 100%, t
                             2. __Insider Threat Testing__ (see if deployed system is secure (or responds well) to internal attacks.)
                             3. __Fuzz Testing__ (see if deployed system is secure to edge cases)
                         2. __Audit Report Generation & Management__
-                3. __Constrained environments__ (using Environment mimicking tools (e.g., Selenium or Cypress for browsers, EdgeCloudSim, EnvisEdge or Auptimizer for edge devices) to simulate hardware (computing & networking), OS (if any) & more constraints (if any; e.g., browser constraints). Uses cases: deployments on: desktop, mobile, embedded devices (microcontrollers with OS, microcontrollers without OS, FPGAs), browsers, and other devices (TVs, watches, glasses))
+                3. __Constrained environments__ (using Environment mimicking tools (e.g., Selenium or Cypress for browsers, EdgeCloudSim, EnvisEdge or Auptimizer for edge devices) to simulate hardware (computing & networking), OS (if any) & more constraints (if any; e.g., browser constraints). Uses cases: deployments on: desktop, mobile, embedded devices (microcontrollers with OS, microcontrollers without OS, FPGAs and ASICs), browsers, and other devices (TVs, watches, glasses))
                     1. __Inference__ (memory usage, power consumption, inference time) (contraints: discontonuos function, only need to be below treshold (memory usage in single-task microcontrollers (no OS)); goals: continuous function, need to optimize (e.g., power usage after treshold is reached)) (small models: Microcontrollers (memory, power, processing speed); medium models: Mobile (memory, processing speed); big models: any cloud instance (memory) (on a fixed high-performant instance: assuming same <machine, OS, processor used, cgroup>)). (_Note:_ has to do various runs and compute <mean, std deviation> because of stochasticity of hardware implementation)
                     2. __Training__ (memory usage, power consumption, training time) (on a fixed high-performant instance: assuming same <machine, OS, processor used, cgroup>) (_Note:_ has to do various runs and compute <mean, std deviation> because of stochasticity of hardware implementation)
                         1. __Training from Scratch__
@@ -3044,6 +3044,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                     1. With OS
                         1. Mobile
                         2. Microcontrollers with OS (e.g., Rasberry Pi)
+                        3. ASICs with OS
                     2. Without OS (e.g., Arduino) (e.g., for mobile app that need to operate without latency)
     2. ML task specification
         1. Search Literature on the task with more focus on implementation
