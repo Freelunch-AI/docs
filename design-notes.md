@@ -2473,13 +2473,16 @@ Yes, because of the following reasons:
 
                     1. Assistance to Human changes
                         1. Compliance-free copy/paste (generates code that does the same thing but has enough differences)
-                        2. Automated Code Review to cath bugs before CI. Pre-CI bug detection (faster than running integration tests & detects problems you might have forgotten to test for. e.g., after updating one model & evaluatig it on the test set (Note: test set needs to be sufficiently large so that the predictive power metric calculated on it is statistically significant), we see if its output distribution had a stat significant change, if yes, downstream models will probably suffer from input (covariate) shift. Or when you change training data pipeline & features schema, the model & monitoring for this part should be changed accordingly);
-                        3. Debugging
-                        4. Refactoring
+                        2. Identifying CI tests that dont need to run (e.g., if changin a text by another, you dont need to run any CI tests, just code review)
+                        3. Automated Code Review. 
+                            1. Pre-CI bug detection (faster than running integration tests & detects problems you might have forgotten to test for. e.g., after updating one model & evaluatig it on the test set (Note: test set needs to be sufficiently large so that the predictive power metric calculated on it is statistically significant), we see if its output distribution had a stat significant change, if yes, downstream models will probably suffer from input (covariate) shift. Or when you change training data pipeline & features schema, the model & monitoring for this part should be changed accordingly);
+                            2. Pre-CD bug detection.
+                        4. Debugging
+                        5. Refactoring
                             1. For Code Quality
                             2. For Performance
-                        5. Security Testing (complex vulnerability analysis and attack vectors that cannot be automated with traditional software)
-                        6. Documentation: detailed explanation (like a teacher would do) of the platform workings and for each change made via beatifull documentation.
+                        6. Security Testing (complex vulnerability analysis and attack vectors that cannot be automated with traditional software)
+                        7. Documentation: detailed explanation (like a teacher would do) of the platform workings and for each change made via beatifull documentation.
 
                     2. Suggestions (e.g. how to improve a prompt)
 
