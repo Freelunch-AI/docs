@@ -23,7 +23,7 @@ We currently make 2 products:
 
 You can checkout our docs in this repository to understand better our vision for the evolution of MLOps.
 
-- Checkout our [Slides](https://docs.google.com/presentation/d/1-sGuCGt35ytcHxnhM25iMcZpsxCaDzDMfSg_D1nxxgQ/edit?usp=sharing) for a concise and visual explanation.
+- Checkout our [Slides](https://docs.google.com/presentation/d/1hFU-lNTDzml5q4ry6jrUl-N3W7lnA33h/edit?usp=sharing&ouid=103765111945407445450&rtpof=true&sd=true) for a concise and visual explanation.
 - Checkout our [Design Notes](design-notes) for an in-depth explanation of not only Freelunch, but also of ML in production (including LLMs).
 
 
