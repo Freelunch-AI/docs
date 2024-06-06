@@ -537,7 +537,7 @@ _Note:_ in the beggining, the MLOps copilot (Virtual ML Engineer) might not be v
 
 #### _Footnotes_
 
-1. __*MLOps Copilot*__: how to build it? Besides using LLM Agents and AutoML techniques, I think more things are needed. One idea I have is the *Lean Engineering Project* for which I wrote a specific document. This document is attached at the end of this file.In a nutshell: making the best dataset possible for an LLM to learn technical stuff.
+1. __*MLOps Copilot*__: how to build it? Besides using LLM Agents and AutoML techniques, I think more things are needed. One idea I have is the *Lean Engineering Project* for which I wrote a specific document. This document is attached at the end of this file. In a nutshell: making the best dataset possible for an LLM to learn technical stuff.
 
 For critical ops activities it can be used in shadow mode, where it generates actions it usually generates, but the actions are not atcully performed, just shown to you in slack with the #shadow tag. We you fell confident with it, you can remove shadow mode and let it actually perform actions.
 
@@ -8532,6 +8532,23 @@ _These show, respectively, that:_
 2. ML problems are getting higher priority across the board;
 3. ML is getting more powerfull (think of better accuracy) inside these companies by default, thus getting greater importance.
 4. ML problems are getting harder to solve due to increasing complexity on the ML side and performance & scalability requirements imposed by Generative AI.
+</details>
+
+<details>
+  <summary><b>Path to AGI</b></summary>
+
+## Path to AGI
+
+With a good enough copilot, a recursive self-improvement feedback loop can be started where the Copilot indirectly improve's itself indefinetely:
+
+1. Good enough ML Engineering Agent
+2. Loop
+    1. ML Engineer Agent is finetuned to build:
+        1. ML Researcher Agent: develops ML research
+        2. ML Revisor Agent: revises ML research developed by the ML Researcher Agent
+        3. ML Tool Builder Agent: builds MLOps tools based on approved ML research done by the ML Researcher and revised by the Revisor Agent
+    2. ML Engineering Agent is finetuned with new ML research and MLOps tools
+
 </details>
 
 <details>
