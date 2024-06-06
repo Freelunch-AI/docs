@@ -537,7 +537,7 @@ _Note:_ in the beggining, the MLOps copilot (Virtual ML Engineer) might not be v
 
 #### _Footnotes_
 
-1. __*MLOps Copilot*__: how to build it? Besides using LLM Agents and AutoML techniques, I think more things are needed. One idea I have is the *Lean Engineering Project* for which I wrote a specific document. This document is attached at the end of this file. In a nutshell: making the best dataset possible for an LLM to learn technical stuff.
+1. __*MLOps Copilot*__: how to build it? Besides using LLM Agents and AutoML techniques, I think more things are needed. One idea I have is the *AgentPool Project* for which I wrote a specific document. This document is attached at the end of this file. In a nutshell: making the best dataset possible for an LLM to learn technical stuff.
 
 For critical ops activities it can be used in shadow mode, where it generates actions it usually generates, but the actions are not atcully performed, just shown to you in slack with the #shadow tag. We you fell confident with it, you can remove shadow mode and let it actually perform actions.
 
@@ -8711,7 +8711,7 @@ These are ideas that can be embedded within *Freelunch*.
 
 1. __*Uli*: <tt>Uli.md</tt>__
 
-    # __*Uli*: the first Scientific ML framework.__
+    # __*Uli*: the first software 2.0 ML framework.__
 
     ## :trollface: __Authors__  
 
@@ -8720,7 +8720,7 @@ These are ideas that can be embedded within *Freelunch*.
 
     ## :8ball: __Overview__
 
-     __*Uli* is the next generation mixed declarative-imperative ML framework. It makes ML feel like traditional programming, a.k.a. software 2.0. *Uli* is a Scientific ML framework that is meant to leverage subject matter expertise expressed as multi-task heuristic causal programs (any program: can have loops, be non-differentiable and make use of libraries, APIs, external data and pre-trained models). For low-level control *Uli* gives you the Pytorch API experience (superset of Pytorch) you are used to, so you have nothing to lose.__
+     __*Uli* is the next generation mixed declarative-imperative ML framework: *DSPy* on steroids. It makes ML feel like traditional programming, a.k.a. software 2.0. *Uli* is a Scientific ML framework that is meant to leverage subject matter expertise expressed as multi-task heuristic causal programs (any program: can have loops, be non-differentiable and make use of libraries, APIs, external data and pre-trained models). For low-level control *Uli* gives you the Pytorch API experience (superset of Pytorch) you are used to, so you have nothing to lose. *Uli* accomplishes this by using a variety of optimization methods and LLMs for guiding parameter search.__
      
      __*Uli* also has a side-by-side code-GUI tabs that reflects your code/config in a model architecture visualization, you can edit either one of them, and it will reflect the changes on the other. Even better: *Uli* lets you coe already thinking of your production system architecture (multiple model services working together) and get a ready PoC deployment with a GUI, with each service containing a trained model. *Uli* also comes with native integrations to experiment trackers (e.g., dvc, W&B and MLFlow).__
      
@@ -8734,8 +8734,8 @@ These are ideas that can be embedded within *Freelunch*.
     6. __Working with less common data modalities:__ e.g., DNA data with Foundation Models 
     7. __Model Editing:__ fixing specific problems models are showing by making adjustments to the model architecture itself along with some training; instead
     of the typicala approach of gathering a lot more data for the cases the model is not handling well.
-    8. __Multi-Agent Learning:__ learn multiple agent controllers via fine-tuning and prompt tuning of programs containing llm calls and tool usage
-    9. __Causal ML:__ ML works within a Causal Inference Framework
+    8. __Multi-Agent Learning:__ learn multiple agents as a team via fine-tuning and prompt tuning of programs containing llm calls and tool usage to minimize
+    9. __Causal ML:__ ML working within a Causal Inference Framework
     10. __Supercharging codebases:__ substituting some software 1.0 parts for software 2.0 parts
     11. __Model-based Reinforcement Learning (RL):__ build model-based controllers mixing domain knowledge, control theory and RL; establishing controller priors and inductive biases before learning and composing hiererachical control loops. Integrates with multiple simulated RL environments, and lets you build a plugin for your own simulated environment.
     12. __Formal Verification of ML Models:__ e.g., if you have a CV model that has to recognize things in images, you can formally verify for fairness related to working well for minority groups in your trianing data (e.g., blacks or asians). You do this by establishing an additional task head that aims to classify between groups, this will give you a race variable. Then *Uli* can reason formally, based on the models' parameters, what would need to change and in which amount to make race change; and if these interventions were made, would they change significantly the model's output. Of course you could to the in the traditional empirical way using a test set (Note: test set needs to be sufficiently large so that the predictive power metric calculated on it is statistically significant), but the doing it formally gives you the confidence you would have only with massive test set (Note: test set needs to be sufficiently large so that the predictive power metric calculated on it is statistically significant) (which is impractical). "If a property does not hold, formal verification techniques usually provide counterexamples that can be inspected or used as tests, similar to adversarial search"
@@ -8936,9 +8936,9 @@ These are ideas that can be embedded within *Freelunch*.
         * __Input__: data, data specification (variables specification: description and units of variables, db schemas), loss function & existing codebase with a added hints
         * __Output__: model files + k8s microservice deployment
 
-2. __*Lean Engineering Project*: <tt>LeanEngineering.md</tt>__
+2. __*AgentPool Project*: <tt>LeanEngineering.md</tt>__
 
-    # __*Lean Engineering*: non-profit AI for Engineering__
+    # __*AgentPool*: non-profit AI for Engineering__
 
     ## :trollface: __Authors__  
 
@@ -8947,7 +8947,7 @@ These are ideas that can be embedded within *Freelunch*.
 
     ## :8ball: __Overview__
 
-    __*Lean Engineering* is an open source project idea that aims to build ENgineering Foundation Models via a heavy data-centric approach. We aim to formalize and strcture engineering knowledge to make it easier to LLMs digest. This approach has showed to be succesfull in the "Textbooks is all you need" paper.__
+    __*AgentPool* is an open source project idea that aims to build ENgineering Foundation Models via a heavy data-centric approach. We aim to formalize and strcture engineering knowledge to make it easier to LLMs digest. This approach has showed to be succesfull in the "Textbooks is all you need" paper.__
     
     A formal database of engineering methods that is way better than raw data from the internet, because it provides consistent structure that guides engineering work out-of-the-box. Normal LLMs have to infer this structure from the data which is pretty hard (because of incosistent materials and lack of connection between related topics), that's one reson why they end up not being so good at science/enginering for example.
 
