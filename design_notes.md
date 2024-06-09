@@ -7770,7 +7770,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                             2. To improve retraining (optional): divding the model into 3 separate models. 1 for static feature, 1 for slow changing features & another for fast changing features, with a meta-model on top of those 3. The advantage of this is to retrain a smaller model. High frequency retraining would only be one to the model of fast changing features and the meta-model, low requency retraining to the model that uses slow changing features. The static feature model would never be retrained. _Note_ however, in my opnion this added complexity & probable corrected predictive power loss is not worth the little retraining advantages.s
                         5. Manual Offline Evaluation again, sending experiment to Experiment Tracking System again
                         6. Building pre/post processors
-                            1. IO Filters: heuristics to filter either undesired inputs from reaching model our undesired outputs of the model from reaching users. Because many times the model is not aware of a larger context & trolling/attacking attempts.
+                            1. IO Filters/Guardrails (e.g., innaproporate content identification, summarization eval, LLM-as-judge, etc): heuristics to filter either undesired inputs from reaching model our undesired outputs of the model from reaching users. Because many times the model is not aware of a larger context, model fails & trolling/attacking attempts.
                                 1. Write your filters as python files
                                 2. Test them against failure modes of your model
                                 3. Export them as filter files (language agnostic, efficent format, that just describes the necessary computation (similar to model file))
@@ -8761,7 +8761,7 @@ These are ideas that can be embedded within *Freelunch*.
         2. [__*AutoKeras*__](https://github.com/keras-team/autokeras)
         3. [__*NNI*__](https://github.com/microsoft/nni)    
 
-    __How to use: you give data, data specification (variables specification: description and units of variables, db schemas), a loss and write your heuristic model function. When writing this function you will put autoML constraints and hints:__
+    __How to use: you give data (or how to generate data), data specification (variables specification: description and units of variables, db schemas), a loss and write your heuristic model function. When writing this function you will put autoML constraints and hints:__
     
     1. Contraints
         1. Specific computation (traditional code)
@@ -10377,6 +10377,8 @@ you can pick hardcode a good implementation, but generally this problem was alre
 - NNs (natural & artificial) work very well because they mimic or compositional world, where everething is a building block built out of smaller building blocks.
 
 * \*\* LLM ideas:
+
+- LLM should be trained/fine-tuned with RAG in mind, to be just a resoning machine (which also enables it to be much smaller). They should be penalized for outputing stuff that couldnt be resoned just based on input.
 
 - Making an agent reflect on its behaviour and improve: in LLM orchestrators, you shoudlnt make vanilla LLM API calls, you should finetune it with knowledge of the workflow and put the workflow context into the prompt at each step call. Doing this enables you to then finetune the same LLM with with feedback on the whole orchestration process, which then will make each step better afterwards.
 
