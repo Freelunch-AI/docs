@@ -114,7 +114,7 @@ __Freelunch enables 2 embedded continuous ci/cd loops (B. and C.) with your DevO
 - __(B)  Outer MLOps CI/CD Loop__: ML Platform Improvement using Base CI/CD.  ML Platform Engineers improve the ML platform as to increase ML System metrics. They also debug the ML  platform in response to ML Practitioners’  complaints and include capabilities requested. This loop tests and deploys ML platform services and pipelines. This loop should only modify code related to the ML 
 Platform. __Freelunch itself helps here.__
 
-    - __(C)  Inner MLOps CI/CD Loop__: ML System Improvement using ML Platform CI/CD. ML    Practitioners (lead/manager, engineers, data scientists, subject matter experts and/or annotators ) improve artifacts (e.g., docs, config, data, models, filters, context retrievers, etc) as to increase business metrics, using the ML  platform. They also post bugs to the ML platform team. This loop tests, evaluates and deploys ML Artifacts. This loop shouldn't modify any production code. __Freelunch-built ML platforms help here.__
+    - __(C)  Inner MLOps CI/CD Loop__: ML System Improvement using ML Platform CI/CD. ML    Practitioners (lead/manager, engineers, data scientists, subject matter experts and/or annotators ) improve artifacts (e.g., docs, config, data, models, pre/post processors, context retrievers, etc) as to increase business metrics, using the ML  platform. They also post bugs to the ML platform team. This loop tests, evaluates and deploys ML Artifacts. This loop shouldn't modify any production code. __Freelunch-built ML platforms help here.__
 
 __For companies that already have an internal MLOps platform:__ we offer detailed documention, support and free help from our MLOps copilot (Virtual ML Engineer)  to help you make it Freelunch-compatible, so that you can start reaping systematic continuous improvement.
 
@@ -645,13 +645,13 @@ __The following process happens continuously:__
             2. __Observability__ (detect where its wrong and how to fix/improve it)
         2. __Making changes__
             1. __Corrections: Monitoring actions__
-                1. __Automated actions: artifact CI/CD__ (e.g., data, config (service and task config), model chains, fallback models, inteliggent appeal policies, ensembles, filters, retrievers, etc)
+                1. __Automated actions: artifact CI/CD__ (e.g., data, config (service and task config), model chains, fallback models, inteliggent appeal policies, ensembles, pre/post processors, retrievers, etc)
                 2. __Manual actions: generalized CI/CD__
             2. __Improvements__
                 1. __Artifact-level__
                     1. __Experimentation__
                     2. __Evaluation__
-                    3. __Artifact CI/CD__ (e.g., data, config (service and task config), model chains, fallback models, inteliggent appeal policies, ensembles, filters, retrievers, etc)
+                    3. __Artifact CI/CD__ (e.g., data, config (service and task config), model chains, fallback models, inteliggent appeal policies, ensembles, pre/post processors, retrievers, etc)
                 2. __Platform-level__
                     1. __Experimentation__ 
                     2. __Evaluation__
@@ -694,7 +694,7 @@ __When a platform (implemented set of non-overlapping pattern distributions) is 
 1. Read about it and comment
 2. Visualize its evaluation scores
 3. Play with it and observer it working directly in the browser (killercoda-style) via Freelunch Hub GUI Playground (but not on the owners' infrastructure, we hide it from the public an substitute it for a equivalent Freelunch managed one)
-4. Download it or artifacts associated with it (e.g., (1) Freelunch artifacts: pattern distribution metadata, pattern evolutions, components specifications, building blocks, etc; (2) MLOps platform artifacts: data, models (ML and/or manual models), filters (e.g., input filters to detect adversarial and ood inputs or to detect sensitive data (in case an external model API is used), and output filters to detect innapropriate and risky outputs)
+4. Download it or artifacts associated with it (e.g., (1) Freelunch artifacts: pattern distribution metadata, pattern evolutions, components specifications, building blocks, etc; (2) MLOps platform artifacts: data, models (ML and/or manual models), pre/post processors (e.g., input filters to detect adversarial and ood inputs or to detect sensitive data (in case an external model API is used), and output filters to detect innapropriate and risky outputs)
 5. Find its repo and make PRs (if it has a public repo that accepts PRs)
 6. Participate in a competition to improve the MLOps platform (if the platform is registered in the competition)
     1. Uncover and fix security vulnearabilities.
@@ -883,7 +883,8 @@ __Platform organization and search:__
                         1. Embedding Power (how well does the embedding distance reflect the actual semantic distance between documents)
                         2. Document Relevance (how usefull are the documents for the tasks that need to be done)
                         3. Retrieval Power (how well the retriever gets the adequate set of documents for a user input)
-                    2. __Pipeline of models and filters__
+                    2. __Pipeline of models and pre/post processors__
+                        1. Error Recovery (how well can revoer from errors in each step)
             3. __System-related__
                 1. Only for RAG:
                 2. Degenerate Feedback Loop Handling
@@ -1094,7 +1095,7 @@ We offer a 1-week free fully managed Freelunch sandbox for you to tinker with an
 
                             3. Deploy Initial State to the ML System.
 
-                    2. Execute ML Pipeline loop: generalized CI/CD to the ML System. Pipelines (implemented by a workflow orchestrator) that ci/cd's code and artifacts ((1) interface artifacts: schema (data lake schema, db/wharehouse schemas, file schemas, message broker/transport schemas, model schema, filter schema, retriever schema, function schema (signature), elt schema, etl schema, pipeline schema, networking api schemas); (2) implementation artifacts: config (service, ci/cd and frontend), data, schema expectations/data validation (ranges, distributions, cosntraints, units, etc), prompter chains, compute artifacts (fallbacks, intelligent appeal policies, ensembles, filters (input, prediction and/or data filters), FaaS functions, elt queries, pipeline components (tasks or services))). Generalized ci/cd events can come from: (1) repo PR; (2) internal ml system events; (3) external events. Generalized ci/cd events can be read via: (1) making requests to statefull services/subsystems; (2) making requests to message brokers; (3) listening to requests from statefull services/subsystems; (4) listening to streaming messages from services or brokers.
+                    2. Execute ML Pipeline loop: generalized CI/CD to the ML System. Pipelines (implemented by a workflow orchestrator) that ci/cd's code and artifacts ((1) interface artifacts: schema (data lake schema, db/wharehouse schemas, file schemas, message broker/transport schemas, model schema, filter schema, retriever schema, function schema (signature), elt schema, etl schema, pipeline schema, networking api schemas); (2) implementation artifacts: config (service, ci/cd and frontend), data, schema expectations/data validation (ranges, distributions, cosntraints, units, etc), prompter chains, compute artifacts (fallbacks, intelligent appeal policies, ensembles, pre/post processors (input, prediction and/or data filters), FaaS functions, elt queries, pipeline components (tasks or services))). Generalized ci/cd events can come from: (1) repo PR; (2) internal ml system events; (3) external events. Generalized ci/cd events can be read via: (1) making requests to statefull services/subsystems; (2) making requests to message brokers; (3) listening to requests from statefull services/subsystems; (4) listening to streaming messages from services or brokers.
 
                         1. Code ci/cd
 
@@ -1134,7 +1135,7 @@ We offer a 1-week free fully managed Freelunch sandbox for you to tinker with an
                                     1. If Evaluation and Observability dont show problems during some time x: PR to stable branch
                                     2. Elseif problems are identified: take a step back. Active Fallback or rollback a service/subsytem to a previous version. This can be automatic (based on metrics gathered in a brief time after the release (PR to release branch)) or manual.
 
-                        2. Artifact ci/cd (data artifacts (configs, schemas, datasets) and computational artifacts (e.g., models, ensembles, filters, DSL programs, etc)
+                        2. Artifact ci/cd (data artifacts (configs, schemas, datasets) and computational artifacts (e.g., models, ensembles, pre/post processors, DSL programs, etc)
 
                             1. CI
 
@@ -1297,7 +1298,7 @@ The stages of ci/cd are depicted below:
             1. If Evaluation and Observability dont show problems during some time x: PR to stable branch
             2. Elseif problems are identified: take a step back. Active Fallback or rollback a service/subsytem to a previous version. This can be automatic (based on metrics gathered in a brief time after the release (PR to release branch)) or manual.
 
-2. Artifact ci/cd (data artifacts (config, data sources) and computational artifacts (e.g., models, ensembles, filters, DSL programs, etc)
+2. Artifact ci/cd (data artifacts (config, data sources) and computational artifacts (e.g., models, ensembles, pre/post processors, DSL programs, etc)
 
     1. CI
 
@@ -1365,7 +1366,7 @@ The stages of ci/cd are depicted below:
         2. Constructing fine-tuning datasets
     3. Prompts: Experimentation, Validation, Compression, Evaluation, Automatic Prompt Generation (support formatting tricks), Automatic Prompt Adapatation (when swapping LLMs),  Breakdown of a prompt into a a prompt chain
     4. Support for Chains and Agents
-        1. Building chains and agents: pipelines of models, prompters, retrievers and filters (input, prediction and/or data filters)
+        1. Building chains and agents: pipelines of models, prompters, retrievers and pre/post processors (input, prediction and/or data filters)
         2. Observing each step of chain and agent execution
     5. Support for multimodal LLMs
     6. LLM-powered dataset construcution
@@ -1819,7 +1820,7 @@ Yes, because of the following reasons:
     1. __ML System Design (Architecture)__ (engineers can sample ml design patterns, use our drawing tool to make awesome diagrams & collaborate on a same diagram with multiple colleagues, versions your diagrams and formally verifiy them agaist specifications.)
     2. __Hot-start: Declarative API for building MLOps platforms__ (Models/Prompts + Runtimes + Infrastructure + Data + Config) with a lower-level layer (plugins and/or edit repo directly) for hacking. Allows you to leverage domain & ML expertise knowledge while making use of Freelunch to do most of the work of setting up the architecture and implementing it, according to your requirements & preferences. It auto-generates documentation and is interactive, allowing you to edit the ML Sytem automatically built by Freelunch. If you want to implement custom integrations and optimizations you can use the lower-level layer (plugins and/or edit repo directly) to hack it from the ground up.
     3. __System-wide Experimentation__ (e.g., an ml team wants to experiment with federated learning)
-        1. __Experiment Management__ (You can do experiments on: codebase, production configuration and/or artifacts (code, config, data, schema (backards-compatible), html, prompts, compute artifacts (e.g. functions, elt, pipelines, models, ensembles, filters (input, prediction and/or data filters))). Experiments also carry along more data that enables you to reproduce it (e.g., branch/commit of the experiment and command to run). And of course, experiments have metrics attached to them: evaluation results (e.g., ML metrics, performance metrics, statistical tests) and specifications (e.g specific system config)). 
+        1. __Experiment Management__ (You can do experiments on: codebase, production configuration and/or artifacts (code, config, data, schema (backards-compatible), html, prompts, compute artifacts (e.g. functions, elt, pipelines, models, ensembles, pre/post processors (input, prediction and/or data filters))). Experiments also carry along more data that enables you to reproduce it (e.g., branch/commit of the experiment and command to run). And of course, experiments have metrics attached to them: evaluation results (e.g., ML metrics, performance metrics, statistical tests) and specifications (e.g specific system config)). 
         
         Besides storing & visualizing experiments, you also have: experiment ranking with custom evaluation function, experiment suggestions (use of intelligent algorithms under the hood (e.g., bayesian optimization, causal inference & genetic algorithms) to make you get great results with less experiments by not following the rule of changing one thing at a time), Playground for doing (notebook and/or no-code) system experiments in the background cluster, estimating large-scale experiment results, providing stat significance tresholds).
         
@@ -2104,7 +2105,7 @@ Yes, because of the following reasons:
                             4. __Package Discovery__ (your internal PyPI (if using gitlab its just gitlabs' package registry))
                         2. __Profiling__ (fine-grained breakdown of metrics)
                             1. __What to profile__
-                                1. __Computational Artifacts__ (e.g, models, filters, serverless functions)
+                                1. __Computational Artifacts__ (e.g, models, pre/post processors, serverless functions)
                                 2. __Services__
                                 3. __Pipelines__
                                 4. __Systems__
@@ -2279,20 +2280,19 @@ Yes, because of the following reasons:
                                 (3) Transformer-specific: Pythia
                         (2) Specific
                             (1) NLP: langtest, checklist
-                                (1) LLM Evaluation: OpenAI evals, deepeval, Bench, Pheonix, HELM, lm-evaluation-harness, truelens, guardrails, promptfoo, fiddler-auditor, trulens, ChainForge, benchllm, evidently, llm-autoeval, auto-evaluator, LLMZoo, moonshot
+                                (1) LLM Evaluation: OpenAI evals, deepeval, Bench, Pheonix, HELM, lm-evaluation-harness, truelens, guardrails, promptfoo, fiddler-auditor, trulens, ChainForge, benchllm, evidently, llm-autoeval, auto-evaluator, LLMZoo, moonshot, Inspect
                                     (1) RAG Evaluation: deepeval, ragas
                                     (2) Image Generation Evaluation: pytorch-fid
                                     (3) Hallucinations: hallucination-leaderboard
                                     (4) Software Engineering: SWE-bench
-                                    (5) Security and Safety: modelbench, Purple Llama
+                                    (5) Security and Safety: modelbench, Purple Llama, garak
+                                        (1) Prompt Injections: rebuff
                                     (6) Code Generation: bigcode-evaluation-harness
                                     (7) vectorDB: VectorDBBench
                                     (8) Science: sciml-bench
                                     (9) speech-to-text: speech-to-text-benchmark
                                     (10) WebAgents: WorkArena
                                     (11) Agents: AgentBench
-                                    (12) Chat: BotChat, FastEval, ToolTalk
-                                    (12) Prompt Injections: rebuff
                             (2) CV: efemarai
                     1. __FM Experimentation__ (assistance with manual prompt engineering (optimizing for model-related benchmarks) & management, fine-tuning)
                         1. __Fine-tuning without regressing:__ fine-tune for new tasks while evalauting performance on previosu tasks to avoid catostrophic forgetting and regressing your model on these previous tasks.
@@ -5932,7 +5932,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                             1. Hardware independent (Interpreted) code: interpreted language library (e.g., python library)
                                             2. Hardware dependent (Compiled) code: .so library for some target hardware.
                                     2. Other model-related artifacts
-                                        1. Prompt function/engine (if LLM-based): python function that receives as input the user query and outputs the final prompt
+                                        1. Prompt function/engine (if LLM-based): python function that receives as input the user query and outputs the final prompt and alternatives prompts (e.g., chanign order of lists, using synonyms, etc)
                                         2. Prediction filter: prediction filter file (defines computation on how to filter the prediction of a specific models)
                                     3. Lifecyle data:
                                         1. Only for prompts & filters: 
@@ -7335,19 +7335,19 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                             (3) Transformer-specific: Pythia
                     (2) Specific
                         (1) NLP: langtest, checklist
-                            (1) LLM Evaluation: OpenAI evals, deepeval, Bench, Pheonix, HELM, lm-evaluation-harness, truelens, guardrails, promptfoo, fiddler-auditor, trulens, ChainForge, benchllm, evidently, llm-autoeval, auto-evaluator, LLMZoom, moonshot
+                            (1) LLM Evaluation: OpenAI evals, deepeval, Bench, Pheonix, HELM, lm-evaluation-harness, truelens, guardrails, promptfoo, fiddler-auditor, trulens, ChainForge, benchllm, evidently, llm-autoeval, auto-evaluator, LLMZoom, moonshot, Inspect
                                 (1) RAG Evaluation: deepeval, ragas
                                 (2) Image Generation Evaluation: pytorch-fid
                                 (3) Hallucinations: hallucination-leaderboard
                                 (4) Software Engineering: SWE-bench
-                                (5) Security and Safety: modelbench, Purple Llama
+                                (5) Security and Safety: modelbench, Purple Llama, garak
+                                    (1) Prompt Injections: rebuff
                                 (6) Code Generation: bigcode-evaluation-harness
                                 (7) vectorDB: VectorDBBench
                                 (8) Science: sciml-bench
                                 (9) speech-to-text: speech-to-text-benchmark
                                 (10) WebAgents: WorkArena
                                 (11) Agents: AgentBench
-                                (12) Prompt Injections: rebuff
                         (2) CV: efemarai
                 1. Experimentation Environments (outputs are feature pipelines & models) (Tools: open-source: devspace, okteto, telepresence, gitpod, Tilt, coder; managed: github codespaces)
                     1. Types
@@ -7769,11 +7769,13 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                 6. Do step ''8. Post-Training Feature Selection''
                             2. To improve retraining (optional): divding the model into 3 separate models. 1 for static feature, 1 for slow changing features & another for fast changing features, with a meta-model on top of those 3. The advantage of this is to retrain a smaller model. High frequency retraining would only be one to the model of fast changing features and the meta-model, low requency retraining to the model that uses slow changing features. The static feature model would never be retrained. _Note_ however, in my opnion this added complexity & probable corrected predictive power loss is not worth the little retraining advantages.s
                         5. Manual Offline Evaluation again, sending experiment to Experiment Tracking System again
-                        6. Building IO Filters: heuristics to filter either undesired inputs from reaching model our undesired outputs of the model from reaching users. Because many times the model is not aware of a larger context & trolling/attacking attempts.
-                            1. Write your filters as python files
-                            2. Test them against failure modes of your model
-                            3. Export them as filter files (language agnostic, efficent format, that just describes the necessary computation (similar to model file))
-                            4. Store them in Model/Prompt Registry in the tab of a specific task (task covers all model versions) or specific model (specific model version).
+                        6. Building pre/post processors
+                            1. IO Filters: heuristics to filter either undesired inputs from reaching model our undesired outputs of the model from reaching users. Because many times the model is not aware of a larger context & trolling/attacking attempts.
+                                1. Write your filters as python files
+                                2. Test them against failure modes of your model
+                                3. Export them as filter files (language agnostic, efficent format, that just describes the necessary computation (similar to model file))
+                                4. Store them in Model/Prompt Registry in the tab of a specific task (task covers all model versions) or specific model (specific model version).
+                            2. Semantic Cache
                         7. Manual Offline Evaluation again, sending experiment to Experiment Tracking System again
                         8. Fallbacks
                             1. ML Fallbacks: simpler ml model
