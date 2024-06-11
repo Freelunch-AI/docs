@@ -302,7 +302,7 @@ Our __target users__ are hardcore ML teams (working on the software-side), which
     1. AI-as-core companies
         1. Standard Products. They dont need to use your data for training. (e.g., *Tesla*, *Waymo*, *Cruise*, *Palantir*, *LogMeIn*, *Sensat*, *Wix*, *TravelPerk*, *Loopme*, *Clarifai*, *Vidado*, *SpotHero*, *Fermata Energy*, *Entrupy*, *ZenRows*, *biorender*, *meMR*, *Orbital Materials*, *Cradle*, *papercup*, *EyeGauge*, *Bytedance*, *OfferFit*, *unlearn*, *veed.io*, *gptzero*, *Hex*, *OtterTune*, *Hemato*, *HawqEye*, *DarkVision*, *Antiverse*, *Stanza Systems*, *tractable*, *Lynceus*, *Deepmeta*, *Clearcover*, *Cardo AI*, *Ironscales*, *seedtag*, *Vivid Machines*, *Anagenex*, *getindata*, *leap*, *pathai*, *bryte*, *luminar*, *Climate AI*, *Wordcab*, *hypothetic*, *iBusiness Funding*, *Layer*, *valohealth*, *capeanalytics*, *Blackbird.ai*, *Vorto*, *Abnormal*, *hyperfactors*, *Animal Dynamics*, *Portcast*, *pano*, *Recursion*, *recruitingfromscratch*, *Locus Robotics*, *BenchSci*, *Element Energy*, *LiveRamp*, *cambrian*, *datathings*, *orbem*, *stada*, *compilatio*, *REimagineHome*, *11x.ai*, *Trellis*, *Bioptimus*, *Diarupt*, *voiceflow*, *patented.ai*, *Lowe's Home Improvement*, *Inner AI*, *Canoe Intelligence*, *tausight*, *resolute*, *Grab*, etc)
         2. Personalized Products: domain-specific platforms. They need to use your data for training. (e.g., *Automation Anywhere*, *Dynatrace*, *Shift Technology*, *Drift*, *Pluralsight*, *InMoment*, *Theloops*, *Conjura*, *Raptormaps*, *movableink*, *Klaviyo*, *Health Rhythms, *Veriff*, *datajoint*, *hyperstart*, *unboxai*, *Virgin Media O2*, *Genius Sports*, *kaksha.ai*, *movley*, *Performance Art*, *Renassaince*, *veriff*, *nemuru*, *Voxel*, *Cerrion*, *Algomo*, *Toumetis*, *Degreed*, *Intuit*, *Pandai*, *Peak.ai*, *OverJet*, *fasal*, *Salesloft*, *Recast*, *Serna Bio*, *pymetrics*, *Bayesian Health*, *Cordial*, *Best Egg*, *Impact.com*, *kraken*, *Icertis*, *rimes*, *syrup*, *Curieo*, *evolutioniq*, *ello*, *dost*, *M-KOPA*, *Yahoo News*, *Desia AI*, *Attentive*, etc)
-    2. AI-as-helper companies (e.g., *Google*, *Microsoft*, *AWS*, *Doordash*, *Cisco*, *Meta*, *Tiktok*, *Snapshat*, *Pinterest*, *Discord*, *Match Group*, *Grindrr*, *Netflix*, *Salesforce*, *Microsoft*, *Apple*, *Spotify*, *Monzo Bank*, *Stichfix*, *Twilio*, *Adobe*, *BMW*, *Twitter*, *Dream11*, *Get your Guide*, *Slack*, *Wolfspeed*, *Duolingo*, *Nextdoor*, *Stack Overflow*, *Shopify*, *General Mills*, *BT Group*, *wolt*, *avant*, *LinkedIn*, *Zendesk*, *Financial Times*, *CNN*, *perpay*, *S&P Global*, *MicDonalds*, *New York Life Insurance Co*, *Franklin Templeton Investments*, *Robinhood*, *Dell*, *Nubank*, *The New York Times*, *Autodesk*, *Bosch*, *Booking*, *Agoda*, *Volvo*, *Lucidmotors*, *syngenta*, *BioGen*, *Nomad*, *hokodo*, *Zoro*, *Simpplr*, *Urgently*, *Ballertv*, *sproutsocial*, *cookpad*, *swordhealth*, *Metrika*, *Heyjobs*, *stepstone*, *onemedical*, **Freeport Mcronan*, *therealreal*, *lemonade*, *karman*, *SImply Business*, *Sidekick*, *Corning*, *MeteoSwiss*, *iFood*, *Mercado Libre*, *crowdsec*, *360learning*, *wayfair*, *Digital Commerce Intelligence*, *mynd*,  *coalition*, *Dish Network*, *Grainger*, *Workiva*, *Cyble*, *cargurus*, *weightwatchers*, *Walmart*, *StockX*, *taktile*, *DIscovery Bank*, *Lacework*, *CollegeVine*, *Navy Federal Credit Union*, *The Weather Channel*, *SailPoint*, *Chegg*, *perpay*, *kayzen*, *ING*, *Itau*, *CVS*, *DRP*, *genomicsengland*, *DrDoctor*, *homebound.*, *centene*, *artemis*, *Fundrise*, *Miro*, *Zalando*, *bees*, *GSK*, *Visa*, *Mastercard*, *DigitalOcean*, *Pie Insurance*, *Disney Streaming*, *King*, *Restaurant Brands International*, *hewlett packard enterprise (hpe)*, *smartcheats*, *iHelath*, *elucid*, *Amgen*, *fanatics*, *splunk*, *Analog Devices*, *stryker*, *mastercontrol*, *Renfroe*, *honeywell*, *iCapital*, *jobyaviation*, *Engage*, *Oho*, *highersearch*, *ID5*, *XCede*, *digitalwaffle*, *monolith*, *orbis*, *abcam*, *zebra*, *penske*, *jaguarlandrove*, *asos*, *Sixt*, *Quora*, *Belvo*, *Atlassian*, *carfax*, *trainline*, *Dream Sports*, *Prosimo*, *Home Depot*, *XP Investimentos*, *Nestlé*, *Hotmart*, *marktplaats*, *Conveyor*, *Moody's*, *AXA GO*, *Faire*, *thumbtack*, *Ford Motor Company*, *Workday*, *Wellcome Sanger Institute*, *TripAdvisor*, *Dell*, *VSCO*).
+    2. AI-as-helper companies (e.g., *Google*, *Microsoft*, *AWS*, *Doordash*, *Cisco*, *Meta*, *Tiktok*, *Snapshat*, *Pinterest*, *Discord*, *Match Group*, *Grindrr*, *Netflix*, *Salesforce*, *Microsoft*, *Apple*, *Spotify*, *Monzo Bank*, *Stichfix*, *Twilio*, *Adobe*, *BMW*, *Twitter*, *Dream11*, *Get your Guide*, *Slack*, *Wolfspeed*, *Duolingo*, *Nextdoor*, *Stack Overflow*, *Shopify*, *General Mills*, *BT Group*, *wolt*, *avant*, *LinkedIn*, *Financial Times*, *CNN*, *perpay*, *S&P Global*, *MicDonalds*, *New York Life Insurance Co*, *Franklin Templeton Investments*, *Robinhood*, *Dell*, *Nubank*, *The New York Times*, *Autodesk*, *Bosch*, *Booking*, *Agoda*, *Volvo*, *Lucidmotors*, *syngenta*, *BioGen*, *Nomad*, *hokodo*, *Zoro*, *Simpplr*, *Urgently*, *Ballertv*, *sproutsocial*, *cookpad*, *swordhealth*, *Metrika*, *Heyjobs*, *stepstone*, *onemedical*, **Freeport Mcronan*, *therealreal*, *lemonade*, *karman*, *SImply Business*, *Sidekick*, *Corning*, *MeteoSwiss*, *iFood*, *Mercado Libre*, *crowdsec*, *360learning*, *wayfair*, *Digital Commerce Intelligence*, *mynd*,  *coalition*, *Dish Network*, *Grainger*, *Workiva*, *Cyble*, *cargurus*, *weightwatchers*, *Walmart*, *StockX*, *taktile*, *DIscovery Bank*, *Lacework*, *CollegeVine*, *Navy Federal Credit Union*, *The Weather Channel*, *SailPoint*, *Chegg*, *perpay*, *kayzen*, *ING*, *Itau*, *CVS*, *DRP*, *genomicsengland*, *DrDoctor*, *homebound.*, *centene*, *artemis*, *Fundrise*, *Miro*, *Zalando*, *bees*, *GSK*, *Visa*, *Mastercard*, *DigitalOcean*, *Pie Insurance*, *Disney Streaming*, *King*, *Restaurant Brands International*, *hewlett packard enterprise (hpe)*, *smartcheats*, *iHelath*, *elucid*, *Amgen*, *fanatics*, *splunk*, *Analog Devices*, *stryker*, *mastercontrol*, *Renfroe*, *honeywell*, *iCapital*, *jobyaviation*, *Engage*, *Oho*, *highersearch*, *ID5*, *XCede*, *digitalwaffle*, *monolith*, *orbis*, *abcam*, *zebra*, *penske*, *jaguarlandrove*, *asos*, *Sixt*, *Quora*, *Belvo*, *Atlassian*, *carfax*, *trainline*, *Dream Sports*, *Prosimo*, *Home Depot*, *XP Investimentos*, *Nestlé*, *Hotmart*, *marktplaats*, *Conveyor*, *Moody's*, *AXA GO*, *Faire*, *thumbtack*, *Ford Motor Company*, *Workday*, *Wellcome Sanger Institute*, *TripAdvisor*, *Dell*, *VSCO*).
 2. __Managed ML Services__
     1. SaaS: AIaaS
         1. Models 
@@ -1543,7 +1543,7 @@ The stages of ci/cd are depicted below:
 
 65. __Equipped with an easy integration testing framework__ ((1) inverted integration testing: instead of writing integration tests, the platform automatically writes multiple tests for you, and then you either visually inspect the result or write an output validator to make it into a real integration test; (2) you can also write your own integration tests like you write unit tests; (3) you can put fast and/or crucial integration tests to run in ci/cd and the rest on the background evaluation/observability cluster.)
 
-66. __That can make ML Systems with a single APIs__ (Note: this approach should not be used if you are exposing a public API to your ML System. Data ingestion, configuration and inference can be done via a single API, and then have an API per use cases. This works by using an API gateway that traslates the single-API calls to actual data ingestion and inference requests, using different APIs.)
+66. __That can make ML Systems with a single APIs__ (Note: this approach should not be used if you are exposing a public API to your ML System. Data ingestion, configuration, inference and querying can be done via a single API, and then have an API per use job underneath. This works by using an API gateway that traslates the single-API calls to actual data ingestion and inference requests, using different APIs.)
 
 </details>
 
@@ -1555,10 +1555,9 @@ The stages of ci/cd are depicted below:
 <details>
     <summary><b>Tools Freelunch uses</b></summary> 
 
-### Tools Freelunch uses
+### Tools Freelunch can use/integrate with.
 
-__*Freelunch* works on top of all these (open source and proprietary) IT, DevSecOps, Data Engineering, MLOps, Analytics and Graphics Programming tools:__  *Diagrams as Code*, *Draw.io*, *Miro Board*, *excalidraw*, *mermaid*, *obsidian*, VSCode*, *Coniniue*, Linux Distributions (*Ubuntu*, *Debian*, *Fedora*, *Talos*), *GDB*, *eBPF*, *GNU parallel*, *fd*, *wtf*, *rush*, *pigz*, *curl*, *unzip*, *git*, *github*, *gitlab*, *gitea*, *Ansible, *Terraform*, *Terragrunt*, *Pulumi*, *OpenTofu*, *klotho*, *Terraformer*, *Brainboard*, *AWS CloudFormation*, *Hashicorp Packer*, *Puppet*, *Chef*, *SaltStack*, *OpenTofu*, *Virtual Box*, *VMWare*, *Vagrant*, *KubeVirt*, *Kata Containers*, *APT*, *DNF*, *Zypper*, *Nix*, *yum*, *yum*, *chocolatey*, *yarn*, *homebrew*, *LXD*, *chezmoi*, *Python*, *venv*, *pyenv*, *pipx*, *manylinux*, *ptpython*, *Rust*, *Java*, *Go*, *Scala*, *zio*, *Monix*, *C++*, *imgui*, *Cosmopolitan Libc*, *gdb*, *rr*, *Julia*, *Javascript*, *Node.js*, *Mojo*, *taichi lang*, *Codon*, *OpenGL*, *DirectX*, *CUDA*, *Triton Lang*, *Kokkos*, *wgpu*, *Emu*, *vGPU_Unlock*, *cuBLAS*, *OpenBLAS*, *ROCm*, *HIP*, *Metal*, *MSL*, *MPS*, *OpenCL*, *Vulkan*, *OpenCL*, *HVM/Blend*, *OpenMP*, *oneTBB*, *HIP*, *OpenACC*, *Taskflow*, *oneTBB*, *Kompute*, *make*, *remake*, *snakemake*, *CMake*, *Gradle*, *Maven*, *Bazel*, *Meson*, *Ninja*, *dagger*, *koin*, *Swinject*, *Fx*, *DependencyInjection Component*, *TypeDI*, *dig*, *KodeinDI*, *Fruit*, *Needle*, *SimpleInjector*, *Injector*, *DI*, *Ant*, *aiomultiprocess*, *gRPC*, *Finagle*, *Thrift*, *Numpy*, *Numba*, *mlx*, *tensorstore*, *Scipy*, *Cupy*, *ArrayFire*, *matplotlib*, *seaborn*, *facets*, *bokeh*, *Altair*, *optimus*, *scrub*, *dataprep*; *DataGradients*, *YData Synthetic*, *Gretel Synthetics*, *SVD*, *AugLy*, *nlpaug*, *TextAttack*, *audiomentations*, *OpenVoice*, *albumentations*, *inflect*, *textaugment*, *kornia*, *batchgenerators*, *synthea*, *supervision*, *temporian*, *Stan*, *pyro*, *PyMC*, *pomegranate*, *Scikit Learn*, *cuML*; *cuGraph*, *mapie*, *human-learn*, *sklearn-expertsys*, *XGBoost*, *TextBlob*, *SpaCy*, *spacy-llm*, *opennlp*, *CoreNLP*, *pyLDAvis*, *scattertext*, *flair*, *XGBoost*, *Catboost*, *deepdetect*, *Bayesian Optimization*, *BoTorch*, *Pytorch (Plain, Lightning & Ignite)*, *Tensorflow*, *HF Transformers*, *tiktoken*, *LASER*, *fastText*, *JAX*, *FLAX*, *TRAX*, *Penzai*, *MNN*, *Volwpal Wabbit*, *River*, *scikit-multiflow*, *Burn*, *Candle*, *CoreNet*, *DL4J*, *dlj*, *BeyondML*, *mlpack*, *flashlight*, *MindSpore*, *Paddle Paddle*, *Oneflow*, *Pytorch3D*, *Kaolin*, *Dopamine*, *ReAgent*, *TensorTrade*, *PARL*, *pymarl*, *MALib*, *WarpDrive*, *OpenRL*, *detectron2*, *MMDetection*, *Lightly SSL*, *timm*, *tsai*, *darts*, *kats*, *biotite*, *deepchem*, *pennylane*, *QuantumKatas*, *lifelines*, *devspace*, *okteto*, *telepresence*, *gitpod*, *Tilt*, *coder*, *Github Codespaces*, *envd*, *Kubeflow Pipelines*, *Kubeflow Model Training Operator*, *ZenML*, *mlinfra*, *mlstacks*, *CLAIMED*, *sqlflow*, *SuperDuperDB*, *mindsdb*, *Dataherald*, *Chat2DB*, *Calcite*, *postgresml*, *cube*, *vespa*, *Snowflake Cortex*, *MLFlow*, *ClearML, *TFX*, *Xorbits*, *Kong AI gateway*, *gateway*, *LiteLLM*, *glide*, *BricksLLM*, *Martian*, *Not Diamond*, *axflow*, *DB-GPT*, *LLMStudio*, *agenta*, *GPTCache*, *LLMLingua*, Open Source LLMs (Text2Text: *Llama*, *Gemma*, *Zephyr*, *RWKV-LM*, *Persimmon*, *OLMo*, *TinyLlama*, *Mistral*, *OpenMoE*, *MPT*, *Falcon*, *PaLM*, *Vicuna*, *Alpaca*, *Dolly*, *t5x*; Multimodal: *MiniCPM*, *Mixtral*, *DBRX*, *Gemma*, *X-LLM*, *BakLLaVA*, *CogVLM*, *Qwen-VL*, *MiniGPT-4*, *NExT-GPT*, *PALM-E*, *OpenFlamingo*, *Video-LLaMA*, *Otter*, *Multimodal-GPT*, *Orca*, *Phi*, *Macaw*), *Quivr*, *SentencePiece*, *PyTorch-StudioGAN*, Managed Generative ML/LLM Services (e.g., *OpenAI Assistants API*, *Google Gemini*, *Midjourney*, *DALL-E*, *SORA*, *Azure Open AI*, *Claude*, *Cohere*, *Suno*, *PLayHT*, *ElevenLabs*, *Resemble.AI*), *Jsonformer*, *JuJu*, *Merlin*, *DeepRec*, *NVIDIA NeMO*, *FastChat*, *Pipecat*, *Rasa Open Source*, *Lobe Chat*, *TensorRT-LLM*, *ipex-llm*, *ray-llm*, *Superagent*, *Cheshire Cat*, *Botonic*, *Tock*, *ffcv*, *Horovod*, *Distributed Data Parallel (DDP)*, *Petastorm*, *Colossal AI*, *DeepSpeed*, *Composer*, *Ray Train*, *pache Singa*, *trlx*, *GPT-NeoX*, *Megatron*, *Paddle*, *h2o-3*, *Spark MLib*, *Spark NLP*, *Spark GraphX*, *Dask Distributed Training*, *Analytics Zoo*, *Apache Singa*, *Ceph*, *HDFS*, *Gluster*, *SeaweedFS*, *cubefs*, *juicefs*, *DVC*, *fds*, *LakeFS*, *Quilt*, *Nessie*, *Neo4j*, *JanusGraph*, *NebulaGraph*, *HugeGraph*, *ArangoDB*, *OpenCog AtomSpace*, *minio*, *ceph*, *storj*, *swiftstack*, *postgres*, *graphql-engine*, *pg_graphql*, *graphql*, *Ariadne*, *graphql-js*, *directus*, *tidb*, *Mathesar*, *Dgraph*, *Redis*, *olric*, *Ignite*, *tikv*, *Vineyard*, *CouchDB*, *pouchdb*, *MongoDB*, *Cassandra*, *HBase*, *Scilladb*, *YDB*, *CockroachDB*, *TerminusDB*, *EventStore*, *realtime*, *DeltaLake*, *LakeSoul*, *ulid*, *netron*, *modelstore*, *ModelDB*, *optscale*, *aiconfig*, *Tensorboard*, *sacred*, *Aim*, *truelens*, *Humanloop*, *ChainForge*, *Promptflow*, *AgentHub*, *ChainForge*, *mirascope*, *benchllm*, *modelbench*, *bigcode-evaluation-harness*, *llm-autoeval*, *SWE-bench*, *hallucination-leaderboard*, *pytorch-fid*, *Purple Llama*, *VectorDBBench*, *sciml-bench*, *speech-to-text-benchmark*, *WorkArena*, *AgentBench*, *BotChat*, *FastEval*, *ToolTalk*, *rebuff*, *auto-evaluator*, *LLMZoom*, *moonshot*, *fasttrackml*, *MLTRAQ*, *Neptune*, *W&B*, *CometML*, *Determined AI*, *Kolena*, *Efemerai*, *Kedro*, *Skypilot*, *substratus*, *lanarky*, *lamini*, *Xorbits Inference*, *khoj*, *ChatGPT Reverse Proxy*, *Text Generation Inference (TGI)*, *Text Embeddings Inference*, *vLLM*, *PowerInfer*, *FlexFlow*, *Monte Carlo*, *Qualdo*, *Metaplane*, *Talend Data Quality*, *JSON Schema*, *Great Expectations*, *Dafafold*, *DataBand*, *Soda Core*, *Anomalo*, *BigEye*, *Ataccama*, *Evidently*, *Phoenix*, *nannyml*, *AimOS*, *OpenLLM*, *langkit*, *Openllmetry*, *Helicone*, *llm.report*, *Vibranium Dome*, *Doku*, *LangWatch*, *langtrace*, *openlit*, *agentops*, *langfuse*, *pezzo*, *bisheng*, *Arize AI*, *Arthur AI*, *Why Labs*, *MonaLabs*, *Aporia*, *Senser*, *Superwise*, *Cencius*, *Verta*, *Truera*, *HuggingFace Libraries (Transformers, Diffusers, PEFT, Accelerate, Optimum, AWS Trainium and Inferentia, Tokenizers, Evaluate, TRL, timm, Safetensors, Autotrain)*, *Stable Diffusion*, *stable-audio-tools*, *Fooocus*, **LoRA*, *QLoRA*, *llmware*, *HuggingFaceHub*, *Label Studio*, *Labelbox*, *xtreme1*, *docanno*, *cvat*, *Dataloop*, *diffgram*, *cleanvision*, *Universal Data Tool*, *refinery*, *Slicer*, *labelme*,* makesense.ai*, *aubio*, *Praat*, *prodigy*, *v7labs*, *FiftyOne*, *Superb AI*, *Scale AI*, *aquarium*, *Kili*, *SuperAnnotate*, *Encord Annotate*, *labelme*, *praat*, *evals*, *Bench*, *checklist*, *lm-evaluation-harness*, *deepchecks*, *datachecks*, *cleanlab*, *TPOT*, *Featuretools*, *tsfresh*, *RasgoQL*, *Armada*, *Joblib*, *Hamilton*, *Burr*, *Argo*, *Hera*, *Airflow*, *Dagster*, *mage*, *kestra*, *Cadence*, *Azkaban*, *Nomad*, *Bacalhau*, *Prefect*, *Pachyderm*, *Mage*, *Feathr*, *Hopsworks OSS*, *Chronon*, *Michelangelo Palette*, *F3*, *Featureflow*, *Griffin*, *OpenMLDB*, *auto-sklearn*, *mljar-supervised*, *PyCaret*, *SapientML*, *Ludwig*, *higgsfield*, *LLaMA2-Accessory*, *AutoGen*, *MetaGPT*, *AgentVerse*, *ChatDev*, *Langroid*, *crewAI*, *langgraph*, *LLMStack*, *Magick*, *Rivet*, *AppAgent*, *zep*, *Langchain*, *Langchain.js*, *Dust*, *BondAI*, *MemGPT*, *OpenAgents*, *SuperAGI*, *Agent Pilot*, *griptape*, *phidata*, *LLMCOmpiler*, *Agents*, *Embedchain*, *Verba*, *Anything LLM*, *Neum AI*, *gorilla*, *Cohere Toolkit*, *R2R*, *FastGPT*, *haystack*, *Langflow*, *Flowise*, *Semantic Kernel*, *DSPy*, *guidance*, *YiVal*, *sglang*, *orca*, *ChemCrow*, *private-gpt*, *vanna*, *Sourcegraph*, *XAgent*, *AgentGPT*, *devika*, *OpenDevin*, *GPT Pilot*, *LoopGPT*, *Mentat*, *Sweep*, *aider*, *codel*, *whatsapp-chatgpt*, *JARVIS*, *LlamaFS*, *gpt-engineer*, *smol developer*, *hackingBuddyGPT*, *cover-agent*, *SWE-agent*, *DevOpsGPT*, *OpenCopilot*, *DemoGPT*, *webllama*, *GeniA*, *AutoDev*, *Open-Assistant*, *Open Interpreter*, *Self-Operating Computer Framework*, *GPT4All*, *LocalAI*, * danielmiessler/fabric*, *Jan*, *TinyAgent*, *OpenOpenAI*, *Open-Sora*, *promptify*, *promptfoo*, *SoM*, *AI Test Kitchen*, *AnySolve*, *betterprompt*, *ChatGPT Prompt Generator*, *ClickPrompt*, *DreamStudio*, *Dify*, *Dust*, *IX*, *Dyno*, *EmergentMind*, *EveryPrompt*, *FlowGPT*, *fastRAG*, *GPT Index*, GPTTools, hwchase17/adversarial-prompts, Interactive Composition Explorer, Knit, *LangBear*, *Lexica*, *LMFlow*, *loom*, *Metaprompt*, *OpenAI Playground*, *OpenICL*, *OpenPrompt*, *OpenPlayground*, *OptimusPrompt*, *Outlines*, *instructor*, *Playground*, *Portkey AI*, *Prodia*, *Prompt Apps*, *PromptAppGPT*, *Prompt Base*, *Prompt Engine*, *prompted.link*, *Prompter*, *PromptInject*, *Prompts.ai*, *Promptmetheus*, *PromptPerfect*, *Promptly*, *PromptSource*, *PromptTools*, *Scale SpellBook*, *sharegpt*, *SmartGPT*, *ThoughtSource*, *Visual Prompt Builder*, *YiVal*, *MLFlow Prompt Engineering UI*, *frugal*, *FLAML*, *NNI*, *AutoGluon*, *StatsForecast*, *beta-recsys*, *metarank*, *Crossplane*, *Spinnaker*, *Hashicorp Vault*, *Sops*, *Infisical*, *keycloak*, *Zitadel*, *ory*, *supertokens*, *OKTA*, *Auth0*, *authelia*, *defguard*, *Ory Kratos*, *Ory Hydra*, *dex*, *OneLogin*, *Ping Identity*, *WSO2 Identity Server*, *Duo Security*, *bytebase*, *kubeblocks*, *Gaphor*, *Archi*, *Icepanel*, *Jira*, *ZenDesk*, *Backlog*, *Trello*, *Plane*, *Openproject*, *Actionview*, *cloudcustodian*, *Teleport*, *Cookiecutter*, *Craft*, *copier*, *Yeoman*, *mlops-python-package*, *Apollo*, *NACOS*, *Salt*, *Configu*, *OmegaConf*, *Hydra, *DynaConf*, *Backstage*, *Qovery Engine*, *OpenFaaS*, *OpenWhisk*, *KNative*, *Nuclio*, *OpenFunction*, *Fission*, *tsuru*, *CDS: Continuous Delivery Service, *Encore*, *PipeCD*, *Dokku*, *KubeVela*, *shuttle*, *Porter*, *piku*, *OTOMI*, *rack*, *kubero*, *kopf*, *PaaSTA*, *RSS Guard*, *rudder-server*, *next-cloud*, *Meilisearch*, *typesense*, *ElasticSearch*, *transformers.js*, *llama-cpp-python*, *llm.c*, *llama2.c*, *nanoGPT*, *Ollama*, *ExLlamaV2*, *koboldcpp*, *Dalai*, *BigDL-LLM*, *LLama-index*, *LLamalab*, *NeMo-Guardrails*, *guardrails*, *Purple Llama*, *LLaMA-Factory*, *JAX*, *FLAX*, *TRAX*, *GGML*, *KitOps*, *llamafile*, *ctransformers*, *GGUF*, *STAX*, *Objax*, *Haiku*, *Elegy*, *Ray Core*, *Kuberay*, *SciML*, *FluidX3D*, *FreeCAD*, *deepxde*, *drake*, *Seldon Core*, *BentoML*, *Ray Serve*, *KServe*, *Cortex*, *Truss*, *MLEM*, *OctoML*, *HippoML*, *NVIDIA Triton Inference Server*, *Vitis*, *ONNX Runtime*, *NVIDIA TensorRT*, *NVIDIA TensorRT-LLM*, *TensorRT Polygraphy*, *TensorRT onnx-graphsurgeon*, *TensorRT*, *pytorch-quantization*, *BlindAI*, *Streamlit*, *Gradio*, *text-generation-webui*, *Shiny*, *Dash*, *Voila*, *nextpy*, *PyWebIO*, *mesop*, *appsmith*, *ToolJet*, *budibase*, *nocobase*, *Retool*, *Chainlit*, *LLaMA-Factory*, *LMFlow*, *Simple LLM Finetuner*, *Axolotl*, *unsloth*, *langdrive*, *mistral-finetune*, *HF trl*, *trlx*, *OpenRLHF*, *Marvin*, Marvin, *TypeChat*, *Vercel AI SDK*, *AnythingLLM*, *snipe-it*, *glpi*, *Zendesk*, *ZohoDesk*, *FreshDesk*, *Zammad*, *osTicket*, *FreeScout*, *Peppermint*, *Trudesk*, *Faveo Helpdesk*, *Pagerduty*, *OSS Review Toolkit*, *OpenSCA*, *Firecracker*, *katacontainers*, *Chatbot Arena*, *Radon*, *Bandit*, *Snyk*, *Intruder*, *Splunk SOAR*, *Immuniweb*, *OpenDSR*, *Drata*, *Cymulate*, *SOPHOS*, *Snyk*, *FOSSA*, *What the Diff*, *Github Dependabot*, *super-linter*, *Bump My Version*, *addlicense*, *ModelScan*, *Github Code Scanning*, *AI Reviewer*, *Codeball*, *Codacy*, IaaS (e.g., *NVIDIA DGX Datacenter*, *AWS EC2*, *AWS ECS*, *AWS EKS*, *AWS Fargate*, *Google GKE*, *ECR Container Registry*, *genesiscloud*; Parallel Processor Machine Providers (e.g., GPUs: *TensorDock*, *Modal*, *Paperspace*, *Lambda GPU Cloud*, *Fluidstack*, *CoreWeave*, *salad*, *HF GPU Spaces*, *Crusoe.ai, *LambdaLabs*, *JarvisLabs*, *SambaNova*, *Juice*, *Super Micro*; Other: *Graphcore*)), MLOps clouds (e.g, *run:ai*, *Runpod*, *Radium*, *Anyscale*), Serverless managed offerings (e.g., *AWS Lambda*, *Azure functions*, *Baseten*, *Inferless*, *Banana*, *Pipeline*, *Slai.io*, *inferrd*, *replicate*), IT PaaS offerings (e.g., *NVIDIA DGX SuperPod*, *AWS EKS*, *GCP GKE*, *fly.io*, *AWS SQS*, *AWS S3, *Google Cloud Storage*), ML PaaS offerings: build and deploy easily (e.g., *AWS bedrock*, *replicate*), SaaS offerings (e.g., *AWS SNS*), *Django*, *Spring Boot*, *Laralevel*, *Sveltekit*, *redwood*, *Voyager*, *Wave*, *Laralevel Spark*, *Genesis*, *Nextjs*, *Astro*, *Supabase*, *caprover*, *FastAPI*, *Guvicorn*, *Uvicorn*, *Caddy*, *NGINX*, *ModSecurity*, *Bunkerweb*, *Podman*, *Docker*, *containerd*, *runc*, *buildah*, *Kaniko*, *Shipwright*, *contaiNERD CTL*, *Slim*, *cadvisor*, *virtualenv*, *pex*, *Github packages*, *Harbor*, *Kubernetes*, *testcontainers-python*, *dockertest*, *Docker-Android*, *kubernetes in docker (kind)*, *minikube*, *k3d*, *mirrord*, *vcluster*, *K3S*, *Kubeedge*, *Microk8s*, *Helm*, *Kustomize*, *timoni*, *cdk8s*, *kpt*, *k9s*, *OKD*, *Kubesphere*, *devtron*, *Lens*, *Kubeapps*, *Rancher*, *Skaffold*, *werf*, *Flux2*, *ketch*, *Garden*, *Velero*, *KEDA*, *Karpenter*, *Sealed Secrets*, *Kubernetes Secrets Store CSI Driver*, *External Secrets*, *k8sgpt*, *LaVague*, *Huginn*, *sonobuoy*, *robusta*, *preevy*, *Metacontroller*, *asyncio*, *Celery*, *RQ*, *kueue*, *fabric*, *plural*, *Run:ai*, *Cloudflare*, *Quarto*, *Hugo*, *Gatsby*, *Jekyll*, *hexo*, *BigQuery*, *AWS RedShift*, *Hive*, Snowflake*, *Coalesce*, *Fivetran*, *Stich*, *velox*, *dbt*, *dlt*, *piperider*, *Snowpark*, *Tecton*, *dotData*, *Molecula*, *Hopsworks*, *Feast*, *Apache Arrow*, *TorchArrow*, *substrait*, *spark*, *GraphScope*, *koalas*, *RabbitMQ*, *NATS*, *ActiveMQ*, *ZeroMQ*, *Kafka*, *GStreamer*, *NNStreamer*, *Pulsar*, *Redpanda*, *Pravega*, *Kinesis*, *RocketMQ*, *Brooklin*, *fireworq*, *Storm*, *Flink*, *Paimon*, *Kafka Streams*, *Spark Structured Streaming*, *Beam*, *Pathway*, *Impala*, *NiFi*, *Benthos*, *Apache NiFi*, *Numaflow*, *KSQL*, *Materialize*, *Decodable*, *quix streams*, *hazelcast*, *chatwoot*, *papercups*, *chaskiq*, *helpy*, *community-skeleton*, *danswer*, *gerev*, *mlflow-kernel*, *Sphinx*, *Graphviz*, *pygraphistry*, *MkDocs*, *mkdocstrings*, *Material for MKDocs*, *gitbook*, *Read the Docs*, *github pages*, *lightdash*, *blazer*, *evidence*, *Salesforce*, *Power BI*, *Tableau*, *Google Analytics*, *umami*, *plausible*, *Mixpanel*, *GoReplay*, *rrweb*, *keep*, *Nagios*, *zabbix*, *netdata*, *Prometheus*, *Thanos*, *VictoriaMetrics*, *Nightingale*, *Ddosify*, *fleet*, *OpenObserve*, *highlight.io*, *hyperdx*, *pixie*, *Retina*, *skywalking*, *OpenTelemetry*, *OpenMetadata*, *atlas*, *collectd*, *Open metrics*, *Telegraf*, *OpenLineage*, *Marquez*, *Datahub*, *Egeria*, *Aligned*, *Beats*, *coroot*, *cilium*, *Hubble*, *Grafana Pyroscope*, *Istio*, *Kiali*, *Linkerd*, *Consul*, *Linkerd2*, *kubeshark*, *hertzbeat*, *FastNetMon*, *akvorado*, *librenms*, *ThingsBoard*, *web-check*, *Datadog*, *Sentry*, *Honeycomb*, *SignalFx*, *CloudWatch*, *New Relic*, *Librato*, *Algolia*, *Splunk*, *BigPanda*, *Sensu*, *Middleware*, *AppDynamics*, *Raygun*, *Splunk Cloud*, *eG Enterprise*, *metabase*, *plotly*, *graphana*, *Perspective*, *superset*, *amundsen*,*redash*, *ckan*, *magda*, *Genie*, *open data discovery (odd)*, *Chat2DB*, *ClickHouse*, *Apache Pinot*, *DuckDB*, *StarRocks*, *Druid*, *Materialize*, *Trino*, *presto*, *Impala*, *Apache Drill*, *EvaDB*, *Alluxio*, *Delta Lake*, *Kylo*, *Apache Hudi*, *Apache Iceberg*, *PyIceberg*, *Apache Parquet*, *h5py*, *Apache Avro*, *Deep Lake*, *AIStore*, *Debezium*, *Zepellin*, *marimo*, *Jupyter Lab*, *Jupyterlab-requirements*, *ipyflow*, *Papermill*, *Ploomber*, *jupysql*, *pyparallel*, *parakeet*, *testbook*, *nbdev*, *nbdime*, *elyra*, *jupytext*, *ReviewNB*, *NBQA*, *lmk*, *lineapy*, *HF Evaluate*, *TF Model Analysis*, *TF Embedding Projector*, *ZenoML*, *AI Verify*, *TF Responsible AI Toolkit*, *Microsoft Responsible AI Toolkit (RAI)*, *Fairlearn*, *AI Fairness 360 (AIF360)*, *Sagemaker Clarify*, *SHAP*, *InterpretML*, *Alibi Explain*, *AI Explainability 360*, *TF What-If*, *interpret*, *Captum*, *TF Lattice*, *TF language interpretability*, *ecco*, *Pythia*, *DeepCausality*, *Causal ML*, *dowhy*, *causalnex*, *Learning Interpretability Tool (LIT)*, *PiML*, *Adversarial Robustness Toolbox (ART)*, *Foolbox*, *Giskard*, *XAI Toolbox*, *Pysift*, *tf federated*, *flower*, *nvidia clara*, *substra*, *OpenFL*, *FATE*, *FedML*, *PipelineDP*, *OpenCV*, *SuperGradients*, *NVIDIA DeepStream SDK*, *Savant*, *espnet*, *Mermaid*, *Icevision*, *Kornia*, *ocrpy*, *Behave*, *Lettuce*, *Robot*, *Scalene*, *Pytest*, *Unittest*, *Coverage*, *Codecov*, *JaCoCo*, *Hypothesis*, *JUnit*, *pycodestyle*, *moto*, *ruff*, *pylint*, *sqlfluff*, *Black*, *flake8*, *MyPy*, *returns*, *injector*, *mock*, *faker*, *pyre-check*, *shellcheck*, *MonkeyType*, *Pydantic*, *schema*, *pandera*, *deequ*, *TF Data Validation*, *DVT*, *data-diff*, *cerberus*, *ydata-profiling*, *unstructured*, *orjson*, *marker*, *pycln*, *pyupgrade*, *Bandit*, *cloudpathlib*, *SonarQube*, *Nessus*, *SpotBugs*, *PMD*, *gosec*, *codeql*, *gitleaks*, *nodejsscan*, *pino*, *bearer*, *scorecard*, *semgrep*, *webhint*, *BinAbsInspector*, *trivy*, *grype*, *Clair*, *Anchore Engine*, *Sysdig Falco*, *Dagda*, *isort*, *Airbyte*, *syncthing*, *SeaTunnel*, *skyplane*, *Fivetran*, *Stitch*, *ingestr*, *lineapy*, *cog*, *chassis*, *chitra*, *crane*, *finetuner*, *Notion*, *notion-clone*, *Logseq*, *dendron*, *AppFlowy*, *AFFiNE*, *AFFiNE*, *plane*, *TVM*, *HF Optimum*, *XLA*, *voltaML*, *TF Model Optimization Toolkit*, *TF Lite*, *uTensor*, *Intel Neural Compressor*, *Adlik*, *AITemplate*, *Hidet*, *distiller*, *sparsify*, *sparseML*, *AIMET*, *TinyNeuralNetwork*, *HAWQ*, *quanto*, *AWQ*, *SmoothQuant*, *AutoGPTQ*, *Encord Active*, *modAL*, *libact*, *ALiPy*, *Baal*, *TenSEAL*, *google/differential-privacy*, *TF Privacy*, *SEAL*, *HElib*, *tf-encrypted*, *HEFlow*, *Presidio*, *molfeat*, *AWS EC2 Inf2*, *botui*, *bottender*, *pandasai*, *Modin*, *Polars*, *ibis*, *Dask*, *Modin*, *mars*, *cuDF*, *Vaex*, *Daft*, *winglang*, *Odigos*, *Jaeger*, *Zipkin*, *py2cfg*, *gensim*, *PyOD*, *Darts*, *Anomalib*, *Anomstack*, *Snorkel*, *Compose*, *Autolabel*, *Adala*, *vectorflow*, *superlinked*, *Text Embeddings Inference*, *infinity*, *pgvector*, *Weaviate*, *Chroma*, *Milvus*, *Qdrant*, *HNSWLib*, *NMBSLib*, *Active Loop*, *lancedb*, *Marqo*, *Faiss*, *vearch*, *Vald*, *indexify*, *docarray*, *Argo Rollouts*, *flagger*, *Posthog*, *Growthbook*, *Flipt*, *Flagr*, *Optimizely*, *AB Tasty*, *Apptimize*; *Google Optimize*, *Stumpy*, *InfluxDB*, *TDengine*, *TimescaleDB*, *Prophet*, *Grafana Loki*, *vector*, *monolog*, *FluentD*, *loguru*, *structlog*, *flume*, *goaccess*, *Logseq*, *logparser*, *Pyomo*, *openblocks*, *Screenshot-to-code*, *draw-a-ui*, *memray*, *py-spy*, *pprof*, *coz*, *Bytehound*, *Stopwatch*, *async-profiler*, *gradle-profiler*, *line_profiler*, *orbit*, *hotspot*, *easy_profiler*, *puffin*, *Strapi*, *Ghost*, *Decap*, *wagtail*, *Keystone*, *Payload*, *Chromium*, *Publii, Drupal*, *Drupal*, *agentlabs*, *OpenCLIP*, *stable-diffusion*, *
-*, *SDXL-Turbo*, *StableStudio*, *SillyTavern*, *tldraw*, *Cypress*, *Selenium*, *Playwright*, *Taxy AI Full Browser Automation*, *Testcomplete*, *Airtest*, *momentic*, *openv0*, *Langui*, *AI Spend*, *Swagger UI*, *Github Actions*, *Jenkins*, *gocd*, *woodpecker*, *CircleCI*, *Bamboo*, *Travis CI*, *Buddy*, *Buildbot*, *Bitbucket Pipelines*, *AWS CodePipeline*, *Tekton*, *TeamCity*, *ArgoCD*, *ArgoCD*, *Spinnaker*, *Buck*, *pygradle*, *python-fire*, *argparse*, *Typer*, *sqlmodel*, *ELK on Docker*, *OpenSearch*, *Solr*, *Sphinx Search*, *Xapian*, *Nutch*, *git-code-debt*, *Sandstorm*, *zuul*, *unicorn*, *capstone*, *reconftw*, *OWASP Nettacker*, *BlackWidow*, *retire.js*, *minisearch*, *WhiteSource Bolt*, *Dependency-Track*, *OSSIndex*, *System Informer*, *BinAbsInspector*, *nuclei*, *Vuls*, *Tsunami*, *grype*, *VeraCrypt*, *cryptomator*, *gophish*, *URH - Universal Radio Hacker*, *Aircrack-ng*, *WireGuard*, *tailscale*, *openvpn*, *nebula*, *IPsec VPN Server on Docker*, *netmaker*, *MVT - Mobile Verification Toolkit*, *Kubescape*, *Gatekeeper*, *Kyverno*, *kube-score*, *yamllint*, *TOML*, *Carvel*, *kubesec*, *kubeaudit*, *kubeconform*, *kube-linter*, *polaris*, *conftest*, *datree*, *kubevious*, *Datashim*, *OSS-Fuzz*, *ClusterFuzz*, *prowler*, *Docker Bench for Security*, *nmap*, *vulscan*, *IVRE*, *Wazuh*, *OpenVAS*, *ThreatMapper*, *CrowSec*, *ossec-hids*, *Sn1per*, *secretive*, *Falco*, *Pacu*, *tfscan*, *terrascan*, *ggshield*, *CloudSploit*, *kube-bench*, *pyWhat*, *Arkime*, *steampipe*, *cloudmapper*, *ntopng*, *Zeek*, *Dependency-Check*, *maltrail*, *x11docker*, *authentik*, *Calico*, *Osmedeus Core Engine*, *MISP - Threat Intelligence Sharing Platform*, *Faraday*, *TheHive*, *OWASP DefectDojo*, *OpenCTI*, *Ockam*, *cameradar*, *Suricata*, *Arachni*, *Meshbird*, *ufw-docker*, *CDK - Zero Dependency Container Penetration Toolkit*, *pocsuite3*, *Step CLI*, *Oso*, *Seatbelt*, *drozer*, *DefectDojo*, *SSLyze*, *tracee*, *parca*, *Interactsh.*, *Chef InSpec*, *CHIPSEC*, *Lynis*, *OpenSCAP*, *ScoutSuite*, *node-rate-limiter-flexible*, *OWASP Zed Attack Proxy (ZAP)*, *Nikto*, *Wapiti*, *Grabber*, *mitmproxy*, *Algo VPN*, *IPsec VPN Server Auto Setup Scripts*, *NGINX Config*, *bettercap*, *cutter*, *wifiphisher*, *JavaScript obfuscator*, *DOMPurify*, *RustScan*, *dirsearch*, *Vuls*, *Caldera*, *Shuffle*, *PhoneSploit Pro*, *shodan*, *keeweb*, *Protobuff*, *Prisma*, *pgroll*, *goose*, *gorm*, *typeorm*, *Sequelize*, *mongoose*, *sqitch*, *flyway*, *Pyrseas*, *liquibase*, *Planetscale*, *cibuildwheel*, *Poetry*, *Twine*, *PySnooper*, *coremltools*, *ncnn*, *ShaderNN*, *mediapipe*, *HyperOpt*, *Optuna*, *SigOpt*, *RayTune*, *Katib*, *Overleaf*, *Stencila*, *novel*, *vnote*, *Notable*, *Joplin*, *memos*, *Laverna*, *Notesnook*, *MarkText*, *Stripe*, *Checkout.com*, *browserify*, *Storybook*, *React*, *Bulletproof React*, *Preact*, *Vue*, *Svelte*, *React Native*, *Ionic*, *Expo*, *Electron*, *Tauri*, *Acorn*, *OpenUI*, **Tailwind*, *vegeta*, *locust*, *gatling*, *k6*, *jmeter*, *Chaos Monkey*, *chaos-mesh*, *chaosblade*, *lLitmusChaos*, *kube-monkey*, *gum*, *Crossplane*, *go-jsonnet*, *CUE*, *LibreTranslate*, *Argos Translate*, *upscayl*, *yake*, *tesseract*, *tts*, *ChatTTS*, *MetaVoice*, *Deepspeech*, *riffusion*, *muzic*, *Amphion*, *audiocraft*, *open-musiclm*, *Ultralytics YOLOv8*, *yolov10*, *Github Copilot*, *fauxpilot*, *tabby*, *continue*, *StarCoder*, *AlphaCodium*, *pr-agent*, *Sweep*, *magnet*, *unblocked*, *Onboard*, *aider*, *Butterfish*, *Second*, *TFLite*, *MLKit*, *CoreML*, *Pytorch Mobile*, *TF.js*, *ai-jsx*, *WebAssembly*, *WebGL*, *WebGPU*, *WebSocket*, *WebRTC*, *LiveKit*, *Edge Impulse*, *EdgeCloudSim*, *EnvisEdge*, *Auptimizer*, *firesim*, *OpenFPGA*, *apio*, *icestorm*, *yosys*, *nextpnr*, *Logisim-evolution*, *Amaranth*, *PlatformIO*, *LiteX*, *LGN*, *whisper.cpp*, *llama.cpp*, *ml-design-doc*, *Youtube Transcript API*, *adr-tools*, *postal*, *EasyEdit*, *mergekit*, *FlexGen*, *Medusa*, *LookaheadDecoding*, *einops*, *safetensors*, *Diataxis*, *ROS2*, *IsaacLab*, *jhonny-five*, *gobot*, *Godot*, *bevy*, *Babylon.js*, *libgdx*, *MonoGame*, *o3de*, *Unreal Engine*, *MindMaker AI Plugin for Unreal Engine*, *Unity*, *Unity ML-Agents Toolkit*, *AnimateAnyone*, *Swirl*, *Devv*, *Algolia*, *Coveo*, *searxng*, *SolidGPT*, *youtube-dl*, *Qt*, *Airtable*, *NocoDB*, *aframe*, *univer*, *Perplexity*, *Perplexica*, *farfalle*, *Noi*, *cvxpy*, *BayesianOptimization*, *ceres-solver*, *nlopt*, *ScrapeGraphAI*, *scrapy*, *Crawlee*, *colly*, *cheerio*, *orbitdb*, *ipfs*, *etherium*)
+__*Freelunch* works on top of all these (open source and proprietary) IT, DevSecOps, Data Engineering, MLOps, Analytics and Graphics Programming tools:__  *Diagrams as Code*, *Draw.io*, *Miro Board*, *excalidraw*, *mermaid*, *obsidian*, VSCode*, *Coniniue*, Linux Distributions (*Ubuntu*, *Debian*, *Fedora*, *Talos*), *GDB*, *eBPF*, *GNU parallel*, *fd*, *wtf*, *rush*, *pigz*, *curl*, *unzip*, *git*, *github*, *gitlab*, *gitea*, *Ansible, *Terraform*, *Terragrunt*, *Pulumi*, *OpenTofu*, *klotho*, *Terraformer*, *Brainboard*, *AWS CloudFormation*, *Hashicorp Packer*, *Puppet*, *Chef*, *SaltStack*, *OpenTofu*, *Virtual Box*, *VMWare*, *Vagrant*, *KubeVirt*, *Kata Containers*, *APT*, *DNF*, *Zypper*, *Nix*, *yum*, *yum*, *chocolatey*, *yarn*, *homebrew*, *LXD*, *chezmoi*, *Python*, *venv*, *pyenv*, *pipx*, *manylinux*, *ptpython*, *Rust*, *Java*, *Go*, *Scala*, *zio*, *Monix*, *C++*, *imgui*, *Cosmopolitan Libc*, *gdb*, *rr*, *Julia*, *Javascript*, *Node.js*, *Mojo*, *taichi lang*, *Codon*, *OpenGL*, *DirectX*, *CUDA*, *Triton Lang*, *Kokkos*, *wgpu*, *Emu*, *vGPU_Unlock*, *cuBLAS*, *OpenBLAS*, *ROCm*, *HIP*, *Metal*, *MSL*, *MPS*, *OpenCL*, *Vulkan*, *OpenCL*, *HVM/Blend*, *OpenMP*, *oneTBB*, *HIP*, *OpenACC*, *Taskflow*, *oneTBB*, *Kompute*, *make*, *remake*, *snakemake*, *CMake*, *Gradle*, *Maven*, *Bazel*, *Meson*, *Ninja*, *dagger*, *koin*, *Swinject*, *Fx*, *DependencyInjection Component*, *TypeDI*, *dig*, *KodeinDI*, *Fruit*, *Needle*, *SimpleInjector*, *Injector*, *DI*, *Ant*, *aiomultiprocess*, *gRPC*, *Finagle*, *Thrift*, *Numpy*, *Numba*, *mlx*, *tensorstore*, *Scipy*, *Cupy*, *ArrayFire*, *matplotlib*, *seaborn*, *facets*, *bokeh*, *Altair*, *optimus*, *scrub*, *dataprep*; *DataGradients*, *YData Synthetic*, *Gretel Synthetics*, *SVD*, *AugLy*, *nlpaug*, *TextAttack*, *audiomentations*, *OpenVoice*, *albumentations*, *inflect*, *textaugment*, *kornia*, *batchgenerators*, *synthea*, *supervision*, *temporian*, *Stan*, *pyro*, *PyMC*, *pomegranate*, *Scikit Learn*, *cuML*; *cuGraph*, *mapie*, *human-learn*, *sklearn-expertsys*, *XGBoost*, *TextBlob*, *SpaCy*, *spacy-llm*, *opennlp*, *CoreNLP*, *pyLDAvis*, *scattertext*, *flair*, *XGBoost*, *Catboost*, *deepdetect*, *Bayesian Optimization*, *BoTorch*, *Pytorch (Plain, Lightning & Ignite)*, *Tensorflow*, *HF Transformers*, *tiktoken*, *LASER*, *fastText*, *JAX*, *FLAX*, *TRAX*, *Penzai*, *MNN*, *Volwpal Wabbit*, *River*, *scikit-multiflow*, *Burn*, *Candle*, *CoreNet*, *DL4J*, *dlj*, *BeyondML*, *mlpack*, *flashlight*, *MindSpore*, *Paddle Paddle*, *Oneflow*, *Pytorch3D*, *Kaolin*, *Dopamine*, *ReAgent*, *TensorTrade*, *PARL*, *pymarl*, *MALib*, *WarpDrive*, *OpenRL*, *detectron2*, *MMDetection*, *Lightly SSL*, *timm*, *tsai*, *darts*, *kats*, *biotite*, *deepchem*, *pennylane*, *QuantumKatas*, *lifelines*, *devspace*, *okteto*, *telepresence*, *gitpod*, *Tilt*, *coder*, *Github Codespaces*, *envd*, *Kubeflow Pipelines*, *Kubeflow Model Training Operator*, *ZenML*, *mlinfra*, *mlstacks*, *CLAIMED*, *sqlflow*, *SuperDuperDB*, *mindsdb*, *Dataherald*, *Chat2DB*, *Calcite*, *postgresml*, *cube*, *vespa*, *Snowflake Cortex*, *MLFlow*, *ClearML, *TFX*, *Xorbits*, *Kong AI gateway*, *gateway*, *LiteLLM*, *glide*, *BricksLLM*, *Martian*, *Not Diamond*, *axflow*, *DB-GPT*, *LLMStudio*, *agenta*, *GPTCache*, *LLMLingua*, Open Source LLMs (Text2Text: *Llama*, *Gemma*, *Zephyr*, *RWKV-LM*, *Persimmon*, *OLMo*, *TinyLlama*, *Mistral*, *OpenMoE*, *MPT*, *Falcon*, *PaLM*, *Vicuna*, *Alpaca*, *Dolly*, *t5x*; Multimodal: *MiniCPM*, *Mixtral*, *DBRX*, *Gemma*, *X-LLM*, *BakLLaVA*, *CogVLM*, *Qwen-VL*, *MiniGPT-4*, *NExT-GPT*, *PALM-E*, *OpenFlamingo*, *Video-LLaMA*, *Otter*, *Multimodal-GPT*, *Orca*, *Phi*, *Macaw*), *Quivr*, *SentencePiece*, *PyTorch-StudioGAN*, Managed Generative ML/LLM Services (e.g., *OpenAI Assistants API*, *Google Gemini*, *Midjourney*, *DALL-E*, *SORA*, *Azure Open AI*, *Claude*, *Cohere*, *Suno*, *PLayHT*, *ElevenLabs*, *Resemble.AI*), *Jsonformer*, *JuJu*, *Merlin*, *DeepRec*, *NVIDIA NeMO*, *FastChat*, *Pipecat*, *Rasa Open Source*, *Lobe Chat*, *TensorRT-LLM*, *ipex-llm*, *ray-llm*, *Superagent*, *Cheshire Cat*, *Botonic*, *Tock*, *ffcv*, *Horovod*, *Distributed Data Parallel (DDP)*, *Petastorm*, *Colossal AI*, *DeepSpeed*, *Composer*, *Ray Train*, *pache Singa*, *trlx*, *GPT-NeoX*, *Megatron*, *Paddle*, *h2o-3*, *Spark MLib*, *Spark NLP*, *Spark GraphX*, *Dask Distributed Training*, *Analytics Zoo*, *Apache Singa*, *Ceph*, *HDFS*, *Gluster*, *SeaweedFS*, *cubefs*, *juicefs*, *DVC*, *fds*, *LakeFS*, *Quilt*, *Nessie*, *Neo4j*, *JanusGraph*, *NebulaGraph*, *HugeGraph*, *ArangoDB*, *OpenCog AtomSpace*, *minio*, *ceph*, *storj*, *swiftstack*, *postgres*, *graphql-engine*, *pg_graphql*, *graphql*, *Ariadne*, *graphql-js*, *directus*, *tidb*, *Mathesar*, *Dgraph*, *Redis*, *olric*, *Ignite*, *tikv*, *Vineyard*, *CouchDB*, *pouchdb*, *MongoDB*, *Cassandra*, *HBase*, *Scilladb*, *YDB*, *CockroachDB*, *TerminusDB*, *EventStore*, *realtime*, *DeltaLake*, *LakeSoul*, *ulid*, *netron*, *modelstore*, *ModelDB*, *optscale*, *aiconfig*, *Tensorboard*, *sacred*, *Aim*, *truelens*, *Humanloop*, *ChainForge*, *Promptflow*, *AgentHub*, *ChainForge*, *mirascope*, *benchllm*, *modelbench*, *bigcode-evaluation-harness*, *llm-autoeval*, *SWE-bench*, *hallucination-leaderboard*, *pytorch-fid*, *Purple Llama*, *VectorDBBench*, *sciml-bench*, *speech-to-text-benchmark*, *WorkArena*, *AgentBench*, *BotChat*, *FastEval*, *ToolTalk*, *rebuff*, *auto-evaluator*, *LLMZoom*, *moonshot*, *fasttrackml*, *MLTRAQ*, *Neptune*, *W&B*, *CometML*, *Determined AI*, *Kolena*, *Efemerai*, *Kedro*, *Skypilot*, *substratus*, *lanarky*, *lamini*, *Xorbits Inference*, *khoj*, *ChatGPT Reverse Proxy*, *Text Generation Inference (TGI)*, *Text Embeddings Inference*, *vLLM*, *PowerInfer*, *FlexFlow*, *mistral.rs*, *Monte Carlo*, *Qualdo*, *Metaplane*, *Talend Data Quality*, *JSON Schema*, *Great Expectations*, *Dafafold*, *DataBand*, *Soda Core*, *Anomalo*, *BigEye*, *Ataccama*, *Evidently*, *Phoenix*, *nannyml*, *AimOS*, *OpenLLM*, *langkit*, *Openllmetry*, *Helicone*, *llm.report*, *Vibranium Dome*, *Doku*, *LangWatch*, *langtrace*, *openlit*, *agentops*, *langfuse*, *pezzo*, *bisheng*, *Arize AI*, *Arthur AI*, *Why Labs*, *MonaLabs*, *Aporia*, *Senser*, *Superwise*, *Cencius*, *Verta*, *Truera*, *HuggingFace Libraries (Transformers, Diffusers, PEFT, Accelerate, Optimum, AWS Trainium and Inferentia, Tokenizers, Evaluate, TRL, timm, Safetensors, Autotrain)*, *Stable Diffusion*, *stable-audio-tools*, *Fooocus*, **LoRA*, *QLoRA*, *llmware*, *HuggingFaceHub*, *Label Studio*, *Labelbox*, *xtreme1*, *docanno*, *cvat*, *Dataloop*, *diffgram*, *cleanvision*, *Universal Data Tool*, *refinery*, *Slicer*, *labelme*,* makesense.ai*, *aubio*, *Praat*, *prodigy*, *v7labs*, *FiftyOne*, *Superb AI*, *Scale AI*, *aquarium*, *Kili*, *SuperAnnotate*, *Encord Annotate*, *labelme*, *praat*, *evals*, *Bench*, *checklist*, *lm-evaluation-harness*, *deepchecks*, *datachecks*, *cleanlab*, *TPOT*, *Featuretools*, *tsfresh*, *RasgoQL*, *Armada*, *Joblib*, *Hamilton*, *Burr*, *Argo*, *Hera*, *Airflow*, *Dagster*, *mage*, *kestra*, *Cadence*, *Azkaban*, *Nomad*, *Bacalhau*, *Prefect*, *Pachyderm*, *Mage*, *Feathr*, *Hopsworks OSS*, *Chronon*, *Michelangelo Palette*, *F3*, *Featureflow*, *Griffin*, *OpenMLDB*, *auto-sklearn*, *mljar-supervised*, *PyCaret*, *SapientML*, *Ludwig*, *higgsfield*, *litgpt*, *LLaMA2-Accessory*, *AutoGen*, *MetaGPT*, *AgentVerse*, *ChatDev*, *Langroid*, *crewAI*, *langgraph*, *LLMStack*, *Magick*, *Rivet*, *AppAgent*, *zep*, *Langchain*, *Langchain.js*, *Dust*, *BondAI*, *MemGPT*, *OpenAgents*, *SuperAGI*, *Agent Pilot*, *griptape*, *phidata*, *LLMCOmpiler*, *Agents*, *Embedchain*, *Verba*, *Anything LLM*, *Neum AI*, *gorilla*, *Cohere Toolkit*, *R2R*, *FastGPT*, *haystack*, *Langflow*, *Flowise*, *Semantic Kernel*, *DSPy*, *guidance*, *YiVal*, *sglang*, *orca*, *ChemCrow*, *private-gpt*, *vanna*, *Sourcegraph*, *XAgent*, *AgentGPT*, *devika*, *OpenDevin*, *GPT Pilot*, *LoopGPT*, *Mentat*, *Sweep*, *aider*, *codel*, *whatsapp-chatgpt*, *JARVIS*, *LlamaFS*, *gpt-engineer*, *smol developer*, *hackingBuddyGPT*, *cover-agent*, *SWE-agent*, *DevOpsGPT*, *OpenCopilot*, *DemoGPT*, *webllama*, *GeniA*, *AutoDev*, *Open-Assistant*, *Open Interpreter*, *Self-Operating Computer Framework*, *GPT4All*, *LocalAI*, * danielmiessler/fabric*, *Jan*, *TinyAgent*, *OpenOpenAI*, *Open-Sora*, *promptify*, *promptfoo*, *SoM*, *AI Test Kitchen*, *AnySolve*, *betterprompt*, *ChatGPT Prompt Generator*, *ClickPrompt*, *DreamStudio*, *Dify*, *Dust*, *IX*, *Dyno*, *EmergentMind*, *EveryPrompt*, *FlowGPT*, *fastRAG*, *GPT Index*, GPTTools, hwchase17/adversarial-prompts, Interactive Composition Explorer, Knit, *LangBear*, *Lexica*, *LMFlow*, *loom*, *Metaprompt*, *OpenAI Playground*, *OpenICL*, *OpenPrompt*, *OpenPlayground*, *OptimusPrompt*, *Outlines*, *instructor*, *Playground*, *Portkey AI*, *Prodia*, *Prompt Apps*, *PromptAppGPT*, *Prompt Base*, *Prompt Engine*, *prompted.link*, *Prompter*, *PromptInject*, *Prompts.ai*, *Promptmetheus*, *PromptPerfect*, *Promptly*, *PromptSource*, *PromptTools*, *Scale SpellBook*, *sharegpt*, *SmartGPT*, *ThoughtSource*, *Visual Prompt Builder*, *YiVal*, *MLFlow Prompt Engineering UI*, *frugal*, *FLAML*, *NNI*, *AutoGluon*, *StatsForecast*, *beta-recsys*, *metarank*, *kusion*, *DevOpsBox*, *OpsLevel*, *cortex*, *telepresence*, *Argonaut*, *Mia Platform*, *Shipa*, *Port*, *Upbound*, *gimlet*, *Crossplane*, *Backstage*, *Spinnaker*, *Hashicorp Vault*, *Sops*, *Infisical*, *keycloak*, *Zitadel*, *ory*, *supertokens*, *OKTA*, *Auth0*, *authelia*, *defguard*, *Ory Kratos*, *Ory Hydra*, *dex*, *OneLogin*, *Ping Identity*, *WSO2 Identity Server*, *Duo Security*, *bytebase*, *kubeblocks*, *Gaphor*, *Archi*, *Icepanel*, *Jira*, *Backlog*, *Trello*, *Plane*, *Openproject*, *Actionview*, *cloudcustodian*, *Teleport*, *Cookiecutter*, *Craft*, *copier*, *Yeoman*, *mlops-python-package*, *Apollo*, *NACOS*, *Salt*, *Configu*, *OmegaConf*, *Hydra, *DynaConf*, *RSS Guard*, *rudder-server*, *next-cloud*, *Meilisearch*, *typesense*, *ElasticSearch*, *transformers.js*, *llama-cpp-python*, *llm.c*, *llama2.c*, *nanoGPT*, *Ollama*, *ExLlamaV2*, *koboldcpp*, *Dalai*, *BigDL-LLM*, *LLama-index*, *LLamalab*, *NeMo-Guardrails*, *guardrails*, *Purple Llama*, *LLaMA-Factory*, *JAX*, *FLAX*, *TRAX*, *GGML*, *KitOps*, *llamafile*, *ctransformers*, *GGUF*, *STAX*, *Objax*, *Haiku*, *Elegy*, *Ray Core*, *Kuberay*, *SciML*, *FluidX3D*, *FreeCAD*, *openscad*, *openscad*, *deepxde*, *drake*, *Seldon Core*, *BentoML*, *Ray Serve*, *KServe*, *Cortex*, *Truss*, *MLEM*, *OctoML*, *HippoML*, *NVIDIA Triton Inference Server*, *Vitis*, *ONNX Runtime*, *NVIDIA TensorRT*, *NVIDIA TensorRT-LLM*, *TensorRT Polygraphy*, *TensorRT onnx-graphsurgeon*, *TensorRT*, *pytorch-quantization*, *BlindAI*, *Streamlit*, *Gradio*, *text-generation-webui*, *Shiny*, *Dash*, *Voila*, *nextpy*, *PyWebIO*, *mesop*, *appsmith*, *ToolJet*, *budibase*, *nocobase*, *Retool*, *Chainlit*, *LLaMA-Factory*, *LMFlow*, *Simple LLM Finetuner*, *Axolotl*, *unsloth*, *langdrive*, *mistral-finetune*, *HF trl*, *trlx*, *OpenRLHF*, *Marvin*, Marvin, *TypeChat*, *Vercel AI SDK*, *text-generation-web-ui*, *AnythingLLM*, *snipe-it*, *glpi*, *Zendesk*, *ZohoDesk*, *FreshDesk*, *Zammad*, *osTicket*, *FreeScout*, *Peppermint*, *Trudesk*, *Faveo Helpdesk*, *Pagerduty*, *chatwoot*, *papercups*, *chaskiq*, *helpy*, *ort*, *OpenSCA*, *Firecracker*, *katacontainers*, *Chatbot Arena*, *Radon*, *Bandit*, *Snyk*, *Intruder*, *Splunk SOAR*, *Immuniweb*, *OpenDSR*, *Drata*, *Cymulate*, *SOPHOS*, *Snyk*, *FOSSA*, *What the Diff*, *Github Dependabot*, *super-linter*, *Bump My Version*, *addlicense*, *ModelScan*, *Github Code Scanning*, *AI Reviewer*, *Codeball*, *Codacy*, IaaS (e.g., *NVIDIA DGX Datacenter*, *AWS EC2*, *AWS ECS*, *AWS EKS*, *AWS Fargate*, *Google GKE*, *ECR Container Registry*, *genesiscloud*; GPU IaaS/FaaS (e.g., GPUs: *TensorDock*, *Modal*, *Paperspace*, *Lambda GPU Cloud*, *Fluidstack*, *CoreWeave*, *salad*, *HF GPU Spaces*, *Crusoe.ai, *LambdaLabs*, *JarvisLabs*, *SambaNova*, *Juice*, *Super Micro*; Other: *Graphcore*)), MLOps clouds (e.g, *run:ai*, *Runpod*, *Radium*, *Anyscale*), Serverless managed offerings (e.g., *AWS Lambda*, *Azure functions*, *Baseten*, *Inferless*, *Banana*, *Pipeline*, *Slai.io*, *inferrd*, *replicate*), IT PaaS: build and deploy easily apps (e.g., *NVIDIA DGX SuperPod*, *AWS EKS*, *GCP GKE*, *fly.io*, *coolify*, *dokploy*, *Qovery Engine*, *OpenFaaS*, *OpenWhisk*, *KNative*, *Nuclio*, *OpenFunction*, *Fission*, *tsuru*, *CDS: Continuous Delivery Service*, *Encore*, *PipeCD*, *Dokku*, *KubeVela*, *shuttle*, *Porter*, *piku*, *OTOMI*, *rack*, *kubero*, *kopf*, *PaaSTA*, *dyrectorio*, *Rig.dev*, *AWS SQS*, *AWS S3*, *Google Cloud Storage*), ML PaaS: build and deploy easily ML workloads (e.g., *AWS bedrock*, *replicate*), SaaS offerings (e.g., *AWS SNS*), *Django*, *gin*, *Spring Boot*, *Laralevel*, *Sveltekit*, *redwood*, *Voyager*, *Wave*, *Laralevel Spark*, *Genesis*, *Nextjs*, *Astro*, *Supabase*, *caprover*, *FastAPI*, *Gunicorn*, *Uvicorn*, *Caddy*, *NGINX*, *ModSecurity*, *Bunkerweb*, *Podman*, *Docker*, *containerd*, *runc*, *buildah*, *Kaniko*, *Shipwright*, *contaiNERD CTL*, *Slim*, *cadvisor*, *virtualenv*, *pex*, *Github packages*, *Harbor*, *Kubernetes*, *testcontainers-python*, *dockertest*, *Docker-Android*, *kubernetes in docker (kind)*, *minikube*, *k3d*, *mirrord*, *vcluster*, *K3S*, *Kubeedge*, *Microk8s*, *Helm*, *Kustomize*, *timoni*, *cdk8s*, *kpt*, *k9s*, *OKD*, *Kubesphere*, *devtron*, *Lens*, *Kubeapps*, *Rancher*, *Skaffold*, *werf*, *Flux2*, *ketch*, *Garden*, *Velero*, *KEDA*, *Karpenter*, *Sealed Secrets*, *Kubernetes Secrets Store CSI Driver*, *External Secrets*, *k8sgpt*, *LaVague*, *Huginn*, *sonobuoy*, *robusta*, *preevy*, *Metacontroller*, *asyncio*, *Celery*, *RQ*, *kueue*, *fabric*, *plural*, *Run:ai*, *Cloudflare*, *Quarto*, *Hugo*, *Gatsby*, *Jekyll*, *hexo*, *BigQuery*, *AWS RedShift*, *Hive*, Snowflake*, *Coalesce*, *Fivetran*, *Stich*, *velox*, *dbt*, *dlt*, *piperider*, *Snowpark*, *Tecton*, *dotData*, *Molecula*, *Hopsworks*, *Feast*, *Apache Arrow*, *TorchArrow*, *substrait*, *spark*, *GraphScope*, *koalas*, *RabbitMQ*, *NATS*, *ActiveMQ*, *ZeroMQ*, *Kafka*, *GStreamer*, *NNStreamer*, *Pulsar*, *Redpanda*, *Pravega*, *Kinesis*, *RocketMQ*, *Brooklin*, *fireworq*, *Storm*, *Flink*, *Paimon*, *Kafka Streams*, *Spark Structured Streaming*, *Beam*, *Pathway*, *Impala*, *NiFi*, *Benthos*, *Apache NiFi*, *Numaflow*, *KSQL*, *Materialize*, *Decodable*, *quix streams*, *hazelcast*, *community-skeleton*, *danswer*, *gerev*, *mlflow-kernel*, *Sphinx*, *Graphviz*, *pygraphistry*, *MkDocs*, *mkdocstrings*, *Material for MKDocs*, *gitbook*, *Read the Docs*, *github pages*, *lightdash*, *blazer*, *evidence*, *Salesforce*, *Power BI*, *Tableau*, *Google Analytics*, *umami*, *plausible*, *Mixpanel*, *GoReplay*, *rrweb*, *keep*, *Nagios*, *zabbix*, *netdata*, *Prometheus*, *Thanos*, *VictoriaMetrics*, *Nightingale*, *Ddosify*, *fleet*, *OpenObserve*, *highlight.io*, *hyperdx*, *pixie*, *Retina*, *skywalking*, *OpenTelemetry*, *OpenMetadata*, *atlas*, *collectd*, *Open metrics*, *Telegraf*, *OpenLineage*, *Marquez*, *Datahub*, *Egeria*, *Aligned*, *Beats*, *coroot*, *cilium*, *Hubble*, *Grafana Pyroscope*, *Istio*, *Kiali*, *Linkerd*, *Consul*, *Linkerd2*, *kubeshark*, *hertzbeat*, *FastNetMon*, *akvorado*, *librenms*, *ThingsBoard*, *web-check*, *Datadog*, *Sentry*, *Honeycomb*, *SignalFx*, *CloudWatch*, *New Relic*, *Librato*, *Algolia*, *Splunk*, *BigPanda*, *Sensu*, *Middleware*, *AppDynamics*, *Raygun*, *Splunk Cloud*, *eG Enterprise*, *metabase*, *plotly*, *graphana*, *Perspective*, *superset*, *amundsen*,*redash*, *ckan*, *magda*, *Genie*, *open data discovery (odd)*, *Chat2DB*, *ClickHouse*, *Apache Pinot*, *DuckDB*, *StarRocks*, *Druid*, *Materialize*, *Trino*, *presto*, *Impala*, *Apache Drill*, *EvaDB*, *Alluxio*, *Delta Lake*, *Kylo*, *Apache Hudi*, *Apache Iceberg*, *PyIceberg*, *Apache Parquet*, *h5py*, *Apache Avro*, *Deep Lake*, *AIStore*, *Debezium*, *Zepellin*, *marimo*, *Jupyter Lab*, *Jupyterlab-requirements*, *ipyflow*, *Papermill*, *Ploomber*, *jupysql*, *pyparallel*, *parakeet*, *testbook*, *nbdev*, *nbdime*, *elyra*, *jupytext*, *ReviewNB*, *NBQA*, *lmk*, *lineapy*, *HF Evaluate*, *TF Model Analysis*, *TF Embedding Projector*, *ZenoML*, *AI Verify*, *TF Responsible AI Toolkit*, *Microsoft Responsible AI Toolkit (RAI)*, *Fairlearn*, *AI Fairness 360 (AIF360)*, *Sagemaker Clarify*, *SHAP*, *InterpretML*, *Alibi Explain*, *AI Explainability 360*, *TF What-If*, *interpret*, *Captum*, *TF Lattice*, *TF language interpretability*, *ecco*, *Pythia*, *DeepCausality*, *Causal ML*, *dowhy*, *causalnex*, *Learning Interpretability Tool (LIT)*, *PiML*, *Adversarial Robustness Toolbox (ART)*, *Foolbox*, *Giskard*, *XAI Toolbox*, *Pysift*, *tf federated*, *flower*, *nvidia clara*, *substra*, *OpenFL*, *FATE*, *FedML*, *PipelineDP*, *OpenCV*, *SuperGradients*, *NVIDIA DeepStream SDK*, *Savant*, *espnet*, *Mermaid*, *Icevision*, *Kornia*, *ocrpy*, *Behave*, *Lettuce*, *Robot*, *Scalene*, *Pytest*, *Unittest*, *Coverage*, *Codecov*, *JaCoCo*, *Hypothesis*, *JUnit*, *pycodestyle*, *moto*, *ruff*, *pylint*, *sqlfluff*, *Black*, *flake8*, *MyPy*, *returns*, *injector*, *mock*, *faker*, *pyre-check*, *shellcheck*, *MonkeyType*, *Pydantic*, *schema*, *pandera*, *deequ*, *TF Data Validation*, *DVT*, *data-diff*, *cerberus*, *ydata-profiling*, *unstructured*, *orjson*, *marker*, *pycln*, *pyupgrade*, *Bandit*, *cloudpathlib*, *SonarQube*, *Nessus*, *SpotBugs*, *PMD*, *gosec*, *codeql*, *gitleaks*, *nodejsscan*, *pino*, *bearer*, *scorecard*, *semgrep*, *webhint*, *BinAbsInspector*, *trivy*, *grype*, *Clair*, *Anchore Engine*, *Sysdig Falco*, *Dagda*, *isort*, *Airbyte*, *syncthing*, *SeaTunnel*, *skyplane*, *Fivetran*, *Stitch*, *ingestr*, *lineapy*, *cog*, *chassis*, *chitra*, *crane*, *finetuner*, *Notion*, *notion-clone*, *Logseq*, *dendron*, *AppFlowy*, *AFFiNE*, *AFFiNE*, *plane*, *TVM*, *HF Optimum*, *XLA*, *voltaML*, *TF Model Optimization Toolkit*, *TF Lite*, *uTensor*, *Intel Neural Compressor*, *Adlik*, *AITemplate*, *Hidet*, *distiller*, *sparsify*, *sparseML*, *AIMET*, *TinyNeuralNetwork*, *HAWQ*, *quanto*, *AWQ*, *SmoothQuant*, *AutoGPTQ*, *Encord Active*, *modAL*, *libact*, *ALiPy*, *Baal*, *TenSEAL*, *google/differential-privacy*, *TF Privacy*, *SEAL*, *HElib*, *tf-encrypted*, *HEFlow*, *Presidio*, *molfeat*, *AWS EC2 Inf2*, *botui*, *bottender*, *pandasai*, *Modin*, *Polars*, *ibis*, *Dask*, *Modin*, *mars*, *cuDF*, *Vaex*, *Daft*, *winglang*, *Odigos*, *Jaeger*, *Zipkin*, *py2cfg*, *gensim*, *PyOD*, *Darts*, *Anomalib*, *Anomstack*, *Snorkel*, *Compose*, *Autolabel*, *Adala*, *vectorflow*, *superlinked*, *Text Embeddings Inference*, *infinity*, *pgvector*, *Weaviate*, *Chroma*, *Milvus*, *Qdrant*, *HNSWLib*, *NMBSLib*, *Active Loop*, *lancedb*, *Marqo*, *Faiss*, *vearch*, *Vald*, *indexify*, *docarray*, *Argo Rollouts*, *flagger*, *Posthog*, *Growthbook*, *Flipt*, *Flagr*, *Optimizely*, *AB Tasty*, *Apptimize*; *Google Optimize*, *Stumpy*, *InfluxDB*, *TDengine*, *TimescaleDB*, *Prophet*, *Grafana Loki*, *vector*, *monolog*, *FluentD*, *loguru*, *structlog*, *flume*, *goaccess*, *Logseq*, *logparser*, *Pyomo*, *openblocks*, *Screenshot-to-code*, *draw-a-ui*, *memray*, *py-spy*, *pprof*, *coz*, *Bytehound*, *Stopwatch*, *async-profiler*, *gradle-profiler*, *line_profiler*, *orbit*, *hotspot*, *easy_profiler*, *puffin*, *Wordpress, Strapi*, *Ghost*, *Decap*, *wagtail*, *Keystone*, *Payload*, *Chromium*, *Publii, Drupal*, *Drupal*, *agentlabs*, *OpenCLIP*, *stable-diffusion*, *SDXL-Turbo*, *StableStudio*, *SillyTavern*, *tldraw*, *Cypress*, *Selenium*, *Playwright*, *Taxy AI Full Browser Automation*, *Testcomplete*, *Airtest*, *momentic*, *openv0*, *Langui*, *AI Spend*, *Swagger UI*, *Github Actions*, *Jenkins*, *gocd*, *woodpecker*, *CircleCI*, *Bamboo*, *Travis CI*, *Buddy*, *Buildbot*, *Bitbucket Pipelines*, *AWS CodePipeline*, *Tekton*, *TeamCity*, *ArgoCD*, *ArgoCD*, *Spinnaker*, *Buck*, *pygradle*, *python-fire*, *argparse*, *Typer*, *sqlmodel*, *ELK on Docker*, *OpenSearch*, *Solr*, *Sphinx Search*, *Xapian*, *Nutch*, *git-code-debt*, *Sandstorm*, *zuul*, *unicorn*, *capstone*, *reconftw*, *OWASP Nettacker*, *BlackWidow*, *retire.js*, *minisearch*, *WhiteSource Bolt*, *Dependency-Track*, *OSSIndex*, *System Informer*, *BinAbsInspector*, *nuclei*, *Vuls*, *Tsunami*, *grype*, *VeraCrypt*, *cryptomator*, *gophish*, *URH - Universal Radio Hacker*, *Aircrack-ng*, *WireGuard*, *tailscale*, *openvpn*, *nebula*, *IPsec VPN Server on Docker*, *netmaker*, *MVT - Mobile Verification Toolkit*, *Kubescape*, *Gatekeeper*, *Kyverno*, *kube-score*, *yamllint*, *TOML*, *Carvel*, *kubesec*, *kubeaudit*, *kubeconform*, *kube-linter*, *polaris*, *conftest*, *datree*, *kubevious*, *Datashim*, *OSS-Fuzz*, *ClusterFuzz*, *prowler*, *Docker Bench for Security*, *nmap*, *vulscan*, *IVRE*, *Wazuh*, *OpenVAS*, *ThreatMapper*, *CrowSec*, *ossec-hids*, *Sn1per*, *secretive*, *Falco*, *Pacu*, *tfscan*, *terrascan*, *ggshield*, *CloudSploit*, *kube-bench*, *pyWhat*, *Arkime*, *steampipe*, *cloudmapper*, *ntopng*, *Zeek*, *Dependency-Check*, *maltrail*, *x11docker*, *authentik*, *Calico*, *Osmedeus Core Engine*, *MISP - Threat Intelligence Sharing Platform*, *Faraday*, *TheHive*, *OWASP DefectDojo*, *OpenCTI*, *Ockam*, *cameradar*, *Suricata*, *Arachni*, *Meshbird*, *ufw-docker*, *CDK - Zero Dependency Container Penetration Toolkit*, *pocsuite3*, *Step CLI*, *Oso*, *Seatbelt*, *drozer*, *DefectDojo*, *SSLyze*, *tracee*, *parca*, *Interactsh.*, *Chef InSpec*, *CHIPSEC*, *Lynis*, *OpenSCAP*, *ScoutSuite*, *node-rate-limiter-flexible*, *OWASP Zed Attack Proxy (ZAP)*, *Nikto*, *Wapiti*, *Grabber*, *mitmproxy*, *Algo VPN*, *IPsec VPN Server Auto Setup Scripts*, *NGINX Config*, *bettercap*, *cutter*, *wifiphisher*, *JavaScript obfuscator*, *DOMPurify*, *RustScan*, *dirsearch*, *Vuls*, *Caldera*, *Shuffle*, *PhoneSploit Pro*, *shodan*, *keeweb*, *Protobuff*, *Prisma*, *pgroll*, *goose*, *gorm*, *typeorm*, *Sequelize*, *mongoose*, *sqitch*, *flyway*, *Pyrseas*, *liquibase*, *Planetscale*, *cibuildwheel*, *Poetry*, *Twine*, *PySnooper*, *coremltools*, *ncnn*, *ShaderNN*, *mediapipe*, *HyperOpt*, *Optuna*, *SigOpt*, *RayTune*, *Katib*, *Overleaf*, *Stencila*, *novel*, *vnote*, *Notable*, *Joplin*, *memos*, *Laverna*, *Notesnook*, *MarkText*, *Stripe*, *Checkout.com*, *browserify*, *Storybook*, *React*, *Bulletproof React*, *Preact*, *Vue*, *Svelte*, *React Native*, *Ionic*, *Expo*, *Electron*, *Tauri*, *Acorn*, *OpenUI*, **Tailwind*, *vegeta*, *locust*, *gatling*, *k6*, *jmeter*, *Chaos Monkey*, *chaos-mesh*, *chaosblade*, *lLitmusChaos*, *kube-monkey*, *gum*, *go-jsonnet*, *CUE*, *LibreTranslate*, *Argos Translate*, *upscayl*, *yake*, *tesseract*, *tts*, *ChatTTS*, *MetaVoice*, *Deepspeech*, *riffusion*, *muzic*, *Amphion*, *audiocraft*, *open-musiclm*, *Ultralytics YOLOv8*, *yolov10*, *Github Copilot*, *fauxpilot*, *tabby*, *continue*, *StarCoder*, *AlphaCodium*, *pr-agent*, *Sweep*, *magnet*, *unblocked*, *Onboard*, *aider*, *Butterfish*, *Second*, *TFLite*, *MLKit*, *CoreML*, *Pytorch Mobile*, *TF.js*, *ai-jsx*, *WebAssembly*, *WebGL*, *WebGPU*, *WebSocket*, *WebRTC*, *LiveKit*, *Edge Impulse*, *EdgeCloudSim*, *EnvisEdge*, *Auptimizer*, *firesim*, *OpenFPGA*, *apio*, *icestorm*, *yosys*, *nextpnr*, *Logisim-evolution*, *Amaranth*, *PlatformIO*, *LiteX*, *LGN*, *whisper.cpp*, *llama.cpp*, *ml-design-doc*, *Youtube Transcript API*, *adr-tools*, *postal*, *EasyEdit*, *mergekit*, *FlexGen*, *Medusa*, *LookaheadDecoding*, *einops*, *safetensors*, *Diataxis*, *ROS2*, *IsaacLab*, *jhonny-five*, *gobot*, *Godot*, *bevy*, *Babylon.js*, *libgdx*, *MonoGame*, *o3de*, *Unreal Engine*, *MindMaker AI Plugin for Unreal Engine*, *Unity*, *Unity ML-Agents Toolkit*, *AnimateAnyone*, *Swirl*, *Devv*, *Algolia*, *Coveo*, *searxng*, *SolidGPT*, *youtube-dl*, *Qt*, *Airtable*, *NocoDB*, *aframe*, *univer*, *Perplexity*, *Perplexica*, *farfalle*, *Noi*, *cvxpy*, *BayesianOptimization*, *ceres-solver*, *nlopt*, *ScrapeGraphAI*, *scrapy*, *Crawlee*, *colly*, *cheerio*, *orbitdb*, *ipfs*, *etherium*)
 
 *__Note:__ Freelunch can be using purely open-source (with only open-source tool backends), but you might want to consider managed backends for reasons like: simplicity gain, integration with your existing infrastructure, previous experience with the tool, unique capabilities not present in open source and lower costs compared to implementing open source naively. On the other hand, you can use open source to: cut down costs, give you more flexibility, can give higher quality solutions, avoid relying on vendors (not shutting down, lacking documentation/support or raising prices), developing your team (which can lead to solving other problems) and can avoid private data leaving your org. Generally you want to start with many managed tools, and as your team gains experience and expertise, slowly substitute managed for open source, until you feel that open source cannot boost you anymore. Note: managed tools have to develop Freelunch plugins as to maintain a single dashboard for the MLOps platform user (instead of having to look at multiple dashoboards from different managed tools).*
 </details>
@@ -2239,7 +2238,7 @@ Yes, because of the following reasons:
                             (1) LLM-specific Libraries
                                 (1) LLMs (single calls)
                                     (1) Data Management & Dataset Construction: RedPajama-Data
-                                    (2) Model Building: HF Transformers, Ludwig, higgsfield
+                                    (2) Model Building: HF Transformers, Ludwig, higgsfield, litgpt
                                         (1) Finetuning: LLaMA-Factory, LMFlow, Simple LLM Finetuner, Axolotl, unsloth, langdrive, mistral-finetune
                                             (1) RLHF: HF trl, trlx, OpenRLHF
                                     (3) Guardrails (Structure & Evaluation of LLM IO): PurpleLlama
@@ -2855,10 +2854,11 @@ _Note:_ __these are all automated benchmarks, no humans involved__. In stages wh
 
     1. __Internal DevOps Platforms__
         1. __Proprietary:__ *DevOpsBox*, *OpsLevel*, *cortex*, *telepresence*, *Argonaut*, *Mia Platform*, *Shipa*, *Port*, *Upbound*
+        2. __Open Source:__ *gimlet*
 
     2. __Internal DevOps Platform fabricators__
         1. __Open source__
-            1. Fabricate the entire platform:
+            1. Fabricate the entire platform: *kusion*
             2. Fabricate a piece of it
                 1. Operations Center: *Crossplane* 
                 2. Discovery and Golden-paths: *Backstage*
@@ -3316,7 +3316,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                 (1) Design: Figma
                                 (2) Automatic template: screenshot-to-code
                                 (3) Implementation
-                                    (1) Content Management System (CMS, aka config/artifact-based Frontend CI/CD): Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
+                                    (1) Content Management System (CMS, aka config/artifact-based Frontend CI/CD): Wordpress, Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
                                         (1) Code:
                                             (1) Template Libraries: Grapesjs
                                             (2) Framework Libraries: React, Preact, Vue, Svelte; 
@@ -3329,10 +3329,12 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                                 (2) Session Replays: OpenReplay
                                             (5) UI Dev Environment: Storybook, Vite, 
                                         (2) Build: Webpack; 
-                                        (3) Web Serve: NGINX; 
-                                        (4) Build & Web Serve: Nextjs, Astro; 
-                                        (5) Code & Build: Django, Larelevel, SpringBoot, Sveltekit, redwood;
-                                        (6) Build & Web Serve: Hugo, Gatsby, Jekyll
+                                        (3) Web Serve: Uvicorn/Gunicorn, caddy, NGINX; 
+                                        (4) Build & Web Serve: 
+                                            (1) SSR: Nextjs, Astro; 
+                                        (5) Code & Build: 
+                                            (1) Web Frameworks: Django, Larelevel, SpringBoot, Sveltekit, redwood;
+                                            (2) Static Site Generators: Hugo, Gatsby, Quartz
                             (2) Using task-specific high level tools
                                 (1) Dashboards: metabase, plotly, graphana)
                     2. Goals
@@ -3470,6 +3472,9 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                                 1. Workflow Orchestrators (Tools: worflow orchestrators such as: General workflow Orchestrators: Argo/Hera, Prefect, Airflow, Dagster, Mage, kestra, Cadence, Azkaban, Nomad, Bacalhau; (2) Virtual ML Workflow Orchestrators: zenml, CLAIMED, kedro, Couler, metaflow, sqlflow; (3) ML Workflow Orchestrators: kubeflow pipelines (_Note:_ built on top of Argo/Hera), mleap, flyte, sematic; (4) Data-driven Workflow Orchestrators: Pachyderm; (5) Notebook-based Wrkflow orchestrators: Ploomber)
                                                 2. Distributed Processing tool (e.g., spark/koalas)
                                 4. Core Software Configuration: configure core software according to requirements and/or preferences
+                                5. Data Sync: setup data sync to copy data from production state store
+                                    1. Continuos sync
+                                    2. Only sync upon request
                             3. Using Kubernetes/OKD: deploy necessary software infrastructure (e.g., dev environment pod)
                         3. Cluster Autoscaling setup (Tools: k8s autoscaler, keda): cluster should upscale if low on resources (reactive) or based on a demand model (proactive via forecast) and downscale if high on resources (reactive) or based on demand model (proactive via forecast).
                     2. For a virtual (simulated) cluster (_Note:_ of course you would never deploy production workloads to a virtual cluster, because they need to be high performance)
@@ -3517,23 +3522,25 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                         (1) Design: Figma
                         (2) Automatic template: screenshot-to-code
                         (3) Implementation
-                            (1) Content Management System (CMS, aka Frontend CI/CD): Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
-                                (1) Code:
+                            (1) Content Management System (CMS, aka Frontend CI/CD): Wordpress, Wordpress, Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
+                                ((1) Code:
                                     (1) Template Libraries: Grapesjs
                                     (2) Framework Libraries: React, Preact, Vue, Svelte; 
                                     (3) Supporting Libraries: 
                                         (1) State management: Redux; 
                                         (2) CSS Frameworks: Tailwind, Sass, Bulma, Bootstrap, Material UI, Carbon Design System, Baklava
-                                        (3) Plots & Dashboards: deck.gl, d3, tremor
+                                        (3) Plots & Dashboards: deck.gl, d3, tremor 
                                     (4) Telemetry
                                         (1) Analytics: (1) Open Source: umami, plausible, Snowplow, DataHog; Managed: Google Analytics, Tableau;
                                         (2) Session Replays: OpenReplay
-                                    (5) UI Dev Environment: Storybook
+                                    (5) UI Dev Environment: Storybook, Vite, 
                                 (2) Build: Webpack; 
-                                (3) Web Serve: NGINX; 
-                                (4) Build & Web Serve: Nextjs, Astro; 
-                                (5) Code & Build: Django, Larelevel, SpringBoot, Sveltekit, redwood  
-                                (6) Build & Web Serve: Hugo, Gatsby, Jekyll
+                                (3) Web Serve: Uvicorn/Gunicorn, caddy, NGINX; 
+                                (4) Build & Web Serve: 
+                                    (1) SSR: Nextjs, Astro; 
+                                (5) Code & Build: 
+                                    (1) Web Frameworks: Django, Larelevel, SpringBoot, Sveltekit, redwood;
+                                    (2) Static Site Generators: Hugo, Gatsby, Quartz
                     (2) Using task-specific high level tools
                         (1) Dashboards: metabase, plotly, graphana)
                     1. Overall stats
@@ -3874,23 +3881,25 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                             (1) Design: Figma
                             (2) Automatic template: screenshot-to-code
                             (3) Implementation
-                                (1) Content Management System (CMS, aka Frontend CI/CD): Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
+                                (1) Content Management System (CMS, aka Frontend CI/CD): Wordpress, Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
                                     (1) Code:
-                                        (1) Template Libraries: Grapesjs
-                                        (2) Framework Libraries: React, Preact, Vue, Svelte; 
-                                        (3) Supporting Libraries: 
-                                            (1) State management: Redux; 
-                                            (2) CSS Frameworks: Tailwind, Sass, Bulma, Bootstrap, Material UI, Carbon Design System, Baklava
-                                            (3) Plots & Dashboards: deck.gl, d3, tremor
-                                        (4) Telemetry
-                                            (1) Analytics: (1) Open Source: umami, plausible, Snowplow, DataHog; Managed: Google Analytics, Tableau;
-                                            (2) Session Replays: OpenReplay
-                                        (5) UI Dev Environment: Storybook
+                                            (1) Template Libraries: Grapesjs
+                                            (2) Framework Libraries: React, Preact, Vue, Svelte; 
+                                            (3) Supporting Libraries: 
+                                                (1) State management: Redux; 
+                                                (2) CSS Frameworks: Tailwind, Sass, Bulma, Bootstrap, Material UI, Carbon Design System, Baklava
+                                                (3) Plots & Dashboards: deck.gl, d3, tremor 
+                                            (4) Telemetry
+                                                (1) Analytics: (1) Open Source: umami, plausible, Snowplow, DataHog; Managed: Google Analytics, Tableau;
+                                                (2) Session Replays: OpenReplay
+                                            (5) UI Dev Environment: Storybook, Vite, 
                                     (2) Build: Webpack; 
-                                    (3) Web Serve: NGINX; 
-                                    (4) Build & Web Serve: Nextjs, Astro; 
-                                    (5) Code & Build: Django, Larelevel, SpringBoot, Sveltekit, redwood  
-                                    (6) Build & Web Serve: Hugo, Gatsby, Jekyll
+                                    (3) Web Serve: Uvicorn/Gunicorn, caddy, NGINX; 
+                                    (4) Build & Web Serve: 
+                                        (1) SSR: Nextjs, Astro; 
+                                    (5) Code & Build: 
+                                        (1) Web Frameworks: Django, Larelevel, SpringBoot, Sveltekit, redwood;
+                                        (2) Static Site Generators: Hugo, Gatsby, Quartz
                         (2) Using task-specific high level tools
                             (1) Dashboards: metabase, plotly, graphana)
             15. Event (and Message) distribution & queuing (Tools: RabbitMQ, NATS, ActiveMQ, ZeroMQ) (every time a write something like "triggered by", think of the pod requesting or subscribing to the message broker for that event. Why use message broker & not Worflow orchestrator for this? You could frame the service as a task & perform it only on some conditon with an workflow orchestrator, however, the workflow orchestrator would need to deploy the pod & undeploy the pod each time. For events that happen a lot & strict latency requirements, this becomes too slow. You would want to use the worflow orchestration approach for low frequency jobs with looser latency requirements. Plus, the rate at which events are produced is generally faster then the rate of consumption, so you need to queue these events, and this is not native to Workflow Orchestrators. _Note:_ when you are using a workflow orchestrators it is often usefull to attach it to a message broker, because it simplifies the process of listening to multi-source events & queuing them. _Note:_ message brokers/queues alo provide the req/reply mode where the producer, after sending its message, check some slot in the reply queu to see when the reply arrived. _Note:_ they also support authentication of producers and consumers.)
@@ -4041,23 +4050,25 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                 (1) Design: Figma
                                 (2) Automatic template: screenshot-to-code
                                 (3) Implementation
-                                    (1) Content Management System (CMS, aka Frontend CI/CD): Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
+                                    (1) Content Management System (CMS, aka Frontend CI/CD): Wordpress, Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
                                         (1) Code:
                                             (1) Template Libraries: Grapesjs
                                             (2) Framework Libraries: React, Preact, Vue, Svelte; 
                                             (3) Supporting Libraries: 
                                                 (1) State management: Redux; 
                                                 (2) CSS Frameworks: Tailwind, Sass, Bulma, Bootstrap, Material UI, Carbon Design System, Baklava
-                                                (3) Plots & Dashboards: deck.gl, d3, tremor
+                                                (3) Plots & Dashboards: deck.gl, d3, tremor 
                                             (4) Telemetry
                                                 (1) Analytics: (1) Open Source: umami, plausible, Snowplow, DataHog; Managed: Google Analytics, Tableau;
                                                 (2) Session Replays: OpenReplay
-                                            (5) UI Dev Environment: Storybook
+                                            (5) UI Dev Environment: Storybook, Vite, 
                                         (2) Build: Webpack; 
-                                        (3) Web Serve: NGINX; 
-                                        (4) Build & Web Serve: Nextjs, Astro; 
-                                        (5) Code & Build: Django, Larelevel, SpringBoot, Sveltekit, redwood  
-                                        (6) Build & Web Serve: Hugo, Gatsby, Jekyll
+                                        (3) Web Serve: Uvicorn/Gunicorn, caddy, NGINX; 
+                                        (4) Build & Web Serve: 
+                                            (1) SSR: Nextjs, Astro; 
+                                        (5) Code & Build: 
+                                            (1) Web Frameworks: Django, Larelevel, SpringBoot, Sveltekit, redwood;
+                                            (2) Static Site Generators: Hugo, Gatsby, Quartz
                             (2) Using task-specific high level tools
                                 (1) Dashboards: metabase, plotly, graphana)
                             1. Lets you explore some sample parts of corps or datapoints
@@ -4775,7 +4786,16 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                             4. Notify Engineer that automatic model offiline evaluation was done and the satus
                                                 1. If passed: waits for model offline evalaution result provided by the engineer on the model evalaution environment
                                                 2. If not passed: engineer debugs training code and does another push
-                                    3. CD (triggered by: new evaluated model/prompt/filter/fallaback in Model/Prompt Registry) (Tools: (1) ML Deploy tools like: Seldon Core, bentoML, Ray Serve, KServe, MLflow Models, Cortex, Truss, MLEM; (2) LLM-specific deploy tools like: (2.1) Cloud: (2.1.1) Higher-level: Superagent, OpenLLM, Skypilot, substratus, lanarky, lamini, Xorbits Inference, ChatGPT Reverse Proxy, dialog; (2.1.2) Lower-level: MLC LLM, TensorRT-LLM, ipex-llm, ray-llm, Text Generation Inference (TGI), vLLM, PowerInfer, NVIDIA Triton Inference Server with FastTransformer backend, FlexFlow; (2.2) (2.2.1) Just LLM: Open Interpreter, transformers.js, llama-cpp-python, GPT4All, LocalAI, Ollama, ExLlamaV2, Dalai, BigDL-LLM, ExLlamaV2, koboldcpp, Xorbits Inference, danielmiessler/fabric; (2.2.2) Agents: TinyAgent, Jan, khoj; (3) Embedding-specific: Text Embeddings Inference, infinity)
+                                    3. CD (triggered by: new evaluated model/prompt/filter/fallaback in Model/Prompt Registry) (Tools: 
+                                        (1) ML Deploy tools like: Seldon Core, bentoML, Ray Serve, KServe, MLflow Models, Cortex, Truss, MLEM; 
+                                        (2) LLM-specific deploy tools like: 
+                                            (2.1) Cloud: 
+                                                (2.1.1) Higher-level: Superagent, OpenLLM, Skypilot, substratus, lanarky, lamini, Xorbits Inference, ChatGPT Reverse Proxy, dialog; 
+                                                (2.1.2) Lower-level: MLC LLM, TensorRT-LLM, ipex-llm, ray-llm, Text Generation Inference (TGI), vLLM, PowerInfer, NVIDIA Triton Inference Server with FastTransformer backend, FlexFlow, mistral.rs; 
+                                            (2.2) Edge: 
+                                                (2.2.1) Just LLM: Open Interpreter, transformers.js, llama-cpp-python, GPT4All, LocalAI, Ollama, ExLlamaV2, Dalai, BigDL-LLM, ExLlamaV2, koboldcpp, Xorbits Inference, danielmiessler/fabric; 
+                                                (2.2.2) Agents: TinyAgent, Jan, khoj; 
+                                        (3) Embedding model-specific: Text Embeddings Inference, infinity)
                                         1. Staging CD (triggered by: new best evaluated model in Model/Prompt Registry)
                                             1. Staging Cluster setup: Setup/reconfig staging cluster if necessary depending on image hardware requirements (Tools: Ansible or Terraform/Terragrunt, Pulumi)
                                             2. If new model
@@ -5004,7 +5024,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                                     1. Integration Testing
                                                     2. Staging
                                                     3. Production
-                            3. Frontend Component CI/CD (Tools: CMS tools: Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal; Ml-specific: agentlabs)
+                            3. Frontend Component CI/CD (Tools: CMS tools: Wordpress, Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal; Ml-specific: agentlabs)
                                 1. CI
                                     1. Validate Component Specification
                                         1. Core Valation (ha to obey specification rules)
@@ -5036,23 +5056,25 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                         (1) Design: Figma
                                         (2) Automatic template: screenshot-to-code
                                         (3) Implementation
-                                            (1) Content Management System (CMS, aka Frontend CI/CD): Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
+                                            (1) Content Management System (CMS, aka Frontend CI/CD): Wordpress, Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
                                                 (1) Code:
                                                     (1) Template Libraries: Grapesjs
                                                     (2) Framework Libraries: React, Preact, Vue, Svelte; 
                                                     (3) Supporting Libraries: 
                                                         (1) State management: Redux; 
                                                         (2) CSS Frameworks: Tailwind, Sass, Bulma, Bootstrap, Material UI, Carbon Design System, Baklava
-                                                        (3) Plots & Dashboards: deck.gl, d3, tremor
+                                                        (3) Plots & Dashboards: deck.gl, d3, tremor 
                                                     (4) Telemetry
                                                         (1) Analytics: (1) Open Source: umami, plausible, Snowplow, DataHog; Managed: Google Analytics, Tableau;
                                                         (2) Session Replays: OpenReplay
-                                                    (5) UI Dev Environment: Storybook
+                                                    (5) UI Dev Environment: Storybook, Vite, 
                                                 (2) Build: Webpack; 
-                                                (3) Web Serve: NGINX; 
-                                                (4) Build & Web Serve: Nextjs, Astro; 
-                                                (5) Code & Build: Django, Larelevel, SpringBoot, Sveltekit, redwood  
-                                                (6) Build & Web Serve: Hugo, Gatsby, Jekyll
+                                                (3) Web Serve: Uvicorn/Gunicorn, caddy, NGINX; 
+                                                (4) Build & Web Serve: 
+                                                    (1) SSR: Nextjs, Astro; 
+                                                (5) Code & Build: 
+                                                    (1) Web Frameworks: Django, Larelevel, SpringBoot, Sveltekit, redwood;
+                                                    (2) Static Site Generators: Hugo, Gatsby, Quartz
                                     (2) Using task-specific high level tools
                                         (1) Dashboards: metabase, plotly, graphana)
                                     1. Exploration
@@ -5194,23 +5216,25 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                             (1) Design: Figma
                                             (2) Automatic template: screenshot-to-code
                                             (3) Implementation
-                                                (1) Content Management System (CMS, aka Frontend CI/CD): Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
+                                                (1) Content Management System (CMS, aka Frontend CI/CD): Wordpress, Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
                                                     (1) Code:
                                                         (1) Template Libraries: Grapesjs
                                                         (2) Framework Libraries: React, Preact, Vue, Svelte; 
                                                         (3) Supporting Libraries: 
                                                             (1) State management: Redux; 
                                                             (2) CSS Frameworks: Tailwind, Sass, Bulma, Bootstrap, Material UI, Carbon Design System, Baklava
-                                                            (3) Plots & Dashboards: deck.gl, d3, tremor
+                                                            (3) Plots & Dashboards: deck.gl, d3, tremor 
                                                         (4) Telemetry
                                                             (1) Analytics: (1) Open Source: umami, plausible, Snowplow, DataHog; Managed: Google Analytics, Tableau;
                                                             (2) Session Replays: OpenReplay
-                                                        (5) UI Dev Environment: Storybook
+                                                        (5) UI Dev Environment: Storybook, Vite, 
                                                     (2) Build: Webpack; 
-                                                    (3) Web Serve: NGINX; 
-                                                    (4) Build & Web Serve: Nextjs, Astro; 
-                                                    (5) Code & Build: Django, Larelevel, SpringBoot, Sveltekit, redwood  
-                                                    (6) Build & Web Serve: Hugo, Gatsby, Jekyll
+                                                    (3) Web Serve: Uvicorn/Gunicorn, caddy, NGINX; 
+                                                    (4) Build & Web Serve: 
+                                                        (1) SSR: Nextjs, Astro; 
+                                                    (5) Code & Build: 
+                                                        (1) Web Frameworks: Django, Larelevel, SpringBoot, Sveltekit, redwood;
+                                                        (2) Static Site Generators: Hugo, Gatsby, Quartz
                                         (2) Using task-specific high level tools
                                             (1) Dashboards: metabase, plotly, graphana)
                                             1. Exploration
@@ -5250,23 +5274,25 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                             (1) Design: Figma
                                             (2) Automatic template: screenshot-to-code
                                             (3) Implementation
-                                                (1) Content Management System (CMS, aka Frontend CI/CD): Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
+                                                (1) Content Management System (CMS, aka Frontend CI/CD): Wordpress, Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
                                                     (1) Code:
                                                         (1) Template Libraries: Grapesjs
                                                         (2) Framework Libraries: React, Preact, Vue, Svelte; 
                                                         (3) Supporting Libraries: 
                                                             (1) State management: Redux; 
                                                             (2) CSS Frameworks: Tailwind, Sass, Bulma, Bootstrap, Material UI, Carbon Design System, Baklava
-                                                            (3) Plots & Dashboards: deck.gl, d3, tremor
+                                                            (3) Plots & Dashboards: deck.gl, d3, tremor 
                                                         (4) Telemetry
                                                             (1) Analytics: (1) Open Source: umami, plausible, Snowplow, DataHog; Managed: Google Analytics, Tableau;
                                                             (2) Session Replays: OpenReplay
-                                                        (5) UI Dev Environment: Storybook
+                                                        (5) UI Dev Environment: Storybook, Vite, 
                                                     (2) Build: Webpack; 
-                                                    (3) Web Serve: NGINX; 
-                                                    (4) Build & Web Serve: Nextjs, Astro; 
-                                                    (5) Code & Build: Django, Larelevel, SpringBoot, Sveltekit, redwood  
-                                                    (6) Build & Web Serve: Hugo, Gatsby, Jekyll
+                                                    (3) Web Serve: Uvicorn/Gunicorn, caddy, NGINX; 
+                                                    (4) Build & Web Serve: 
+                                                        (1) SSR: Nextjs, Astro; 
+                                                    (5) Code & Build: 
+                                                        (1) Web Frameworks: Django, Larelevel, SpringBoot, Sveltekit, redwood;
+                                                        (2) Static Site Generators: Hugo, Gatsby, Quartz
                                         (2) Using task-specific high level tools
                                             (1) Dashboards: metabase, plotly, graphana)
                                         1. Exploration
@@ -5302,23 +5328,25 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                             (1) Design: Figma
                                             (2) Automatic template: screenshot-to-code
                                             (3) Implementation
-                                                (1) Content Management System (CMS, aka Frontend CI/CD): Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
+                                                (1) Content Management System (CMS, aka Frontend CI/CD): Wordpress, Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
                                                     (1) Code:
                                                         (1) Template Libraries: Grapesjs
                                                         (2) Framework Libraries: React, Preact, Vue, Svelte; 
                                                         (3) Supporting Libraries: 
                                                             (1) State management: Redux; 
                                                             (2) CSS Frameworks: Tailwind, Sass, Bulma, Bootstrap, Material UI, Carbon Design System, Baklava
-                                                            (3) Plots & Dashboards: deck.gl, d3, tremor
+                                                            (3) Plots & Dashboards: deck.gl, d3, tremor 
                                                         (4) Telemetry
                                                             (1) Analytics: (1) Open Source: umami, plausible, Snowplow, DataHog; Managed: Google Analytics, Tableau;
                                                             (2) Session Replays: OpenReplay
-                                                        (5) UI Dev Environment: Storybook
+                                                        (5) UI Dev Environment: Storybook, Vite, 
                                                     (2) Build: Webpack; 
-                                                    (3) Web Serve: NGINX; 
-                                                    (4) Build & Web Serve: Nextjs, Astro; 
-                                                    (5) Code & Build: Django, Larelevel, SpringBoot, Sveltekit, redwood  
-                                                    (6) Build & Web Serve: Hugo, Gatsby, Jekyll
+                                                    (3) Web Serve: Uvicorn/Gunicorn, caddy, NGINX; 
+                                                    (4) Build & Web Serve: 
+                                                        (1) SSR: Nextjs, Astro; 
+                                                    (5) Code & Build: 
+                                                        (1) Web Frameworks: Django, Larelevel, SpringBoot, Sveltekit, redwood;
+                                                        (2) Static Site Generators: Hugo, Gatsby, Quartz
                                         (2) Using task-specific high level tools
                                             (1) Dashboards: metabase, plotly, graphana): that Labellers interact with to label data 7 explains labels, talks with backend sending labelled data & explanations
                                     4. Automatic (ML-powered) labelling Service (Proxy Labels from combination of subject matter expert heuristics.
@@ -5382,23 +5410,25 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                             (1) Design: Figma
                                             (2) Automatic template: screenshot-to-code
                                             (3) Implementation
-                                                (1) Content Management System (CMS, aka Frontend CI/CD): Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
+                                                (1) Content Management System (CMS, aka Frontend CI/CD): Wordpress, Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
                                                     (1) Code:
                                                         (1) Template Libraries: Grapesjs
                                                         (2) Framework Libraries: React, Preact, Vue, Svelte; 
                                                         (3) Supporting Libraries: 
                                                             (1) State management: Redux; 
                                                             (2) CSS Frameworks: Tailwind, Sass, Bulma, Bootstrap, Material UI, Carbon Design System, Baklava
-                                                            (3) Plots & Dashboards: deck.gl, d3, tremor
+                                                            (3) Plots & Dashboards: deck.gl, d3, tremor 
                                                         (4) Telemetry
                                                             (1) Analytics: (1) Open Source: umami, plausible, Snowplow, DataHog; Managed: Google Analytics, Tableau;
                                                             (2) Session Replays: OpenReplay
-                                                        (5) UI Dev Environment: Storybook
+                                                        (5) UI Dev Environment: Storybook, Vite, 
                                                     (2) Build: Webpack; 
-                                                    (3) Web Serve: NGINX; 
-                                                    (4) Build & Web Serve: Nextjs, Astro; 
-                                                    (5) Code & Build: Django, Larelevel, SpringBoot, Sveltekit, redwood  
-                                                    (6) Build & Web Serve: Hugo, Gatsby, Jekyll
+                                                    (3) Web Serve: Uvicorn/Gunicorn, caddy, NGINX; 
+                                                    (4) Build & Web Serve: 
+                                                        (1) SSR: Nextjs, Astro; 
+                                                    (5) Code & Build: 
+                                                        (1) Web Frameworks: Django, Larelevel, SpringBoot, Sveltekit, redwood;
+                                                        (2) Static Site Generators: Hugo, Gatsby, Quartz
                                         (2) Using task-specific high level tools
                                             (1) Dashboards: metabase, plotly, graphana)
                                         1. Monitoring automated data generator: shows inputs/outputs of the automated data generator to human, to see if it working correctly
@@ -5477,23 +5507,25 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                                 (1) Design: Figma
                                                 (2) Automatic template: screenshot-to-code
                                                 (3) Implementation
-                                                    (1) Content Management System (CMS, aka Frontend CI/CD): Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
+                                                    (1) Content Management System (CMS, aka Frontend CI/CD): Wordpress, Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
                                                         (1) Code:
                                                             (1) Template Libraries: Grapesjs
                                                             (2) Framework Libraries: React, Preact, Vue, Svelte; 
                                                             (3) Supporting Libraries: 
                                                                 (1) State management: Redux; 
                                                                 (2) CSS Frameworks: Tailwind, Sass, Bulma, Bootstrap, Material UI, Carbon Design System, Baklava
-                                                                (3) Plots & Dashboards: deck.gl, d3, tremor
+                                                                (3) Plots & Dashboards: deck.gl, d3, tremor 
                                                             (4) Telemetry
                                                                 (1) Analytics: (1) Open Source: umami, plausible, Snowplow, DataHog; Managed: Google Analytics, Tableau;
                                                                 (2) Session Replays: OpenReplay
-                                                            (5) UI Dev Environment: Storybook
+                                                            (5) UI Dev Environment: Storybook, Vite, 
                                                         (2) Build: Webpack; 
-                                                        (3) Web Serve: NGINX; 
-                                                        (4) Build & Web Serve: Nextjs, Astro; 
-                                                        (5) Code & Build: Django, Larelevel, SpringBoot, Sveltekit, redwood  
-                                                        (6) Build & Web Serve: Hugo, Gatsby, Jekyll
+                                                        (3) Web Serve: Uvicorn/Gunicorn, caddy, NGINX; 
+                                                        (4) Build & Web Serve: 
+                                                            (1) SSR: Nextjs, Astro; 
+                                                        (5) Code & Build: 
+                                                            (1) Web Frameworks: Django, Larelevel, SpringBoot, Sveltekit, redwood;
+                                                            (2) Static Site Generators: Hugo, Gatsby, Quartz
                                             (2) Using task-specific high level tools
                                                 (1) Dashboards: metabase, plotly, graphana)
                                             1. Shows datapoints
@@ -5682,7 +5714,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                 3. Separation of labelled (prediction context (e.g., docs retrieved by RAG retriever), Ys, proxy Ys & explanation ground truths (_Note:_ explanation is text data and can get big, so what is actually stored is a pointer to get the file in another location ((1) Data Lake: open source: (1.1) Kylo, Delta Lake; (1.2) managed: Azure Data Lake Storage, AWS Lake Formation + S3; (2) object storage: (2.1) open source: minio, ceph, storj, swiftstack; (2.2) managed: s3; (3) distributed file system: HDFS, Gluster), also, Y does not need to be a scalar)) and unlabelled featured datapoints
                                 4. Separation of featured datapoints per ML task and per mode of operation (online or offline)
                                 5. Separation of datapoints using old vs new schema in a dataset (if new schema has > n datapoints. Give them to clients, else continue giving old schema)
-                                6. Separation of featured datapoints w/o prediction (y_hat), featured datapoints with prediction (y_hat) (along with timestamp of  prediction request)
+                                6. Separation of featured datapoints w/o prediction (<y_hat, y_hat_prob> (y_hat_prob is usefull to know if we need to retrain using this datapoint as part of training data, if y_hat_prob to very hugh, we dont need to)), featured datapoints with prediction (<y_hat, y_hat_prob>) (along with timestamp of  prediction request)
                                 7. Separe location for needy features: features that arent in any dataset
                                 8. Separation of traditional vs generative datapoints
                                     1. Traditional datapoints: 
@@ -5820,23 +5852,25 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                         (1) Design: Figma
                                         (2) Automatic template: screenshot-to-code
                                         (3) Implementation
-                                            (1) Content Management System (CMS, aka Frontend CI/CD): Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
+                                            (1) Content Management System (CMS, aka Frontend CI/CD): Wordpress, Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
                                                 (1) Code:
                                                     (1) Template Libraries: Grapesjs
                                                     (2) Framework Libraries: React, Preact, Vue, Svelte; 
                                                     (3) Supporting Libraries: 
                                                         (1) State management: Redux; 
                                                         (2) CSS Frameworks: Tailwind, Sass, Bulma, Bootstrap, Material UI, Carbon Design System, Baklava
-                                                        (3) Plots & Dashboards: deck.gl, d3, tremor
+                                                        (3) Plots & Dashboards: deck.gl, d3, tremor 
                                                     (4) Telemetry
                                                         (1) Analytics: (1) Open Source: umami, plausible, Snowplow, DataHog; Managed: Google Analytics, Tableau;
                                                         (2) Session Replays: OpenReplay
-                                                    (5) UI Dev Environment: Storybook
+                                                    (5) UI Dev Environment: Storybook, Vite, 
                                                 (2) Build: Webpack; 
-                                                (3) Web Serve: NGINX; 
-                                                (4) Build & Web Serve: Nextjs, Astro; 
-                                                (5) Code & Build: Django, Larelevel, SpringBoot, Sveltekit, redwood  
-                                                (6) Build & Web Serve: Hugo, Gatsby, Jekyll
+                                                (3) Web Serve: Uvicorn/Gunicorn, caddy, NGINX; 
+                                                (4) Build & Web Serve: 
+                                                    (1) SSR: Nextjs, Astro; 
+                                                (5) Code & Build: 
+                                                    (1) Web Frameworks: Django, Larelevel, SpringBoot, Sveltekit, redwood;
+                                                    (2) Static Site Generators: Hugo, Gatsby, Quartz
                                     (2) Using task-specific high level tools
                                         (1) Dashboards: metabase, plotly, graphana)
                                     1. HTTP Server to serve Frontend. FrontEnd: displays all the features, datasets, namespaces and client models like shop, where you can rank or filter by any of these. Also lets you sample some feature datapoints and compute get statistics of it.
@@ -5872,23 +5906,25 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                     (1) Design: Figma
                                     (2) Automatic template: screenshot-to-code
                                     (3) Implementation
-                                        (1) Content Management System (CMS, aka Frontend CI/CD): Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
+                                        (1) Content Management System (CMS, aka Frontend CI/CD): Wordpress, Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
                                             (1) Code:
                                                 (1) Template Libraries: Grapesjs
                                                 (2) Framework Libraries: React, Preact, Vue, Svelte; 
                                                 (3) Supporting Libraries: 
                                                     (1) State management: Redux; 
                                                     (2) CSS Frameworks: Tailwind, Sass, Bulma, Bootstrap, Material UI, Carbon Design System, Baklava
-                                                    (3) Plots & Dashboards: deck.gl, d3, tremor
+                                                    (3) Plots & Dashboards: deck.gl, d3, tremor 
                                                 (4) Telemetry
                                                     (1) Analytics: (1) Open Source: umami, plausible, Snowplow, DataHog; Managed: Google Analytics, Tableau;
                                                     (2) Session Replays: OpenReplay
-                                                (5) UI Dev Environment: Storybook
+                                                (5) UI Dev Environment: Storybook, Vite, 
                                             (2) Build: Webpack; 
-                                            (3) Web Serve: NGINX; 
-                                            (4) Build & Web Serve: Nextjs, Astro; 
-                                            (5) Code & Build: Django, Larelevel, SpringBoot, Sveltekit, redwood  
-                                            (6) Build & Web Serve: Hugo, Gatsby, Jekyll
+                                            (3) Web Serve: Uvicorn/Gunicorn, caddy, NGINX; 
+                                            (4) Build & Web Serve: 
+                                                (1) SSR: Nextjs, Astro; 
+                                            (5) Code & Build: 
+                                                (1) Web Frameworks: Django, Larelevel, SpringBoot, Sveltekit, redwood;
+                                                (2) Static Site Generators: Hugo, Gatsby, Quartz
                                 (2) Using task-specific high level tools
                                     (1) Dashboards: metabase, plotly, graphana)
                                 1. Show experiments that were done (each one with all related information), can visualize, compare, rank and filter them (e.g., by metrics & time). Allows user to define a custom evaluation function on top of experiment metrics, so that they can have a single final metric to pick the best experiment.
@@ -6064,23 +6100,25 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                         (1) Design: Figma
                                         (2) Automatic template: screenshot-to-code
                                         (3) Implementation
-                                            (1) Content Management System (CMS, aka Frontend CI/CD): Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
+                                            (1) Content Management System (CMS, aka Frontend CI/CD): Wordpress, Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
                                                 (1) Code:
                                                     (1) Template Libraries: Grapesjs
                                                     (2) Framework Libraries: React, Preact, Vue, Svelte; 
                                                     (3) Supporting Libraries: 
                                                         (1) State management: Redux; 
                                                         (2) CSS Frameworks: Tailwind, Sass, Bulma, Bootstrap, Material UI, Carbon Design System, Baklava
-                                                        (3) Plots & Dashboards: deck.gl, d3, tremor
+                                                        (3) Plots & Dashboards: deck.gl, d3, tremor 
                                                     (4) Telemetry
                                                         (1) Analytics: (1) Open Source: umami, plausible, Snowplow, DataHog; Managed: Google Analytics, Tableau;
                                                         (2) Session Replays: OpenReplay
-                                                    (5) UI Dev Environment: Storybook
+                                                    (5) UI Dev Environment: Storybook, Vite, 
                                                 (2) Build: Webpack; 
-                                                (3) Web Serve: NGINX; 
-                                                (4) Build & Web Serve: Nextjs, Astro; 
-                                                (5) Code & Build: Django, Larelevel, SpringBoot, Sveltekit, redwood  
-                                                (6) Build & Web Serve: Hugo, Gatsby, Jekyll
+                                                (3) Web Serve: Uvicorn/Gunicorn, caddy, NGINX; 
+                                                (4) Build & Web Serve: 
+                                                    (1) SSR: Nextjs, Astro; 
+                                                (5) Code & Build: 
+                                                    (1) Web Frameworks: Django, Larelevel, SpringBoot, Sveltekit, redwood;
+                                                    (2) Static Site Generators: Hugo, Gatsby, Quartz
                                     (2) Using task-specific high level tools
                                         (1) Dashboards: metabase, plotly, graphana)
                                     1. HTTP server that serves Frontend. Frontend: displays all the information being store in the DB as a model shop, separeated by type of model, deployed/not deployed, organzed in version sequence and with all the deitails of each versioned model along with the API endpoint + Authentication Required to access the Inference Service of a particular model (aka Model Card).
@@ -6170,23 +6208,25 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                         (1) Design: Figma
                                         (2) Automatic template: screenshot-to-code
                                         (3) Implementation
-                                            (1) Content Management System (CMS, aka Frontend CI/CD): Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
+                                            (1) Content Management System (CMS, aka Frontend CI/CD): Wordpress, Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
                                                 (1) Code:
                                                     (1) Template Libraries: Grapesjs
                                                     (2) Framework Libraries: React, Preact, Vue, Svelte; 
                                                     (3) Supporting Libraries: 
                                                         (1) State management: Redux; 
                                                         (2) CSS Frameworks: Tailwind, Sass, Bulma, Bootstrap, Material UI, Carbon Design System, Baklava
-                                                        (3) Plots & Dashboards: deck.gl, d3, tremor
+                                                        (3) Plots & Dashboards: deck.gl, d3, tremor 
                                                     (4) Telemetry
                                                         (1) Analytics: (1) Open Source: umami, plausible, Snowplow, DataHog; Managed: Google Analytics, Tableau;
                                                         (2) Session Replays: OpenReplay
-                                                    (5) UI Dev Environment: Storybook
+                                                    (5) UI Dev Environment: Storybook, Vite, 
                                                 (2) Build: Webpack; 
-                                                (3) Web Serve: NGINX; 
-                                                (4) Build & Web Serve: Nextjs, Astro; 
-                                                (5) Code & Build: Django, Larelevel, SpringBoot, Sveltekit, redwood  
-                                                (6) Build & Web Serve: Hugo, Gatsby, Jekyll
+                                                (3) Web Serve: Uvicorn/Gunicorn, caddy, NGINX; 
+                                                (4) Build & Web Serve: 
+                                                    (1) SSR: Nextjs, Astro; 
+                                                (5) Code & Build: 
+                                                    (1) Web Frameworks: Django, Larelevel, SpringBoot, Sveltekit, redwood;
+                                                    (2) Static Site Generators: Hugo, Gatsby, Quartz
                                     (2) Using task-specific high level tools
                                         (1) Dashboards: metabase, plotly, graphana) 
                                     (displays all the information being storeds in the DB as a pipeline shop, separeated by type of pipeline, deployed/not deployed, the model it is making feature for; organzed in version sequence and with all the deitails of each versioned pipeline along with the API endpoint + Authentication Required to access the Inference Service of a particular pipeline (aka pipeline Card)
@@ -6237,23 +6277,25 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                     (1) Design: Figma
                                     (2) Automatic template: screenshot-to-code
                                     (3) Implementation
-                                        (1) Content Management System (CMS, aka Frontend CI/CD): Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
+                                        (1) Content Management System (CMS, aka Frontend CI/CD): Wordpress, Strapi, Ghost, Decap, wagtail, Keystone, Payload, Publii, Drupal
                                             (1) Code:
                                                 (1) Template Libraries: Grapesjs
                                                 (2) Framework Libraries: React, Preact, Vue, Svelte; 
                                                 (3) Supporting Libraries: 
                                                     (1) State management: Redux; 
                                                     (2) CSS Frameworks: Tailwind, Sass, Bulma, Bootstrap, Material UI, Carbon Design System, Baklava
-                                                    (3) Plots & Dashboards: deck.gl, d3, tremor
+                                                    (3) Plots & Dashboards: deck.gl, d3, tremor 
                                                 (4) Telemetry
                                                     (1) Analytics: (1) Open Source: umami, plausible, Snowplow, DataHog; Managed: Google Analytics, Tableau;
                                                     (2) Session Replays: OpenReplay
-                                                (5) UI Dev Environment: Storybook
+                                                (5) UI Dev Environment: Storybook, Vite, 
                                             (2) Build: Webpack; 
-                                            (3) Web Serve: NGINX; 
-                                            (4) Build & Web Serve: Nextjs, Astro; 
-                                            (5) Code & Build: Django, Larelevel, SpringBoot, Sveltekit, redwood  
-                                            (6) Build & Web Serve: Hugo, Gatsby, Jekyll
+                                            (3) Web Serve: Uvicorn/Gunicorn, caddy, NGINX; 
+                                            (4) Build & Web Serve: 
+                                                (1) SSR: Nextjs, Astro; 
+                                            (5) Code & Build: 
+                                                (1) Web Frameworks: Django, Larelevel, SpringBoot, Sveltekit, redwood;
+                                                (2) Static Site Generators: Hugo, Gatsby, Quartz
                                 (2) Using task-specific high level tools
                                     (1) Dashboards: metabase, plotly, graphana)
                                 1. Crucial & Fast-changing monitoring data: streamed to frontend (carefull not to overload memory usage on frontend!)
@@ -6359,8 +6401,10 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                                         2. Fit generative models (that model the the joint distribution P(X)) to training & deploy data
                                                             1. If explicit model (Density Estimation): can compare functions
                                                             2. If implicit model (e.g., GANs): sample from it and get statistics
+                                                        3. For NLP:
+                                                            1. Topic models
+                                                            2. clustering on Embeddings
                                                     3. Use Visualizations: project high dimensional data into low dimensional space (2 or 3 dimensions). E.g.,  tSNE. And then go by eye or do Statistical tests on this easier data
-
                                                 3. If a shift is detected: investigate.
                                                     1. Analyze data distribution shifts on subsets of the feature space. 
                                                         1. Aggregate. The goal here is to maybe find that a shift is localized to some features only.
@@ -6588,7 +6632,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                             3. Malicous (attackers or trolls) user identification
                                                 1. Too many requests
                                                 2. Poisoned training data (e.g., fake reviews)
-                                                3. Adversarial inference data (e.g., image modified to cause ml model mistake) (Tools: alibi-detect)
+                                                3. Adversarial inference input data (e.g., image modified to cause ml model mistake) (Tools: alibi-detect)
                                         7. ML CI/CD Monitoring (can be done together with  ''General Monitoring - Level 1 CI/CD'')
                                             1. Metrics relative to: Generalized CI/CD Levels [2-5] (Level 1 is traditional CI/CD, which is bigger than ML, thus is located at General Monitoring)
                                             2. Metrics:
@@ -7078,7 +7122,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                     4. Reconfigure Monitoring: send/stream to monitoring system a reconfiguration request (directly or through the state store that distributes configurations) to change the reference data distribution it using for detecting Data Distribution shift (Note: sudden shifts are often indicative of data bugs)s in this model. Send a pointer to training data that was used in training this model.
             2. MLOps platform CI/CD
         2. ML Product (works on top of MLOps platform)
-            1. ML Frontend (UI/UX) (Tools: Marvin, TypeChat, Vercel AI SDK)
+            1. ML Frontend (UI/UX) (Tools: Marvin, TypeChat, Vercel AI SDK, text-generation-web-ui)
                 1. Development (output is changed repository)
                     1. Principles
                         1. Data Principles
@@ -7296,7 +7340,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                         (1) LLM-specific Libraries
                             (1) LLMs (single calls)
                                 (1) Data Management & Dataset Construction: RedPajama-Data
-                                (2) Model Building: HF Transformers, Ludwig, higgsfield
+                                (2) Model Building: HF Transformers, Ludwig, higgsfield, litgpt
                                     (1) Fine-tuning: LLaMA-Factory, LMFlow, Simple LLM Finetuner, Axolotl, unsloth, langdrive
                                         (1) RLHF: HF trl, trlx, OpenRLHF
                                 (3) Guardrails (Structure & Evaluation of LLM Outputs):
@@ -7444,8 +7488,10 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                         3. Bias: spotting bias indicators (e.g., if model is relying heavily on the gender feature to estimate loan)
                                     2. Methods
                                         1. SHAP (Improved version of Vanilla Shapley) values (there is a SHAP library for this)
-                                        2. Vanilla Shapley values (e.g., Integrated Gradients (Tensorflow Integrated Gradients is a great tool)) (_Note:_ computing Shapley values exactly in most cases is computationally intractable because of the number of feature, what is done is an approximation (the you can modify the Shapely accuray/computational cost tradeoff accordig to your needs))
-                                        3. Causal Inference (evaluating effect of feature x on target): Avargae Treatment Effects
+                                        2. LIME
+                                        3. Vanilla Shapley values (e.g., Integrated Gradients (Tensorflow Integrated Gradients is a great tool)) (_Note:_ computing Shapley values exactly in most cases is computationally intractable because of the number of feature, what is done is an approximation (the you can modify the Shapely accuray/computational cost tradeoff accordig to your needs))
+                                        4. Causal Inference (evaluating effect of feature x on target): Avargae Treatment Effects
+                                        5. Substituting feature values by random values and seeing the amount of drop in predictive power
                                     3. Actions: remove non-informative features (are defined by low information gain == E_x[Entropy(P^(Y=y|X=x))]/Entropy(P^(Y=y)) where P^(Y=y|X=x) and P^(Y=y) are estimates of P(Y=y|X=x) and P(Y=y) respectively) (e.g., can do SHAP (Improved version of Vanilla Shapley) values on entire dataset)
                                         1. Categorical features: Remove categorical features or Lower dimension of categorical features
                                         2. Numerical features: Remove numerical features
