@@ -10078,6 +10078,9 @@ it now does not model the data distribution, but models the data that shoould be
 ratio should have little mass now and distribute to the other parts of the distribution (regions model needs data). This way the network can ask for examples (active learning) in regions it has few data (and therefore doesnt estimate well in these regions) Currently these systems are tested/deployed and where it shows a lot of errors --> the team gathers more data on these situations.
 
 * RL:
+
+- its important to learning hierarchical reward functions
+
 - reward funtions are hard-coded because we are focusing on narrow tasks.
 Actually, humans learn reward functions in a conntext of hierarchical tasks.
 AI already outperforms humans in writting reward functions (Eureka Paper).
@@ -10360,6 +10363,8 @@ and by the end you are just rewarding scoring goals (which is what you actually 
         2. Hierarchical Representations (what NNs enable): because our world is hierarchical, it is building blocks built on top of lower level building blocks.
 
         3. Optimization: changing things in the direction of achieving some goal.
+
+        4. Curriculum Learning: learn in increasing levels of diffculty.
 
     3. Reasoning via Logic + Heuristics: logic enables us to propagate truth, it it enables us to produce high level statements from lower level ones. However, the search space is intractable for interesting problems. We need good hueirstics to guide the search.
 
