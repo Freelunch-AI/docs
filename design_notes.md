@@ -309,7 +309,7 @@ Our __target users__ are hardcore ML teams (working on the software-side), which
             1. Platforms (e.g., Twelve Labs)
             2. APIs 
                 1. Broad (e.g., *OpenAI*, *Cohere*, *Anthropic*, *Groq*, etc)
-                2. Narrow (*One Concern*, *Unitary*, *Graft*, *Symbl.ai*, *Jasper*, Major clouds (*GCP AI*, *Azure AI*, *AWS AI*, *IBM AI*) etc)
+                2. Narrow (*One Concern*, *Unitary*, *Graft*, *Symbl.ai*, *Jasper*, *Yobi*, Major clouds (*GCP AI*, *Azure AI*, *AWS AI*, *IBM AI*) etc)
         2. AutoML (e.g., *Akkio*, *Obviously AI*, *ModularMind*, *Tuba.ai*, etc)
     2. PaaS: MLOps platforms
         1. General (e.g., *Datarobot*, *Sagemaker*, *Paperspace Gradient*, *c3.ai*, *Cleanlab*, *attri*, *Datagran*, etc).
@@ -8816,14 +8816,16 @@ These are ideas that can be embedded within *Freelunch*.
     1. Contraints
         1. Specific computation (traditional code)
         2. Implicit computation with symbolic expressions (i.e., specifying functions by them being the solution of a differential equation istead of implementing it via explicit knowledge of it)
-        3. Learn specific parameters given a prior over them
+        3. Priors over parameters and latent variables
         4. Strict Causal graph
         5. Signature of LLM call
     2. Hints
         1. Places to fill in with black box models
         2. Parts of specific computation to be replaced by a surrogate black-box model
-        3. Suggested Causal Graph
-        4. What a modeule of your program is supposed to do semantically.
+        3. Causal relationships
+        4. Docstrings
+        5. What you are satisfied with just a point estimate (MAP or MLE)
+        6. Proxy feedback signal functions (e.g., learned fine-grained rewards)
 
     Some variable are not interesting by themselves (e.g. a single pixel), so we need a higher level thing, besides variables. This thing is an object, which is defined as data structure that makes use of: functions of these variables, and/or constraints on them. Also, if multiple variables all have the exact same arrows (arrows pointing to the same object; where arrows define the variable as an input to a program that makes that object), so they form an object aswell (specifically a vector object, a.k.a. feature vector in ML). For most higher-level analysis purposes, you can treat objects as variables.
 
@@ -8904,7 +8906,7 @@ These are ideas that can be embedded within *Freelunch*.
                         3. For each statistical estimate, an ML model is built using AutoML if it is not present in cashe, else the model it just gets the model from the cashe.
                         4. Models are interpreted to produce inference outputs
 
-    We let you code using latent variables, abstracting away from the user the actual ML architecture and learning methods used. This makes us a mixed declarative (using latent variables) and imperative (your program) programming framework. 
+    We let you code using latent variables and parameters (both from a bayesian inference perspective are just variables, with some excpetions from methods like EM that define parameters things you want to point estimate and latent variables things you want a posterior), abstracting away from the user the actual ML architecture and learning methods used. This makes us a mixed declarative (using latent variables) and imperative (your program) programming framework. 
     
     Ideal for:
 
