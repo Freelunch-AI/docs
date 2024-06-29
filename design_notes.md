@@ -266,7 +266,7 @@ As evidence for the proposed solution (*Freelunch*):
                     1. By requirement
                         1. Real-time (e.g., *TurboML*, *Claypot AI*)
                     2. By method
-                        1. Generative ML/LLMs/Agents (e.g., *Together.ai*, *Langsmith*, *Scale Generative AI Platform*, *Parea*, *Galileo*, *HoneyHive*, *Klu.ai*, *Freeplay*, *Giga ML*, *Lamini*, *Vellum*, *Vianai*, *Parea AI*, *Athina AI*, *AilaFlow*, *Airkit.ai*, *Rebyte*, *Keywords AI*, *Helicone*, *GradientJ*)
+                        1. LLMs (e.g., *Together.ai*, *Langsmith*, *Scale Generative AI Platform*, *Parea*, *Galileo*, *HoneyHive*, *Klu.ai*, *Freeplay*, *Giga ML*, *Lamini*, *Vellum*, *Vianai*, *Parea AI*, *Athina AI*, *AilaFlow*, *Airkit.ai*, *Rebyte*, *Keywords AI*, *Helicone*, *GradientJ*, *LastMile AI*)
                             1. RAG (e.g., *Vectara*)
                             2. Agents (e.g., *Steamship*, *Langsmith*, *crewAI*, *Stack AI*)
                     3. By focus
@@ -1600,7 +1600,7 @@ The MLOps tool landscape is huge. I will just leave here some pointers (without 
                 1. By requirement
                     1. Real-time (e.g., *TurboML*, *Claypot AI*)
                 2. By method
-                    1. Generative ML/LLMs/Agents (e.g., *Together.ai*, *Langsmith*, *Scale Generative AI Platform*, *Parea*, *Galileo*, *HoneyHive*, *Klu.ai*, *Freeplay*, *Giga ML*, *Lamini*, *Vellum*, *Vianai*, *Parea AI*, *Athina AI*, *AilaFlow*, *Airkit.ai*, *Rebyte*, *Keywords AI*, *Helicone*, *GradientJ*)
+                    1. LLMs (e.g., *Together.ai*, *Langsmith*, *Scale Generative AI Platform*, *Parea*, *Galileo*, *HoneyHive*, *Klu.ai*, *Freeplay*, *Giga ML*, *Lamini*, *Vellum*, *Vianai*, *Parea AI*, *Athina AI*, *AilaFlow*, *Airkit.ai*, *Rebyte*, *Keywords AI*, *Helicone*, *GradientJ*, *LastMile AI*)
                         1. RAG (e.g., *Vectara*)
                         2. Agents (e.g., *Steamship*, *Langsmith*, *crewAI*, *Stack AI*)
                 3. By focus
@@ -2804,7 +2804,7 @@ _Note:_ __these are all automated benchmarks, no humans involved__. In stages wh
                     1. By requirement
                         1. Real-time (e.g., *TurboML*, *Claypot AI*)
                     2. By method
-                        1. Generative ML/LLMs/Agents (e.g., *Together.ai*, *Langsmith*, *Scale Generative AI Platform*, *Parea*, *Galileo*, *HoneyHive*, *Klu.ai*, *Freeplay*, *Giga ML*, *Lamini*, *Vellum*, *Vianai*, *Parea AI*, *Athina AI*, *AilaFlow*, *Airkit.ai*, *Rebyte*, *Keywords AI*, *Helicone*, *GradientJ*)
+                        1. LLMs (e.g., *Together.ai*, *Langsmith*, *Scale Generative AI Platform*, *Parea*, *Galileo*, *HoneyHive*, *Klu.ai*, *Freeplay*, *Giga ML*, *Lamini*, *Vellum*, *Vianai*, *Parea AI*, *Athina AI*, *AilaFlow*, *Airkit.ai*, *Rebyte*, *Keywords AI*, *Helicone*, *GradientJ*, *LastMile AI*)
                             1. RAG (e.g., *Vectara*)
                             2. Agents (e.g., *Steamship*, *Langsmith*, *crewAI*, *Stack AI*)
                     3. By focus
