@@ -9,11 +9,11 @@ make ML work as expected in production.
 
 We currently make 2 products:
 
-- __Freelunch Open Source:__ it's Supabase for AI and Backstage for MLOps. Open source tool for fabrication and improvement of ML Platforms.
+- __Freelunch Open Source:__ it's Backstage for MLOps. Open source tool for fabrication and improvement of ML Platforms.
 
     Instead of reinventing the wheel, it is designed to leverage existing best-in-class (open-source and proprietary) tools; without being tied to any specific tool (tool-agnostic).
 
-    Note: not a ML Platform, allows you to make your own.
+    Note: <span style="color: red">not an ML Platform</span> (like *MLFlow*), allows you to make your own internal ML Platform.
 
 - __Freelunch Copilot:__ SaaS ML Engineering co-pilot that works on top of Freelunch Open Source. 
 
