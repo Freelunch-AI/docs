@@ -13,7 +13,7 @@ We currently make 2 products:
 
     Instead of reinventing the wheel, it is designed to leverage existing best-in-class (open-source and proprietary) tools; without being tied to any specific tool (tool-agnostic).
 
-    Note: <span style="color: red">not an ML Platform</span> (like *MLFlow*), allows you to make your own internal ML Platform.
+    Note: __not an ML Platform__ (like *MLFlow* or *Kubeflow*); allows you to make your own internal ML Platform.
 
 - __Freelunch Copilot:__ SaaS ML Engineering co-pilot that works on top of Freelunch Open Source. 
 
