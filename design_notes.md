@@ -5,7 +5,10 @@ This document tries describes Freelunch, a startup that making the next generati
 
 __Reading guide:__
 
-* __If you have < 5 minutes to spend:__ you can read [__TL;DR__](###__TL;DR__) section.
+* __If you have < 5 minutes to spend:__ you can read <a href="###__TL;DR__">__TL;DR__</a>
+
+
+[__TL;DR__](###__TL;DR__) section.
 * __If you have at least 5 minutes to spend:__ you can read [__TL;DR__](__TL;DR__), [__Problem__](__Problem__) and [__Explaining Freelunch in a few steps__](__Explaining-Freelunch-in-a-few-steps__)
 * __If you have at least 10 minutes to spend:__ you can read [__TL;DR__](__TL;DR__), [__Problem__](__Problem__), [__Explaining Freelunch in a few steps__](__Explaining-Freelunch-in-a-few-steps__) and [__Freelunch vs current best open source options__](__*Freelunch*-vs-current-best-open-source-options__) sections
 * __If you have at least 20 minutes to spend:__ you can read [__TL;DR__](__TL;DR__), [__Problem__](__Problem__), [__Explaining Freelunch in a few steps__](__Explaining-Freelunch-in-a-few-steps__)
