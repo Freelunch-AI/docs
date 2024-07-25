@@ -5,7 +5,7 @@ This document tries describes Freelunch, a startup that making the next generati
 
 __Reading guide:__
 
-* __If you have < 5 minutes to spend:__ you can read [__TL;DR__](###:gem:-__TL;DR__) section.
+* __If you have < 5 minutes to spend:__ you can read [__TL;DR__](###__TL;DR__) section.
 * __If you have at least 5 minutes to spend:__ you can read [__TL;DR__](__TL;DR__), [__Problem__](__Problem__) and [__Explaining Freelunch in a few steps__](__Explaining-Freelunch-in-a-few-steps__)
 * __If you have at least 10 minutes to spend:__ you can read [__TL;DR__](__TL;DR__), [__Problem__](__Problem__), [__Explaining Freelunch in a few steps__](__Explaining-Freelunch-in-a-few-steps__) and [__Freelunch vs current best open source options__](__*Freelunch*-vs-current-best-open-source-options__) sections
 * __If you have at least 20 minutes to spend:__ you can read [__TL;DR__](__TL;DR__), [__Problem__](__Problem__), [__Explaining Freelunch in a few steps__](__Explaining-Freelunch-in-a-few-steps__)
@@ -80,7 +80,7 @@ And these problems are especially important for:
 <details open>
     <summary><b>TL;DR</b></summary>
 
-### :gem: __TL;DR__
+### __TL;DR__
 
 __Helps AI teams build and improve AI Platforms. *Freelunch* follows the open-core model: (1) *Freelunch OSS*: open source tool that lets teams build ML platforms in days and keep improving their ML system (using the platform) and the platform itself. It does not reinvent the wheel, leverages existing tools that are great at what they do (e.g., Seldon Core for model deployment and Weights & Biases for model experiment tracking); (2) *Freelunch Copilot*: SaaS ML Engineering copilot; it works on top of *Freelunch OSS* and feels just like a Human ML Engineer (e.g., makes PRs, interacts via slack, builds models, operates de system, etc).<sup>1</sup>.__
 
