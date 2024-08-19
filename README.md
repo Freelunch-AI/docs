@@ -9,11 +9,11 @@ make ML work as expected in production.
 
 We currently make 2 products:
 
-- __Freelunch Open Source:__ it's *Backstage* for MLOps. Open source framework for fabrication and improvement of enterprise-grade internal ML Platforms.
+- __Freelunch Open Source:__ it's [*Backstage*](https://github.com/backstage/backstage) for MLOps. Open source framework for fabrication and improvement of enterprise-grade internal ML Platforms.
 
     Instead of reinventing the wheel, it is designed to leverage existing best-in-class (open-source and proprietary) tools; without being tied to any specific tool (tool-agnostic).
 
-    Note: __not an ML Platform__ (like *MLFlow* or *Kubeflow*); allows you to make your own internal ML Platform.
+    Note: __not an ML Platform__ (like [*MLFlow*](https://github.com/mlflow/mlflow) or [*Kubeflow*](https://github.com/kubeflow/kubeflow)); allows you to make your own internal ML Platform.
 
 - __Freelunch Copilot:__ SaaS ML Engineering co-pilot that works on top of Freelunch Open Source. 
 
