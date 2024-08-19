@@ -9,7 +9,7 @@ make ML work as expected in production.
 
 We currently make 2 products:
 
-- __Freelunch Open Source:__ it's Backstage for MLOps. Open source framework for fabrication and improvement of enterprise-grade internal ML Platforms.
+- __Freelunch Open Source:__ it's *Backstage* for MLOps. Open source framework for fabrication and improvement of enterprise-grade internal ML Platforms.
 
     Instead of reinventing the wheel, it is designed to leverage existing best-in-class (open-source and proprietary) tools; without being tied to any specific tool (tool-agnostic).
 
@@ -23,7 +23,7 @@ We currently make 2 products:
 
 You can checkout our docs in this repository to understand better our vision for the evolution of MLOps.
 
-- Checkout our [Design Partnership Proposal Slides](https://docs.google.com/presentation/d/1kF-ZzVD8EiNLHFMuztEcYeT-kez1266R/edit?usp=sharing&ouid=114266237528985699122&rtpof=true&sd=true) for a concise and visual explanation.
+- Checkout our [Design Partnership Proposal Slides](https://docs.google.com/presentation/d/1kF-ZzVD8EiNLHFMuztEcYeT-kez1266R/edit?usp=sharing&ouid=114266237528985699122&rtpof=true&sd=true) for a concise and visual explanation. This slide deck was originally built for bringing potential clients as Design Partners.
 - Checkout our [Design Notes](design_notes.md) for an in-depth explanation of not only Freelunch, but also of ML in production (including LLMs).
 
 
