@@ -316,7 +316,7 @@ Our __target users__ are hardcore ML teams (working on the software-side), which
     1. AI-as-core companies
         1. Standard Products. They dont need to use your data for training. (e.g., *Tesla*, *Waymo*, *Cruise*, *Palantir*, *LogMeIn*, *Sensat*, *Wix*, *TravelPerk*, *Loopme*, *Clarifai*, *Vidado*, *SpotHero*, *Fermata Energy*, *Entrupy*, *ZenRows*, *biorender*, *meMR*, *Orbital Materials*, *Cradle*, *papercup*, *EyeGauge*, *Bytedance*, *OfferFit*, *unlearn*, *veed.io*, *gptzero*, *Hex*, *OtterTune*, *Hemato*, *HawqEye*, *DarkVision*, *Antiverse*, *Stanza Systems*, *tractable*, *Lynceus*, *Deepmeta*, *Clearcover*, *Cardo AI*, *Ironscales*, *seedtag*, *Vivid Machines*, *Anagenex*, *getindata*, *leap*, *pathai*, *bryte*, *luminar*, *Climate AI*, *Wordcab*, *hypothetic*, *iBusiness Funding*, *Layer*, *valohealth*, *capeanalytics*, *Blackbird.ai*, *Vorto*, *Abnormal*, *hyperfactors*, *Animal Dynamics*, *Portcast*, *pano*, *Recursion*, *recruitingfromscratch*, *Locus Robotics*, *BenchSci*, *Element Energy*, *LiveRamp*, *cambrian*, *datathings*, *orbem*, *stada*, *compilatio*, *REimagineHome*, *11x.ai*, *Trellis*, *Bioptimus*, *Diarupt*, *voiceflow*, *patented.ai*, *Lowe's Home Improvement*, *Inner AI*, *Canoe Intelligence*, *tausight*, *resolute*, *Grab*, *Intuition Machines*, *meMR health*, *taranawireless*, *odditylabs*, *Evidium*, *Marker Learning*, *Lyric*, *radai*, *Isomorphic Labs*, etc)
         2. Personalized Products: domain-specific platforms. They need to use your data for training. (e.g., *Automation Anywhere*, *Dynatrace*, *Shift Technology*, *Drift*, *Pluralsight*, *InMoment*, *Theloops*, *Conjura*, *Raptormaps*, *movableink*, *Klaviyo*, *Health Rhythms, *Veriff*, *datajoint*, *hyperstart*, *unboxai*, *Virgin Media O2*, *Genius Sports*, *kaksha.ai*, *movley*, *Performance Art*, *Renassaince*, *veriff*, *nemuru*, *Voxel*, *Cerrion*, *Algomo*, *Toumetis*, *Degreed*, *Intuit*, *Pandai*, *Peak.ai*, *OverJet*, *fasal*, *Salesloft*, *Recast*, *Serna Bio*, *pymetrics*, *Bayesian Health*, *Cordial*, *Best Egg*, *Impact.com*, *kraken*, *Icertis*, *rimes*, *syrup*, *Curieo*, *evolutioniq*, *ello*, *dost*, *M-KOPA*, *Yahoo News*, *Desia AI*, *Attentive*, *Clari*, etc)
-    2. AI-as-helper companies (e.g., *Google*, *Microsoft*, *AWS*, *Doordash*, *Cisco*, *Meta*, *Tiktok*, *Snapshat*, *Pinterest*, *Discord*, *Match Group*, *Grindrr*, *Netflix*, *Salesforce*, *Microsoft*, *Apple*, *Spotify*, *Monzo Bank*, *Stichfix*, *Twilio*, *Adobe*, *BMW*, *Twitter*, *Dream11*, *Get your Guide*, *Slack*, *Wolfspeed*, *Duolingo*, *Nextdoor*, *Stack Overflow*, *Shopify*, *General Mills*, *BT Group*, *wolt*, *avant*, *LinkedIn*, *Financial Times*, *CNN*, *perpay*, *S&P Global*, *McDonalds*, *New York Life Insurance Co*, *Franklin Templeton Investments*, *Robinhood*, *Dell*, *Nubank*, *The New York Times*, *Autodesk*, *Bosch*, *Booking*, *Agoda*, *Volvo*, *Lucidmotors*, *syngenta*, *BioGen*, *Nomad*, *hokodo*, *Zoro*, *Simpplr*, *Urgently*, *Ballertv*, *sproutsocial*, *cookpad*, *swordhealth*, *Metrika*, *Heyjobs*, *stepstone*, *onemedical*, *Freeport Mcronan*, *therealreal*, *lemonade*, *karman*, *SImply Business*, *Sidekick*, *Corning*, *MeteoSwiss*, *iFood*, *Mercado Libre*, *crowdsec*, *360learning*, *wayfair*, *Digital Commerce Intelligence*, *mynd*, *coalition*, *Dish Network*, *Grainger*, *Workiva*, *Cyble*, *cargurus*, *weightwatchers*, *Walmart*, *StockX*, *taktile*, *DIscovery Bank*, *Lacework*, *CollegeVine*, *Navy Federal Credit Union*, *The Weather Channel*, *SailPoint*, *Chegg*, *perpay*, *kayzen*, *ING*, *Itau*, *CVS*, *DRP*, *genomicsengland*, *DrDoctor*, *homebound.*, *centene*, *artemis*, *Fundrise*, *Miro*, *Zalando*, *bees*, *GSK*, *Visa*, *Mastercard*, *DigitalOcean*, *Pie Insurance*, *Disney Streaming*, *King*, *Restaurant Brands International*, *hewlett packard enterprise (hpe)*, *smartcheats*, *iHelath*, *elucid*, *Amgen*, *fanatics*, *splunk*, *Analog Devices*, *stryker*, *mastercontrol*, *Renfroe*, *honeywell*, *iCapital*, *jobyaviation*, *Engage*, *Oho*, *highersearch*, *ID5*, *XCede*, *digitalwaffle*, *monolith*, *orbis*, *abcam*, *zebra*, *penske*, *jaguarlandrove*, *asos*, *Sixt*, *Quora*, *Belvo*, *Atlassian*, *carfax*, *trainline*, *Dream Sports*, *Prosimo*, *Home Depot*, *XP Investimentos*, *Nestlé*, *Hotmart*, *marktplaats*, *Conveyor*, *Moody's*, *AXA GO*, *Faire*, *thumbtack*, *Ford Motor Company*, *Workday*, *Wellcome Sanger Institute*, *TripAdvisor*, *Dell*, *VSCO*, *IAG Loyalty*, *Roche*, *Lodgify*, *Caterpillar*, *BrokerChooser*, etc).
+    2. AI-as-helper companies (e.g., *Google*, *Microsoft*, *AWS*, *Doordash*, *Cisco*, *Meta*, *Tiktok*, *Snapshat*, *Pinterest*, *Discord*, *Match Group*, *Grindrr*, *Netflix*, *Salesforce*, *Microsoft*, *Apple*, *Spotify*, *Monzo Bank*, *Stichfix*, *Twilio*, *Adobe*, *BMW*, *Twitter*, *Dream11*, *Get your Guide*, *Slack*, *Wolfspeed*, *Duolingo*, *Nextdoor*, *Stack Overflow*, *Shopify*, *General Mills*, *BT Group*, *wolt*, *avant*, *LinkedIn*, *Financial Times*, *CNN*, *perpay*, *S&P Global*, *McDonalds*, *New York Life Insurance Co*, *Franklin Templeton Investments*, *Robinhood*, *Dell*, *Nubank*, *The New York Times*, *Autodesk*, *Bosch*, *Booking*, *Agoda*, *Volvo*, *Lucidmotors*, *syngenta*, *BioGen*, *Nomad*, *hokodo*, *Zoro*, *Simpplr*, *Urgently*, *Ballertv*, *sproutsocial*, *cookpad*, *swordhealth*, *Metrika*, *Heyjobs*, *stepstone*, *onemedical*, *Freeport Mcronan*, *therealreal*, *lemonade*, *karman*, *SImply Business*, *Sidekick*, *Corning*, *MeteoSwiss*, *iFood*, *Mercado Libre*, *crowdsec*, *360learning*, *wayfair*, *Digital Commerce Intelligence*, *mynd*, *coalition*, *Dish Network*, *Grainger*, *Workiva*, *Cyble*, *cargurus*, *weightwatchers*, *Walmart*, *StockX*, *taktile*, *DIscovery Bank*, *Lacework*, *CollegeVine*, *Navy Federal Credit Union*, *The Weather Channel*, *SailPoint*, *Chegg*, *perpay*, *kayzen*, *ING*, *Itau*, *CVS*, *DRP*, *genomicsengland*, *DrDoctor*, *homebound.*, *centene*, *artemis*, *Fundrise*, *Miro*, *Zalando*, *bees*, *GSK*, *Visa*, *Mastercard*, *DigitalOcean*, *Pie Insurance*, *Disney Streaming*, *King*, *Restaurant Brands International*, *hewlett packard enterprise (hpe)*, *smartcheats*, *iHelath*, *elucid*, *Amgen*, *fanatics*, *splunk*, *Analog Devices*, *stryker*, *mastercontrol*, *Renfroe*, *honeywell*, *iCapital*, *jobyaviation*, *Engage*, *Oho*, *highersearch*, *ID5*, *XCede*, *digitalwaffle*, *monolith*, *orbis*, *abcam*, *zebra*, *penske*, *jaguarlandrove*, *asos*, *Sixt*, *Quora*, *Belvo*, *Atlassian*, *carfax*, *trainline*, *Dream Sports*, *Prosimo*, *Home Depot*, *XP Investimentos*, *Nestlé*, *Hotmart*, *marktplaats*, *Conveyor*, *Moody's*, *AXA GO*, *Faire*, *thumbtack*, *Ford Motor Company*, *Workday*, *Wellcome Sanger Institute*, *TripAdvisor*, *Dell*, *VSCO*, *IAG Loyalty*, *Roche*, *Lodgify*, *Caterpillar*, *BrokerChooser*, *PicNic*, etc).
 2. __Managed ML Services__
     1. SaaS: AIaaS
         1. Models 
@@ -576,33 +576,15 @@ __Target buyer: we will be selling to MLOps leads/managers or MLOps Platform lea
 
 __Simple reasoning to show we can be a unicorn:__
 
-1. __Assumption A:__ Unicorn >= 100M dollars/year in profit
-2. __Data A:__ [aprox 350K large companies in the world](https://www.statista.com/statistics/1261035/large-global-companies/)
-3. __Data B:__ [35% of companies are using AI](https://explodingtopics.com/blog/companies-using-ai#:~:text=According%20to%20the%20latest%20data,incorporate%20AI%20technologies%20in%202024.)
-4. __Logic A:__ AI is used more in larger corporations than smaller ones, so we are going to assume that B can be considered to apply to large comapnies
-5. __Assumption B:__ we assume that 50% of large companies using AI have technical expertise to go for an open source solution
-6. __Assumption C:__ we assume that we can achieve 50% market share
-7. __Result A:__ aprox 8% of 350K are potential customers == 28k potential customers
-8. __Problem A:__ need 100M/28k == aprox. 3 572 dollars/year/customer in profit
-9. __Data C:__ [avarage salary of ML Engineer is 164 627 dollars/year](https://www.indeed.com/career/machine-learning-engineer/salaries)
-10. __Assumption D:__ our MLOps copilot will be at least as powerfull as 1 ML Engineer
-11. __Data D:__ [worldwide spend in cloud/year == aprox. 244B for SaaS comapnies](https://www.gartner.com/en/newsroom/press-releases/11-13-2023-gartner-forecasts-worldwide-public-cloud-end-user-spending-to-reach-679-billion-in-20240)
-12. __Data E:__ [90% of comapnies spend less than 60M dollards /year in cloud](https://www.cloudzero.com/blog/cost-of-cloud-computing/#:~:text=More%20specifically%2C%20in%20companies%20with,from%20%24600%2C000%20to%20%241.2%20million.)
-13. __Assumption E:__ we use 60M dollars /year as an estimate of our compute costs, considering companies using AI are the ones that usually spend more
-14. __Logic B:__ our MLOps copilot costs/customer/year == 60M/28k == 2142 dollars
-15. __Assumption F:__ considering we would have 100 ml engineers working for us, total cost of personel == 100*164 627 == aprox. 15M dollars/year
-16. __Assumption G:__ considering additional costs (other personnel, taxes, etc) to be 50% of main costs
-17. __Logic C:__ cost of personnel/customer/year == 15M/28k == 535 dollars
-18. __Logic D:__ total cost/customer/year == (aprox. cloud costs/customer/year + personnel costs/customer/year) * 1.5 == (2142 + 535) * 1.5 == 4015 dollars/customer/year
-19. __Logic E:__ to reach 3 572 dollars/customer/year in profit, we need to charge 4015 + 3 572 == 7587 dollars/customer/year
-20. __Logic F:__ since our solution will be 164 627/7587 == aprox. 22 times cheaper than a ML Engineer, companies will prefer it.
+We estimate that we can make 150 million dollars/year in profit in the medium term. 
 
-__But how much can we make?:__
+Revenue/year := # of potential customers (ML teams) * potential market share * how much we could charge/customer/year. 
 
-1. __Logic A:__ our ML Engineering Copilot should be at least as good as a single ML Engineer, therefore we could charge the amount paid to a Human ML Enginner.
-2. __Logic B:__ this yields 164627*28k == aprox. 5B dollars/year in revenue
-3. __Logic C:__ total costs == 4015*28k == aprox. 100M dollars/year in costs
-4. __Answer:__ profit == aprox. 5B dollars/year
+150M dollars/year := 15k * 0.5 * 20k dollars/year
+
+Why 15k? We assume ML teams composed of 10 ML Engineers and used [this baseline](https://thenewstack.io/tech-works-how-to-fill-the-27-million-ai-engineer-gap/)
+
+Why 20k dollars/year? We assumed 1/5 of human ML Engineer salary and used [this baseline](https://www.iu.org/blog/salaries/data-scientist-salary-expectations/#:~:text=An%20individual%20with%20a%20Bachelor's,%E2%82%AC69%2C500%20per%20year%5B3%5D)
 
 </details>
 
@@ -1596,6 +1578,7 @@ The MLOps tool landscape is huge. I will just leave here some pointers (without 
 * [Navigating the MLOps tooling landscape by *LJ Miranda*](https://ljvmiranda921.github.io/notebook/2021/05/10/navigating-the-mlops-landscape)
 * [AI & Data Foundation Interactive Landscape by *Linux Foundation*](https://landscape.lfai.foundation/)
 * [Cloud Native Landscape by Cloud Native Computing Foundation](https://landscape.cncf.io/)
+* [The 2024 MAD (ML, AI & Data) Landscape](https://mad.firstmark.com/)
 * [Machine Learning Toolbox by *Amit Chaudhary*](https://amitness.com/toolbox/)
 * [Machine Learning Tools Landscape v2 (+84 new tools) by *Chip Huyen*](https://huyenchip.com/2020/12/30/mlops-v2.html)
 * [Awesome MLOps: a curated list of awesome MLOps tool by *kelvins*](https://github.com/kelvins/awesome-mlops)
@@ -1730,7 +1713,9 @@ The MLOps tool landscape is huge. I will just leave here some pointers (without 
                 2. [__*Inductor*__](https://inductor.ai/)
             3. __LLM Observability + Experiment Tracking__
                 1. [__*HumanLoop*__](https://humanloop.com/)
-        2. __LLM APIs__
+        3. __Agent Observability__
+            1. [__*Agency AI*__](https://www.agentops.ai/)
+        4. __LLM APIs__
             1. __Vendor-dependent:__
                 1. [__*OpenAI GPT4 API*__](https://openai.com/gpt-4)
             2. __Vendor-agnostic (LLM gateway)__
@@ -1739,24 +1724,24 @@ The MLOps tool landscape is huge. I will just leave here some pointers (without 
                 3. __LLM Routers__ (instead of you specifying which LLM, the LLM Router is intelligent to chose the best one for your prompt)
                     1. [__*Martian*__](https://withmartian.com/products/model-router)
                     2. [__*Mot Diamond*__](https://www.notdiamond.ai/)
-        3. __LLM Fine-tuning__
+        5. __LLM Fine-tuning__
             1. [__*Graphlit*__](https://www.graphlit.com/)
             2. [__*Helix*__](https://tryhelix.ai/)
             3. Mosaic
             4. Together
             5. Predibase
             6. Deci
-        4. __Prompt Engineering__
+        6. __Prompt Engineering__
             1. [__*PromptLayer*__](https://promptlayer.com/)
             2. [__*Prompthero*__](https://prompthero.com/)
-        5. __LLM Security__
+        7. __LLM Security__
             1. [__*Lakera*__](https://www.lakera.ai/)
             2. [__*Guardrails AI*__](https://www.guardrailsai.com/)
-        6. __Knowledge-base Marketplace__
+        8. __Knowledge-base Marketplace__
             1. [__*Boostio*__](https://www.boostio.ai/)
-        7. __Synthetic Data for Testing/Evaluation__
+        9. __Synthetic Data for Testing/Evaluation__
             1. [__*Tonic AI*__](https://www.tonic.ai/)
-        8. __RAG Building__
+        10. __RAG Building__
             1. [__*ragieai*__]
     3. __Data Versioning__
         1. [__*XetHub*__](https://about.xethub.com/)
@@ -1774,7 +1759,6 @@ The MLOps tool landscape is huge. I will just leave here some pointers (without 
     7. __Model Interpretability/Explainability/Analysis__
         1. [__*Goodfire*__](https://goodfire.ai/)
         
-
 ##### __DevOps tools for Security, Compliance, Code Quality & Cost Management__
 
 1. __While Developing:__
