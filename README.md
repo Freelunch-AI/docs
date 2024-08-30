@@ -9,7 +9,7 @@ make ML work as expected in production.
 
 We currently make 2 products:
 
-- __Freelunch Open Source:__ it's [*Backstage*](https://github.com/backstage/backstage) for MLOps. Open source framework for fabrication and improvement of enterprise-grade internal ML Platforms.
+- __Freelunch Open Source:__ open source framework for fabrication and improvement of enterprise-grade internal ML Platforms.
 
     Instead of reinventing the wheel, it is designed to leverage existing best-in-class (open-source and proprietary) tools; without being tied to any specific tool (tool-agnostic).
 
