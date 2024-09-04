@@ -7548,9 +7548,9 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                     1. IDEs (e.g., VSCode)
                                     2. SDKs (e.g., Android SDK)
                                     3. Tools
-                                        1. CLI tools
-                                        2. GUI tools
-                                        3. Libraries
+                                        1. CLI tools (e.g., git)
+                                        2. API tools (e.g., notebook server)
+                                        3. Libraries (e.g., pytorch)
                                 2. Send experimentation/dev image to private image registry
                                 3. Deploy experimentation/dev environment as a kubernetes (using Shipwright, Skaffold/Flux/ketch/kubevela/kubeblocks, Lens/Kubeapps/porter-archive, Rancher, Istio/Kiali/linkerd2/Cilium/Consul, Helm/Kustomize/timoni/JuJu/cdk8s/kpt, yamllint/Carvel/kubesec/kubeaudit/kubeconform/kube-linter/polaris/conftest/Kubescape/Kyverno/Datree/Kubevious, SchemaHero/Datashim/Velero, Karpenter, Sealed Secrets/Kubernetes Secrets Store CSI Driver/External Secrets, Metacontroller)/OKD/Kubeflow <pod, container>
                             2. Go in, work & go out of your remote experimentation/dev environment (Tools: vscode extension)
