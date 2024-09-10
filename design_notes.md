@@ -1917,6 +1917,7 @@ Yes, because of the following reasons:
                         1. Embedding Power (how well does the embedding distance reflect the actual semantic distance between documents)
                         2. Document Relevance (how usefull are the documents for the tasks that need to be done)
                         3. Retrieval Power (how well the retriever gets the adequate set of documents for a user input)
+                        4. Query Rewriting Power (how well does wuery rewriting actually reflect what the user is querying)
                     2. Degenerate Feedback Loop Handling
                     3. Replayability
                     4. CI/CD speed & efficiency
@@ -1994,6 +1995,8 @@ Yes, because of the following reasons:
                                     4. TexVideo2Video (Video Editing)
                                 2. NLP
                                     1. Text2Text (LLM Generated Data)
+                                        1. NL2SQL
+                                        2. NL2Latex
                                 3. Audio
                                     1. Text2Audio (Audio Generation)
                                     2. Text&Audio2Audio (Audio Editing)
@@ -2336,7 +2339,7 @@ Yes, because of the following reasons:
                                 (1) LLM Evaluation: OpenAI evals, deepeval, Bench, Pheonix, HELM, lm-evaluation-harness, truelens, guardrails, promptfoo, fiddler-auditor, ChainForge, benchllm, evidently, llm-autoeval, auto-evaluator, LLMZoo, moonshot, Inspect, empirical, alpaca_eval, chat-arena, lone-arena, opencompass
                                     (1) RAG Evaluation: deepeval, ragas
                                     (2) Image Generation Evaluation: pytorch-fid
-                                    (3) Hallucinations: hallucination-leaderboard
+                                    (3) Hallucinations: hallucination-leaderboard, selfcheckgpt
                                     (4) Software Engineering: SWE-bench, Spider
                                     (5) Security and Safety: modelbench, Purple Llama, garak, PyRIT
                                         (1) Prompt Injections: rebuff
@@ -4176,13 +4179,16 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                             1. Support for:
                                 1. Formated Inference: restrict output tokens according to a specified format by the user
                                 2. Real-time Predictions: when instead of sending a sequence of input tokens to to a sequence of output tokens (e.g., translating a pience of text), you need to keep calling the API to generate each token (e.g., live translation of people speaking). The service needs to then remember the tokens it generated in earlier calls.
+                            2. Domain-specific:
+                                1. NL2SQL
+                                2. NL2Latex
                         2. Text2Image (Tools: DALL-E, Midjourney)
-                        3. Text&Image2Image (Image Editing)
-                        4. Text2Video (Tools: Sora)
-                        5. Text&Video2Video (Video Editing)
-                        6. Audio2Text (Tools: Whisper)
-                        7. Audio&Text2Audio (Tools: Audio Editing)
-                        8. Text2Speech (Tools: TTS, SeamlessM4T, OpenAI Audio API, IMS-Toucan, Parler-TTS, GPT-SoVITS)
+                        4. Text&Image2Image (Image Editing)
+                        5. Text2Video (Tools: Sora)
+                        6. Text&Video2Video (Video Editing)
+                        7. Audio2Text (Tools: Whisper)
+                        8. Audio&Text2Audio (Tools: Audio Editing)
+                        9. Text2Speech (Tools: TTS, SeamlessM4T, OpenAI Audio API, IMS-Toucan, Parler-TTS, GPT-SoVITS)
                     2. Embeddings (Encoders for generative embeddings from data (e.g., BERT) & decoders for generating data from embeddings (e.g., some transfomer decoder variant or stable diffusion decoder)) (Tools: finetuner, LASER, fastText, sentence-transformers, clip-as-service, mmpretrain)
                         1. By task
                             1. Text2Embedding & reverse
@@ -4199,17 +4205,18 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                         3. Traditional ML Tasks (Regression, Classification, Segmentation, etc)
                 5. Higher-level Services (act on on top of FM services)
                     1. LLM-specific wrappers
-                        1. LLM Gateway (Tools: Kong AI gateway, gateway, LiteLLM, glide, BricksLLM): route to most adequate llm (e.g., simple queries go to small llm, as hard ones go to big one)standardize llm calls, retries, fallback, telemetry, bypassing rate limits (Tools: gptcache), semantic caching, detect private data that shouldnt be sent to LLM (PII) (Tools: Octopii), prompt compression (Tools: LLMLingua), request batching, etc. (e.g., use a managed LLM API (e.g. OpenAI GPT) as a fallback in case our own FM is not shure (note: requires that we have a calibrated FM.)) across multiple vendors
+                        1. LLM Gateway (Tools: Kong AI gateway, gateway, LiteLLM, glide, BricksLLM, Paddler): route to most adequate llm (e.g., simple queries go to small llm, as hard ones go to big one), guardrails, standardize llm calls, retries, fallback, telemetry, bypassing rate limits, semantic caching (Tools: gptcache), detect private data that shouldnt be sent to LLM (PII) (Tools: Octopii), prompt compression (Tools: LLMLingua), request batching, etc. (e.g., use a managed LLM API (e.g. OpenAI GPT) as a fallback in case our own FM is not shure (note: requires that we have a calibrated FM.)) across multiple vendors
                             1. LLM Routers
                                 1. Actual Routers (Tools: (1) open source: glide, Unify, semantic-router; (2) proprietary: Martian, Not Diamond): instead of specifying which llm, let the router intelligently decide it for you
                                 2. Router Frameworks (Deploy + Evaluate LLM Routers) (Tools: RouteLLM)
-                            2. LLM Reverse Proxies (Tools: Paddler)
-                        2. LLM Guardrails (Make shure outputs have certain format & arent innapropriate)
-                            1. Structure Enforcement: Guidance, promptify, lmql
-                                1. Prompt Structure Enforcement:
-                                2. Output Structure Enforcement: guardrails, outlines, Faster-Outlines, instructor, lm-format-enforcer, Artificial Intelligence Controller Interface (AICI)
-                            2. Evaluation: Open AI evals, Bench, Pheonix, HELM, lm-evaluation-harness, truelens, checklist, guardrails, promptfoo, fiddler-auditor, trulens
-                        3. LLM Orchestrators
+                            2. LLM Guardrails
+                                1. Input Guardrails (make shure private data isnt leaked to external APIs and defend against adversarial attacks (jailbreaking))
+                                2. Output Guardrails (Make shure outputs have certain format, dont leak private info & arent innapropriate)
+                                    1. Structure Enforcement: Guidance, promptify, lmql
+                                        1. Prompt Structure Enforcement:
+                                        2. Output Structure Enforcement: guardrails, outlines, Faster-Outlines, instructor, lm-format-enforcer, Artificial Intelligence Controller Interface (AICI)
+                                    2. Evaluation: Open AI evals, Bench, Pheonix, HELM, lm-evaluation-harness, truelens, checklist, guardrails, promptfoo, fiddler-auditor, trulens
+                        2. LLM Orchestrators
                             1. Agent-less Orchestrators (Tools: DSPy, Guidance, mirascope): these orchestrators dont provide "sensors & actuators" for your LLM. However they are very usefull because they remove glue code to make multiple calls (with templated prompts & outputs).
                             2. Agent-full Orchestrators (Tools: Llama-index, zep, Langchain, haystack, Semantic Kernel, Dust, IX, MemGPT, BondAI, OpenAgents, SuperAGI, Agent Pilot, griptape, CopilotKit): (the body of your LMM): from LMMs to LLM Agents: orchestrates LLM calls by putting the LLM in a agent framework (LLM as general information processing library that specifies observations it wants to get & actions it wants to take, where our wrapper code is the "sensors and actuators" it needs to be an agent). This involves pipelining LLM calls, feeding LLM-specified observations & performing LLM-specified actions. Actions are the uage of tools (e.g., using google api, using a DB, using a cli tool, etc). Think of te LLM a controller with virtual sensors & actuators (tools: internal actuators: E2B). _Note:_ LLM Service API calls interact only with the LLM Agent Orchestrator and the LLM service itself only serves the LLM Agent Orchestrator.
                                 1. Multi-Agent Orchestrators (Tools: MetaGPT, ChatDev, Langroid, crewAI, langgraph). The goal of these is to produce semantically different specialist agents that work together to produce achieve some higher-level goal (e.g. produce an entire app).
@@ -4840,7 +4847,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                                                         1. Diversity
                                                                             1. Self-BLEU
                                                                         2. Toxicity
-                                                                        3. Halucination
+                                                                        3. Hallucination (Tools: selfcheckgpt)
                                                                     2. Groud-truth-dependent (only one right text)
                                                                         1. Compare representions
                                                                             1. Embeddings
@@ -5987,7 +5994,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                         (1) Dashboards: metabase, plotly, graphana)
                                     1. HTTP Server to serve Frontend. FrontEnd: displays all the features, datasets, namespaces and client models like shop, where you can rank or filter by any of these. Also lets you sample some feature datapoints and compute get statistics of it.
                                     2. Application Server that serves FrontEnd and other clients can consume. HTTP API: returns all the features, datasets, namespaces and client models like shop, where you can rank or filter by any of these. Also lets you sample some feature datapoints and compute get statistics of it; in the from of a json response.
-                    3. Tensor DB (Tools: (1) Vector DBs: pgvector, Weaviate, Chroma, Milvus, Qdrant, ElasticSearch, HNSWLib, NMBSLib, Active Loop, lancedb, Marqo; (2) Similarity Search Libraries used to build your vector DB: Faiss, vearch, Vald, semantra): for dealing with embeddings
+                    3. Tensor DB (Tools: (1) Vector DBs: pgvector, Weaviate, Chroma, Milvus, Qdrant, ElasticSearch, HNSWLib, NMBSLib, Active Loop, lancedb, Marqo; (2) Similarity Search Libraries used to build your vector DB: Faiss, vearch, Vald, semantra, annoy): for dealing with embeddings
                         1. Capabilities
                             1. Should support tensor embeddings: not just vectors, but any tensor higher-order tensor (e.g., you might want to embed images as 3d tensors 
                             2. Should link embedding tensors to their data via a pointer to how to get the data (to be faster, should store the data in the DB aswell).
@@ -7486,10 +7493,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                 (5) Local Hosting
                                     (1) Just LLM: Open Interpreter, transformers.js, llama-cpp-python, GPT4All, LocalAI, Ollama, ExLlamaV2, Dalai, BigDL-LLM, ExLlamaV2, koboldcpp, Xorbits Inference, danielmiessler/fabric, chatbox
                                     (2) Agents: TinyAgent, Jan, khoj, UFO
-                            (2) RAG: 
-                                (1) Imperative: Verba, Anything LLM, Neum AI, gorilla, graphRAG, Cohere Toolkit, R2R, clip-retrieval, HippoRAG, ragbuilder, cognita, ragflow
-                                (2) Declarative (AutoRAG): AutoRAG
-                            (3) LLM Orchestrators (mUltiple calls orchestrated)
+                            (2) LLM Orchestrators (mUltiple calls and context construction (RAG) orchestrated)
                                 (1) Types
                                     (1) Agent-less Orchestrators: DSPy, Guidance, mirascope
                                     (2) Agent-full Orchestrators: AutoGen, Llama-index, zep, Langchain, haystack, Semantic Kernel, Dust, IX, MemGPT, BondAI, OpenAgents, SuperAGI, Agent Pilot, griptape, phidata, LLMCompiler, ragapp, CopilotKit
@@ -7499,9 +7503,12 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                         (3) Mobile Agent-full Orchestrators: AppAgent
                                         (4) Web Agent-full Orchestrators: Huginn, LaVague, Agent-E, AgentGPT, skyvern, webllama, robotframework
                                         (5) Data Enginering Agent-full Orchestrators: Sparrow
+                                        (6) RAG-specific:
+                                            (1) Imperative: Verba, Anything LLM, Neum AI, gorilla, graphRAG, Cohere Toolkit, R2R, clip-retrieval, HippoRAG, ragbuilder, cognita, ragflow
+                                            (2) Declarative (AutoRAG): AutoRAG
                                 (2) Experimentation: langflow, flowise
                                     (1) Response size estimation: 
-                            (4) LLM Explainability
+                            (3) LLM Explainability
                                 (1) Token importance: 
                                 (2) Prompt Engineering for explainability:
                                 (3) LLM internal analysis: tuned-lens
@@ -10037,6 +10044,8 @@ Flexibility: Using WSGI/ASGI allows Python applications to be run on any web ser
 > 135. Crossplane is a Kubernetes-native IAC tool with primary interface being a GUI. Kubernetes-native means it's mande for setting up K8s cluster and it runs as a k8s operator.
 
 > 136. Porter: docker but for repos. A tool for packaging repos to make it easier for it to be distributed and locally deploy its assets. E.g., can be used to package a platform.
+
+> 137.  RAG == Query Rewriter -> Context Retriever -> Prompt template
     
 ### __AI & Friends: summary of AI & other relevant fields of study__
 
