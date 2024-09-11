@@ -26,6 +26,6 @@ You can checkout our docs in this repository to understand better our vision for
 - Checkout our [Design Partnership Proposal Slides](https://docs.google.com/presentation/d/1kF-ZzVD8EiNLHFMuztEcYeT-kez1266R/edit?usp=sharing&ouid=114266237528985699122&rtpof=true&sd=true) for a concise and visual explanation. This slide deck was originally built for bringing potential customers as Design Partners.
 - Checkout our [Design Notes](design_notes.md) for an in-depth explanation of not only Freelunch, but also of ML in production (including LLMs).
 
-The slides are easier to understand, more polished and up-to-date, so I'd recommend them first. The Notes way more stuff if want more details.
+The slides are easier to understand, more polished and up-to-date, so I'd recommend them first. The Notes have way more stuff, useful if want more details.
 
 
