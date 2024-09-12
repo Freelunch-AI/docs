@@ -6948,7 +6948,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                         1. For Bulidng your own task-specific model
                             1. Training Mode (only Batch Offline Learning)
                                 1. Training Mode==Experimentation
-                                    1. 
+                                    1. Data
                                         1. Source
                                             1. ML Data whareshouse (always scheduled)
                                             2. A file somewhere (need API endpoint & file format) (e.g., S3)
@@ -7118,6 +7118,9 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                                     1. Loe precision training
                                                     2. Mixed precision training
                                                 2. Sparsity-aware training (introduce sparsity gradually over training)
+                                    3. Training Artifacts (users can plug in or use defaults)
+                                        1. Loss Function
+                                        2. Optimizer
                                 3. Practical Tips
                                     1. If classification: supposing classes in {A,B,C} add another class D == not in {A,B,C} (then your model can handle unexpected input)
                             4. Training Steps Definition
