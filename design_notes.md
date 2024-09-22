@@ -2318,7 +2318,7 @@ Yes, because of the following reasons:
                                         (1) Just LLM: Open Interpreter, transformers.js, llama-cpp-python, GPT4All, LocalAI, Ollama, LM studio, ExLlamaV2, Dalai, BigDL-LLM, ExLlamaV2, koboldcpp, Xorbits Inference, danielmiessler/fabric, torchchat, TinyLLM
                                         (2) RAG/Agents: TinyAgent, Jan, khoj, UFO, llama-agent, leon
                                 (2) RAG:
-                                    (1) Imperative: Verba, Anything LLM, Neum AI, gorilla, graphRAG, Cohere Toolkit, R2R, clip-retrieval, HippoRAG, ragbuilder, cognita
+                                    (1) Imperative: Verba, Anything LLM, Neum AI, gorilla, graphRAG, Cohere Toolkit, R2R, clip-retrieval, HippoRAG, ragbuilder, cognita, mem0
                                         (1) RAG for Tool Use: composio
                                     (2) Declarative (AutoRAG): AutoRAG
                                 (3) LLM Orchestrators (mUltiple calls orchestrated)
