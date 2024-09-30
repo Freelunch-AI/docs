@@ -2,8 +2,7 @@
 
 ## About
 
-Freelunch is an early-stage startup making declarative MLOps tools. Our goal is to make
-make ML work as expected in production.
+Freelunch is an early-stage startup making declarative MLOps tools. Our goal is to make the life of the ML Engineer 10x easier.
 
 ## Products
 
