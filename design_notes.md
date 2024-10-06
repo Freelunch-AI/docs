@@ -7600,7 +7600,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                             (3) Automated Interpretability: maia, sae-auto-interp, automated-interpretability
                     (2) Specific
                         (1) NLP: langtest, checklist
-                            (1) LLM Evaluation: OpenAI evals, deepeval, Bench, Pheonix, HELM, lm-evaluation-harness, truelens, guardrails, promptfoo, fiddler-auditor, trulens, ChainForge, benchllm, evidently, llm-autoeval, auto-evaluator, LLMZoom, moonshot, Inspect, empirical, alpaca_eval, chat-arena, lone-arena, opencompass, BIG-bench, Eureka ML Insights
+                            (1) LLM Evaluation: Chatbot Arena, OpenAI evals, deepeval, Bench, Pheonix, HELM, lm-evaluation-harness, truelens, guardrails, promptfoo, fiddler-auditor, trulens, ChainForge, benchllm, evidently, llm-autoeval, auto-evaluator, LLMZoom, moonshot, Inspect, empirical, alpaca_eval, lone-arena, opencompass, BIG-bench, Eureka ML Insights
                                 (1) RAG Evaluation: deepeval, ragas
                                 (2) Image Generation Evaluation: pytorch-fid
                                 (3) Hallucinations: hallucination-leaderboard
@@ -7612,7 +7612,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                 (8) Science: sciml-bench
                                 (9) speech-to-text: speech-to-text-benchmark
                                 (10) WebAgents: WorkArena
-                                (11) Agents: AgentBench
+                                (11) Agents: AgentBench, agent-arena
                                 (12) Reasoning: llm-reasoners
                                 (13) Performance: llmperf
                                 (14) LLM-powered Evaluation: prometheus-eval, EvalLM, evalgen, cappy, arena-hard-auto
