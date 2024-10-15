@@ -7569,7 +7569,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                 (1) Types
                                     (1) Agent-less Orchestrators: DSPy, Guidance, mirascope
                                     (2) Agent-full Orchestrators: AutoGen, Llama-index, zep, Langchain, haystack, Semantic Kernel, Dust, IX, MemGPT, BondAI, OpenAgents, SuperAGI, Agent Pilot, griptape, phidata, LLMCompiler, ragapp, CopilotKit, agentkit, gptscript, ten_framework, TaskGen
-                                        (1) Multi-Agent Orchestrators: MetaGPT, ChatDev, Langroid, crewAI, langgraph, ControlFlow, agent-zero, AgentVerse
+                                        (1) Multi-Agent Orchestrators: MetaGPT, ChatDev, Langroid, crewAI, ControlFlow, agent-zero, AgentVerse
                                             (1) Agent Communication: Camel
                                         (2) No-code Agent-full Orchestrators: LLMStack, Magick, Rivet, Tribe AI, PraisonAI
                                             (1) Automatic Agent Building: AgentK, ADAS
@@ -7580,6 +7580,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                         (6) RAG-specific:
                                             (1) Imperative: Verba, Anything LLM, Neum AI, gorilla, graphRAG, Cohere Toolkit, R2R, clip-retrieval, HippoRAG, ragbuilder, cognita, ragflow
                                             (2) Declarative (AutoRAG): AutoRAG
+                                        (7) Graph-based: langgraph, HybridAGI, graphRAG
                                 (2) Experimentation: langflow, flowise
                                     (1) Response size estimation: 
                             (3) LLM Explainability
