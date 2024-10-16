@@ -1438,6 +1438,8 @@ The stages of ci/cd are depicted below:
             3. Text2Audio: (e.g., bark)
             4. Audio2Audio: (e.g., VALL-E)
             5. Text&Image&Video2Text: (e.g., Vitron, Pixtral, MiniCPM, X-LLM, BakLLaVA, CogVLM, Qwen-VL, MiniGPT-4, NExT-GPT, PALM-E, OpenFlamingo, Video-LLaMA, Otter, Multimodal-GPT, AnyGPT, Orca, Phi, Macaw, Grok, VILA, Show-o, VMamba, LWM)
+            6. Observation&Goal2Action: (e.g., octo, openvla)
+)
         2. Image output: reiceves images and/or text and input and output images (e.g., StableDiffusion)
         
     3. Feature Extractor LLMs: receives sequential data as input and outputs a variable (e.g., BERT)
@@ -1613,7 +1615,7 @@ The MLOps tool landscape is huge. I will just leave here some pointers (without 
                 1. By requirement
                     1. Real-time (e.g., *TurboML*, *Claypot AI*)
                 2. By method
-                    1. LLMs (e.g., *Together.ai*, *Langsmith*, *Scale Generative AI Platform*, *Parea*, *HoneyHive*, *Klu.ai*, *Freeplay*, *Giga ML*, *Lamini*, *Vellum*, *Vianai*, *Parea AI*, *Athina AI*, *AilaFlow*, *Airkit.ai*, *Rebyte*, *Keywords AI*, *Helicone*, *GradientJ*, *LastMile AI*, *Adaptive ML*, *Freeplay*, *dkube*, *dynamiq*, *composable*, *VESSL AI*, *Braintrust*)
+                    1. LLMs (e.g., *Together.ai*, *Langsmith*, *Scale Generative AI Platform*, *Parea*, *HoneyHive*, *Klu.ai*, *Freeplay*, *Giga ML*, *Lamini*, *Vellum*, *Vianai*, *Parea AI*, *Athina AI*, *AilaFlow*, *Airkit.ai*, *Rebyte*, *Keywords AI*, *Helicone*, *GradientJ*, *LastMile AI*, *Adaptive ML*, *Freeplay*, *dkube*, *dynamiq*, *composable*, *VESSL AI*, *Braintrust*, *Toolhouse*)
                         1. By method
                             1. RAG (e.g., *Vectara*)
                             2. Agents (e.g., *Steamship*, *Langsmith*, *crewAI*, *Stack AI*, *Emergence AI*, *Zaia*, *Artisan*)
@@ -2894,7 +2896,7 @@ _Note:_ __these are all automated benchmarks, no humans involved__. In stages wh
                     1. By requirement
                         1. Real-time (e.g., *TurboML*, *Claypot AI*)
                     2. By method
-                        1. LLMs (e.g., *Together.ai*, *Langsmith*, *Scale Generative AI Platform*, *Parea*, *HoneyHive*, *Klu.ai*, *Freeplay*, *Giga ML*, *Lamini*, *Vellum*, *Vianai*, *Parea AI*, *Athina AI*, *AilaFlow*, *Airkit.ai*, *Rebyte*, *Keywords AI*, *Helicone*, *GradientJ*, *LastMile AI*, *Adaptive ML*, *Freeplay*, *dkube*, *dynamiq*, *composable*, *VESSL AI*, *Braintrust*)
+                        1. LLMs (e.g., *Together.ai*, *Langsmith*, *Scale Generative AI Platform*, *Parea*, *HoneyHive*, *Klu.ai*, *Freeplay*, *Giga ML*, *Lamini*, *Vellum*, *Vianai*, *Parea AI*, *Athina AI*, *AilaFlow*, *Airkit.ai*, *Rebyte*, *Keywords AI*, *Helicone*, *GradientJ*, *LastMile AI*, *Adaptive ML*, *Freeplay*, *dkube*, *dynamiq*, *composable*, *VESSL AI*, *Braintrust*, *Toolhouse*)
                             1. By method
                                 1. RAG (e.g., *Vectara*)
                                 2. Agents (e.g., *Steamship*, *Langsmith*, *crewAI*, *Stack AI*)
