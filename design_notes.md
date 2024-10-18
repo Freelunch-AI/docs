@@ -274,7 +274,7 @@ As evidence for the proposed solution (*Freelunch OSS*):
                 2. Self-hosting (e.g., *Modela.ai*)
             2. Low-code (e.g., *Datarobot*, *Dataiku*, *H2O*, *Valohai*, *Continual.ai*, *aixplain*, *c3.ai*, *Telepath*, *getindata*, *radicalbit*, *fleak*)
             3. Medium-code 
-                1. General-purpose (e.g., *Paperspace Gradient*, *W&B*, *Comet*, *MindsDB*, *Iguazio*, *Red Hat OpenShift Data Science*, *managed ClearML*, *Neu.ro*, *Outerbounds (managed Metaflow)*, *Seldon*, *BentoML*, *Modular*, *Wallaroo.ai*, *Truefoundry*, *Vessl.ai*, *Lightning.ai*, *cnvrg.io*, *deploifai*, *Prem AI*, *striveworks*)
+                1. General-purpose (e.g., *Paperspace Gradient*, *W&B*, *Comet*, *MindsDB*, *Iguazio*, *Red Hat OpenShift Data Science*, *managed ClearML*, *Neu.ro*, *Outerbounds (managed Metaflow)*, *Seldon*, *BentoML*, *Modular*, *Wallaroo.ai*, *Truefoundry*, *Vessl.ai*, *Lightning.ai*, *cnvrg.io*, *deploifai*, *Prem AI*, *striveworks*, *Simplismart*)
                 2. Specialized
                     1. By requirement
                         1. Real-time (e.g., *TurboML*, *Claypot AI*)
