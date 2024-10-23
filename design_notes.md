@@ -2337,7 +2337,7 @@ Yes, because of the following reasons:
                                         (1) Automatic Prompt Engineering: YiVal, gpt-prompt-engineer, DSPy, Zenbase Core, textgrad, Agents 2.0, prompt-poet
                                     (5) Local Hosting: 
                                         (1) Just LLM: Open Interpreter, transformers.js, llama-cpp-python, GPT4All, LocalAI, Ollama, LM studio, ExLlamaV2, Dalai, BigDL-LLM, ExLlamaV2, koboldcpp, Xorbits Inference, danielmiessler/fabric, torchchat, TinyLLM
-                                        (2) RAG/Agents: TinyAgent, Jan, khoj, UFO, llama-agent, leon, gptme, JARVIS, PocketPal AI
+                                        (2) RAG/Agents: (1) open source: TinyAgent, Jan, khoj, UFO, llama-agent, leon, gptme, JARVIS, PocketPal AI; (2) proprietary: Anthropic Desktop
                                             (1) Can take screenrecord as input: screenpipe
                                 (2) RAG:
                                     (1) Imperative: Llama-index, Haystack, Verba, Anything LLM, Neum AI, gorilla, graphRAG, Cohere Toolkit, R2R, clip-retrieval, HippoRAG, ragbuilder, cognita, mem0
@@ -7091,6 +7091,13 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                 2. Ablation Study Wrapper (should allow visualizations on how each ablated part is affecting our metrics) (objective: disprove parts of your hypothesis, maintain only important stuff, remove noise)
                                     1. Feature removal (runs several instances of the Training Algorithm with k features, each one of them removing a diferent feature k number of times, see there are r features that are not so relevant and remove them. Start the same process now with k-r features). If removing some feature degrade significantly model's performance, might suspect there is a leakage, so alert programmer and send to (generally stream) Monitoring System
                                     2. Model removal (removig parts of the model, lowering computation. (e.g., removing layers of a depp learning model or removing models in an ensemble))
+                                        ""
+                                            The attention layers were not removed randomly but based on a cosine-based similarity score: If the input and output are very similar, the layer is redundant and can be removed.
+
+                                            This is a super intriguing result and could potentially be combined with various model compression techniques (like pruning and quantization) for compounding effects.
+
+                                            Furthermore, the layers are removed in a one-shot fashion (versus iterative fashion), and no (re)training is required after the removal. However, retraining the model after the removal could potentially even recover some of the lost performance.
+                                        ""
                                 3. Training Profiling Wrapper (should allow visualizations) (Fine grained measure of some resource through operators of the model). _Note:_ results for measuring this resources will vary do to uncertainty in hardware implementation (assuming same <machine, OS, processor used, cgroup>): branch prediction, threads, concurrent processes, process priority, etc. So these should be measured in a statistical sense: drawing a few samples then compute mean a std deviation.
                                     1. Time (time spent on each stage of model training epoch and generates report) (time per perator) (if one operator is a bottleneck you ca decide to modify it and train again)
                                     2. Energy (measure energy consumption of each operator involved in training and generates report) (energy per perator) (if one operator is a bottleneck you ca decide to modify it and train again) (Tools: codecarbon, scaphandre, mlco2)
