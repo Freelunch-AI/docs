@@ -1428,7 +1428,7 @@ The stages of ci/cd are depicted below:
     Note: LLMs generally come in 4 flavours nowadays:
     1. Generative LLMs: receives sequential data as input and outputs sequential data
         1. Text output: 
-            1. Text2Text: (e.g., Llama, Llama-3.1-Nemotron, Reflection, DBRX, Gemma, R Family, Zephyr, OLMo, MPT, Falcon, PaLM, Vicuna, Alpaca, Dolly, t5x, Mamba, Zamba, Jamba, s4, LFM, LOLA)
+            1. Text2Text: (e.g., Qwen, Llama, Llama-3.1-Nemotron, Reflection, DBRX, Gemma, R Family, Zephyr, OLMo, MPT, Falcon, PaLM, Vicuna, Alpaca, Dolly, t5x, Mamba, Zamba, Jamba, s4, LFM, LOLA)
                 1. Domain-specific:
                     1. Time-series (e.g., TimesFM, chronos-forecasting)
                     2. Language Translation (e.g., seamless_communication, NLLB/OpenNLLB)
@@ -2008,7 +2008,7 @@ Yes, because of the following reasons:
                             3. New (X',Y')s Datapoints from old (X, Y)s
                                 1. For tabular data: learn P(X=x,=y) and sample from it (But if we could model P(X=x,Y=y) wouldnt we already have the final mode? Well, technically yes, but in paractice the P(X=x,=y) here is a bit low-quality, but is sufficient do generate a lot of data with low bias. Additionally, we can model P(X=x,Y=y) using different approaches as to average out the biases of each data model. Think of it like this: our data models can be wrong, but if their errors everage out, then the expectation becomes similar to the real model.)
                                 2. For non-tabular data (files) (pften called semi-structured (e.g., pdf) & unstructured (e.g., media)): output-invariant tranformations: given a spacific model, get datapoins from Feature Store, apply output-invariant transformations to generate new datapoints and store them back in the Feature Store
-                        2. Pure Synthetic Data Generation: new (X,Y) datapoints out-of-the-blue
+                        2. Pure Synthetic Data Generation: new (X,Y) datapoints out-of-the-blue (Tools: bonito, textbook_quality, NeMo-Curator, distilabel, lilac, ataDreamer, airoboros, DeepEval)
                             1. Using Foundation Models
                                 1. CV
                                     1. Text2Image (Image Generation)
@@ -4985,7 +4985,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                                             1. Sparsification (If NNs: Sparsification == Pruning) (Tools: sparsify, onnxSlim) + Compiler/Runtime that takes advatage of Sparsity (Tools: deepsparse) (setting to 0 some parameters, then model can leverage this sparsisity when doing computation) (''Most weights can be removed after training is finished (while only losing a few % in test-set accuracy!'')
                                                             2. Symbolic Search: search for symbolic functions that capture most of the model but are way smaller and more interpretable.
                                                         2. Runtime/Hardware-aware methods
-                                                            1. Quantization (try to save memory as much as possible (e.g., float32 --> float16, this can go until binary ( but of course, acc will have severe damage with too much quantization)) (Tools: (1) General: HAWQ, quanto; (2) LLM-specific: AWQ, AutoGPTQ, SmoothQuant, VPTQ; (3) Hardware-specific: (1) Intel: bigdl-llm; (2) NVIDIA: )
+                                                            1. Quantization (try to save memory as much as possible (e.g., float32 --> float16, this can go until binary ( but of course, acc will have severe damage with too much quantization)) (Tools: (1) General: HAWQ, quanto; (2) LLM-specific: AWQ, AutoGPTQ, SmoothQuant, VPTQ, AQLM; (3) Hardware-specific: (1) Intel: bigdl-llm; (2) NVIDIA: )
                                                             2. Knowledge Distillation (Teacher Model (original model, lots of parameters) trains Student Model (less parameters)) (''E.g., DistillBERT, reduces size of BERT by 40%, and increases inference speed by 60%, while retaining 97% language understanding'')
                                                             3. Hardware-aware Neural Architecture Search (HANAS) (Tools: TVM does this under the hood) conditioned on an existing good (& too big) model. _Note:_ most of the time when NAS is talked about, is in the context of either (1) in the AutoML sense: automating the core modeling process, i.e., building models with high predictive power; or (2) in the SOTA sense: too find better architectures, enalbing gaining a bit of predictive power. However, here the use is to find a smaller architecture that has good predictive power aswell. But isnt this just pruning? Well, yes, pruning shpuld solve a lot of your problems, but there might be cases where you can find some sneaky operators that are just the inductive biase you need for the problem (e.g., attention in transformers)
                                                             4. Operation Fusion (some hardwares or runtimes have perform natively some higher level operations, these native implementations than can be leveraged)
@@ -5656,7 +5656,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                                     1. Rule-based: output-invariant tranformations: given a spacific model, get datapoins from Feature Store, apply output-invariant transformations to generate new datapoints and store them back in the Feature Store
                                                     2. Model-based: use ML model (e.g. LLM) to augment datapoints for you.
                                                     3. Noise-based: add noise to X
-                                        2. Pure Synthetic Data Generation: new (X,Y) datapoints out-of-the-blue (Tools: bonito, textbook_quality, NeMo-Curator, distilabel, lilac, ataDreamer, airoboros)
+                                        2. Pure Synthetic Data Generation: new (X,Y) datapoints out-of-the-blue (Tools: bonito, textbook_quality, NeMo-Curator, distilabel, lilac, ataDreamer, airoboros, DeepEval)
                                             1. Using Foundation Models
                                                 1. CV
                                                     1. Text2Image (Image Generation)
@@ -10147,7 +10147,8 @@ Flexibility: Using WSGI/ASGI allows Python applications to be run on any web ser
 > 138. LLM Caching
     1. Semantic Caching -> avoids unnecessary computation: sits between LLM client and LLM service, if the query is very similar (in terms of similar embeddings) to a query stored in the cache, then it counts as a cache hit. Useful if you are expecting users to do simialr queries.
     2. Prompt Caching -> avoid unncessary communication: sits at the LLM client, made to start a session where a fixed prompt piece is appended to every call, this avoid sending the same prompt piece over to the service at every call. Useful if you are expecting users to keep resuing parts of a prompt (e.g., system message).
-    3. KV Caching -> avoids unnecessary computation: sits inside the model, internal representation of previous token geration is cached so that we can avoid doing a constly recomputation of these abstract representations, instead we can do a lightweight computation (previous internal represenation, new input token -> current internal representation).
+    3. KV Caching -> avoids unnecessary computation: sits inside the model, keys and values of previous tokens are cached. KV Caching makes a simplifying assumption that the output attention vector for each past token doesn't depend on subsequent tokens. In the classical transformer, the output attention vector of any past token depends on all past tokens. Apparently, this simplifying assumption doesnt hurt that much the acc of transformers, since it is used everywhere to get way faster inference (just need to compute query, key, value and attention output of previous token instead of computing query, key, value and attention output of all past tokens). 
+        A version of KV Caching that would't change the computation would be just to cache the keys and values of past tokens, and recalculating all the attention outputs. The problem is that this would only help for the first layer, so basically its useless in terms of reducing latency.
 
 > 139. Emotions (e.g., fear, anger, envy etc) are just a set of heuristic namespaces (aka intuition or system 1) for critical types of survivial situations an agent can encounter. Happyness/Sadness are just dense proxy reward functions. Surpise/Disgust/other quick reactions are just non-verbal communication mechanisms.
 
