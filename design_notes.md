@@ -10213,6 +10213,32 @@ Flexibility: Using WSGI/ASGI allows Python applications to be run on any web ser
 > 145. Agent evals: groundtruth test set is human experts doing the same control flow and successfully achieving the goal.
 
 > 146. Simply-typed lambda calculus (and more advanced type theories) are usefull for automated teorem proving because it gives a concise language for verification of proofs (the proof verifier just needs to check that the lambda calculus is valid, then do the beta-reductions and see if the type of the output checks). However vanilla simply-typed lambda calculus is not enoigh for ATP (one is reason is that the space of propositions is infinite). "Lean is based on a version of dependent type theory known as the Calculus of Constructions"
+
+> AI agents need to:
+
+1. Bootstrap off a sufficiently good language/world model.
+
+2. Self-improve its internal models
+
+    1. Learn by reading
+        1. Perceive supervision
+        2. Analyze supervision to see if it is quality supervision
+        3. Self-optimize using quality supervision
+
+    2. Learn by doing
+        1. Plan to set sub goals
+        2. Perceive environment reward of sub goals
+        3. Build Proxy reward functions
+        4. Do RL
+
+3. Have system 2: Store quality info & reason
+    1. Maintain a personal knowledge base
+
+    2. Reason on top of the knowledge base
+
+4. Have System 1
+    1. Distill System 2 into fast System 1 heuristic models
+    2. Make a router that decides when it goes to the heuristic System 1 Model or System 2 Model
     
 ### __AI & Friends: summary of AI & other relevant fields of study__
 
