@@ -1,220 +1,3 @@
-
-# __*Freelunch*__
-
-This document tries describes Freelunch, a startup that making the next generation of MLOps tools. This is done while exploring the space of production ML. 
-
-__Reading guide:__
-
-* __If you have < 5 minutes to spend:__ you can read _TL;DR_
-
-* __If you have at least 5 minutes to spend:__ you can read _TL;DR_, _Problem_ and _Explaining Freelunch in a few steps_
-
-* __If you have at least 10 minutes to spend:__ you can read _TL;DR_, _Problem_, _Explaining Freelunch in a few steps_ and _Freelunch vs current best open source options_ sections
-
-* __If you have at least 20 minutes to spend:__ you can read _TL;DR_, _Problem__, _Explaining Freelunch in a few steps_
-, __Freelunch vs current best open source options__ and _Anatomy of Freelunch MLOps platforms_ sections
-
-* __If you have at least 1 day to spend:__ you can read _Core_ section
-
-* __If you have at least 1 week to spend:__ you can read it all
-
-Thanks for reading! :beers:
-
-<Details>
-    <summary><b>Keywords</b></summary>
-
-## Keywords:
-
-AI, ML, MLOps, ML Platorm, ML System, ML Engineering, Declarative MLOps, Copilot
-</Details>
-
-<Details open>
-    <summary><b>Author</b></summary>
-
-## :trollface: __Author__
-
-__Name:__ Bruno Scaglione  
-__Contact:__ bruno.c.scaglione@gmail.com
-</Details>
-
-<Details open>
-    <summary><b>Document disclaimer</b></summary>
-
-## :warning: __Document disclaimer__
-
-1. __This is an envolving document.__
-
-    * If something is wrong or missing, please help me fix or improve it.
-    * If you have some suggestion, please let me know.
-
-2. __The document presents *Freelunch* as if it is already built, however, this is not the case. It is being built.__
-</Details>
-
-<Details>
-    <summary><b>Background: MLOps problems</b></summary>
-    
-## __Background: MLOps problems. Building and maintaining ML Systems is hard because:__ 
-
-1. There is a long tail of silent bugs (in addition to traditional bugs) which can be either in data, code and/or ML methods.
-2. Components tend to be more coupled than in a traditional software system.
-3. Models that power these systems tend to have poor interpretability.
-4. Engineers have to know about Systems and Machine Learning.
-5. Everything is changing fast: a lot of new method and tools (or new versions of existing tools) pop up every week.
-6. In big data/big models regime, mistakes are very costly.
-7. They systems can be doing more high-stakes tasks (e.g., self-driving) with unrealiable components.
-8. With big data, comes big privacy responsabilities.
-9. Due to the new added layer of ML, these systems becomes more complex than traditional software systems.
-10. MLOps is a new field, so the best practices and patterns and not well worked out yet.
-
-And these problems are especially important for:
-
-1.  AI-core companies (companies that would die without AI) that rely heavily on their ML Systems.
-2.  Critical sectors (e.g., Medicine and Autonomous Vehicles) that need strong QA on their ML Systems.
-</Details>
-
-<details>
-    <summary><b>Proposed solution: an open source tool for continuous improvement of your MLOps/LLMOps + a copilot on top of it</b></summary>
-
-## __Proposed solution: an open source tool for continuous improvement of your MLOps/LLMOps + a copilot on top of it__
-
-<details>
-    <summary><b>Core</b></summary>
-
-## :clubs:__Core__
-
-<details open>
-    <summary><b>TL;DR</b></summary>
-
-### :gem: __TL;DR__
-
-__Helps AI teams build and improve AI Platforms. *Freelunch* follows the open-core model: (1) *Freelunch OSS*: open source tool that lets teams build ML platforms in days and keep improving their ML system (using the platform) and the platform itself. It does not reinvent the wheel, leverages existing tools that are great at what they do (e.g., Seldon Core for model deployment and Weights & Biases for model experiment tracking); (2) *Freelunch Copilot*: SaaS ML Engineering copilot; it works on top of *Freelunch OSS* and feels just like a Human ML Engineer (e.g., makes PRs, interacts via slack, builds models, operates de system, etc).<sup>1</sup>.__
-
-__No more:__ 
-
-1. Being lost in the sea of MLOps tools: evaluating, picking, stiching them together and integrating with your DevOps stack
-2. Lock-in and lack of customization of pre-built MLOps platforms (e.g., Sagemaker or ClearML)
-3. Lack of best practices
-4. Hours debugging
-5. ML that doesnt impact Business Metrics
-6. Catastrophic or suprising production failures
-7. Waiting for production for evaluating changes
-8. Lack of team coordination and well-defined abstraction boundaries
-9. Months to get a MLOps platform up and running
-10. Need for deep ML and Systems expertise
-
-__Freelunch is 4 things:__
-
-1. __Platform Building__
-    1. __MLOPs Standards:__ codebase, pattern and building block standardization according to best practices.
-    2. __MLOPs Hub:__ composable and reusable implementations from the community that follow the aforementioned standards.
-    3. __No code head-start:__ saves you time by designing (interactively with you) and building a head-start MLOps platform (which can be used independently of freelunch also) according to your needs. You then do manual fine-grained modifications on the resulting codebase, following the codebase flavour standard.
-2. __Platform and System QA (Integration Tests, Evaluation, Monitoring and Observability):__ long-running integration tests, holistic evaluation and simulation-based observability of the MLOps platform and ML System in a background cluster (with simulated or production traffic) to: (1) surface problems before they appear in production, (2) identify improvement opportunities and (3) train new engineers.
-3. __Platform-level Experiment Tracking:__ track, visualize, promote and delete experiments at the Platform-level (e.g. experimenting with different ML monitoring solutions and then picking one for PR). Also, do offline causal inference on top of experiement parameters and outcomes to uncover the root cause of changes in outcome, this guides you towards your next experiment.
-4. __Cost tracking and optimization:__ track costs ang get cost reduction suggestions for Freelunch itself.
-
-__Freelunch enables 2 embedded continuous ci/cd loops (B. and C.) with your DevOps ci/cd loop (A.).__
-
-- __(A)  DevOps CI/CD Loop__: IT System Improvement using Base CI/CD. Software Engineers improve the IT System as to increase Business Metrics. This loop tests and deploys non-ML services and pipelines. This loop should not modify code related to the ML Lifecycle.
-
-- __(B)  Outer MLOps CI/CD Loop__: ML Platform Improvement using Base CI/CD.  ML Platform Engineers improve the ML platform as to increase ML System metrics. They also debug the ML  platform in response to ML Practitioners’  complaints and include capabilities requested. This loop tests and deploys ML platform services and pipelines. This loop should only modify code related to the ML 
-Platform. __Freelunch itself helps here.__
-
-    - __(C)  Inner MLOps CI/CD Loop__: ML System Improvement using ML Platform CI/CD. ML    Practitioners (lead/manager, engineers, data scientists, subject matter experts and/or annotators ) improve artifacts (e.g., docs, config, data, models, pre/post processors, context retrievers, etc) as to increase business metrics, using the ML  platform. They also post bugs to the ML platform team. This loop tests, evaluates and deploys ML Artifacts. This loop shouldn't modify any production code. __Freelunch-built ML platforms help here.__
-
-__For companies that already have an internal MLOps platform:__ we offer detailed documention, support and free help from our MLOps copilot (Virtual ML Engineer)  to help you make it Freelunch-compatible, so that you can start reaping systematic continuous improvement.
-
-__Supports your entire MLOps/LLMOps journey:__ from small scale to large scale, from small team to big team, from managed pieces to open source ones, from simple platforms to complex ones and from less engineering rigour to more.
-
-__Explaining in terms of existing tools:__ 
-
-Freelunch provides the MLOPs lifecycle completeness of ClearML, the lego-block experience of Retool, the tool flexibility and ease of ZenML, support for the strong kubernetes ecosystem of Kubeflow, the structure and best practices of Kedro, the production-grade capabilities of managed MLOps Platforms and the artifact sharing of HuggingFace Hub; while adding steroids such as: Interactive Platform Design, Platform and System Evaluation, Simulation-based Observability, Platform-level Experiment Tracking, Platforms with ML-Business KPI Aligment and generalized CI/CD, etc.
-
-The closest tool to Freelunch is [CLAIMED](https://github.com/claimed-framework/component-library). CLAIMED provides a set of ready-made components (analogous to our Hub that stores pattern specifications and implementations) a visual designer to help you compose the components in a no code/low code manner (analogous to our interactive designer) and a compiler that makes it easy for you to build CLAIMED components (analogous to the Freelunch compiler). 
-
-The problem is that CLAIMED has a clear focus on rapid prototyping and does not:
-
-1. Enforce software enginering best practices (e.g., test-driven development, clear abstraction boundaries between personas, data source abstraction, separate workspaces for different purposes)
-2. Incentivize the usage of MLOps patterns (e.g., a RAG LLM deployment pattern)
-3. Contain production-grade capabilities (e.g., project management with RBAC, operations, collaboration, compliance management, security testing)
-4. Only help you build ML Systems, not MLOps platforms (e.g., doesnt help with building CI/CD infra, platform-level and artifact-level experimentation, evaluation and observability, data discovery, ML-Business KPI aligment)
-
-Thus is not a suitable option for building prodution MLOps platforms.
-
-__Notes:__ Freelunch can make use of ZenML and Kubeflow Pipelines as powerfull virtual and actual ML workflow orchestrators, respectively; and Freelunch largely makes open source MLOps platforms (e.g., ClearML) purposless. Managed MLOps platforms (e.g. Datarobot) still have their place, because their target customer are companies without much ML expertise that want the simplest solution they can control. As a matter of fact, Managed MLOps platforms can now use Freelunch behind the scenes.
-
-<details>
-    <summary><i>Footnotes</i></summary>
-
-#### _Definitions_
-
-1. __ML System (online):__ stack of components running on top of an isolated compute environment (logical machine (VM or bare metal machine), logical cluster (virtual cluster, namespace cluster or bare metal cluster), embedded device or app sandbox) that either: (1) executes tasks for clients via ML models (LLMs included) or (2) provides data that powers the aforementioned task execution by  a downstream ML System. Developers interact with ML Systems via an API (networking or library API) which specifies how to get inferences and which/how data needs to be sent to it.
-
-
-2. __MLOps Platform (online and offline):__ the infrastructure that makes it easier to maintain and improve *ML Systems*. It makes the life of applied ML practitioners easier by giving them MLOps automation, high-level abstractions and best practices for free. Typically has 8 things:
-
-    1. __Initial ML System (online):__ the ML System that is deployed as a starting point. Often heuristics or simple ml models are used, instead of complex ml models.
-
-    2. __ML System State Store (online):__ receives state-changing events from the ML System and stores (in append-only manner) the events sequentially. After every period T, it calculates current state (from past state and state-changing eventssince then) and store the current state to avoid doing all the computation again (as a backup).
-
-    3. __Generalized CI/CD (online):__ pipelines (admiistrated by a workflow orchestrator) that receive events (originated from the ML System or engineers) and deploys appropriate changes to improve the ML System.
-
-    4. __Observability & Evaluation (offline and online)__
-        1. __Evaluation (offline):__ Evaluation of the ML System according various metrics (e.g., predictive power of models, performance profiling, cost of the system, security, etc) that togehter are able to paint a picture of how good the ML System is. This is needed to guide platform-level experimentation and avoid unecessary production risk.
-        2. __Observability (offline and online):__ 
-            1. __Monitoring (online):__ collection, storage and analysis of telemetry data/metadata of the ML System with the goal of identifying problems to be solved. Once problems are pinned down, actions to correct them should be easy to identify and take.
-            2. __Fine-grained Observability (offline):__ root cause analysis, visualization of the production ML System working, visualization of the ML Systme working in simulation and multiple evaluation views of it to find improvement opportunities.
-
-    5. __Artifact-level Experimentation & Evaluation (offline):__ evaluate data and model artifacts. Needs an artifact evaluator and all experiments need to happen under a versioning framework. 
-
-    6. __Data Discovery & EDA (offline):__
-        1. __Data Discovery:__ data from multiple sources can be understood, fetched and aggregated into working files and data structures.
-        2. __EDA:__ data is better understood via visualizations, statistical metrics and tests and fitting heuristic models. The output of this stage are EDA reports.
-
-    7. __Management (Offline & online)__
-        1. __KPI Alignment (offline):__ align MLOps platform and system KPI goals with Business KPI goals.
-        2. __Collaboration (Offline & online)__
-        3. __Onboarding (Offline)__
-
-    8. __Activity Logging__ (Offline & Online)
-
-</details>
-</details>
-
-<details>
-    <summary><b>Problem</b></summary>
-
-### __Problem__
-
-The need for *Freelunch* comes from multiple ML teams:
-
-[Building their own internal MLOps platforms](https://www.evidentlyai.com/ml-platforms) and:
-
-1. Struggling to find the best combination of tools among the sea of MLOps.
-2. Suffering to keep up with transitions to new tools that pop up constantly.
-3. Having a hard time combining IT and DevOps world with the MLOps world.
-4. Having messy codebases full of glue code and patches
-5. Struggling to manage ROI of ML projects
-6. Struggling with complexity of ML Systems and Platforms
-7. Struggling to evaluate ML Systems and MLOps platforms
-8. Struggling with integration/coupling hell, where 1 component changes, and because it is coupled with others, the others are manually changed accordingly to support the initial change.
-
-As evidence for the proposed solution (*Freelunch OSS*):
-
-* [A comment from a MLOps tech lead from deepsense.ai (an AI consulting company) on building a similar closed source thing (a tool for building MLOps platforms using MLOps building blocks)](https://mlops-community.slack.com/archives/C0253TQTUQ0/p1644390182275929)
-
-* [The recent birth of the AI Infrastructure Alliance (AIIA) with the goal of standardazing MLOps and develop tool stacks](https://ai-infrastructure.org/)
-
-* [The sucess of internal DevOps platforms, which can seen as the "older brothers" of MLOps platforms](https://hackernoon.com/an-in-depth-guide-to-internal-developer-platforms-idps)
-
-* [OPEA: a similar tool being spearheded by Intel and incubated in the Linux Foundation](https://opea.dev/)
-
-* [Success of ZenML for providing clear abstraction boundaries for platform and applied engineers within the ML lifecycle](https://www.zenml.io/)
-
-</details>
-
-<details>
-    <summary><b>We are not/Our users are not</b></summary>
-
 ### __We are not/Our users are not__
 
 #### <mark>We are __NOT__:</mark>
@@ -265,7 +48,7 @@ As evidence for the proposed solution (*Freelunch OSS*):
                 1. Generative ML/LLMs: *axflow*, *agenta*, *DB-GPT*, *Dify*, *llmware*, *langfuse*, *pezzo*, *bisheng*
                     1. Agents: *agentsea*, *AGiXT*, *TaskingAI*
 
-    2. __Proprietary MLOps platforms__
+    2. __Proprietary ML platforms__
         1. From Major Cloud Providers (e.g., *AWS Sagemaker*, *Vertex AI*)
         2. Cloud Agnostic
             1. No-code 
@@ -312,7 +95,7 @@ As evidence for the proposed solution (*Freelunch OSS*):
                  
 2. A typical piecewise MLOPs tool that helps you with some specific part of the ML Lifecycle (e.g., dvc/fds or Tensorboard for Experiment Tracking)
 
-3. A open-core tool. We don't hold back anything from our open source tool, we provide everthing you need to build and improve your MLOps platform in a collaborative, safe and compliant way!
+3. A open-core tool. We don't hold back anything from our open source tool, we provide everthing you need to build and improve your ML platform in a collaborative, safe and compliant way!
 
 #### <mark>Our users are __NOT__:</mark>
 
@@ -333,397 +116,19 @@ Our __target users__ are hardcore ML teams (working on the software-side), which
                 1. Broad (e.g., *OpenAI*, *Cohere*, *Anthropic*, *Groq*, *Cerebras*, etc)
                 2. Narrow (*One Concern*, *Unitary*, *Graft*, *Symbl.ai*, *Jasper*, *Yobi*, Major clouds (*GCP AI*, *Azure AI*, *AWS AI*, *IBM AI*) etc)
         2. AutoML (e.g., *Akkio*, *Obviously AI*, *ModularMind*, *Tuba.ai*, etc)
-    2. PaaS: MLOps platforms
+    2. PaaS: ML platforms
         1. General (e.g., *Datarobot*, *Sagemaker*, *Paperspace Gradient*, *c3.ai*, *Cleanlab*, *attri*, *Datagran*, etc).
         2. Specific 
             1. Domain-specific (e.g., *Roboflow*, *Landing AI*, *Revela*, *Dialogflow*, *Wit.ai*, *MonkeyLearn*, *Rossum*, etc)
             2. Scope-specific (e.g., *Lakera*, *Portkey*, etc)
 3. __AI Consultancy and Outsourcing companies__ (e.g., *Quantum Black*, *Whinder.ai*, *Boston Consulting Group*, *Accenture*, *Beam Data*, *Max Kelsen*, *Hop Labs*, *IBM*, *Flamelit*, *Neoway*, *bitstrapped*, *Gradient*, *Bain & Company*, *alexanderthamm*, *Beyond Limits*, *Criterion Systems*, *Booz Allen*, *JR*, *smartims*, *Capco*, *Peacock Technologies*, *Monstarlab*, *WeDo*, *Data Idols*, *Mantelgroup*, *Aptford*, *You Got Us*, *ManTech*, *aptford*, *ML6*, *Hop Labs*, *Hitachi Digital*, etc)
 
-</details>
-
-<details>
-    <summary><b>Explaining Freelunch in a few steps</b></summary>
-
-### __Building a MLOps platform with Freelunch can be summarized in a few steps:__
-
-0. __Interactive Specification Builder (Powered by the MLOps Copilot):__ An application that interacts with the user with the goal of producing formal requirments fot he ML platform. The user gives as input an informal specification in natural language, then the Interactive Specification Builder returns a formal specification for it, if the specification is imcomplte because the user didnt provide enough data, the Specification Builder asks for more info to infer the complete specification. It aoutputs a formal specification that the user can edit if he wants.
-
-1. __Interactive Design__: you, interactively, provide requirements to the Interactive Designer (constraints and preferences: (1) constraints: latency ceiling for some ML task, direct support for specific ml tasks and/or algos and/or data modalities and/or data volume and/or types of workloads, follow open standards/specifications, format of interfaces, dont change specific parts of your current mlops platform, use specific programming languages, template flavour, use/integrate_with/avoid specific tools/types of tools, filter tools by security level, scale, SLOs, compute & networking hardware specification, cluster multitenancy, cost ceiling, secure by default, specific places where backwards compatibility is needed; (2) preferences: cost range, capabilities, methods used, tools/types of tools used, similarity of tools to ones your team has expertise on, IO formats, patterns, sample projects, types of interfaces (GUI, CLI, Library, API), ease of use) and receive a well suited MLOPs architecture specification (a set of non-overlapping pattern distributions -- will be explained later) from Freelunch. 
-
-    Note: Design constraints and preferences dont need to be provided in structured format directly, we provide am Design Formalizer (using LLM under the hood) that maps your preferences and constraints in plain english to structured format, making your life easier. It might not get it 100% right in the first go, but then you can edit the generated strctured format with a GUI to make final adjustments.
-
-    __A MLOps platform specification can be constructued as a set of non-overlapping pattern distributions__ (e.g., 
-        {
-            base ci/cd with feature branch ci v3,
-            type-safe python coding v2, 
-            cost-aware compute provisioner v3, 
-            streaming-based data collection v5, 
-            data mesh v2, 
-            virtual feature store v3,
-            model/prompt registry v2,
-            programmatic labelling v1,
-            sql-based feature engineering v2, 
-            lambda pattern v1, 
-            lakehouse pattern v1, 
-            synchronous data validation v2, 
-            pipeline-centric feature/model experimentation environment v3, 
-            logging-based feature/model experiment tracking v2, 
-            pull-based metadata gathering v2, 
-            active learning system v1,
-            data-parallel distributed training for task H,
-            edge-mobile deployments with federated learning for ML task A v1, 
-            rl-based recommender system for task B v4, 
-            one service per model for ML task B v2, 
-            online learning for ML task B v1, 
-            service than loads and runs pipeline of models for task C v2, 
-            retraining for ML task C v3, 
-            no-retrain (time modelled explictly) model for ML task D, 
-            human-in-the-loop prediction review when model is not shure for task D v1, 
-            LLM RAG with API store for task E v4, 
-            Streaming and LLM API-based LLM service for task F v1, 
-            Team of agents system for task G v2, 
-            sql-based model workflow for task H, 
-            Online learning for task I v4, 
-            edge microcontroller deployment with cloud retraining for task J v3,
-            hybrid fallback model deployment for task H v2,
-            Internal LLM with small scale model experimentation v1, 
-            LLM gateway with llm routing and caching v2, 
-            prediction manager with support for inference config and pipelines v1, 
-            support for GNNs for task G v1, 
-            hyperparameter tuning post-training v2, 
-            real-time feature store v5, 
-            frontend with interactive model explainer v3, 
-            gitops v4, 
-            serverless for task B v3, 
-            subplatform-based mlops (feature system, data collection system, deploy platform, discovery platform...) v2, 
-            component-resposible data validation v5, 
-            OAuth v1, 
-            k8s operator pattern v2, 
-            Infrastrcture-from-Code (IfC) v3, 
-            config-based (declarative) model training v1, 
-            differentially-private model experimentation v4, 
-            container-based v2, 
-            serverless ML pipeline v1, 
-            RPC for internal HTTP APIs v1, 
-            CPU for training and GPU for inference v5, 
-            always-up offline ephemeral workloads cluster v1, 
-            static analysis, notebook conversion and artifact substitution in pre-commit hooks v1,
-            ...
-        }
-    )
-     
-        Each pattern has metadata such as intent, motivation, solution, tradeoffs and alternatives, and can have multiple pattern distributions (a pattern distribution assigns a method to a pattern, which makes it more specific), each one being an architecture with standard component distributions (which can be functions, container images, plugins, drivers, etc). Each component can have multiple distributions which can differ by: (1) their interface formats/protocols, (2) being configurable (flexible) or hardcoded (faster), (3) language implementation, (4) scalability. Also, a component distribution can be used by multiple pattern distributions of the same or different patterns. __A building unit is an implementation of a component distribution. A building block is an implementation of a pattern distribition == set of non-overlapping component distributions.__
+2. __*ML platforms*__ are organized and can be searched by:
     
-    
-    __The output is a MLOps platform specification that fully specifies the MLOps platform in terms of available pattern distributions__ (from backup, infrastructure provisioning, ML System, CI/CD and Observability) Anatomy of a Freelunch-built MLOps platform is discussed later. 
-    
-    __When its time for implementation (next step), configurable building blocks (which contain: (1) smart defaults, (2) properties, (3) tests and (4) benchmarking results (operational: latency, throughput, memory and storage footprints; security vulnerabilities; scalability; tool-related: maturity, active community, ease of install, ease of use, similarity with existing tools, seamless integrations, pre-requisite knowledge (of tools & theory))) are matched with the MLOps platform Design and User constraints & Preferences__.
-
-    __Think of Freelunch building block as a standardized Juju Charm__. It is a infrastrcture-agnostic package that implementes one or more component specifications.
-
-    __Types of implementations:__
-
-    1. __Freelunch implementations (building units and building blocks)__ (these follow freelunch's standard. Ideally, all implementations should be like this, but in practice, teams have to transition smoothly to freelunch and freelunch wont support all necessary implementations out-of-the-gate.)
-
-        1. __Open source:__ the building block is open source, available in the *Freelunch Hub* and deployed in your compute infrastructure with no additional cost.
-        2. __Proprietary:__ the building block is proprietary, only its signature and tests are available in the *Freelunch Hub*, its deployment is hidden from you, you only interact with its APIs directly or indirectly (via UI) and there is a additional cost for using it. Note: if it contains a GUI, the GUI must be implemented as a *Freelunch Plugin* (which has 2 modules: a payment module and a usage module), so that Freelunch user can use it diretly from *Freelunch* without having to go to the comapanies' website. It is pretty easy to transfer a standard web frontend to a *Freelunch plugin*.
-    
-    2. __External implementations__ (any implementation that doesnt follow the Freelunch building block standard. The disavantages of these is that they werent necessarily carefully designed to fit into the Freelunch ecosystem of patterns, dont have built in evaluation metrics and cant be automatically identified by the platform evaluator.)
-    
-    __Pattern variations:__ are new patterns that just slight modifications of existing patterns, therefore they lieve within the main pattern, as variations that can be applied to it. A specific type of pattern variation worth mentioning is a pattern plugin: incorporation of of a capability.
-    
-    __Evolutions:__ Evolutions are a sequence of maturity-evolving patterns (more automation, capabilities, best practices, quality and performance at the expense of more cost and expertise) or platform specifications (set of non-overlapping patterns) for an organization to use in their MLOps journey, which allows them to keep easily extending their current platform for better MLOps and only introduce more complexity when really needed. A pattern or platform can have multiple evolution branches. An evolution typically: reduces manual work, reduces failures, increases compute costs, incoporates complexity via more abstractions and tooling, substitutes managed tools for open source ones and imposes more standards. __Example of how evolutions can look like: serverless with no ML at all (using heuristics) --> serverless just with traditional ML and low traditional MLOPs maturity --> mixed oss and proprietary software just with traditional ML and medium traditional MLOPs maturity on standard IaaS --> majority oss just with traditional ML and high traditional MLOPs maturity on high-performance IaaS --> majority oss incorporating generative ML with high traditional MLOPs maturity and medium LLMOps maturity on high-performance IaaS --> majority oss incorporating generative ML with high traditional MLOPs maturity and high LLMOps maturity on high-performance IaaS__
-
-    __Golden patterns:__ sometimes, we/you want a pattern, but current tools are not suited for making it work elegantly, therefore pattern variations are made to this original pattern that aim to relax a bit of the constraints and adapt more to the existing toolset. However, call for new tools/tool updates for the original pattern continues. We call the original main pattern the golden pattern (more fun name).
-
-    __Out-of-the-box MLOPs platforms:__ these are ready and implemented MLOPs platforms (architectures) that you cant just use. They are a set of implemented non-overlapping pattern distributions for specific popular use-cases that should get you started very quickly.
-
-    But how does Freelunch choose a set of on-overlapping patterns distributions that satisfy your constraints and preferences? It uses 3 things: 
-    
-    1. Interactive design storage: that stores Out-of-the-box MLOPs platforms, patterns distributions, building blocks, constraints and heuristics to combine pattern distributions.
-    2. Engineer Feedback: to modify the proposed solution. 
-    3. AI: specifically an LLM specialized in MLOPs architecture design.
-
-2. __Automatic Implementation__: Freelunch does design verification and implements a the specified MLOps platform, using building blocks. The platform follows one of Freelunch's codebase strcture flavours (e.g., all flavours decouple interface from implementation, but they can differ by folder strcture pattern). Freelunch uses the best tool stack with smart default config for the job (by following your tool constraints, matching the design specification (which is tool-agnostic) with building blocks (which are tool-dependent) and giving prefernce to building blocks with better benchmarking results). You can deploy and run the tests in a integration testing cluster. The MLOps platform deployable is a 2-step meta pipeline: (1) step 1 provisions ML pipeline infrastrcture and (2) step 2 deploys ML pipeline to that infrastrcture (Note: ML Pipeline == deployment of initial ML System + Generalized CI/CD to improve the ML System).
-
-It also spits a Initial Platform manifest. Which is a file that specifies the platform (architecture with pattern distributions used, building blocks used with placeholders for custom private stuff) makes it possible for others to build the exact same initial MLOps platform using this file, without having to go trough interactive design and long-running automatic implementation.
-
-3. __Manual Low-level Customization:__ 
-
-    1. __Changing Building Blocks__
-
-        1. __Changing configuration__
-
-        You manually edit configurations of building blocks according to your necessities that were not covered by the first step.
-
-        2. __Changing code__
-
-        There are some things you might want to implement and our not supported out-of-the box by Freelunch. In this case, you change the building block's code directly, change it's metadata, benchmark it using the Building Block Benchmarker we provide and publish the new building block to the hub.
-    
-    2. __Changing or Adding Components__
-
-    This type of change is more radical and is done when you need a change in the architecture itself, so you modify or add component specifications. You then publish to the hub your new component specification.
-
-4. __Sandbox: Offline Evaluation, Observation and Security Testing__: you evaluate the ML System and MLOps platform (according to your use-cases) in a background cluster (provisioned on-the-fly or always available) where an evaluation suite (evaluations can be: (1) requirements: integration tests, backwards-compatibility, compliance, privacy, security, deployment pattern, SLOs; (2) benchmarks: predictive power loss (loss of predictive power wrt offline model), performance profiling, observability, replayability, scalability, model robustness (natural and adversarial), system robustness (fault tolerance and adaptability), cloud/premise cost, data-efficiency, CI/CD speed, fairness, explainability, uncertainty estimation, technical debt, application-specific benchamarks (e.g., degenerate feedback loop handling and causal/intervention analysis); and evaluations can be: (1) automated: (1.1); Not AI-powered (1.2) AI-powered; (2) Manual) is run against your platform. 
-
-    You can observe the evaluations being done via a GUI to get better undertanding of bugs and improvement opportunities. You can also observe platforms under data collection and user traffic: (1) your current platform that is in production (under real-time traffic, replay it under historic production traffic); or (2) a platform experiment (under production or synthetic traffic). Observation can be done externally (with restricted permisssions) in the case of external audits. You also do security (fuzz, insider and penetration) testing on the MLOps platform to try to find complex integration-level vulnerabilities that can be surfaced or exploited.
-
-    This is acomplished by mimicking the core production clusters + emulating: (1) client machines and networks; (2) data sources machines and networks; (3) Geographically separated Clusters and CDNs; and general events from external services (e.g. repo events or S3 changes) + performing an evaluation suite on top of it. All of this can be done inside a real physical cluster or a virtual cluster (e.g. kubernetes in docker (kind), minikube, k3d).
-
-5. __Platform-level Experimentation__: you edit design and generate a new build or modify the codebase directly (following the codebase standard. Note: the codebase standard makes it easy to switch component implementations or even plug-in your own custom ones). Note: experiments are tracked by the experiment tracker. The experiment tracker which is hooked up to your remote repo (github, gitlab or gitea) and each evaluated commit is an experiment (basically a UI for git/dvc with built-in Freelunch format support). The experiment tracker is actually Freelunch Hub itself (will be explained in the following sections), you can have either a private or public project there. Built-in support for PoCs (with Wizard-of-Oz support), these are experiments that are not meant to go to production, they are just meant to prove that more efforts such be put in certain direction. If an experiment turns out to be bad, you just restore to the last good one or go back to a specific one, by using the Experiment Tracker's GUI.
-
-6. __*Goto 4. until satisfied*__: you repeat the *edit/build/evaluate and observe* cycle until you confident the new MLOps platform can be pushed to production.
-
-7. __Push to master__: pull master branch, resolve changes and push to master
-
-8. __DevOps CI/CD to your favourite infrastructure stack__: (1) your devops ci/cd spins up your meta pipeline integration testing logical cluster and production logical cluster. Integration testing logical cluster is: cloud cluster provider/on-premise machine cluster + meta pipeline integration tester. Production logical cluster is <cloud cluster provider/on-premise cluster + VPN server + DNS server + (optional) container orchestrator + workflow orchestrator OR managed workflow orchestrator> + meta pipeline artifact store + meta pipeline observer (with a lineage store); (2) Tests the meta pipeline in your integration testing logical cluster; (3) Deploys the meta pipeline to your production logical cluster.
-
-9. __Sandbox: Online Evaluation, Observation, Security Testing and Onboarding__: same as *4.* but, now that there is already a platform deployed. Onboarding is added now because it is important to help new engineers catch-up to how the platform works.
-
-10. __Pull master and experiment__: pull master, check experiments done as a git-like tree via Experiment Tracker's GUI and decide the next experiments to do. The make changes to the MLOps platform to try these experiment ideas. The changes can be done via interactive design with Freelunch and/or you can make the changes to the repo all by yourself. If an experiment turns out to be bad, you just restore to the last good one or go back to a specific one, by using the Experiment Tracker's GUI.
-
-11. __Repeat the experimentation cycle__: *Go to 4.*
-
-12. __Creation your own building units and building blocks__
-
-Freelunch provides a compiler that lets you build implementations: (1) building units (e.g., k8s pod) from code, tests and metadata; and (2) building blocks from building units, tests and metadata and config. You can create private or public implementations and upload them to Freelunch Hub.
-
-13. __Repeat the dev cycle__: *Go to 1.* 
-
-</details>
-
-<details>
-    <summary><b>Freelunch vs current best open source options</b></summary>
-
-### __*Freelunch* vs current best open source options__
-
-*CLAIMED*, *Kubeflow Pipelines*, *MLFlow*, *Metaflow*, *MLeap*, *Flyte*, *Sematic*, *Kedro*, *ZenML*, *ClearML*, *Polyaxon*, *SystemDS*, *SuperDuperDB*
-
-* __Similarities:__
-    1. Pipeline-centric: *Freelunch*, *CLAIMED*, *Kubeflow Pipelines*, *Metaflow*, *Kedro*, *ZenML*, *ClearML* and *Polyaxon* aim to build a ML pipeline.
-    2. Tool-agnostic: *Freelunch*, *CLAIMED* and *ZenML* make it easy for you to use multiple best-in-class MLOps tools as building blocks. 
-    3. Best practices: *Freelunch* and *Kedro* provide project structure with embedded software engineering best practices. Actually, Freelunch's low-level layer (MLOps codebase that can be holistically evaluated and deployed in multiple ways) is similar to Kedro (and Hamilton btw) but more fine-grained (also contains structure for internals of the ML System) and with more capabilities (e.g., evaluation).
-    4. Decoupled infrastructure: all, excpept *SuperDuperDB*, decouple deployables from infrastructure.
-    5. Automatic Container builds: all can abstract away from you the process of building containers
-
-* __Differences:__
-    1. *MLFlow*, *ClearML*, *Polyaxon*, *SystemDS* and *SuperDuperDB* are not tool-agnostic, whereas *Freelunch* and *ZenML* are, enabling fast adaptation to best in class tool at the moment and progressive maturity.
-    2. Lack of fundamental things that *Freelunch*, *Kubeflow Pipelines*, *Metaflow*, *MLeap*, *Flyte*, *Sematic*, *Kedro*, *ZenML* and *ClearML* have.
-        1. Lack of support for pipelines: *MLFlow* and *SuperDuperDB* dont provide good support for building pipelines
-        2. Lack of support for pipelines and deployment: *Polyaxon* doesnt provide any support for these things.
-    3. Lack software engineering best practices: *Kubeflow Pipelines*, *MLFlow*, Metaflow*, *MLeap*, *Flyte*, *Sematic*, *ClearML*, *Polyaxon*, *ZenML*, *CLAIMED* and *SuperDuperDB* lack things like testing structure, data storage abstraction and separate workspaces; whereas *Freelunch* and *Kedro* have these things.
-    4. Dont provide support for ML infrastructure: *Kedro* is just a tool-agnostic pipeline specification tool (which need a workflow orchestrator to execute it). *Kubeflow Pipelines*, *Metaflow*, *MLeap*, *Flyte* and *Sematic* are just fancy workflow orchestrators; whereas *Freelunch*, *MLFlow*, *ClearML* and *Polyaxon* offer.
-    5. No intuitive low-level hacking: *MLFlow*, *MLeap*, *ZenML*, *Polyaxon* and *SuperDuperDB* dont provide this, whereas the others do.
-    6. Lack of important capabilities. *All* lack these *Freelunch* capabilities:
-        1. Production-grade capabilities such as: project management with RBAC, collaboration, compliance management, security testing, operations, golden path support, progressive maturity support.
-        2. Platform-level experiment tracking (tracking new platform experiments)
-        3. Declarative and interactive high-level API for designing MLOps platforms (Disclaimer: *SystemDS* provides a declarative approach for building ML Systems)
-        4. MLOps platform and ML System Evaluator
-        5. Cost tracking and optimization
-        6. Built-in support for building <ci/cd-based, cost-aware, replayable, FM/LLM/Agent-friendly, edge-friendly, secure, compliant, AutoML-equipped, PoC-equipped, helpdesk-equipped, ML-Business KPI aligned, activity logged, privacy-preserving, lineage-complete, UI-customizable> MLOps platforms
-
-<details>
-<summary><b>Some root problems of open source all-in-ones</b></summary>
-
-#### __Some root problems:__
-
-1. Many of these (*MLFLow*, *Metaflow*, *ZenML*, *ClearML* and *Polyaxon*) have paid managed enterprise versions, they keep the open source version without important production capabilities on purpose (e.g., IAM, Security, Collaboration, etc).
-
-</details>
-
-</details>
-
-<details>
-    <summary><b>Paid plans</b></summary>
-
-### Paid plans:
-
-All plans enjoy SLAs.
-
-1. __SaaS. Specifically AI as a service (AIaaS): *MLOps Copilot* (also available as self-hosted)*. Comes with Priority Customer Support (which can be extended to Dedicated 24/7 Support)__<sup>1</sup>.
-
-Imagine Cognition Labs' Devin, but specifically for MLOps. You can superchage Freelunch with our MLOps copilot (Virtual ML Engineer)  that plays the role of multiple ML Engineers, with half the cost of a single engineer. The MLOps copilot (Virtual ML Engineer)  can help you both in building the MLOps platform and operating the MLOps platform. Helps you along all MLOps phases such as: project management, learning, design, coding/configuring, dataset construction, offline and online experimentation, ci/cd, prediction client code (frontend or embedded device), operations, security testing, ROI analysis.
-
-It has access to your comapany's internal tools (those explictly made available to it) and interacts with your team via slack: telling you what he has done, asking for approvals, reviews and asking questions. You can teach it directly from slack also: every message you send to it with #teaching tag will be stored as training data as used to fine-tune it.
-
-It is continiuouly fine-tuned to your company's MLOps workflows using telemetry data from the ML platform (state of the ML System, telemetry data of the ML System, actions of practitioners). So it keeps getting better and better using what is commonly known as a "data flywheel".
-
-_Note:_ in the beggining, the MLOps copilot (Virtual ML Engineer) might not be very good (like a data scientist starting his first MLOps job), however we can bootstrap with free plans and improve it by leveraging online user data (engineers using the MLOps Copilot) as supervised data. An then keep improving with online data forever, making our own data flywheel that creates a clear unfair advantage over other players.
-
-2. __PaaS. Freelunch is managed for you__ Managed Freelunch + Success Manager + Dedicated 24/7 Customer Support__
-
-3. __SaaS + PaaS. Freelunch is managed for you + *MLOps Copilot*:__ Managed Freelunch + Success Manager + Dedicated 24/7 Customer Support + *MLOps Copilot*
-
-<details>
-    <summary><i>Footnotes</i></summary>
-
-#### _Footnotes_
-
-1. __*MLOps Copilot*__: how to build it? Besides using LLM Agents and AutoML techniques, I think more things are needed. One idea I have is the *AgentPool Project* for which I wrote a specific document. This document is attached at the end of this file. In a nutshell: making the best dataset possible for an LLM to learn technical stuff.
-
-For critical ops activities it can be used in shadow mode, where it generates actions it usually generates, but the actions are not atcully performed, just shown to you in slack with the #shadow tag. We you fell confident with it, you can remove shadow mode and let it actually perform actions.
-
-Note: should be ebnchamrked against *SWE-Bench*, which is a benchamark about solving real world github issues (with and without assistance).
-
-</details>
-
-</details>
-
-<details>
-    <summary><b>Business model</b></summary>
-
-#### :moneybag: __Business model__
-
-__We provide a B2B open source PaaS tool; and we charge for pay/usage SaaS services highly integrated with the open source tool.__ We charge for:
-
-1. __AI-assisted MLOps__
-2. __Dedicated Support Channel__
-
-__Target buyer: we will be selling to MLOps leads/managers or MLOps Platform leads/managers.__
-
-__Simple reasoning to show we can be a unicorn:__
-
-We estimate that we can make 150 million dollars/year in profit in the medium term. 
-
-Revenue/year := # of potential customers (ML teams) * potential market share * how much we could charge/customer/year. 
-
-150M dollars/year := 15k * 0.5 * 20k dollars/year
-
-Why 15k? We assume ML teams composed of 10 ML Engineers and used [this baseline](https://thenewstack.io/tech-works-how-to-fill-the-27-million-ai-engineer-gap/)
-
-Why 20k dollars/year? We assumed 1/5 of human ML Engineer salary and used [this baseline](https://www.iu.org/blog/salaries/data-scientist-salary-expectations/#:~:text=An%20individual%20with%20a%20Bachelor's,%E2%82%AC69%2C500%20per%20year%5B3%5D)
-
-</details>
-
-<details>
-    <summary><b>Why now?</b></summary>
-
-### :date: __Why now?__
-
-1. __Problems__
-    1. __Complexity__. ML Systems are getting too complex, especially with big data/models. This make it hard for humans to do risk assesment & find improvement opportunities, systematically & efficently.
-    2. __High Costs__. Maintaining these systems is very costly. With the wrong practices, companies can end up sinking in cloud/premise costs.
-    3. __Regulations__. Data & AI Laws, that enforce certain properties of ML Systems, started popping (e.g., GDPR & Explanability for Medical/Finance).
-    4. __High Bar__. Users have low tolerance for errors and want fast systems.
-    5. __Fierce Competition__. ML is widespread across companies & better systems can be the competitive advantage that lets one company win over others.
-2. __Solution Enablers__
-    1. __Research & Tools__. Reserch & Tools in ML are exploding, thus it is hard to keep up with the fast-paced landscape.
-    2. __Holisitic Problem Awareness__. Awareness is high of all problems that can happen with ML in Production (e.g., bias). Focus shifted from building ML Models to building ML Systems.
-    3. __Tech__
-        1. __ML__. FM/LLM Paradigm. LLMs can do: interactive code (actual code & test code) debugging, generation and explanation. You can build LLM agents that are able to use software tools, make & execute plans and collaborate with other agents; like humans do.
-        2. __Formal Verificaton__. Recent Interactive Theorem Provers such as _Lean Theorem Prover_ show that we can debug & prove properties of programs, given formal specifications of these properties.
-        3. __Kubernetes__. Enable application-infrastrcture decoupling.
-    4. __Data:__ tons of freely-licenced publicly available repos. More specifcally, "The Stack" (Kocetkovet al., 2022), a large collection of permissively licensed github repositories with inspection tools and an opt-out process. (e.g., _github/gitlab/gitea (self-hosted) Copilot_ was trained on public code).
-    5. __More AI-core Companies__. Companies, in which AI is at the core of their value proposition, are popping fast. These are the companies that may die if their ML Systems arent good enough.
-</details>
-
-<details>
-    <summary><b>Freelunch and the MLOps world</b></summary>
-
-### Freelunch and the MLOps world
-
-__The following process happens continuously:__
-
-1. __By Freelunch team and contributors__
-
-    1. __Use-case Discovery.__ Discover new MLOps use cases, and give preference to the most popular ones.
-    2. __Platform Specification.__ Come up with new MLOps platform specifications (set of component specifications that work together) for the most popular use-cases.
-    3. __Pattern Formalization.__ Come up with new patterns. A Pattern should be an umbrella for similar specifications across use-cases
-    4. __Pattern Distribution Formalization.__ Allow pattern variations under different pattern distributions.
-    5. __Pattern Distribution Integration__ Freelunch needs to support the new Pattern Distribution Integration in its hub, format, evaluation suite and native tools.
-    6. __Call for implementations.__ Publish the pattern distribution, so that piecewise implementations can cover the need.
-        1. __1-off implementations:__ a new version of a specific pattern distribution is made from existing tools and custom code.
-        2. __Tools (preferable):__ supports multiple pattern distribution versions, multiple pattern distributions (maybe an entire pattern) or even multiple patterns. Either (1) existing tools change to incorporate the standard; (2) wrappers around existing tools are made to adapt them to the standard; (3) forks of existing tools are made to change the tools to conform to the standard; or (4) new tools are made that natively conform to the standard. In this way, we can improve way faster than if we were to make the tools ourselves
-    7. __Implementation integration__ Freelunch integrates with the new pattern distribution implementation (set of building blocks). This happens by hosting building blocks in the Freelunch Hub under the pattern distribution.
-
-2. __By Freelunch users__
-
-    1. __Custom MLOps Platform construction__ 
-        1. __Hot-start:__ teams construct a custom MLOps platform using: (1) the interactive designer and (2) the platform builder.
-        2. __Fine-grained customization__ 
-            1. __Plugin inclusion__ teams customize the platform by making their own custom component specifications and building blocks.
-            2. __Repo-level editing__ teams modify the repo in any way they want, but they must conform to one of the standard codebase structure specifications, or they must create their own custom codebase strcuture specification (So that the evaluation suite can understand the codebase).
-    2. __Custom MLOps Platform and ML System continuous improvement__
-        1. __Problem pinning__
-            1. __Monitoring__ (detect that something is wrong)
-            2. __Observability__ (detect where its wrong and how to fix/improve it)
-        2. __Making changes__
-            1. __Corrections: Monitoring actions__
-                1. __Automated actions: artifact CI/CD__ (e.g., data, config (service and task config), model chains, fallback models, inteliggent appeal policies, ensembles, pre/post processors, retrievers, etc)
-                2. __Manual actions: generalized CI/CD__
-            2. __Improvements__
-                1. __Artifact-level__
-                    1. __Experimentation__
-                    2. __Evaluation__
-                    3. __Artifact CI/CD__ (e.g., data, config (service and task config), model chains, fallback models, inteliggent appeal policies, ensembles, pre/post processors, retrievers, etc)
-                2. __Platform-level__
-                    1. __Experimentation__ 
-                    2. __Evaluation__
-                    3. __Code CI/CD__
-    3. __Component Specification Requests__ teams request for the inclusion of component specifications that are not currently suported, that they are using via Fine-grained customization.
-    4. __Native inclusion of requested Component Specifications__ teams refactor to include the specification and building block natively, which is much more clean and than the previous manual inlcusion via Fine-grained customization.
-
-__*Ideally, we would sponsor the projects behind new tools that are created in a similar fashion to what the Cloud Native Computing Foundation (CNCF) does; and we should work closely with: AI Infrastructure Aliance (AIIA) and Full Stack Deep Learning (FSDL)*__
-</details>
-
-<details>
-    <summary><b>Freelunch Hub: the place to track MLOps platform experiments, document, share, discover and play with MLOps platforms</b></summary>
-
-### __Freelunch Hub: the place to track MLOps platform experiments, document, share, discover and play with MLOps platforms__ 
-
-__*What HuggingFace Hub is for ML models we are for ML platforms*.__
-
-Uploading your platform to the hub takes a single click/command/line of code. 
-
-__Freelunch Hub is where you store, version, visualize, annotate, explore, manage, document and share your MLOps platform experiments. Experiments are versioned in git-like tree. There are 3 tiers of MLOps platform experiments (from least to most intrusive):__
-
-1. __Building block tier:__ architecture isnt changed, just the implementation modules. This can happen by changing config, tool or code.
-
-2. __Component tier:__ architecture is changed a bit, component specification are introduced, removed or changed. This happens via modifying the current pattern distribution by changing the codebase. The new pattern distribution is a new version of the previous one.
-
-3. __Platform tier:__ architecture is changed a lot, component specification are introduced, removed or changed. This happens via modifying the current pattern distribution by changing the codebase. The new pattern distribution is not a new version of the previous one, it gets a new name/id and starts its own version history.
-
-__Documentation can be of 2 types:__
-
-1. __Internal (for the ml team):__ internal playbooks, guidelines, knowledge-base, design docs, architectural decision records (ADRs), coupling description/dataflows, etc;
-    1. __MLOps Platform docs__
-    2. __ML System docs__
-    
-2. __External (for other teams within the company)__ how to interact with the ml system, expected behaviour of the API/UI (model biases, model failures modes, latency, etc). 
-    
-In addition to standard documenting formats (e.g., markdown), we support notion-like notebooks and latex editing directly in the Hub. 
-
-__When a platform (implemented set of non-overlapping pattern distributions) is in Freelunch Hub, people can:__
-
-1. Read about it and comment
-2. Visualize its evaluation scores
-3. Play with it and observer it working directly in the browser (killercoda-style) via Freelunch Hub GUI Playground (but not on the owners' infrastructure, we hide it from the public an substitute it for a equivalent Freelunch managed one)
-4. Download it or artifacts associated with it (e.g., (1) Freelunch artifacts: pattern distribution metadata, pattern evolutions, components specifications, building blocks, etc; (2) MLOps platform artifacts: data, models (ML and/or manual models), pre/post processors (e.g., input filters to detect adversarial and ood inputs or to detect sensitive data (in case an external model API is used), and output filters to detect innapropriate and risky outputs)
-5. Find its repo and make PRs (if it has a public repo that accepts PRs)
-6. Participate in a competition to improve the MLOps platform (if the platform is registered in the competition)
-    1. Uncover and fix security vulnearabilities.
-    2. Make it more efficient.
-    3. Add capabilities.
-
-__Platform organization and search:__
-
-1. __*Pattern Distributions*__ are organized and can be searched by:
-
-    1. __Constraints__ (e.g., use/integrate_with/avoid/security level of specific tools/types of tools, follow open standards specifications, hardware requirements)
-    2. __Most Popular Sectors that used it__
-    3. __MLOps platforms that use it__
-    4. __Pattern it belongs to__
-    5. __MLOps Maturity level of it__
-    6. __Popularity of its implementations (Building Blocks)__
-    7. __Evaluation Metrics of its implementations (Building Blocks)__
-
-2. __*MLOps platforms*__ are organized and can be searched by:
-    
-    1. __Constraints__ (e.g., direct support for specific ml tasks and/or data modalities and/or types of workloads, follow open standards/specifications, format of interfaces, dont change specific parts of your current mlops platform, template flavour, use/integrate_with/avoid specific tools/types of/security level of tools, hardware requirements, cluster multitenancy, cost ceiling, specific places where backwards compatibility is needed)
+    1. __Constraints__ (e.g., direct support for specific ml tasks and/or data modalities and/or types of workloads, follow open standards/specifications, format of interfaces, dont change specific parts of your current ml platform, template flavour, use/integrate_with/avoid specific tools/types of/security level of tools, hardware requirements, cluster multitenancy, cost ceiling, specific places where backwards compatibility is needed)
 
     2. __Sector (Required)__
-        1. MLOps platforms as a service
+        1. ML platforms as a service
         2. Applied
             1. Healthcare
             2. Science
@@ -824,7 +229,7 @@ __Platform organization and search:__
             1. 2D-time (e.g., geospatial)
             3. 3D-time (e.g., point clouds or molecules) 
 
-    5. __By MLOps platform Evaluation Metrics__
+    5. __By ML platform Evaluation Metrics__
         1. __Requirements__
             1. __Constrained environments__ (using Environment mimicking tools (e.g., Selenium or Cypress for browsers, EdgeCloudSim, EnvisEdge or Auptimizer for edge devices) to simulate hardware (computing & networking), OS (if any) & more constraints (if any; e.g., browser constraints). Uses cases: deployments on: mobile, embedded devices (microcontrollers with OS, microcontrollers without OS, FPGAs), browsers, wearables (e.g., glasses, watches) and other devices (e.g., TVs, interactive panels, etc)) (Tools: MLPerf Tiny)
                 1. __Inference__ (memory usage, power consumption, inference time) (contraints: discontonuos function, only need to be below treshold (memory usage in single-task microcontrollers (no OS)); goals: continuous function, need to optimize (e.g., power usage after treshold is reached)) (small models: Microcontrollers (memory, power, processing speed); medium models: Mobile (memory, processing speed); big models: any cloud instance (memory) (on a fixed high-performant instance: assuming same <machine, OS, processor used, cgroup>)). (_Note:_ has to do various runs and compute <mean, std deviation> because of stochasticity of hardware implementation)
@@ -861,7 +266,7 @@ __Platform organization and search:__
             3. __Compliance__
                 1. __Functional Compliance__ (test for functional compliance (e.g., data privacy: role-based access control, GDPR, sensitive data handling; or cybersecurity: encryted data at rest, in transit & maybe even in-memory, and defense & remdiation automated protocols), manage regulations, certificates and agreements, configure & schedule report generation; manage & share reports)
                 2. __IP/Licence Compliance__
-                    1. __Dangerous Code Copy/Paste__ (Our VSCode extension works together with our Chrome Extension to detect risky code copy/paste. If risky code is detected, *Freelunch* generates alternative free-to-use code that does the same thing as the original copyleft code. This way, Engineers can be free to do what they like most: copy/paste code :joy:.)
+                    1. __Dangerous Code Copy/Paste__ (Our VSCode extension works together with our Chrome Extension to detect risky code copy/paste. If risky code is detected, *Pizza* generates alternative free-to-use code that does the same thing as the original copyleft code. This way, Engineers can be free to do what they like most: copy/paste code :joy:.)
                     2. __IP/Licence Scanning__ Explicit declaration of third-party dependencies & their licences (a simple file where you organize from where you got your third-party code, data & models that we use to verify if you are adhering to their licences. We help you build this file: we scan your repo in an attempt to find dependencies you missed mentioning there or detect licences that got updated; automatically generate a PR with updated dependency declaration file)
                     3. __Compliance support 4 AI generated code__ is checking with the training code data to see any matches, if there is very similar code (of singificant complexity), the licence of that code is linked to it; also: you can ask for the AI Assistant to generate free-to-use code that does the same thing as the original copyleft code.
             4. __Non-crucial unit and integration tests__ (because when they are crucial, they need to be inside CI/CD)
@@ -913,195 +318,43 @@ __Platform organization and search:__
         1. AR/VR
         2. Web3
 
-__Security guardrails__: Freelunch automatically identifies security vulnearabilities (e.g., leaked secrets and confidential data) in your project repo, alerts you and does not allow it to go public.
+__Security guardrails__: Pizza automatically identifies security vulnearabilities (e.g., leaked secrets and confidential data) in your project repo, alerts you and does not allow it to go public.
 </details>
 
-<details>
-    <summary><b>Get started with our free fully managed Freelunch playground in your browser</b></summary>
+### Pizza templates are:
 
-### __Get started with our free fully managed Freelunch playground in your browser__
-
-We offer a 1-week free fully managed Freelunch playground for you to tinker with and get to know how building and evaluating ML platforms feels like with Freelunch. It works directly in your browser and requires no setup at all. You can also tinker with any of the MLOps platforms in the Freelunch Hub (will be explained in the following section).
-</details>
-
-<details>
-    <summary><b>Freelunch's properties</b></summary>
-
-### Freelunch is:
-
-1. __0 lock-in__ (Freelunch builds platforms that are independent of Freelunch itself. So, if you want to stop using Freelunch, just stop using it! No MLOps platform rewrites are necessary for you to continuw your MLOps journey without Freelunch.)
+1. __0 lock-in__ (Pizza builds platforms that are independent of Pizza itself. So, if you want to stop using Pizza, just stop using it! No ML platform rewrites are necessary for you to continuw your MLOps journey without Pizza.)
 
 2. __Extensible__ (you can extend it without having to refactor the codebase (Note: the codebase standard makes it easy to switch component implementations or even plug-in your own custom ones) via building custom plugins (your own component and/or building block), when it doesnt support some tool you need or for your own internal tools. We provide a plugin generator to make your life easier. Then, you register your new plugin so that the Interactive Designer and Platform Builder can use them later.)
 
-3. __Persona/role and team-based__ (built-in separate interfaces and levels of abstraction for stakeholder (e.g., can play with a lot of models, comment, but can't edit anything), manager/lead, subject matter expert, researcher, data scientist, ml engineer, data engineer, software development engineer (sde), software reliability engineer (sre), security engineer (red and blue), lawyer, data & security auditor, AI auditor; while each persona can visualize the other persona's work in a higher-level. You can setup multiple separate platforms teams working in parallel in different subsystems of the MLOps platform and you can setup multiple separate business teams working in parallel within the same MLOps platform. Each team has a sublead/manager that manages only his team. Lead/managers configure coarse-grained IAM (authorization rules) and delegate fine-grained IAM to subleads/submanagers.)
+3. __Persona/role and team-based__ (built-in separate interfaces and levels of abstraction for stakeholder (e.g., can play with a lot of models, comment, but can't edit anything), manager/lead, subject matter expert, researcher, data scientist, ml engineer, data engineer, software development engineer (sde), software reliability engineer (sre), security engineer (red and blue), lawyer, data & security auditor, AI auditor; while each persona can visualize the other persona's work in a higher-level. You can setup multiple separate platforms teams working in parallel in different subsystems of the ML platform and you can setup multiple separate business teams working in parallel within the same ML platform. Each team has a sublead/manager that manages only his team. Lead/managers configure coarse-grained IAM (authorization rules) and delegate fine-grained IAM to subleads/submanagers.)
 
 4. __Following Software Engineering best practices:__ standard codebase structures for projects; built-in static analysis: code smell detection, coding style checks, security checks, compliance enforcement, service-level input expectations (making sure the input is in the expected format and with expected bounds); design patterns by default; built-in different abstractions for different personas, separate workspaces for different purposes.
 
 5. __Licence-enforced__ (automatically detects dependencies, retrieves licenses, builds a file declaring licenses of dependencies and alerts you if you are using it in a waty that might go against its licence. Licences can be for code, data or models.)
 
-6. __Cost-aware__ (Use cost as a preference to make Freelunch build low cost MLOps platforms. Track and profile your cloud/premise cost, get automatic cost reductions (e.g., via spot VMs and removing idle resources) and get suggestions for cost reductions that will incite a trade-off with other things (e.g., build and evaluation time), only retrain/tune models when their estimated metric improvement is worth the training/tuning cost)
+6. __Cost-aware__ (Use cost as a preference to make Pizza build low cost ML platforms. Track and profile your cloud/premise cost, get automatic cost reductions (e.g., via spot VMs and removing idle resources) and get suggestions for cost reductions that will incite a trade-off with other things (e.g., build and evaluation time), only retrain/tune models when their estimated metric improvement is worth the training/tuning cost)
 
-7. __Experiment Tracked__ (all experiments (different MLOps platform versions with resulting metrics) are versioned and available in a beatifull UI in Freelunch Hub. Note: repo contains pointer to experimentation environment image in image registry. Built-in support for PoCs (with Wizard-of-Oz support), these are experiments that are not meant to go to production, they are just meant to justify production efforts in certain direction (E.g., estimation of metrics improvement from PoC to stable production).)
+7. __Experiment Tracked__ (all experiments (different ML platform versions with resulting metrics) are versioned and available in a beatifull UI in Pizza Hub. Note: repo contains pointer to experimentation environment image in image registry. Built-in support for PoCs (with Wizard-of-Oz support), these are experiments that are not meant to go to production, they are just meant to justify production efforts in certain direction (E.g., estimation of metrics improvement from PoC to stable production).)
 
-8. __Statefull and Resilient__ (MLOps platforms built by Freelunch contain a  ML System State Store that stores and versions data and config states of ML Systems via backups and patches. This ML System State Store is used to provide ML System state when needed (e.g., for doing replays or for maintaining state across integration testing/staging/prod). If you try a new project, new databases, your clusters break or your spot machines get reclaimed, where is the state of the previous one persisted in an easily-retrievable way? It is persisted via backups and patches in a Data Lake deployed at the start of every Freelunch project. The  ML System State Store is just a virtual DB that uses the data lake under the hood. You can also choose to takeout all of the Data Lake data as a set of .rar/.zip file dumps, then you can kill the Data lake. Freelunch also lets you visualize and interact directly with the  ML System State Store)
+8. __Statefull and Resilient__ (ML platforms built by Pizza contain a  ML System State Store that stores and versions data and config states of ML Systems via backups and patches. This ML System State Store is used to provide ML System state when needed (e.g., for doing replays or for maintaining state across integration testing/staging/prod). If you try a new project, new databases, your clusters break or your spot machines get reclaimed, where is the state of the previous one persisted in an easily-retrievable way? It is persisted via backups and patches in a Data Lake deployed at the start of every Pizza project. The  ML System State Store is just a virtual DB that uses the data lake under the hood. You can also choose to takeout all of the Data Lake data as a set of .rar/.zip file dumps, then you can kill the Data lake. Pizza also lets you visualize and interact directly with the  ML System State Store)
 
-9. __Multi-team and multi-platform__ (Each ML Patform (and all of its versions) are a single Freelunch project. You can build separate MLOps platforms in parallel by having multiple projects. This can be usefull in these scenarios: (1) large comapnies with multiple ML teams with different needs, (2) when you want parts of your system to "see" other parts as external third-party services for higher-level modularization, or (3) you want to completely separate critical ML Systems from non-critical ones, so that failures in non-critical ones can't affect the critical ones. The latter can be usefull for example for reproducibility (e.g., using same feature store for all ci/cd stages; in this case the feature store is a separate Freelunch project and is seen by the rest of the system as an external service which only exposes a usefull interface (not internal knowledge about it is known)). Inter-team collobaoration is also supported: each team can see other team's progress & updates, chat with messages from them with links that take you directly to the problem, receive help & issue requests (issues are posted on github repi automatically).)
+9. __Multi-team and multi-platform__ (Each ML Patform (and all of its versions) are a single Pizza project. You can build separate ML platforms in parallel by having multiple projects. This can be usefull in these scenarios: (1) large comapnies with multiple ML teams with different needs, (2) when you want parts of your system to "see" other parts as external third-party services for higher-level modularization, or (3) you want to completely separate critical ML Systems from non-critical ones, so that failures in non-critical ones can't affect the critical ones. The latter can be usefull for example for reproducibility (e.g., using same feature store for all ci/cd stages; in this case the feature store is a separate Pizza project and is seen by the rest of the system as an external service which only exposes a usefull interface (not internal knowledge about it is known)). Inter-team collobaoration is also supported: each team can see other team's progress & updates, chat with messages from them with links that take you directly to the problem, receive help & issue requests (issues are posted on github repi automatically).)
 
-10. __No-code for giving you a headstart__ (Note: Freelunch is not a no-code tool! Freelunch just uses a no-code interactive approach to generate advanced project setup that fits your needs, to give you a true hot-start. This is better than picking templates.)
+10. __No-code for giving you a headstart__ (Note: Pizza is not a no-code tool! Pizza just uses a no-code interactive approach to generate advanced project setup that fits your needs, to give you a true hot-start. This is better than picking templates.)
 
-11. __Maturity-guided__ (Freelunch uses the concept of evolutions. Evolutions are a sequence of maturity-evolving (more automation, capabilities, best practices, quality and performance at the expense of more cost and expertise) patterns or whole platform specifications (set of non-overlapping patterns) for an organization to use in their MLOps journey, which allows them to keep easily extending their current platform for better MLOps and only introduce more complexity when really needed. A pattern or platform can have multiple evolution branches. An evolution typically: reduces manual work, reduces failures, increases compute costs, incoporates complexity via more abstractions and tooling, substitutes managed tools for open source ones and imposes more standards.)
+11. __Maturity-guided__ (Pizza uses the concept of evolutions. Evolutions are a sequence of maturity-evolving (more automation, capabilities, best practices, quality and performance at the expense of more cost and expertise) platforms within the same template, just by odofying config.
 
 12. __Layered__ (has a 2-layer API. Layer 1 is easier to use, provides higher-level abstractions and uses a bunch of smart defaults for low-level abstractions). Layer 2 is harder to use but provides higher-level of control by giving the user the possibility to access and edit the lower-level abstractions, including editing the smart defaults used in Layer 1. Ideally, users start at layer 1, gradually move towards using more layer 2, establish custom smart defaults and stabilize at using both layers.)
 
-13. __Very well documented__ (besides standard API reference and "getting started", contains also: (1) multiple end-to-end examples for different sectors, contraints and preferences; (2) real-world case studies; (3) detailed pros and cons of MLOps tools; (4) browser sandbox for tinkering with mlops platforms)
+13. __Very well documented__ (besides standard API reference and "getting started", contains also: (1) multiple end-to-end examples for different sectors, contraints and preferences; (2) real-world case studies; (3) detailed pros and cons of MLOps tools; (4) browser sandbox for tinkering with ml platforms)
 
 </details>
 
 <details>
-    <summary><b>Anatomy of Freelunch MLOps platforms</b></summary>
+    <summary><b>Anatomy of Pizza ML platforms</b></summary>
 
-### __Anatomy of Freelunch MLOps Platforms__
-
-1. Governance
-    1. Manual Documentation: any documentation outisde of automatic codebase documentation
-        1. __Needs__ (subjective goals of the ml system)
-            1. __Current needs__
-            2. __Needs evolution__ (how you expect the needs to evolve in the next 5 years)
-        2. __Requirements__ (specific constraints and engineer preferences for the platform)
-            1. __Current requirements__ (tool usage and integration, operational metrics (SLOs and SLAs), running cost, predictive power, observability, etc)
-                1. __Constraints__ (only need to be above a certain threshold)
-                2. __Preferences__ (need to be above a certina threshold but resources shuld be allocated for further improvement)
-            2. __Requirements evolution__ (how you expect the requirements to evolve in the next 5 years)
-                1. __Constraints__
-                2. __Preferences__
-        3. __Problem formalization__ (problem formalized in terms of ml and business KPIs, requirements and assumptions)
-            1. __Current problem formalization__
-            2. __Problem formalization evolution__ (how you expect problem formalization to evolve in the next 5 years)
-        4. __Design Docs__ (Solution Analysis. Alternatives to build the MLOps Platform, tradeoffs, discussions and lessons learned. Append-only doc.)
-        5. __Risk Analysis__ (Past failures (out or in prodution), Failure modes with cause (e.g., fault trees or Failure Modes and Effects Analysis (FMEA)), how often hey happen, how bad they are, solution specification changes that make the system less risker and their tradeoffs (e.g., increase cost and latency) and methods to detect and adress the failures gracefully and in a contained manner)
-    2. Ownership/Accountability: who is responsible for which part of the development or operation of the MLOps platform
-    3. Compliance
-        1. Certifacates
-        2. Issues
-        3. Tests
-        4. Declaration of licences of dependencies
-    4. Initial Platform manifest: a file that others can supply to freelunch to build the exact same initial MLOps platform (We say initial because the repo afterwards, but then you just have to follow the commit history)
-    5. subject matter expert Knowledge files (files that try to distill subject matter expert knowledge about the real-world process we are tring to model)
-
-2. Base CI/CD
-    1. Git/Github stuff
-    2. Pre-commit hooks
-    3. Automatic Codebase Documentation (automatically generate and deploy beatifull solution specification documentation (platform manifest, architecture diagrams, schemas, coupling description/dataflows, artifact (model, filter, pipeline, dataset, etc) cards, line-by-line explanation, line-by-line explanation)
-    4. Collaboration Knowledge Base Setup
-    5. Meta Pipeline Cluster Setup
-    6. Container Image and Package Registries setup
-    7. Base Workflow Orchestrator Setup
-    8. Base CI/CD tool setup (with monitoring and alerts)
-
-3. MLOps Platform
-
-    1. ML System State Store. It is important because: (1) even if all your clusters break, you will have your data in a safe backup; (2) enables easy use of the same data across MLOps platforms experiments (e.g. changing the database that powers your feature store).
-        1. System State (config, schema, data, deploy) Store: versions & provides any state in history or combination of config, schema, data and deploy states (makes it possible to go back to any state of the system) Stores versioned system config (e.g., data imputation method to be used by feature store, error handling protocol to be used by prediciton manager, DAGs to be implemented by Data Pipelines, etc. configs can be changed in your repo or the state store itself (by athrorized clients) and then distributed to systems or can be done independently by the systems and then sent to the state store so that it can be updated.), schema (db migrations and file format changes) data (backups & patches (telemetry)).
-            1. Intra-service Config Store (Tools: Apollo, NACOS, Salt, Configu, OmegaConf Hydra, DynaConf)
-            2. Schema Store (Tools: Liquibase)
-            3. Data Store (Tools: (1) Event storing: EventStore; (2) Backup versioning: LakeFS + object storage or DB)
-            4. Deployment Store (e.g., k8s deploy state)
-            5. API Store (stores history of APIs for each service)
-        2. State change message broker/stream transport (delivers state change events to system state store)
-
-    2. Logic (deployed often): 2-step Meta Pipeline. The Meta Pipeline is deployed by your base CI/CD tool (e.g. Jenkins) and contains code that makes up the MLOps platform.
-
-        1. Meta Pipeline itself
-
-            1. Provision Infrastrcture
-                1. Privision ML Pipeline (MLOps platform) Infrastructure (provisioned on-demand).
-                    1. Integration testing workspace (provisioned on-demand OR at the first time and then always up): <cloud cluster provider/on-premise cluster + VPN server + DNS server + (optional) container orchestrator + workflow orchestrator OR managed workflow orchestrator> + ML pipeline artifact store + ML pipeline integration tester.
-                    2. Staging workspace (provisioned on-demand OR at the first time and then always up): same as *Production workspace*
-                    3. Evaluation workspace (provisioned on-demand OR at the first time and then always up): <cloud cluster provider/on-premise cluster + VPN server + DNS server + (optional) container orchestrator + workflow orchestrator OR managed workflow orchestrator> + ML pipeline artifact store + ML pipeline evaluator.
-                    4. Production workspace (provisioned at the first time and then always up): <cloud cluster provider/on-premise cluster + VPN server + DNS server + (optional) container orchestrator + workflow orchestrator OR managed workflow orchestrator> + ML pipeline artifact store + ML pipeline observer (with a lineage store).
-                
-            2. ML Pipeline deploy
-
-                1. ML Pipeline itself
-
-                    1. ML Pipeline startup
-
-                        1. Deploy Services
-
-                            1. Initial ML System
-
-                                1. Provision ML System Infrastructure
-                                    1. By type
-                                        1. Operator Worskpace. Hosts k8s operators which extend kubernetes native functionality (e.g., autoscaling): <cloud cluster provider/on-premise cluster OR cluster namespace + VPN server + DNS server + cd operator + autoscaling operators + backup operators>
-                                        2. Logic workspace. Host logic, driver programs: <cloud cluster provider/on-premise cluster OR cluster namespace + VPN server + DNS server + python virtual environment + notebook ecosystem + installed common dev tools>
-                                        3. Workloads Workspace. Hosts workloads driven by logic services.
-                                            1. ML System Pipeline Workloads Workspace. Hosts pipelines driven by ML System services: <cloud cluster provider/on-premise cluster OR cluster namespace + VPN server + DNS server + (optional) container orchestrator + workflow orchestrator OR managed workflow orchestrator>
-                                            2. ML System Distributed Processing Workloads Workspace. Hosts distributed processing workloads driven by either ML System logic services directly or ML System pipeline workloads: <cloud cluster provider/on-premise cluster OR cluster namespace + VPN server + DNS server + (optional) container orchestrator + workflow orchestrator OR managed workflow orchestrator>
-                                        4. Storage Workspace. Hosts big data storage services (used by more than one service or task) such as artifact stores, feature stores, data lakes and data wharehouses used by logic services: <cloud cluster provider/on-premise cluster OR cluster namespace + VPN server + DNS server>
-                                    2. By stage
-                                        1. Integration testing workspace (provisioned on-demand OR at the first time and then always up): + Services OR Pipeline integration tester.
-                                        2. Staging workspace (provisioned on-demand OR at the first time and then always up): + Production Traffic Simulator
-                                        3. Evaluation and Observability (bacground cluster) workspace (provisioned on-demand OR at the first time and then always up)
-                                        4. Production workspace (provisioned at the first time and then always up): + nothing
-
-                                2. Deploy ML System itself: services that are initally deployed (e.g., feature store, etl/elt pipelines, artifact store, metadata store (lineages, logs and metrics), data wharehouse, data lake, Inference Services, image registry, API gateway, message broker, frontend, prediction manager, llm orchestrator, llm gateway, agent actuators, agent observers, etc)
-
-                            2. Operations Center
-
-                                1. Provision Operations Center Infrastructure
-                                    1. By type
-                                        1. Operator Worskpace. Hosts k8s operators which extend kubernetes native functionality (e.g., autoscaling): <cloud cluster provider/on-premise cluster OR cluster namespace + VPN server + DNS server + cd operator + autoscaling operators + backup operators>
-                                        2. Logic Workspace
-                                            1. Development Workspace. Hosts dev and experimentation (feature and model) environments: <cloud cluster provider/on-premise cluster + VPN server + DNS server>
-                                            2. Operations Logic Workspace. 
-                                                1. Services. Hosts operation center services: <cloud cluster provider/on-premise cluster + VPN server + DNS server + (optional) container orchestrator + workflow orchestrator OR managed workflow orchestrator>
-                                                2. Environment. Host ML Operations environment: <cloud cluster provider/on-premise cluster + VPN server + DNS server>
-                                        3. Workloads Workspace
-                                            1. Artifact Experimentation Workspace. 
-                                                1. Artifact Production Workspace. Hosts ephemeral experimentation workloads (aka experimentation pipelines): <cloud cluster provider/on-premise cluster + VPN server + DNS server + (optional) container orchestrator + workflow orchestrator OR managed workflow orchestrator>
-                                                2. Artifact Evaluation and Optimization Workspace. Hosts ephemeral artifact evaluation and optimization experimentation workloads. Hosts ephemeral experimentation workloads (aka experimentation pipelines): <cloud cluster provider/on-premise cluster + VPN server + DNS server + (optional) container orchestrator + workflow orchestrator OR managed workflow orchestrator>
-                                            2. Operations Workspace.    
-                                                1. Operations Pipeline Workloads Workspace. Hosts pipelines driven by operation center services: <cloud cluster provider/on-premise cluster + VPN server + DNS server + (optional) container orchestrator + workflow orchestrator OR managed workflow orchestrator>
-                                                2. Operations Distributed Processing Workloads Workspace. Hosts distributed processing workloads driven by either operations logic services directly or via pipeline workloads: <cloud cluster provider/on-premise cluster + VPN server + DNS server + (optional) container orchestrator + workflow orchestrator OR managed workflow orchestrator>
-                                        4. Storage Workspace. Hosts big data storage services (used by more than one service or task) such as artifact stores, feature stores, data lakes and data wharehouses used by logic services: <cloud cluster provider/on-premise cluster + VPN server + DNS server + (optional) container orchestrator>
-                                    2. By stage
-                                        1. Logic Workspace
-                                            1. Integration testing workspace (provisioned on-demand OR at the first time and then always up): + Services OR Pipeline integration tester.
-                                            2. Staging workspace (provisioned on-demand OR at the first time and then always up): + Production Traffic Simulator
-                                            3. Production workspace (provisioned at the first time and then always up): + nothing
-                                        2. Workloads Workspace
-                                            1. Artifact Experimentation Workspace: ephemeral workspace (provisioned on-demand OR at the first time and then always up). Debugging and execution is done in this workspace.
-                                            2. Operations Workspace.
-                                                1. Integration testing workspace (provisioned on-demand OR at the first time and then always up): + Services OR Pipeline integration tester.
-                                                2. Staging workspace (provisioned on-demand OR at the first time and then always up): + Production Traffic Simulator
-                                                3. Production workspace (provisioned at the first time and then always up): + nothing
-                                        3. Storage Workspace.
-                                            1. Integration testing workspace (provisioned on-demand OR at the first time and then always up): + Services OR Pipeline integration tester.
-                                            2. Staging workspace (provisioned on-demand OR at the first time and then always up): + Production Traffic Simulator
-                                            3. Production workspace (provisioned at the first time and then always up): + nothing
-                                        
-
-                                2. Deploy Operations Center itself: dashboard equipped with backend services that contain everthing necessary to operate the ML system
-
-                                    1. Generalized CI/CD pusher services (Note: gitops is generalized ci/cd concerning engineer-generated events (what is meant usually by ci/cd), specifically using git repos for this) (their output goes directly to generalized ci/cd): instead interacting directly with the repo, you interact with intuitive UIs. Under the hood, pushes to the repo are being done your you. These can be: IT Asset Manager + Security (Vulnerability and Malware) Scanner (for machines,networks, endpoints, cloud, secrets, pure code, dependencies, containers, kubernetes, web and mobile) + ML Artifact Manager + ML System Decorator (e.g., adds/remove prperties that span multiple ML service. E.g., update A/B testing rules or change from mysql to postgres) + ML Config Manager + Documentation Builder + Data Pipeline Builder (compiles to and from tool-agnostic pipeline) + Model Builder (support for Distributed Training, Hyperparameter Tuning, Knowledge Distillation, Ensembling and deciding which features to remove and make a model for each value/value range of it) + Prompt Builder + Filter Builder + ML Featured Dataset Builder (EDA + wrangling + augmentation + labeling + feature engineering) + ML Filter Builder + ML PoC Builder (with Wizard-of-Oz support) + MLOps Architecture Documentation Builder + ML Experimentation Environment (feature and model) + Content Management System (CMS) (with support for docs and model frontend components) + Frontend Mocker (Support for broser, desktop, mobile, agent simulation environments and game engines) + Rollbacker (lets you easily rollback to old versions of system, systme config, service, service config, A/B experiments and artifacts). Note: as soon as some of these service dont need to be interactive anymore, they can be moved to within generalized CI/CD itself for streamlined workflow (e.g., Builder Services)!
-
-                                    2. Helpers: that provide some kind of help, but dont deploy to your ML System
-                                        1. Services: Single-Sign-On (SSO)/Secrets Manager + Services Observer + Security Observer (Identification of vulnearabilities and attacks + internal communication + implementation of incident response protocols) + Security Testing (Fuzz, Insider and Penetration) Tracker + ML Artifact Experiment Tracker (with scaling law estimator) + Discoverer (Data, Service, Artifact and Package Discovery) + Artifact Expert (Evaluation, Analysis & Visualization, Optimization, Compilation, Scaling Law Estimation, Stamping and Mocking) + ML Observer (Training and Inference Monitoring + ML System Observer (fine-grained monitoring + debugging/improvement analysis with observability stores (model, metadata, lineage, production state checkpoint and engineer activity)) GUI for your DBs) + ML-Business KPI Aligner + Notifier + ML Compliance Manager + ML Project Manager (Management and Collaboration) + Offline Container Image Registry + External Dependency Changes Notifier (e.g., change in gpt version) + Interactive Designer + R&D Playground + Input Data Distribution Forecaster.
-                                        2. Tasks: replay the ML System in the background cluster, penetration Test (recon, build and attack), onboard new team member, benchmark a building block, recover the state of the ml system after a crash occurred to the cluster, migrate the ML System (using the ML System State Store) to another cloud provider if the current cloud provider crashes or raises price abruptly.
-                                        3. REPL Operations: ML Operations Environment with Notebook + Terminal with action tracker (for doing stuff currently not supported by your Operations Center GUI)
-                                        4. Chat Interface (AIOps): where you chat with the MLOps copilot (Virtual ML Engineer)  to give you action suggestions in the operations Center
-                                    
-                                    3. Webserver: serves single Operation Center Frontend. 
-
-                        2. Deploy Initial State of ML System
-
-                            1. Test Inital State manifest file together with the  ML System State Store (which is always running, it was deployed when we started a Freelunch MLOps platform project).
-
-                            2. Build Inital State from Desired Inital State manifest file. This is via getting ML System data and config versions frm the  ML System State Store.
-
-                            3. Deploy Initial State to the ML System.
-
-                    2. Execute ML Pipeline loop: generalized CI/CD to the ML System. Pipelines (implemented by a workflow orchestrator) that ci/cd's code and artifacts ((1) interface artifacts: schema (data lake schema, db/wharehouse schemas, file schemas, message broker/transport schemas, model schema, filter schema, retriever schema, function schema (signature), elt schema, etl schema, pipeline schema, networking api schemas); (2) implementation artifacts: config (service, ci/cd and frontend), data, schema expectations/data validation (ranges, distributions, cosntraints, units, etc), prompter chains, compute artifacts (fallbacks, intelligent appeal policies, ensembles, pre/post processors (input, prediction and/or data filters), FaaS functions, elt queries, pipeline components (tasks or services))). Generalized ci/cd events can come from: (1) repo PR; (2) internal ml system events; (3) external events. Generalized ci/cd events can be read via: (1) making requests to statefull services/subsystems; (2) making requests to message brokers; (3) listening to requests from statefull services/subsystems; (4) listening to streaming messages from services or brokers.
+### __Anatomy of Pizza ML platforms__
 
                         1. Code ci/cd
 
@@ -1131,11 +384,11 @@ We offer a 1-week free fully managed Freelunch playground for you to tinker with
 
                                 1. Staging (staging clusters). The final verification that everything is ok, should mimic production, clusters at the same scale and geographical locations. Offcluster end-2-end testing of new release (PR to release branch) and Diff end-2-end testing between new release (PR to release branch) and previous release (PR to release branch), using production data.
 
-                                2. *Optional*: Evaluation (background cluster). The ml system and mlops platform are evalauted in multiple dimensions, before it is deployed to production. It is optional because it can slow down your ci/cd, therefore you might choose only some evaluations.
+                                2. *Optional*: Evaluation (background cluster). The ml system and ml platform are evalauted in multiple dimensions, before it is deployed to production. It is optional because it can slow down your ci/cd, therefore you might choose only some evaluations.
                                 
                                 3. Production (production clusters)
 
-                                4. Evaluation and Observability (background cluster). The ml system and mlops platform are evaluated in multiple dimensions, after it is deployed to production; and where you can do simulation-based observability to uncover problems proactively and to find improvement opportunities.
+                                4. Evaluation and Observability (background cluster). The ml system and ml platform are evaluated in multiple dimensions, after it is deployed to production; and where you can do simulation-based observability to uncover problems proactively and to find improvement opportunities.
 
                                 5. PR to stable branch or rollback
                                     1. If Evaluation and Observability dont show problems during some time x: PR to stable branch
@@ -1176,9 +429,9 @@ We offer a 1-week free fully managed Freelunch playground for you to tinker with
 </details>
 
 <details>
-    <summary><b>Properties of Freelunch MLOps platforms</b></summary>
+    <summary><b>Properties of Pizza ML platforms</b></summary>
 
-### Freelunch can build MLOps platforms that are:
+### Pizza can build ML platforms that are:
 
 1. __Production-grade__ (e.g., ml project management, software engineering best practices, collaboration, secrets manager, authentication/authorization, compliance enforcement, security testing and operations (monitoring, observability and actions))
 
@@ -1188,11 +441,11 @@ We offer a 1-week free fully managed Freelunch playground for you to tinker with
 
 4. __Python-based__ (made for coding with python and doesnt break any of python's functionality you are used to)
 
-5. __Compatible with your existing infrastructure__ (you can require Freelunch to use/not use specific tools for the build)
+5. __Compatible with your existing infrastructure__ (you can require Pizza to use/not use specific tools for the build)
 
 6. __Operations-heavy:__ multiple ops capabilities such as: project management, collaboration, codebase management, IT operations, ML operations (e.g., retraining, killing buggy ML workload, fixing data problem, etc), internal assets search.
 
-7. __Control-level-dependent:__ you can create MLOps platforms that contraint a lot applied ML Engineers (e.g., only allow them to do a handfull of activities (e.g., ci/cd artifacts and ML minitoring) or you can create MLOps platforms that give full control to applied ML Engineers (e.g., edit project management, IT infrastructure, ML infrastrcture, Data Pipelines and even the MLOps platform codebase)). You can also do anything in the middle of this spectrum.
+7. __Control-level-dependent:__ you can create ML platforms that contraint a lot applied ML Engineers (e.g., only allow them to do a handfull of activities (e.g., ci/cd artifacts and ML minitoring) or you can create ML platforms that give full control to applied ML Engineers (e.g., edit project management, IT infrastructure, ML infrastrcture, Data Pipelines and even the ML platform codebase)). You can also do anything in the middle of this spectrum.
 
 8. __CI/CD-based:__ (multiple embedded generalized ci/cd (that ci/cd code/config/data/artifacts) loops orchestrated by a workflow orchestrator. Each loop can have ci/cd stuff such as: static analysis (code quality, compliance and security), testing (unit and integration testing), building, storing images, staging, deploying, documentation generation. 
 
@@ -1228,13 +481,13 @@ Since ML Systems have significant coupling between components, new changes often
 
 The ci/cd loops are depicted below (assuming a platform with full control for applied ML Engineers):
 
-* __*Freelunch* management: cost analysis and configuration --> *ML Lead/Product Manager*__
-    * __Generalized CI/CD Monitoring Wrapper (give you traces (Change --> CI --> CD --> Effect), metrics and visual diffs) --> *ML Engineer (MLOps)>MLOps platform Engineer (MLOps)*__
+* __*Pizza* management: cost analysis and configuration --> *ML Lead/Product Manager*__
+    * __Generalized CI/CD Monitoring Wrapper (give you traces (Change --> CI --> CD --> Effect), metrics and visual diffs) --> *ML Engineer (MLOps)>ML platform Engineer (MLOps)*__
             * __[ML Platform improvement using base ci/cd] IT infrastructure/DevOps (e.g., codebase management, cloud IaaS (machines, proxies, networks), cloud storage, IAM, IT observability actions, container image generation, kubernetes, ci/cd) ci/cd loop --> *Software Engineer (DevSecOps)>Software Development Engineer (SDE), Software Engineer (DevSecOps)>Software Tester Engineer, Software Engineer>Software Reliability Engineer (SRE), Cybersecurity Engineer (SecOps)>*.__ (other role names such as: Infrastructure Engineer, DevOps Engineer, System Administrator, IT Manager and Security Engineer also belong here)
                 --> Artifact ci/cd (spans: data and computational artifacts) (note: data state of a statefull component or system, saved as a backup, counts as an artifact)
                 --> Code ci/cd (spans: functions, scripts, libraries, executables, container images, app pods, operator pods, plugins and macros)
                 --> Config ci/cd (spans: build and runtime config) (for: (1) ML System Config: (1.1) Services Config: Config Manager config, Generalized ci/cd config; (1.2) Task config; (2) Observability Config: (2.1) Services Config: helper services config; (2.2) Tasks Config: helper tasks config)
-                * __[ML Platform improvement using base ci/cd] ML infrastructure (e.g., development of ml services (e.g., workflow orchestrator, feature store, Model/Prompt Registry, model deployer, monitoring system) and mlops ci/cd)  --> *ML Engineer (MLOps)>MLOps platform Engineer, Frontend Engineer and Cybersecurity Engineer (SecOps)*.__
+                * __[ML Platform improvement using base ci/cd] ML infrastructure (e.g., development of ml services (e.g., workflow orchestrator, feature store, Model/Prompt Registry, model deployer, monitoring system) and mlops ci/cd)  --> *ML Engineer (MLOps)>ML platform Engineer, Frontend Engineer and Cybersecurity Engineer (SecOps)*.__
                     --> Artifact ci/cd (spans: data and computational artifacts) (note: data state of a statefull component or system, saved as a backup, counts as an artifact)
                     --> Code ci/cd
                     --> Config ci/cd (spans: build and runtime config) (for: Config Manager config, Generalized ci/cd config, Observability Config, ML System config)
@@ -1258,7 +511,7 @@ The ci/cd loops are depicted below (assuming a platform with full control for ap
                                         --> Artifact ci/cd (spans: computational artifacts) (for cd of model files (e.g., ONNX, PMML, PFA))
                                         --> Code ci/cd (for cd of model code (e.g., executable or library))
                                         --> Config ci/cd (spans: build config) (for cd of config-based training workload)
-                                        * __(Optional) Your own Foundation Models System__ (think of it as a sub MLOps platform within the general MLOps platform, the same loops would apply here aswell, but I didnt put them because it would become to messy) __--> *ML Engineer (MLOps)>ML System (Applied) Engineer>FM Engineer (FMOps/LLMOps) & ML Researcher>FM Researcher*__
+                                        * __(Optional) Your own Foundation Models System__ (think of it as a sub ML platform within the general ML platform, the same loops would apply here aswell, but I didnt put them because it would become to messy) __--> *ML Engineer (MLOps)>ML System (Applied) Engineer>FM Engineer (FMOps/LLMOps) & ML Researcher>FM Researcher*__
                                             --> Artifact ci/cd (spans: data and computational artifacts) (Note: data state of a statefull component or system, saved as a backup, counts as an artifact)
                                             --> Code ci/cd
                                             --> Config ci/cd (spans: build and runtime config)
@@ -1296,11 +549,11 @@ The stages of ci/cd are depicted below:
 
         1. Staging (staging clusters). The final verification that everything is ok, should mimic production, clusters at the same scale and geographical locations. Offcluster end-2-end testing of new release (PR to release branch) and Diff end-2-end testing between new release (PR to release branch) and previous release (PR to release branch), using production data (past and future estimate).
 
-        2. *Optional*: Evaluation (background cluster). The ml system and mlops platform are evalauted in multiple dimensions, before it is deployed to production. It is optional because it can slow down your ci/cd, therefore you might choose only some evaluations.
+        2. *Optional*: Evaluation (background cluster). The ml system and ml platform are evalauted in multiple dimensions, before it is deployed to production. It is optional because it can slow down your ci/cd, therefore you might choose only some evaluations.
         
         3. Production (production clusters)
 
-        4. Evaluation and Observability (background cluster). The ml system and mlops platform are evaluated in multiple dimensions, after it is deployed to production; and where you can do simulation-based observability to uncover problems proactively and to find improvement opportunities.
+        4. Evaluation and Observability (background cluster). The ml system and ml platform are evaluated in multiple dimensions, after it is deployed to production; and where you can do simulation-based observability to uncover problems proactively and to find improvement opportunities.
 
         5. PR to stable branch or rollback
             1. If Evaluation and Observability dont show problems during some time x: PR to stable branch
@@ -1332,7 +585,7 @@ The stages of ci/cd are depicted below:
 
 9. __Cost-aware__ (provision cluster of cloud vendor with lowest price, track and profile your cloud/premise cost, get automatic cost reductions (e.g., via spot VMs and removing idle resources), get suggestions for cost reductions that can incite a trade-off with other things (e.g., infrastrcture quality, latency, tool choice), get an alaysis to decide the profit-optimal ML system setting.
 
-10. __Compliance-supported:__ (1) For your own MLOps platform: compliance todo's, compliance tests, external audit support, certificate management (e.g., (1) Data & Security: (1.1) Standard: GDPR, CCPA, SOC2, ISO 27001, HIPAA, FERPA, PCI DSS, GLBA; (1.2) Custom: agreements (SLAs, DPAs, etc); (2) AI-specific: EU AI Act, NY AI Bias Law, AI Bill of Rights, SB 1047, Equal Employment Opportunity Commission (EEOC) commission’s twelve factors of discrimination, etc), audit tracking; (2) For managed third-party dependencies: certificate management and audit tracking; 
+10. __Compliance-supported:__ (1) For your own ML platform: compliance todo's, compliance tests, external audit support, certificate management (e.g., (1) Data & Security: (1.1) Standard: GDPR, CCPA, SOC2, ISO 27001, HIPAA, FERPA, PCI DSS, GLBA; (1.2) Custom: agreements (SLAs, DPAs, etc); (2) AI-specific: EU AI Act, NY AI Bias Law, AI Bill of Rights, SB 1047, Equal Employment Opportunity Commission (EEOC) commission’s twelve factors of discrimination, etc), audit tracking; (2) For managed third-party dependencies: certificate management and audit tracking; 
 
 11. __Secure:__ privacy-preserving ML (private EDA, model building, task execution and deployment; via usage of on-premise machines, data profiling, anonymization, fair representations, differential privacy, homomorphic encryption, zero-knowledge proofs and trusted execution environments (TEEs)), you can config the cybersecurity setup of your instances, run static and dynamic security tests, manage security compliance audits, scan for vulnearabilities in dependencies, operate with security-focused observability, best security practices are incentivized and enforced, configure defense and remediation protocols, do breach and attack simulations, cve tracking for open source projects.
 
@@ -1348,8 +601,8 @@ The stages of ci/cd are depicted below:
             1. __Needs__ (subjective goals of the ml system)
             2. __Requirements__ (specific constraints and engineer preferences for the platform)
             3. __Problem Formalization__ (problem formalized in terms of ml and business KPIs, requirements and assumptions)
-            4. __Design Docs__ (Solution Analysis. Alternatives to build the MLOps Platform, tradeoffs, discussions and lessons learned. Append-only doc.)
-            5. __Solution Specification__ (Platform manifest (architecture with pattern distributions used, building blocks used with placeholders for custom private stuff) which makes it possible to reproduce the platform easily with Freelunch)
+            4. __Design Docs__ (Solution Analysis. Alternatives to build the ML platform, tradeoffs, discussions and lessons learned. Append-only doc.)
+            5. __Solution Specification__ (Platform manifest (architecture with pattern distributions used, building blocks used with placeholders for custom private stuff) which makes it possible to reproduce the platform easily with Pizza)
             6. __Risk Analysis__ (Past failures (out or in prodution), Failure modes with cause (e.g., fault trees or Failure Modes and Effects Analysis (FMEA)), how often hey happen, how bad they are, solution specification changes that make the system less risker and their tradeoffs (e.g., increase cost and latency) and methods to detect and adress the failures gracefully and in a contained manner)
         2. __External Documentation: for all ML Platform users (Applied ML Engineers, Data Scientistis, Data Engineers, subject matter experts, Stakeholders, Lawyer etc)__
             1. __Getting Started__
@@ -1459,7 +712,7 @@ The stages of ci/cd are depicted below:
 
 23. __Experimentation-friendly:__ support for notebook-based hardware-flexible experimentation environments (feature and model) for data scientists (e.g., GUI for: pipelining, formatting, diffs, exporting, etc). Data scientist can provide hardware requirements on-the-fly (e.g., machine with GPU or large memory) and a experemtation environment adapts acoordingly, while maintaining state.
 
-24. __Artifact Experiment Tracked:__ (all experiments (different artifacts with resulting metrics) are versioned and available in a beatifull UI in Freelunch Hub. Note: repo contains pointer to experimentation environment image in image registry. Built-in support for PoCs (with Wizard-of-Oz support), these are experiments that are not meant to go to production, they are just meant to justify production efforts in certain direction (E.g., estimation of metrics improvement from PoC to stable production).)
+24. __Artifact Experiment Tracked:__ (all experiments (different artifacts with resulting metrics) are versioned and available in a beatifull UI in Pizza Hub. Note: repo contains pointer to experimentation environment image in image registry. Built-in support for PoCs (with Wizard-of-Oz support), these are experiments that are not meant to go to production, they are just meant to justify production efforts in certain direction (E.g., estimation of metrics improvement from PoC to stable production).)
 
 25. __RLOps-supported:__ RL-specific stuff: (1) Simulated Environment Evaluation: latency, property verification, deployment and analysis of human episodes (for the simulated environment) to real-world deployment to see compatibility. (2) Model building: support for building RL controllers for multiple (standard and custom) environments, offline RL, Imitation Learning, Model-based RL, Causal RL; (3) Model Evaluation: total reward, security guarantees; (4) Monitoring: real-time GUI-based RL monitoring + Standard MLOps stuff.
 
@@ -1505,7 +758,7 @@ The stages of ci/cd are depicted below:
 
 46. __Equipped with Frontend Support__
     1. Content Management System (CMS) (important for: (1) automated frontend adaptation in response to backend changes; (2) easy UI/UX changes; (3) Automated UI testing;)
-    2. Frontend Mocker (a minimal frontend package with the mlops platform that emulates the real frontends. The frontends can be: (1) Browser; (2) Desktop; (2) Mobile; (3) Agent Simulation Environment; (4) VideoGame; (5): Embedded System.)
+    2. Frontend Mocker (a minimal frontend package with the ml platform that emulates the real frontends. The frontends can be: (1) Browser; (2) Desktop; (2) Mobile; (3) Agent Simulation Environment; (4) VideoGame; (5): Embedded System.)
     3. Screenshot-to-code (enables you to take a screnshot of a website ang get the code for it, usefull for getting started quickly with a nice solution)
 
 47. __Equipped with support for internal packages__ (an "Internal PyPi" for you to post and get internal packages)
@@ -1547,7 +800,7 @@ The stages of ci/cd are depicted below:
 
 59. __Equipped with golden-path support__ (easily create, store, edit, get and use golden-paths. Golden paths are basically smart defaults + macros that should give you an 80% solution right off the gate (e.g. for deploying a statefull service) using standard best practices. You can create macros easily from engineer ops activity by extracting and refining pieces of the activity history (e.g., retraining is not natively supported by the platform you created, but an engineer spots the necessity to retrain and does the necessary actions to have a model retrained on fresh data in production. This acitivity was logged in a structrued way that makes it easy to convert the activity into a reproducible macro) and then build a workload out of it (service or task) and extend your platform with this new capability that now becomes just 1 click or 1 line of code for the next engineer)
 
-60. __Layered__ (every Freelunch-built mlops platform has two working layers: (1) High-level and (2) Low-level. High-level is easy to use, provides nice abstractions over underlying infrastrcture and smart defaults; ideal for getting things to work. Low-level requires more experience and is for engineers that need to extract the maximum juice out of their mlops platform for their use cases, ideal for making improvements down the road.)
+60. __Layered__ (every Pizza-built ml platform has two working layers: (1) High-level and (2) Low-level. High-level is easy to use, provides nice abstractions over underlying infrastrcture and smart defaults; ideal for getting things to work. Low-level requires more experience and is for engineers that need to extract the maximum juice out of their ml platform for their use cases, ideal for making improvements down the road.)
 
 61. __UI-customizable__ (you can edit the operations center UI to suit your preferences, via no-code, config or code)
 
@@ -1561,7 +814,7 @@ The stages of ci/cd are depicted below:
 
 63. __Equipped with GUI-to-config__ (anyhting you do in a GUI can be converted to reproducible config. 2 options: (1) Dev: export result as config and then edit the resulting config as necessary; Ops: record activities then edit the resulting config as necessary)
 
-64. __Equipped with Platform Namespaces__ (this is usefull in 2 situations: a comapsny wants to give the same platform functionality to separated ml teams (each ML team lives within a namespace) or a company that is building a managed mlops platform (each customer of theirs lives within a namespace).)
+64. __Equipped with Platform Namespaces__ (this is usefull in 2 situations: a comapsny wants to give the same platform functionality to separated ml teams (each ML team lives within a namespace) or a company that is building a managed ml platform (each customer of theirs lives within a namespace).)
 
 65. __Equipped with an easy integration testing framework__ ((1) inverted integration testing: instead of writing integration tests, the platform automatically writes multiple tests for you, and then you either visually inspect the result or write an output validator to make it into a real integration test; (2) you can also write your own integration tests like you write unit tests; (3) you can put fast and/or crucial integration tests to run in ci/cd and the rest on the background evaluation/observability cluster.)
 
@@ -1574,14 +827,9 @@ The stages of ci/cd are depicted below:
 
 ### Tool ecosystem
 
-<details>
-    <summary><b>Tools Freelunch uses</b></summary> 
+__*Pizza* works on top of all these (open source and proprietary) IT, DevSecOps, Data Engineering, MLOps, Analytics and Graphics Programming tools:__  *d2*, *Diagrams*, *Draw.io*, *Miro Board*, *excalidraw*, *mermaid.js*, *Structurizr*, *PlantUML*, *obsidian*, *penpot*, *VSCode*, *vscode-debug-visualizer*, *code-server*, *&Coniniue*, Linux Distributions (*Ubuntu*, *Debian*, *Fedora*, *Talos*), distrobox, Embedded Linux Distributions (*OpenBMC*, ), *systemd*,  *spack*, *GDB*, *eBPF*, *ecapture*, *kitty*, *GNU parallel*, *fd*, *wtf*, *rush*, *pigz*, *curl*, *aria2*, *HTTPie CLI*, *unzip*, *fzf*, *starship*, *git*, *gitbutler*, *github*, *gitlab*, *gitea*, *Ansible, *Terraform*, *Terragrunt*, *terramate*, *terranetes-controller*, *terraform-plugin-framework*, *typhoon*, *Pulumi, Crossplane*, *nitric*, *OpenTofu*, *klotho*, *Terraformer*, *Brainboard*, *AWS CloudFormation*, *Hashicorp Packer*, *laf*, *Go CDK*, *Puppet*, *Chef*, *SaltStack*, *OpenTofu*, *warewulf*, *Virtual Box*, *VMWare*, *Vagrant*, *OpenVMM*, *cloud-hypervisor*, *crosvm*, *Neutron*, *KubeVirt*, *Harvester*, *Kata Containers*, *APT*, *DNF*, *Zypper*, *Nix*, *yum*, *chocolatey*, *yarn*, *homebrew*, *apt-get*, *fpm*, *LXD*, *paru*, *chezmoi*, *pixi*, *Python*, *fastcore*, *asyncio*, *venv*, *pyenv*, *pipx*, *uv*, *manylinux*, *ptpython*, *hy*, *coconut*, *more-itertools*, *returns*, *Rust*, *tokio*, *Zig*, *Java*, *Golang*, *gf*, *Dart*, *testify*, *lo*, *Scala*, *zio*, *Monix*, *C++*, *googletest*, *cpputest*, *Catch2*, *doctest*, *palanteer*, *mimalloc*, *imgui*, *Cosmopolitan Libc*, *gdb*, *qira*, *rr*, *Julia*, *Flux.jl*, *Javascript*, *es-toolkit*, *V8*, *Node.js*, *Deno*, *npm*, *bun*, *Jest*, *jasmine*, *Express.js*, *hono*, *poyro*, *Mojo*, *Erg*, *vlang*, *taichi lang*, *Codon*, *gpu.cpp*, *OpenGL*, *Direct3D*, *Vulkan*, *Metal*, *D3D12*, *DirectX*, *CUDA*, *cccl*, *nccl*, *LibreCUDA*, *Triton Lang*, *Liger-Kernel*, *Bend*, *chapel*, *Halide*, *ThunderKittens*, *Futhark*, *gpu-operator*, *gpustat*, *wgpu*, *Pygfx*, *dawn*, *Emu*, *vGPU_Unlock*, *blis*, *cuBLAS*, *cutlass*, *OpenBLAS*, *ROCm*, *HIP*, *Metal*, *MSL*, *MPS*, *OpenCL*, *pyopencl*, *Kokkos*, *HVM/Blend*, *OpenMP*, *oneTBB*, *HIP*, *OpenACC*, *Taskflow*, *oneTBB*, *Kompute*, *poptorch*, *make*, *remake*, *just*, *pyInvoke* *snakemake*, *CMake*, *Gradle*, *Maven*, *turborepo*, *Bazel*, *fastlane*, *buildozer*, *python-for-android*, *localsend*, *Meson*, *Ninja*, *dagger*, *koin*, *Swinject*, *Fx*, *DependencyInjection Component*, *TypeDI*, *dig*, *KodeinDI*, *Fruit*, *Needle*, *SimpleInjector*, *Injector*, *DI*, *Ant*, *aiomultiprocess*, *gRPC*, *Finagle*, *Thrift*, *Numpy*, *cuda-python*, *Numba*, *MatX*, *mlx*, *tensorstore*, *Scipy*, *statsmodels*, *Cupy*, *ArrayFire*, *matplotlib*, *seaborn*, *facets*, *bokeh*, *folium*, *holoviz*, *nomic*, *pygwalker*, *Altair*, *optimus*, *scrub*, *dataprep*, *img2dataset*, *augmentoolkit*, DataGradients*, *FastDup*, *dedupe*, *zingg*, *YData Synthetic*, *Gretel Synthetics*, *SVD*, *AugLy*, *nlpaug*, *TextAttack*, *FoleyCrafter*, *pyaudio*, *python-sounddevice*, *playsound*, *simpleaudio*, *winsound*, *winutil*, *python-sounddevice*, *pydub*, *wavio*, *soundfile*, *torchaudio*, *pyAudioAnalysis*, *librosa*, *audiomentations*, *OpenVoice*, *albumentations*, *inflect*, *textaugment*, *kornia*, *batchgenerators*, *synthea*, *temporian*, *pgmpy*, *pyAgrum*, *BayesFlow*, *bayespy*, *Stan*, *pyro*, *PyMC*, *pytensor*, *pomegranate*, *Scikit Learn*, *cuML*, *hyperlearn*, *NetworkX*, *cuGraph*, *mapie*, *human-learn*, *sklearn-expertsys*, *XGBoost*, *TextBlob*, *SpaCy*, *scispacy*, *spacy-llm*, *PaddleNLP*, *opennlp*, *CoreNLP*, *pyLDAvis*, *scattertext*, *flair*, *XGBoost*, *Catboost*, *deepdetect*, *Bayesian Optimization*, *BoTorch*, *Keras*, *Pytorch (Plain, Lightning & Ignite)*, *Tensorflow*, *sonnet*, *HF Transformers*, *ml-4m*, *tiktoken*, *LASER*, *fastText*, *sentence-transformers*, *clip-as-service*, *mmpretrain*, *JAX*, *Endia*, *FLAX*, *TRAX*, *Penzai*, *MNN*, *Volwpal Wabbit*, *River*, *scikit-multiflow*, *Burn*, *Candle*, *CoreNet*, *DL4J*, *dlj*, *BeyondML*, *mlpack*, *flashlight*, *MindSpore*, *Paddle Paddle*, *Oneflow*, *Pytorch3D*, *Kaolin*, *Dopamine*, *ReAgent*, *TensorTrade*, *PARL*, *acme*, *pymarl*, *DI-engine*, *MALib*, *WarpDrive*, *OpenRL*, *detectron2*, *MMDetection*, *Lightly SSL*, *timm*, *LAVIS*, *CV-CUDA*, *supervision*, *ImageAI*, *cupoch*, *deformgs*, *champ*, *tsai*, *darts*, *kats*, *Time-Series-Library*, *hierarchicalforecast*, *gluonts*, *skforecast*, *pydlm*, *biotite*, *NoLabs*, *deepchem*, *fairchem*, *pyscf*, *pennylane*, *QuantumKatas*, *lifelines*, *devspace*, *che*, *nocalhost*, *flox*, *okteto*, *telepresence*, *gitpod*, *Tilt*, *coder*, *daytona*, *Github Codespaces*, *envd*, *Kubeflow Pipelines*, *Kubeflow Model Training Operator*, *ZenML*, *mlinfra*, *mlstacks*, *CLAIMED*, *sqlflow*, *SuperDuperDB*, *mindsdb*, *lotus*, *Dataherald*, *Calcite*, *postgresml*, *pgai*, *cube*, *vespa*, *Snowflake Cortex*, *MLFlow*, *ClearML*, *oss-mlops-platform*, *TFX*, *Xorbits*, *Kong AI gateway*, *gateway*, *LiteLLM*, *glide*, *Unify*, *BricksLLM*, *Paddler*, *llm-gateway*, *felafax-gateway*, *Martian*, *Not Diamond*, *RouteLLM*, *axflow*, *DB-GPT*, *LLMStudio*, *languagemodels*, *entropix*, *agenta*, *GPTCache*, *LLMLingua*, *Octopii*, Open Source LLMs (Text: *BERT*, *Llama*, *Reflection*, *DeepSeek*, *LLM360*, *OLMo*, *Gemma*, *R Family*, *Zephyr*, *RWKV-LM*, *Persimmon*, *OLMo*, *TinyLlama*, *MobileLLM*, *Mistral*, *OpenMoE*, *MPT*, *Falcon*, *Falcon Mamba*, *PaLM*, *Vicuna*, *Alpaca*, *Dolly*, *t5x*, *RWKV-LM* (*rwkv.cpp*), *Mamba*, *VMamba*, *zamba*, *Jamba*, *s4*, *LFM*, *LOLA*, *matmulfreellm*, *LWM*, *Extended Mind Transformers*; Code: *Codestral Mamba*; Video: *JEPA*, *InternVideo*; Multimodal: *Vitron*, *MiniCPM*, *InternViT*, *Pixtral*, *DBRX*, *X-LLM*, *BakLLaVA*, *CogVLM*, *Qwen-VL*, *MiniGPT-4*, *NExT-GPT*, *PALM-E*, *OpenFlamingo*, *Grok*, *Video-LLaMA*, *Otter*, *Multimodal-GPT*, *AnyGPT*, *Orca*, *Phi*, *Macaw*, *VILA*, *Show-o*), *SentencePiece*, *PyTorch-StudioGAN*, Managed Generative ML/LLM Services (e.g., *OpenAI Assistants API*, *Gemini*, *Midjourney*, *DALL-E*, *SORA*, *Azure Open AI*, *Claude*, *Nova*, *Cohere*, *Suno*, *PLayHT*, *ElevenLabs*, *Resemble.AI*), *openai-realtime-console*, *ai-artifacts*, *GodMode*, *Jsonformer*, *JuJu*, *Merlin*, *DeepRec*, *botpress*, *NVIDIA NeMO*, *NeMo-Aligner*, *alignment-handbook*, *FastChat*, *Pipecat*, *Rasa Open Source*, *Lobe Chat*, *TensorRT-LLM*, *TransformerEngine*, *ipex-llm*, *ray-llm*, *Superagent*, *Cheshire Cat*, *Botonic*, *Tock*, *wechaty*, *ffcv*, *Horovod*, *Distributed Data Parallel (DDP)*, *Petastorm*, *Colossal AI*, *DeepSpeed*, *training-operator*, *Composer*, *Ray Train*, *pache Singa*, *trlx*, *GPT-NeoX*, *lingua*, *Megatron*, *megablocks*, *Paddle*, *h2o-3*, *Spark MLib*, *Spark NLP*, *Spark GraphX*, *Dask Distributed Training*, *Analytics Zoo*, *Apache Singa*, *Ceph/rook*, *longhorn*, *DAOS*, *openebs*, *HDFS*, *Gluster*, *Lustre*, *moosefs*, *SeaweedFS*, *cubefs*, *juicefs*, *DVC*, *fds*, *xvc*, *LakeFS*, *Quilt*, *Nessie*, *Neo4j*, *JanusGraph*, *NebulaGraph*, *HugeGraph*, *ArangoDB*, *OpenCog AtomSpace*, *minio*, *storj*, *swiftstack*, *drawdb*, *postgres*, *pglite*, *rainfrog*, *Neon*, *pgx*, *pglite*, *graphql-engine*, *pg_graphql*, *querybook*, *pgadmin4*, *HeidiSQL*, *dbeaver*, *AnotherRedisDesktopManager*, *azuredatastudio*, *beekeeper-studio*, *whodb*, *dbgate*, *Jailer*, *pgweb*, *phpmyadmin*, *Sequel-Ace*, *graphql*, *Ariadne*, *graphql-js*, *directus*, *tidb*, *Mathesar*, *Dgraph*, *Redis*, *cachecloud*, *DiceDB*, *etcd*, *Vitesse*, *KV*, *foundationdb*, *minikeyvalue*, *olric*, *Ignite*, *tikv*, *Vineyard*, *CouchDB*, *pouchdb*, *MongoDB*, *Cassandra*, *HBase*, *Scilladb*, *YDB*, *CockroachDB*, *TerminusDB*, *EventStore*, *realtime*, *DeltaLake*, *LakeSoul*, *ulid*, *netron*, *modelstore*, *ModelDB*, *optscale*, *aiconfig*, *Tensorboard*, *sacred*, *Aim*, *truelens*, *Humanloop*, *ChainForge*, *Promptflow*, *AgentHub*, *ChainForge*, *mirascope*, *spring-ai*, *benchllm*, *modelbench*, *bigcode-evaluation-harness*, *llm-autoeval*, *SWE-bench*, *hallucination-leaderboard*, *pytorch-fid*, *Purple Llama*, *garak*, *PyRIT*, *VectorDBBench*, *sciml-bench*, *speech-to-text-benchmark*, *WorkArena*, *DISCOVERYWORLD*, *AgentBench*, *agent-arena*, *OSWorld*, *llm-reasoners*, *llmperf*, *langfair*, *prometheus-eval*, *EvalLM*, *evalgen*, *cappy*, *arena-hard-auto*, *JudgeLM*, *PandaLM*, *Auto-J*, *BotChat*, *FastEval*, *ToolTalk*, *rebuff*, *auto-evaluator*, *LLMZoom*, *moonshot*, *Inspect*, *empirical*, *alpaca_eval*, *lone-arena*, *opencompass*, *BIG-bench*, *Eureka ML Insights*, *AlignEval*, *artkit*, *chat-arena*, *Inspect*, *fasttrackml*, *MLTRAQ*, *Neptune*, *W&B*, *CometML*, *Determined AI*, *Kolena*, *Efemerai*, *Kedro*, *substratus*, *lanarky*, *lamini*, *Xorbits Inference*, *khoj*, *UFO*, *ChatGPT Reverse Proxy*, *dialog*, *aphrodite-engine*, *KubeAI*, *leptonai*, *Text Generation Inference (TGI)*, *Text Embeddings Inference*, *vLLM*, *Jina-Serve*, *lmdeploy*, *WebLLM*, *PowerInfer*, *FlexFlow*, *mistral.rs*, *lightllm*, *Monte Carlo*, *Qualdo*, *Metaplane*, *Talend Data Quality*, *JSON Schema*, *Great Expectations*, *Dafafold*, *DataBand*, *Soda Core*, *Anomalo*, *BigEye*, *Ataccama*, *Evidently*, *labml*, *Phoenix*, *nannyml*, *AimOS*, *Radicalbit AI Monitoring*, *OpenLLM*, *langkit*, *Openllmetry*, *Helicone*, *llm.report*, *Vibranium Dome*, *Doku*, *LangWatch*, *langtrace*, *openlit*, *opik*, *agentops*, *tokencost*, *langfuse*, *pezzo*, *bisheng*, *agentsea*, *AGiXT*, *Arize AI*, *Arthur AI*, *Why Labs*, *MonaLabs*, *Aporia*, *Senser*, *Superwise*, *Cencius*, *Verta*, *Truera*, *Hugging Face Libraries (Transformers, Diffusers, PEFT, Accelerate, Optimum, AWS Trainium and Inferentia, Tokenizers, Evaluate, TRL, timm, Safetensors, Autotrain, Autotrain Advanced, Lerobot)*, *KerasHub*, *fairseq*, *big-AGI*, *TorchScale*, *Stable Diffusion*, *stable-dreamfusion*, *Wonder3D*, *ODM*, *stable-audio-tools*, *DiT*, *Fooocus*, *photoguard*, *PaddleGAN*, *PhotoEditor*, *EditAnything*, *ImageToolbox*, *rembg*, *magic-animate*, *SadTalker*, *DynamiCrafter*, *LoRA*, *QLoRA*, *LongLoRA*, *llmware*, *artifacthub*, *HuggingFaceHub*, *Featherless.ai*, *tost.ai*, *Label Studio*, *Labelbox*, *xtreme1*, *docanno*, *cvat*, *Dataloop*, *diffgram*, *cleanvision*, *Universal Data Tool*, *refinery*, *Slicer*, *labelme*,* makesense.ai*, *aubio*, *Praat*, *prodigy*, *v7labs*, *FiftyOne*, *Superb AI*, *Scale AI*, *aquarium*, *Kili*, *SuperAnnotate*, *Encord Annotate*, *labelme*, *praat*, *evals*, *Bench*, *checklist*, *lm-evaluation-harness*, *deepchecks*, *datachecks*, *cleanlab*, *TPOT*, *Featuretools*, *tsfresh*, *RasgoQL*, *Armada*, *Joblib*, *Hamilton*, *Burr*, *Argo*, *Hera*, *Airflow*, *Dagster*, *maestro*, *mage*, *kestra*, *Cadence*, *Azkaban*, *Bacalhau*, *Dagger*, *Prefect*, *Nomad*; *zenml*, *CLAIMED*, *kedro*, *kubeflow pipelines*, *mleap*, *flyte*, *sematic*, *covalent*, *Ploomber*, *n8n*, *zapier*, *Pachyderm*, *Mage*, *Cromwell*, *Nextflow*, *Feathr*, *Hopsworks OSS*, *Chronon*, *Michelangelo Palette*, *F3*, *Featureflow*, *Griffin*, *OpenMLDB*, *auto-sklearn*, *mljar-supervised*, *PyCaret*, *SapientML*, *Ludwig*, *higgsfield*, *litgpt*, *dclm*, *openchat*, *LLaMA2-Accessory*, *aicommits*, *opencommit*, *AutoGen*, *MetaGPT*, *AgentVerse*, *swarm*, *TapeAgents*,  *Camel*, *ChatDev*, *Langroid*, *crewAI*, *langgraph*, *GPTSwarm*, *livekit/agents*, *ControlFlow*, *agent-zero*, *agentK*, *ADAS*, * openbb-agents*, *AutoAgents*, *LLMStack*, *Magick*, *Rivet*, *Tribe AI*, *PraisonAI*, *AppAgent*, *MobileAgent*, *Langchain*, *Langchain.js*, *Dust*, *BondAI*, *letta*, *OpenAgents*, *SuperAGI*, *Agent Pilot*, *griptape*, *phidata*, *LLMCOmpiler*, *ragapp*, *CopilotKit*, *agentkit*, *gptscript*, *Agents*, *Embedchain*, *Verba*, *Neum AI*, *gorilla*, *graphRAG*, *AutoRAG*, *Cohere Toolkit*, *R2R*, *clip-retrieval*, *HippoRAG*, *ragbuilder*, *cognita*, *composio*, *FastGPT*, *haystack*, *Langflow*, *Flowise*, *tuned-lens*, *inspectus*, *llm-viz*, *Semantic Kernel*, *DSPy*, *Zenbase Core*, *AutoPrompt*, *AdalFlow*, *KaibanJS*, *Bee*, *Agience*, *TaskGen*, *AgentJo*, *dynamiq*, *textgrad*, *Agents 2.0*, *prompt-poet*, *guidance*, *YiVal*, *sglang*, *lorax*, *orca*, *ChemCrow*, *alphafold3-pytorch*, *IBM/materials*, *Chai-1*, *private-gpt*, *vanna*, *Sourcegraph*, *XAgent*, *AgentGPT*, *skyvern*, *webllama*, *robotframework*, *OmniParser*, *devika*, *AI-Scientist*, *Devin*, *Genie*, *Open Hands*, *bolt.new*, *gpt-pilot*, *ai-toolkit*, *auto-code-rover*, *Devon*, *JACoB*, *micro-agent*, *GPT Pilot*, *LoopGPT*, *foyle*, *Mentat*, *Sweep*, *aider*, *codel*, *whatsapp-chatgpt*, *JARVIS*, *PocketPal AI*, *gptme*, *agent.exe*, *LlamaFS*, *gpt-engineer*, *o1-engineer*, *g1*, **, *Robbie G2*, *Agentless*, *merlinn*, *smol developer*, *vectorlm*, *hackingBuddyGPT*, *cover-agent*, *fuzz4all*, *coverup*, *SWE-agent*, *RepoUnderstander*, *repo2txt*, *DevOpsGPT*, *OpenCopilot*, *DemoGPT*, *GeniA*, *AutoDev*, *Open-Assistant*, *Open Interpreter*, *Self-Operating Computer Framework*, *GPT4All*, *LocalAI*, *danielmiessler/fabric*, *chatbox*, *torchchat*, *TinyLLM*, *Jan*, *leon*, *screenpipe*, *TinyAgent*, *OpenOpenAI*, *speech-to-speech*, *Open-Sora*, *Mochi*, *Pyramid Flow SD3*, *VideoCrafter*, *CogVideo*, *open-chat-video-editor*, *imaginAIry*, *VGen*, *Tune-A-Video*, *mmaction2*, *VADER*, *promptify*, *promptfoo*, *SoM*, *AI Test Kitchen*, *AnySolve*, *betterprompt*, *ChatGPT Prompt Generator*, *ClickPrompt*, *DreamStudio*, *Dify*, *TaskingAI*, *Dust*, *IX*, *Dyno*, *EmergentMind*, *EveryPrompt*, *FlowGPT*, *fastRAG*, *GPT Index*, GPTTools, hwchase17/adversarial-prompts, Interactive Composition Explorer, Knit, *LangBear*, *Lexica*, *LMFlow*, *loom*, *Metaprompt*, *OpenAI Playground*, *OpenICL*, *OpenPrompt*, *OpenPlayground*, *OptimusPrompt*, *Outlines*, *Faster-Outlines*, *instructor*, *lm-format-enforcer*, *Artificial Intelligence Controller Interface (AICI)*, *StrictJSON*, Playground*, *Portkey AI*, *Prodia*, *Prompt Apps*, *PromptAppGPT*, *Prompt Base*, *Prompt Engine*, *prompted.link*, *Prompter*, *PromptInject*, *Prompts.ai*, *Promptmetheus*, *PromptPerfect*, *Promptly*, *PromptSource*, *PromptTools*, *Scale SpellBook*, *sharegpt*, *SmartGPT*, *ThoughtSource*, *Visual Prompt Builder*, *YiVal*, *MLFlow Prompt Engineering UI*, *frugal*, *FLAML*, *NNI*, *AutoGluon*, *AutoTS*, *AI Scientist*, *RD-Agent*, *Vision Agent*, *StatsForecast*, *beta-recsys*, *metarank*, *kusion*, *rig*, *dyrectorio*, *Azure DevOps*, *DevOpsBox*, *OpsLevel*, *cortex*, *telepresence*, *Argonaut*, *Mia Platform*, *Shipa*, *Port*, *Upbound*, *gimlet*, *nautes*, *Crossplane*, *Backstage*, *Spinnaker*, *sheperd*, *Teller*, *Hashicorp Vault*, *Sops*, *Infisical*, *external-secrets*, *keycloak*, *Zitadel*, *ory*, *supertokens*, *OKTA*, *Auth0*, *authelia*, *defguard*, *Stack Auth*, *OPA*, *keto*, *spicedb*, *permify*, *casbin*, *Teleport*, *openfga*, *warrant*, *topaz*, *Ory Kratos*, *Ory Hydra*, *dex*, *OneLogin*, *Ping Identity*, *WSO2 Identity Server*, *Duo Security*, *bytebase*, *cloudnative-pg*, *kubeblocks*, *Gaphor*, *Archi*, *Icepanel*, *Jira*, *Backlog*, *Trello*, *plane*, *Openproject*, *Actionview*, *cloudcustodian*, *xterm.js*, *sshuttle*, *Ayup*, *gliderlabs/ssh*, *sshfs*, *ssh3*, *ssh-audit*, *team-viewer*, *rustdesk*, *Cookiecutter*, *copier*, *Craft*, *copier*, *Yeoman*, *mlops-python-package*, *AgentStack*, *Self-hosted AI starter kit*, *OPEA*, *llama-stack*, *AgentGenesis*, *Apollo*, *NACOS*, *Salt*, *Configu*, *OmegaConf*, *Hydra, *DynaConf*, *RSS Guard*, *rss-bridge*, *FreshRSS*, *Follow*, *rudder-server*, *next-cloud*, *Meilisearch*, *typesense*, *ElasticSearch*, *MobileAgent*, *transformers.js*, *llama-cpp-python*, *llm.c*, *llama2.c*, *nanoGPT*, *nanoGPT-mup*, *kat*, *nano-llama31*, *MobiLlama*, *Ollama*, *LM studio*, *ExLlamaV2*, *koboldcpp*, *unilm*, *Dalai*, *BigDL-LLM*, *argilla*, *bonito*, *DataDreamer*, *airoboros*, *textbook_quality*, *NeMo-Curator*, *distilabel*, *lilac*, *llm-data-creation*, *pluto*, *LLama-index*, *mem0*, *zep*, *Letta*, *LLamalab*, *NeMo-Guardrails*, *guardrails*, *Purple Llama*, *LLaMA-Factory*, *JAX*, *FLAX*, *TRAX*, *optax*, *Mctx*, *AXLearn*, *GGML*, *KitOps*, *valor*, *llamafile*, *ctransformers*, *GGUF*, *STAX*, *Objax*, *Haiku*, *Elegy*, *Ray Core*, *Kuberay*, *SciML*, *pysindy*, *neuromancer*, *deepmd-kit*, *PyDMD*, *PyKoopman*, *PyNumDiff*, *PySensors*, *deepxde*, *FluidX3D*, *SU2*, *FreeCAD*, *openscad*, *drake*, *Seldon Core*, *BentoML*, *Ray Serve*, *KServe*, *Cortex*, *Truss*, *MLEM*, *OctoML*, *HippoML*, *NVIDIA DALI, *NVIDIA Triton Inference Server*, *TorchServe*, *exo*, *Vitis*, *ONNX Runtime*, *deepsparse*, *PPLNN*, *NVIDIA TensorRT*, *NVIDIA TensorRT-LLM*, *Intel Extension for Transformers*, *TensorRT Polygraphy*, *TensorRT onnx-graphsurgeon*, *TensorRT*, *pytorch-quantization*, *ao*, *torchao*, *BlindAI*, *Streamlit*, *Gradio*, *text-generation-webui*, *Shiny*, *Dash*, *Voila*, *nextpy*, *PyWebIO*, *mesop*, *reflex*, *nicegui*, *appsmith*, *ToolJet*, *illa-builder*, *budibase*, *nocobase*, *Retool*, *Chainlit*, *LMFlow*, *Simple LLM Finetuner*, *Axolotl*, *unsloth*, *xTuring*, *langdrive*, *mistral-finetune*, *xtuner*, *LLM Finetuning Toolkit*, *OpenPipe*, *xTuring*, *LLaMA-Adapter*, *multimodal-maestro*, *ms-swift*, *torchtune*, *HF trl*, *trlx*, *OpenRLHF*, *DistillKit*, *Marvin*, Marvin, *TypeChat*, *Vercel AI SDK*, *text-generation-web-ui*, *AnythingLLM*, *snipe-it*, *glpi*, *Zendesk*, *ZohoDesk*, *Inkeep*, FreshDesk*, *Zammad*, *osTicket*, *FreeScout*, *Peppermint*, *Trudesk*, *Faveo Helpdesk*, *Pagerduty*, *chatwoot*, *papercups*, *chaskiq*, *helpy*, *ort*, *OpenSCA*, *QEMU*, *Firecracker*, *katacontainers*, *Chatbot Arena*, *WindowsAgentArena*, *Radon*, *Bandit*, *Snyk*, *Intruder*, *Splunk SOAR*, *Immuniweb*, *OpenDSR*, *Drata*, *Cymulate*, *SOPHOS*, *Snyk*, *FOSSA*, *What the Diff*, *Github Dependabot*, *super-linter*, *Bump My Version*, *addlicense*, *ModelScan*, *Github Code Scanning*, *AI Reviewer*, *Codeball*, *Codacy*, IaaS (e.g., (1) Open Source: *OpenStack*, *Cloudstack*, *Cozystack*, *clutch*, *cluster-health*; (2) Managed: *NVIDIA DGX Datacenter*, *AWS EC2*, *AWS ECS*, *AWS EKS*, *AWS Fargate*, *Google GKE*, *cluster-toolkit*, *ECR Container Registry*, *genesiscloud*; AI Paas/FaaS (e.g., GPUs: FaaS: (1) they own the machines: *Lambda GPU Cloud*, *Fluidstack*, *mfem*, *CoreWeave*, *HF GPU Spaces*, *Crusoe.ai, *LambdaLabs*, *JarvisLabs*, *SambaNova*, *Juice*, *Super Micro*, *TensorDock*, *Modal*; *Shadeform*; (1.1) GPU FaaS Clients: *Moonglow*; (2) Normal People rent their machines to others: *salad*, *vast.ai*; PaaS: *Anyscale*, *Lepton AI*, *Fireworks AI*, *Groq*, *Paperspace*, *run:ai*, *Runpod*, *Radium*, *AWS bedrock*, *replicate*, *Nebius AI*; IaaS: *San Francisco Compute*; Other: PaaS: *Graphcore*)) Serverless managed offerings (e.g., *AWS Lambda*, *Azure functions*, *Baseten*, *Inferless*, *Banana*, *Pipeline*, *Slai.io*, *inferrd*, *replicate*), IT PaaS/FaaS: run easily workloads (e.g., Open Source: *Supabase*, *NVIDIA DGX SuperPod*, *AWS EKS*, *GCP GKE*, *fly.io*, *coolify*, *dokploy*, *Qovery Engine*, *langrunner*, *OpenFaaS*, *OpenWhisk*, *KNative*, *Nuclio*, *Backend.AI*, *OpenFunction*, *Fission*, *tsuru*, *CDS: Continuous Delivery Service*, *Encore*, *PipeCD*, *Dokku*, *KubeVela*, *shuttle*, *Porter*, *piku*, *OTOMI*, *rack*, *kubero*, *kopf*, *PaaSTA*, *kapp*, *dyrectorio*, *Rig.dev*, AI-focused: *Skypilot*; Managed: *Firebase*, *Heroku*, *Netlify*), SaaS offerings (e.g., *AWS SNS*), *Django*, *frappe*, *fasthtml*, *htmgo*, *gin*, *Spring*, *dubbo*, *Laralevel*, *Sveltekit*, *xyflow*, *redwood*, *Voyager*, *Wave*, *Laralevel Spark*, *Genesis*, *Nextjs*, *fragments*, *Vite*, *Astro*, *remix*, *perseus*, *caprover*, *FastAPI*, *litestar*, *Gunicorn*, *Uvicorn*, *starlette*, *Caddy*, *NGINX*, *haproxy*, *workerd*, *ModSecurity*, *Bunkerweb*, *Podman*, *Docker*, *Apptainer*, *containerd*, *runc*, *buildah*, *Moby*, *pack*, *ko*, *Porter*, *Kaniko*, *Shipwright*, *contaiNERD CTL*, *Slim*, *cadvisor*, *virtualenv*, *pex*, *Github packages*, *SLURM*, *volcano*, *Nomad*, *Harbor*, *distribution*, *cri-o*, *stackrox*, *strelka*, *trow*, *Kubernetes*, *k8s-device-plugin*, *CRI-O*, *kubectl-cost*, *kubebuilder*, *operator-sdk*, *operator-lifecycle-manager*, *testcontainers-python*, *dockertest*, *Docker-Android*, *ContainerSSH*, *Docker-OSX*, *kubernetes in docker (kind)*, *minikube*, *k3d*, *mirrord*, *vcluster*, *K3S*, *Kubeedge*, *baetyl*, *openyurt*, *shifu*, *EdgeX*, *fledge*, *thingsboard-gateway*, *Microk8s*, *ekuiper*, *Helm*, *Kustomize*, *timoni*, *cdk8s*, *kpt*, *k9s*, *OKD*, *Kubesphere*, *kluctl*, *zadig*, *cds*, *devtron*, *Lens*, *Kubeapps*, *porter-archive*, *capsule*, *Rancher*, *kubermatic*, *Karmada*, *Skaffold*, *werf*, *Flux2*, *ketch*, *sablier*, *dapr*, *Carvel*, *Garden*, *Velero*, *stash*, *OPA*, *Kubearmor*, *cert-manager*, *in-toto*, *kubecost*, *opencost*, *kube-prometheus*, *scope*, *kdash*, *skooner*, *KEDA*, *Karpenter*, *Sealed Secrets*, *Kubernetes Secrets Store CSI Driver*, *External Secrets*, *k8sgpt*, *PentestGPT*, *LaVague*, *Agent-E*, *Huginn*, *Fuji-Web*, *zapier*, *sonobuoy*, *robusta*, *preevy*, *Metacontroller*, *Twisted*, *tornado*, *asyncio*, *Celery*, *RQ*, *kueue*, *fabric*, *plural*, *Run:ai*, *Cloudflare*, *Fastly*, *Quarto*, *Hugo*, *Gatsby*, *Jekyll*, *hexo*, *tailwind-nextjs-starter-blog*, *BigQuery*, *AWS RedShift*, *Doris(, *Hive*, *Snowflake*, *Coalesce*, *Fivetran*, *Stich*, *velox*, *dbt*, *dlt*, *piperider*, *Snowpark*, *Tecton*, *dotData*, *Molecula*, *Hopsworks*, *Feast*, *Apache Arrow*, *TorchArrow*, *substrait*, *spark*, *GraphScope*, *koalas*, *RabbitMQ*, *NATS*, *cloudevents*, *ActiveMQ*, *ZeroMQ*, *Kafka*, *strimzi*, *cruise-control*, *GStreamer*, *NNStreamer*, *Pulsar*, *Redpanda*, *Pravega*, *Kinesis*, *RocketMQ*, *Brooklin*, *fireworq*, *Storm*, *Flink*, *Kafka Streams*, *Spark Structured Streaming*, *Beam*, *Pathway*, *Impala*, *NiFi*, *Benthos*, *Apache NiFi*, *Numaflow*, *KSQL*, *Materialize*, *Decodable*, *quix streams*, *hazelcast*, *bytewax*, *community-skeleton*, *danswer*, *gerev*, *mlflow-kernel*, *Sphinx*, *Graphviz*, *pygraphistry*, *MkDocs*, *mkdocstrings*, *Material for MKDocs*, *gitbook*, *Read the Docs*, *github pages*, *lightdash*, *blazer*, *evidence*, *Salesforce*, *Power BI*, *Tableau*, *Google Analytics*, *umami*, *plausible*, *Mixpanel*, *GoReplay*, *rrweb*, *keep*, *Nagios*, *wireshark*, *sniffnet*, *GoodbyeDPI*, *SREWorks*, *zabbix*, *netdata*, *CyberChef*, *Prometheus*, *Thanos*, *VictoriaMetrics*, *Nightingale*, *Ddosify*, *fleet*, *OpenObserve*, *highlight.io*, *hyperdx*, *pixie*, *Retina*, *skywalking*, *OpenTelemetry*, (Grafana Agent*, *OpenMetadata*, *atlas*, *collectd*, *Open metrics*, *Telegraf*, *OpenLineage*, *Marquez*, *Datahub*, *Egeria*, *Aligned*, *Beats*, *coroot*, *Cilium*, *Hubble*, *Grafana Pyroscope*, *envoy*, *Istio*, *Kiali*, *Consul*, *kuma*, *linkerd2*, *flannel*, *kubeshark*, *hertzbeat*, *openclarity*, *Keptn*, *FastNetMon*, *akvorado*, *librenms*, *ThingsBoard*, *web-check*, *entef*, *Datadog*, *Sentry*, *Honeycomb*, *SignalFx*, *CloudWatch*, *New Relic*, *Librato*, *Algolia*, *Splunk*, *BigPanda*, *Sensu*, *Middleware*, *AppDynamics*, *Raygun*, *Splunk Cloud*, *eG Enterprise*, *metabase*, *plotly*, *graphana*, *Perspective*, *unitycatalo*, *superset*, *amundsen*, *redash*, *ckan*, *magda*, *Genie*, *open data discovery (odd)*, *Chat2DB*, *ClickHouse*, *Apache Pinot*, *DuckDB*, *StarRocks*, *Druid*, *Materialize*, *Trino*, *presto*, *Impala*, *Apache Drill*, *EvaDB*, *Alluxio*, *Delta Lake*, *LakeSoul*, *paimon*, *Kylo*, *Apache Hudi*, *Apache Iceberg*, *PyIceberg*, *Apache Parquet*, *h5py*, *Apache Avro*, *Deep Lake*, *AIStore*, *Debezium*, *Zepellin*, *marimo*, *positron*, *runme*, *Jupyter Lab*, *Jupyterlab-requirements*, *ipyflow*, *Papermill*, *Ploomber*, *jupysql*, *jupyter-ai*, *pyparallel*, *parakeet*, *testbook*, *nbdev*, *nbdime*, *elyra*, *jupytext*, *ReviewNB*, *NBQA*, *QAnything*, *paper-qa*, *lmk*, *lineapy*, *HF Evaluate*, *TF Model Analysis*, *TF Embedding Projector*, *ZenoML*, *AI Verify*, *TF Responsible AI Toolkit*, *Microsoft Responsible AI Toolkit (RAI)*, *Fairlearn*, *AI Fairness 360 (AIF360)*, *Sagemaker Clarify*, *SHAP*, *InterpretML*, *Alibi Explain*, *AI Explainability 360*, *TF What-If*, *interpret*, *Captum*, *TF Lattice*, *nnsight*, *gemma-scope*, *OmniXAI*, *TF language interpretability*, *ecco*, *Pythia*, *maia*, *sae-auto-interp*, *automated-interpretability*, *DeepCausality*, *Causal ML*, *dowhy*, *causalnex*, *Learning Interpretability Tool (LIT)*, *PiML*, *Adversarial Robustness Toolbox (ART)*, *Foolbox*, *Giskard*, *XAI Toolbox*, *trustyai-explainability*, *Pysift*, *tf federated*, *flower*, *nvidia clara*, *substra*, *OpenFL*, *FATE*, *FedML*, *PipelineDP*, *OpenCV*, *SuperGradients*, *NVIDIA DeepStream SDK*, *Savant*, *espnet*, *Mermaid*, *Icevision*, *detectotron2*, *PaddleDetection*, *Segmentation Models*, *Grounding DINO*, *segment-anything*, *co-tracker*, *mmsegmentation*, *Kornia*, *ocrpy*, *faceswap*, *GPT-SoVITS*, *Behave*, *Lettuce*, *Robot*, *Scalene*, *Pytest*, *Unittest*, *Coverage*, *Codecov*, *JaCoCo*, *Hypothesis*, *JUnit*, *pycodestyle*, *moto*, *ruff*, *pyright*, *yapf*, *pylint*, *sqlfluff*, *Black*, *flake8*, *MyPy*, *returns*, *injector*, *mock*, *faker*, *pyre-check*, *shellcheck*, *MonkeyType*, *beartype*, *Pydantic*, *jaxtyping*, *schema*, *pandera*, *deequ*, *TF Data Validation*, *DVT*, *data-diff*, *cerberus*, *ydata-profiling*, *unstructured*, *omniparse*, *unstract*, *docetl*, *DataTrove*, *docling*, *sparrow*, *ryoma*, *orjson*, *marker*, *pycln*, *pyupgrade*, *Bandit*, *cloudpathlib*, *SonarQube*, *Nessus*, *SpotBugs*, *PMD*, *gosec*, *codeql*, *gitleaks*, *nodejsscan*, *pino*, *bearer*, *scorecard*, *criticality_score*, *semgrep*, *webhint*, *BinAbsInspector*, *reko*, *ImHex*, *jpexs-decompiler*, *python-decompile3*, *LLM4Decompile*, *Recaf*, *decompiler-explorer*, *compiler-explorer*, *trivy*, *grype*, *clair*, *neuvector*, *Anchore Engine*, *Sysdig*, *Dagda*, *isort*, *Airbyte*, *syncthing*, *SeaTunnel*, *skyplane*, *Fivetran*, *Stitch*, *ingestr*, *lineapy*, *cog*, *chassis*, *chitra*, *crane*, *finetuner*, *Notion*, *notion-clone*, *Coda*, *siyuan*, *super-productivity*, *platform*, *papermark*, *reor*, *Logseq*, *dendron*, *AppFlowy*, *AFFiNE*, *plane*, *TVM*, *iree*, *HF Optimum*, *GPTFast*, *FlexiGen*, *XLA*, *voltaML*, *TF Model Optimization Toolkit*, *TF Lite*, *executorch*, *uTensor*, *Intel Neural Compressor*, *Adlik*, *AITemplate*, *MLC LLM*, *mnn-llm*, *Hidet*, *distiller*, *sparsify*, *OnnxSlim*, *sparseML*, *AIMET*, *TinyNeuralNetwork*, *HAWQ*, *quanto*, *AWQ*, *SmoothQuant*, *VPTQ*, *AutoGPTQ*, *cold-compress*, *Encord Active*, *modAL*, *libact*, *ALiPy*, *Baal*, *TenSEAL*, *google/differential-privacy*, *TF Privacy*, *SEAL*, *HElib*, *tf-encrypted*, *HEFlow*, *concrete-ml* *Presidio*, *molfeat*, *AWS EC2 Inf2*, *botui*, *bottender*, *pandas*, *pingouin*, *pandas-ai*, *WrenAI*, *quivr*, *localGPT*, *kotaemon*, *DocsGPT*, *KnowledgeCanvas/knowledge*, *pdftochat*, *Modin*, *Polars*, *vaex*, *ibis*, *Dask*, *Modin*, *mars*, *cuDF*, *Vaex*, *Daft*, *winglang*, *Odigos*, *Jaeger*, *Zipkin*, *Elastic APM*, *py2cfg*, *gensim*, *PyOD*, *Darts*, *Anomalib*, *Anomstack*, *Snorkel*, *Compose*, *Autolabel*, *Adala*, *vectorflow*, *superlinked*, *Text Embeddings Inference*, *infinity*, *pykeen*, *pgvector*, *Weaviate*, *Chroma*, *Milvus*, *Qdrant*, *HNSWLib*, *NMBSLib*, *Active Loop*, *lancedb*, *Marqo*, *Faiss*, *semantra*, *annoy*, *pyserinim*, *vearch*, *Vald*, *indexify*, *docarray*, *Argo Rollouts*, *flagger*, *Posthog*, *Growthbook*, *Flipt*, *Flagr*, *flagsmith*, *Optimizely*, *AB Tasty*, *Apptimize*; *Google Optimize*, *Stumpy*, *InfluxDB*, *TDengine*, *TimescaleDB*, *FiloDB*, *FlashDB*, *opentsdb*, *Prophet*, *Grafana Loki*, *Greylog*, *Logstash*, *spdlog*, *vector*, *monolog*, *FluentD*, *loguru*, *quill*, *structlog*, *flume*, *goaccess*, *Logseq*, *logparser*, *Pyomo*, *openblocks*, *Screenshot-to-code*, *draw-a-ui*, *memray*, *py-spy*, *pprof*, *coz*, *Bytehound*, *Stopwatch*, *async-profiler*, *gradle-profiler*, *line_profiler*, *orbit*, *hotspot*, *easy_profiler*, *puffin*, *Wordpress, Strapi*, *Ghost*, *Decap*, *wagtail*, *Keystone*, *Payload*, *Chromium*, *Publii, Drupal*, *Drupal*, *agentlabs*, *OpenCLIP*, *CLAP*, *ImageBind*, *AnyGPT*, *stable-diffusion*, *fastsdcpu*, *mmagic*, *SDXL-Turbo*, *StableStudio*, *Flux*, *DiffSynth-Studio*, *ComfyUI*, *SillyTavern*, *chathub*, *tldraw*, *IOPaint*, *diffusion-forcing*, *servo*, *OnionBrowser*, *Tor*, *ladybird*, *filebrowser*, *Cypress*, *Selenium*, *Playwright*, *Taxy AI Full Browser Automation*, *webdriverio*, *Testcomplete*, *Airtest*, *momentic*, *openv0*, *Langui*, *AI Spend*, *Swagger UI*, *Github Actions*, *Jenkins*, *gocd*, *woodpecker*, *CircleCI*, *Bamboo*, *Travis CI*, *Buddy*, *Buildbot*, *Bitbucket Pipelines*, *AWS CodePipeline*, *Tekton*, *TeamCity*, *ArgoCD*, *ArgoCD*, *Spinnaker*, *Buck*, *pygradle*, *python-fire*, *argparse*, *Typer*, *sqlmodel*, *ELK on Docker*, *OpenSearch*, *Solr*, *Sphinx Search*, *Xapian*, *Nutch*, *bm25s*, *datasketch*, *git-code-debt*, *Sandstorm*, *zuul*, *Kong*, *Traefik*, *higress*, *SafeLine*, *SafeLine*, *Unkey*, *unicorn*, *capstone*, *reconftw*, *OWASP Nettacker*, *BlackWidow*, *retire.js*, *minisearch*, *WhiteSource Bolt*, *Dependency-Track*, *OSSIndex*, *System Informer*, *BinAbsInspector*, *x64dbg*, *Santa*, *nuclei*, *flan*, *checkov*, *Vuls*, *Tsunami*, *grype*, *VeraCrypt*, *cryptomator*, *gophish*, *URH - Universal Radio Hacker*, *Aircrack-ng*, *WireGuard*, *tailscale*, *openvpn*, *amnezia-client*, *nebula*, *IPsec VPN Server on Docker*, *netmaker*, *MVT - Mobile Verification Toolkit*, *Kubescape*, *Gatekeeper*, *Kyverno*, *kube-score*, *yamllint*, *TOML*, *Carvel*, *kubesec*, *kubeaudit*, *kubeconform*, *kube-linter*, *tflint*, *polaris*, *conftest*, *datree*, *kubevious*, *Datashim*, *OSS-Fuzz*, *ClusterFuzz*, *prowler*, *Docker Bench for Security*, *nmap*, *vulscan*, *IVRE*, *Wazuh*, *OpenVAS*, *ThreatMapper*, *CrowSec*, *ossec-hids*, *Sn1per*, *secretive*, *Falco*, *IntelOwl*, *Watcher*, *metlo*, *hackingtool*, *it-tools*, *securityonion*, *Pacu*, *capa*, *cve-bin-tool*, *cve*, *tfscan*, *terrascan*, *ggshield*, *CloudSploit*, *kube-bench*, *pyWhat*, *Arkime*, *steampipe*, *cloudmapper*, *ntopng*, *systeminformer*, *osquery*, *Zeek*, *Dependency-Check*, *maltrail*, *x11docker*, *authentik*, *Calico*, *Osmedeus Core Engine*, *MISP - Threat Intelligence Sharing Platform*, *Faraday*, *TheHive*, *OWASP DefectDojo*, *OpenCTI*, *Ockam*, *cameradar*, *Suricata*, *Arachni*, *Meshbird*, *ufw-docker*, *CDK - Zero Dependency Container Penetration Toolkit*, *pocsuite3*, *Step CLI*, *Oso*, *Seatbelt*, *drozer*, *DefectDojo*, *SSLyze*, *tracee*, *parca*, *Interactsh.*, *Chef InSpec*, *CHIPSEC*, *Lynis*, *OpenSCAP*, *ScoutSuite*, *node-rate-limiter-flexible*, *OWASP Zed Attack Proxy (ZAP)*, *Nikto*, *Wapiti*, *Grabber*, *mitmproxy*, *Algo VPN*, *IPsec VPN Server Auto Setup Scripts*, *NGINX Config*, *bettercap*, *cutter*, *wifiphisher*, *JavaScript obfuscator*, *DOMPurify*, *RustScan*, *dirsearch*, *Vuls*, *Caldera*, *Shuffle*, *PhoneSploit Pro*, *shodan*, *keeweb*, *Protobuff*, *Prisma*, *pgroll*, *goose*, *gorm*, *typeorm*, *Sequelize*, *mongoose*, *sqitch*, *flyway*, *Pyrseas*, *liquibase*, *Planetscale*, *cibuildwheel*, *Poetry*, *rye*, *pyo3*, *Maturin*, *Twine*, *PySnooper*, *coremltools*, *ncnn*, *ShaderNN*, *mediapipe*, *HyperOpt*, *Optuna*, *SigOpt*, *RayTune*, *Katib*, *Overleaf*, *Stencila*, *novel*, *vnote*, *Notable*, *Joplin*, *memos*, *Laverna*, *Notesnook*, *MarkText*, *Stripe*, *hyperswitch*, *Checkout.com*, *browserify*, *Storybook*, *One*, *htmx*, *solidjs*, *mitosis*, *Lucide*, *React*, *react-starter-kit*, *openv0*, *open-saas*, *Preact*, *Bulletproof React*, *nextui*, *Radix Primitive*, *react-figma*, *mui-x*, *intro.js*, *kivy*, *React Native*, *Hippy*, *reactotron*, *lit*, *shadcn/ui*, *shoelace*, *biome*, *Vue*, *Svelte*, *flipper*, *Ionic*, *capacitor*, *Expo*, *Electron*, *Tauri*, **dioxus*, *sycamore*, *leptos*, *Pake*, *Acorn*, *OpenUI*, *tiptap*, *Tailwind*, *headlessui*, *vegeta*, *locust*, *gatling*, *k6*, *jmeter*, *Chaos Monkey*, *chaos-mesh*, *chaosblade*, *lLitmusChaos*, *kube-monkey*, *gum*, *go-jsonnet*, *CUE*, *LibreTranslate*, *Argos Translate*, *upscayl*, *yake*, *tesseract*, *Umi-OCR*, *EasyOCR*, *OCRmyPDF*, *PaddleOCR*, *zerox*, *surya*, *VERBI*, *tts*, *fish-speech*, *IMS-Toucan*, *ChatTTS*, *Parler-TTS*, *F5-TTS*, *GPT-SoVITS*, *EmotiVoice*, *MARS5*, *MetaVoice*, *Deepspeech*, *riffusion*, *muzic*, *magenta*, *riffusion-hobby*, *riffusion-app-hobby*, *AudioLDM2*, *musegan*, *Suno-API*, *Amphion*, *audiocraft*, *spleeter*, *voice-changer*, *Retrieval-based-Voice-Conversion-WebUI*, *open-musiclm*, *musiclm-pytorch*, *Ultralytics YOLOv8*, *yolov10*, *Github Copilot*, *cody*, *fauxpilot*, *claude-dev*, *continue*, *privy*, *cline*, *cursor*, *void*, *coffee*, *melty*, *zed*, *tabby*, *potpie*, *LSP-AI*, *claude-engineer*, *StarCoder*, *Granite*, *Yi-Coder*, *Toolformer*, *ToolBench*, *AgentCoder*, *OpenCodeInterpreter*, *AlphaCodium*, *pr-agent*, *Sweep*, *magnet*, *unblocked*, *Onboard*, *aider*, *Butterfish*, *Second*, *TFLite*, *MLKit*, *CoreML*, *Pytorch Mobile*, *TF.js*, *ai-jsx*, *WebAssembly*, *Pyodide*, *WebGL*, *WebGPU*, *Rive*, *WebSocket*, *WebRTC*, *LiveKit*, *Edge Impulse*, *EdgeCloudSim*, *EnvisEdge*, *Auptimizer*, *firesim*, *OpenFPGA*, *apio*, *icestorm*, *yosys*, *nextpnr*, *Logisim-evolution*, *Digital-Logic-Sim*, *Amaranth*, *PlatformIO*, *LiteX*, *LGN*, *whisper.cpp*, *whisper-diarization*, *WhisperKit*, *RealtimeSTT*, *WhisperLive*, *moonshine*, *LLaMA-Omni*, *SpeechGPT*, *bark*, *wavify-sdks*, *gpt-aria*, *TimesFM*, *chronos-forecasting*, *seamless_communication*, *NLLB/OpenNLLB*, *llama.cpp*, *bitnet.cpp*, *gpt-fast*, *codellama*, *ml-design-doc*, *Youtube Transcript API*, *OutfitAnyone*, *adr-tools*, *postal*, *EasyEdit*, *mergekit*, *FlexGen*, *Medusa*, *LookaheadDecoding*, *einops*, *safetensors*, *Diataxis*, *ROS2*, *home-robot*, *OpenBot*, *curobo*, *IsaacLab*, *jhonny-five*, *gobot*, *MuJoCo*, *robosuite*, *gz-sim*, *Godot*, *GDevelop*, *bevy*, *Babylon.js*, *cocos-engine*, *libgdx*, *MonoGame*, *o3de*, *Unreal Engine*, *MindMaker AI Plugin for Unreal Engine*, *Unity*, *Unity ML-Agents Toolkit*, *Huggy*, *AnimateAnyone*, *Swirl*, *Devv*, *Algolia*, *Coveo*, *searxng*, *SolidGPT*, *youtube-dl*, *Qt*, *gz-gui*, *Airtable*, *NocoDB*, *teable*, *aframe*, *univer*, *quadratic*, *sheetjs*, *visidata*, *Perplexity*, *Rubik's AI*, *You*, *Capitol AI*, *Perplexica*, *morphic*, *FreeAskInternet*, *MindSearch*, *OpenPlexity-Pages*, *stanford-oval/storm*, *farfalle*, *Noi*, *cvxpy*, *pulp*, *BayesianOptimization*, *ceres-solver*, *timefold-solver*, *osqp*, *nlopt*, *ScrapeGraphAI*, *Lumos*, *firecrawl*, *scrapy*, *Crawlee*, *crawl4ai*, *EasySpider*, *maxun*, *parsera*, *beatifull soup*, *colly*, *cheerio*, *orbitdb*, *ipfs*, *etherium*, *PySR*, *pystruct*, *neurosym*, *alpha-beta-CROWN*, *nnenum*, *VeriNet*, *Lyapunov_Stable_NN_Controllers*, *Verified Software Toolchain*, *pysmt*, *fastsmt*, *Gradient Free Optimizers*, *or-tools*, *sympy*, *langdiversity*, *PyReason*, *LNN*, *Problog*, *DeepProbLog*, *SATNet*, Unique3D*, *Meshroom*, *invesalius3*, *Open3D*, *Online3DViewer*, *nerfstudio*, *yt-dlp*, *convex_adversarial*, *Energy-Languages*, *torch2chip*, *TF-Agents*, *ReAgent*, *OpenSpiel*, *OpenAI Gym*, *Gymnasium*, *poppy-humanoid*, *Isaac Sim*, *humanoid-gym*, *arcle*, *GRUtopia*, *mesa*, *iGibson*, *ai2thor*, *Dopamine*, *dm_control*, *keras-rl*, *ray rllib*, *Coach*, *Huskarl*, *Stirling-PDF*, *MinerU*, *pdfminer.six*, *ivy*, *haxe*, *c2rust*, *Transcrypt*, *c2go*, *SQLGlot*, *sqlalchemy*, *DBeaver*, *sqlx*, *sqlmap*, *Insomnia*, *bruno*, *keploy*, *Scalar*, *hoppscotch*, *Lean4*, *LeanDojo*, *dns0.eu*, *libredirect*, *AirSim*, *simulator*, *carla*, *HighwayEnv*, **, *MotionPlanning*, *UniAD*, *ApolloAuto/apollo*, *autoware*, *ardupilot*, *openpilot*, *End-to-end-Autonomous-Driving*, *SMARTS*, *SensorsCalibration*, *SVGDreamer*, *NoLabs*, *Evo*, *poly*, *REINVENT4*, *sherlock*, *LocalSend*, *drawio-desktop*, *Lean*, *Lean Dojo*, *llmlean*, *slack*, *discord*, *Vencord*, *Baileys*, *Zulip*, *OpenStreetMap*, *spotube*, *roop*, *Frigate*, *python-tuf*, *ERPNext*, *Score Specification*, *PowerToys*, *linutil*, *Microsoft-Activation-Scripts, *immich*, *ente*, *graphcast*, *WRF*, *open-meteo*, *core*, *formbricks*, *twenty*, *latex*, *typst*, *dub*, *fingerprintjs*, *deepface*, *openpyxl*, *jinja*, *nodemailer*, *novu*, etc
 
-### Tools Freelunch can use/integrate with.
-
-__*Freelunch* works on top of all these (open source and proprietary) IT, DevSecOps, Data Engineering, MLOps, Analytics and Graphics Programming tools:__  *d2*, *Diagrams*, *Draw.io*, *Miro Board*, *excalidraw*, *mermaid.js*, *Structurizr*, *PlantUML*, *obsidian*, *penpot*, *VSCode*, *vscode-debug-visualizer*, *code-server*, *&Coniniue*, Linux Distributions (*Ubuntu*, *Debian*, *Fedora*, *Talos*), distrobox, Embedded Linux Distributions (*OpenBMC*, ), *systemd*,  *spack*, *GDB*, *eBPF*, *ecapture*, *kitty*, *GNU parallel*, *fd*, *wtf*, *rush*, *pigz*, *curl*, *aria2*, *HTTPie CLI*, *unzip*, *fzf*, *starship*, *git*, *gitbutler*, *github*, *gitlab*, *gitea*, *Ansible, *Terraform*, *Terragrunt*, *terramate*, *terranetes-controller*, *terraform-plugin-framework*, *typhoon*, *Pulumi, Crossplane*, *nitric*, *OpenTofu*, *klotho*, *Terraformer*, *Brainboard*, *AWS CloudFormation*, *Hashicorp Packer*, *laf*, *Go CDK*, *Puppet*, *Chef*, *SaltStack*, *OpenTofu*, *warewulf*, *Virtual Box*, *VMWare*, *Vagrant*, *OpenVMM*, *cloud-hypervisor*, *crosvm*, *Neutron*, *KubeVirt*, *Harvester*, *Kata Containers*, *APT*, *DNF*, *Zypper*, *Nix*, *yum*, *chocolatey*, *yarn*, *homebrew*, *apt-get*, *fpm*, *LXD*, *paru*, *chezmoi*, *pixi*, *Python*, *fastcore*, *asyncio*, *venv*, *pyenv*, *pipx*, *uv*, *manylinux*, *ptpython*, *hy*, *coconut*, *more-itertools*, *returns*, *Rust*, *tokio*, *Zig*, *Java*, *Golang*, *gf*, *Dart*, *testify*, *lo*, *Scala*, *zio*, *Monix*, *C++*, *googletest*, *cpputest*, *Catch2*, *doctest*, *palanteer*, *mimalloc*, *imgui*, *Cosmopolitan Libc*, *gdb*, *qira*, *rr*, *Julia*, *Flux.jl*, *Javascript*, *es-toolkit*, *V8*, *Node.js*, *Deno*, *npm*, *bun*, *Jest*, *jasmine*, *Express.js*, *hono*, *poyro*, *Mojo*, *Erg*, *vlang*, *taichi lang*, *Codon*, *gpu.cpp*, *OpenGL*, *Direct3D*, *Vulkan*, *Metal*, *D3D12*, *DirectX*, *CUDA*, *cccl*, *nccl*, *LibreCUDA*, *Triton Lang*, *Liger-Kernel*, *Bend*, *chapel*, *Halide*, *ThunderKittens*, *Futhark*, *gpu-operator*, *gpustat*, *wgpu*, *Pygfx*, *dawn*, *Emu*, *vGPU_Unlock*, *blis*, *cuBLAS*, *cutlass*, *OpenBLAS*, *ROCm*, *HIP*, *Metal*, *MSL*, *MPS*, *OpenCL*, *pyopencl*, *Kokkos*, *HVM/Blend*, *OpenMP*, *oneTBB*, *HIP*, *OpenACC*, *Taskflow*, *oneTBB*, *Kompute*, *poptorch*, *make*, *remake*, *just*, *pyInvoke* *snakemake*, *CMake*, *Gradle*, *Maven*, *turborepo*, *Bazel*, *fastlane*, *buildozer*, *python-for-android*, *localsend*, *Meson*, *Ninja*, *dagger*, *koin*, *Swinject*, *Fx*, *DependencyInjection Component*, *TypeDI*, *dig*, *KodeinDI*, *Fruit*, *Needle*, *SimpleInjector*, *Injector*, *DI*, *Ant*, *aiomultiprocess*, *gRPC*, *Finagle*, *Thrift*, *Numpy*, *cuda-python*, *Numba*, *MatX*, *mlx*, *tensorstore*, *Scipy*, *statsmodels*, *Cupy*, *ArrayFire*, *matplotlib*, *seaborn*, *facets*, *bokeh*, *folium*, *holoviz*, *nomic*, *pygwalker*, *Altair*, *optimus*, *scrub*, *dataprep*, *img2dataset*, *augmentoolkit*, DataGradients*, *FastDup*, *dedupe*, *zingg*, *YData Synthetic*, *Gretel Synthetics*, *SVD*, *AugLy*, *nlpaug*, *TextAttack*, *FoleyCrafter*, *pyaudio*, *python-sounddevice*, *playsound*, *simpleaudio*, *winsound*, *winutil*, *python-sounddevice*, *pydub*, *wavio*, *soundfile*, *torchaudio*, *pyAudioAnalysis*, *librosa*, *audiomentations*, *OpenVoice*, *albumentations*, *inflect*, *textaugment*, *kornia*, *batchgenerators*, *synthea*, *temporian*, *pgmpy*, *pyAgrum*, *BayesFlow*, *bayespy*, *Stan*, *pyro*, *PyMC*, *pytensor*, *pomegranate*, *Scikit Learn*, *cuML*, *hyperlearn*, *NetworkX*, *cuGraph*, *mapie*, *human-learn*, *sklearn-expertsys*, *XGBoost*, *TextBlob*, *SpaCy*, *scispacy*, *spacy-llm*, *PaddleNLP*, *opennlp*, *CoreNLP*, *pyLDAvis*, *scattertext*, *flair*, *XGBoost*, *Catboost*, *deepdetect*, *Bayesian Optimization*, *BoTorch*, *Keras*, *Pytorch (Plain, Lightning & Ignite)*, *Tensorflow*, *sonnet*, *HF Transformers*, *ml-4m*, *tiktoken*, *LASER*, *fastText*, *sentence-transformers*, *clip-as-service*, *mmpretrain*, *JAX*, *Endia*, *FLAX*, *TRAX*, *Penzai*, *MNN*, *Volwpal Wabbit*, *River*, *scikit-multiflow*, *Burn*, *Candle*, *CoreNet*, *DL4J*, *dlj*, *BeyondML*, *mlpack*, *flashlight*, *MindSpore*, *Paddle Paddle*, *Oneflow*, *Pytorch3D*, *Kaolin*, *Dopamine*, *ReAgent*, *TensorTrade*, *PARL*, *acme*, *pymarl*, *DI-engine*, *MALib*, *WarpDrive*, *OpenRL*, *detectron2*, *MMDetection*, *Lightly SSL*, *timm*, *LAVIS*, *CV-CUDA*, *supervision*, *ImageAI*, *cupoch*, *deformgs*, *champ*, *tsai*, *darts*, *kats*, *Time-Series-Library*, *hierarchicalforecast*, *gluonts*, *skforecast*, *pydlm*, *biotite*, *NoLabs*, *deepchem*, *fairchem*, *pyscf*, *pennylane*, *QuantumKatas*, *lifelines*, *devspace*, *che*, *nocalhost*, *flox*, *okteto*, *telepresence*, *gitpod*, *Tilt*, *coder*, *daytona*, *Github Codespaces*, *envd*, *Kubeflow Pipelines*, *Kubeflow Model Training Operator*, *ZenML*, *mlinfra*, *mlstacks*, *CLAIMED*, *sqlflow*, *SuperDuperDB*, *mindsdb*, *lotus*, *Dataherald*, *Calcite*, *postgresml*, *pgai*, *cube*, *vespa*, *Snowflake Cortex*, *MLFlow*, *ClearML*, *oss-mlops-platform*, *TFX*, *Xorbits*, *Kong AI gateway*, *gateway*, *LiteLLM*, *glide*, *Unify*, *BricksLLM*, *Paddler*, *llm-gateway*, *felafax-gateway*, *Martian*, *Not Diamond*, *RouteLLM*, *axflow*, *DB-GPT*, *LLMStudio*, *languagemodels*, *entropix*, *agenta*, *GPTCache*, *LLMLingua*, *Octopii*, Open Source LLMs (Text: *BERT*, *Llama*, *Reflection*, *DeepSeek*, *LLM360*, *OLMo*, *Gemma*, *R Family*, *Zephyr*, *RWKV-LM*, *Persimmon*, *OLMo*, *TinyLlama*, *MobileLLM*, *Mistral*, *OpenMoE*, *MPT*, *Falcon*, *Falcon Mamba*, *PaLM*, *Vicuna*, *Alpaca*, *Dolly*, *t5x*, *RWKV-LM* (*rwkv.cpp*), *Mamba*, *VMamba*, *zamba*, *Jamba*, *s4*, *LFM*, *LOLA*, *matmulfreellm*, *LWM*, *Extended Mind Transformers*; Code: *Codestral Mamba*; Video: *JEPA*, *InternVideo*; Multimodal: *Vitron*, *MiniCPM*, *InternViT*, *Pixtral*, *DBRX*, *X-LLM*, *BakLLaVA*, *CogVLM*, *Qwen-VL*, *MiniGPT-4*, *NExT-GPT*, *PALM-E*, *OpenFlamingo*, *Grok*, *Video-LLaMA*, *Otter*, *Multimodal-GPT*, *AnyGPT*, *Orca*, *Phi*, *Macaw*, *VILA*, *Show-o*), *SentencePiece*, *PyTorch-StudioGAN*, Managed Generative ML/LLM Services (e.g., *OpenAI Assistants API*, *Gemini*, *Midjourney*, *DALL-E*, *SORA*, *Azure Open AI*, *Claude*, *Nova*, *Cohere*, *Suno*, *PLayHT*, *ElevenLabs*, *Resemble.AI*), *openai-realtime-console*, *ai-artifacts*, *GodMode*, *Jsonformer*, *JuJu*, *Merlin*, *DeepRec*, *botpress*, *NVIDIA NeMO*, *NeMo-Aligner*, *alignment-handbook*, *FastChat*, *Pipecat*, *Rasa Open Source*, *Lobe Chat*, *TensorRT-LLM*, *TransformerEngine*, *ipex-llm*, *ray-llm*, *Superagent*, *Cheshire Cat*, *Botonic*, *Tock*, *wechaty*, *ffcv*, *Horovod*, *Distributed Data Parallel (DDP)*, *Petastorm*, *Colossal AI*, *DeepSpeed*, *training-operator*, *Composer*, *Ray Train*, *pache Singa*, *trlx*, *GPT-NeoX*, *lingua*, *Megatron*, *megablocks*, *Paddle*, *h2o-3*, *Spark MLib*, *Spark NLP*, *Spark GraphX*, *Dask Distributed Training*, *Analytics Zoo*, *Apache Singa*, *Ceph/rook*, *longhorn*, *DAOS*, *openebs*, *HDFS*, *Gluster*, *Lustre*, *moosefs*, *SeaweedFS*, *cubefs*, *juicefs*, *DVC*, *fds*, *xvc*, *LakeFS*, *Quilt*, *Nessie*, *Neo4j*, *JanusGraph*, *NebulaGraph*, *HugeGraph*, *ArangoDB*, *OpenCog AtomSpace*, *minio*, *storj*, *swiftstack*, *drawdb*, *postgres*, *pglite*, *rainfrog*, *Neon*, *pgx*, *pglite*, *graphql-engine*, *pg_graphql*, *querybook*, *pgadmin4*, *HeidiSQL*, *dbeaver*, *AnotherRedisDesktopManager*, *azuredatastudio*, *beekeeper-studio*, *whodb*, *dbgate*, *Jailer*, *pgweb*, *phpmyadmin*, *Sequel-Ace*, *graphql*, *Ariadne*, *graphql-js*, *directus*, *tidb*, *Mathesar*, *Dgraph*, *Redis*, *cachecloud*, *DiceDB*, *etcd*, *Vitesse*, *KV*, *foundationdb*, *minikeyvalue*, *olric*, *Ignite*, *tikv*, *Vineyard*, *CouchDB*, *pouchdb*, *MongoDB*, *Cassandra*, *HBase*, *Scilladb*, *YDB*, *CockroachDB*, *TerminusDB*, *EventStore*, *realtime*, *DeltaLake*, *LakeSoul*, *ulid*, *netron*, *modelstore*, *ModelDB*, *optscale*, *aiconfig*, *Tensorboard*, *sacred*, *Aim*, *truelens*, *Humanloop*, *ChainForge*, *Promptflow*, *AgentHub*, *ChainForge*, *mirascope*, *spring-ai*, *benchllm*, *modelbench*, *bigcode-evaluation-harness*, *llm-autoeval*, *SWE-bench*, *hallucination-leaderboard*, *pytorch-fid*, *Purple Llama*, *garak*, *PyRIT*, *VectorDBBench*, *sciml-bench*, *speech-to-text-benchmark*, *WorkArena*, *DISCOVERYWORLD*, *AgentBench*, *agent-arena*, *OSWorld*, *llm-reasoners*, *llmperf*, *langfair*, *prometheus-eval*, *EvalLM*, *evalgen*, *cappy*, *arena-hard-auto*, *JudgeLM*, *PandaLM*, *Auto-J*, *BotChat*, *FastEval*, *ToolTalk*, *rebuff*, *auto-evaluator*, *LLMZoom*, *moonshot*, *Inspect*, *empirical*, *alpaca_eval*, *lone-arena*, *opencompass*, *BIG-bench*, *Eureka ML Insights*, *AlignEval*, *artkit*, *chat-arena*, *Inspect*, *fasttrackml*, *MLTRAQ*, *Neptune*, *W&B*, *CometML*, *Determined AI*, *Kolena*, *Efemerai*, *Kedro*, *substratus*, *lanarky*, *lamini*, *Xorbits Inference*, *khoj*, *UFO*, *ChatGPT Reverse Proxy*, *dialog*, *aphrodite-engine*, *KubeAI*, *leptonai*, *Text Generation Inference (TGI)*, *Text Embeddings Inference*, *vLLM*, *Jina-Serve*, *lmdeploy*, *WebLLM*, *PowerInfer*, *FlexFlow*, *mistral.rs*, *lightllm*, *Monte Carlo*, *Qualdo*, *Metaplane*, *Talend Data Quality*, *JSON Schema*, *Great Expectations*, *Dafafold*, *DataBand*, *Soda Core*, *Anomalo*, *BigEye*, *Ataccama*, *Evidently*, *labml*, *Phoenix*, *nannyml*, *AimOS*, *Radicalbit AI Monitoring*, *OpenLLM*, *langkit*, *Openllmetry*, *Helicone*, *llm.report*, *Vibranium Dome*, *Doku*, *LangWatch*, *langtrace*, *openlit*, *opik*, *agentops*, *tokencost*, *langfuse*, *pezzo*, *bisheng*, *agentsea*, *AGiXT*, *Arize AI*, *Arthur AI*, *Why Labs*, *MonaLabs*, *Aporia*, *Senser*, *Superwise*, *Cencius*, *Verta*, *Truera*, *Hugging Face Libraries (Transformers, Diffusers, PEFT, Accelerate, Optimum, AWS Trainium and Inferentia, Tokenizers, Evaluate, TRL, timm, Safetensors, Autotrain, Autotrain Advanced, Lerobot)*, *KerasHub*, *fairseq*, *big-AGI*, *TorchScale*, *Stable Diffusion*, *stable-dreamfusion*, *Wonder3D*, *ODM*, *stable-audio-tools*, *DiT*, *Fooocus*, *photoguard*, *PaddleGAN*, *PhotoEditor*, *EditAnything*, *ImageToolbox*, *rembg*, *magic-animate*, *SadTalker*, *DynamiCrafter*, *LoRA*, *QLoRA*, *LongLoRA*, *llmware*, *artifacthub*, *HuggingFaceHub*, *Featherless.ai*, *tost.ai*, *Label Studio*, *Labelbox*, *xtreme1*, *docanno*, *cvat*, *Dataloop*, *diffgram*, *cleanvision*, *Universal Data Tool*, *refinery*, *Slicer*, *labelme*,* makesense.ai*, *aubio*, *Praat*, *prodigy*, *v7labs*, *FiftyOne*, *Superb AI*, *Scale AI*, *aquarium*, *Kili*, *SuperAnnotate*, *Encord Annotate*, *labelme*, *praat*, *evals*, *Bench*, *checklist*, *lm-evaluation-harness*, *deepchecks*, *datachecks*, *cleanlab*, *TPOT*, *Featuretools*, *tsfresh*, *RasgoQL*, *Armada*, *Joblib*, *Hamilton*, *Burr*, *Argo*, *Hera*, *Airflow*, *Dagster*, *maestro*, *mage*, *kestra*, *Cadence*, *Azkaban*, *Bacalhau*, *Dagger*, *Prefect*, *Nomad*; *zenml*, *CLAIMED*, *kedro*, *kubeflow pipelines*, *mleap*, *flyte*, *sematic*, *covalent*, *Ploomber*, *n8n*, *zapier*, *Pachyderm*, *Mage*, *Cromwell*, *Nextflow*, *Feathr*, *Hopsworks OSS*, *Chronon*, *Michelangelo Palette*, *F3*, *Featureflow*, *Griffin*, *OpenMLDB*, *auto-sklearn*, *mljar-supervised*, *PyCaret*, *SapientML*, *Ludwig*, *higgsfield*, *litgpt*, *dclm*, *openchat*, *LLaMA2-Accessory*, *aicommits*, *opencommit*, *AutoGen*, *MetaGPT*, *AgentVerse*, *swarm*, *TapeAgents*,  *Camel*, *ChatDev*, *Langroid*, *crewAI*, *langgraph*, *GPTSwarm*, *livekit/agents*, *ControlFlow*, *agent-zero*, *agentK*, *ADAS*, * openbb-agents*, *AutoAgents*, *LLMStack*, *Magick*, *Rivet*, *Tribe AI*, *PraisonAI*, *AppAgent*, *MobileAgent*, *Langchain*, *Langchain.js*, *Dust*, *BondAI*, *letta*, *OpenAgents*, *SuperAGI*, *Agent Pilot*, *griptape*, *phidata*, *LLMCOmpiler*, *ragapp*, *CopilotKit*, *agentkit*, *gptscript*, *Agents*, *Embedchain*, *Verba*, *Neum AI*, *gorilla*, *graphRAG*, *AutoRAG*, *Cohere Toolkit*, *R2R*, *clip-retrieval*, *HippoRAG*, *ragbuilder*, *cognita*, *composio*, *FastGPT*, *haystack*, *Langflow*, *Flowise*, *tuned-lens*, *inspectus*, *llm-viz*, *Semantic Kernel*, *DSPy*, *Zenbase Core*, *AutoPrompt*, *AdalFlow*, *KaibanJS*, *Bee*, *Agience*, *TaskGen*, *AgentJo*, *dynamiq*, *textgrad*, *Agents 2.0*, *prompt-poet*, *guidance*, *YiVal*, *sglang*, *lorax*, *orca*, *ChemCrow*, *alphafold3-pytorch*, *IBM/materials*, *Chai-1*, *private-gpt*, *vanna*, *Sourcegraph*, *XAgent*, *AgentGPT*, *skyvern*, *webllama*, *robotframework*, *OmniParser*, *devika*, *AI-Scientist*, *Devin*, *Genie*, *Open Hands*, *bolt.new*, *gpt-pilot*, *ai-toolkit*, *auto-code-rover*, *Devon*, *JACoB*, *micro-agent*, *GPT Pilot*, *LoopGPT*, *foyle*, *Mentat*, *Sweep*, *aider*, *codel*, *whatsapp-chatgpt*, *JARVIS*, *PocketPal AI*, *gptme*, *agent.exe*, *LlamaFS*, *gpt-engineer*, *o1-engineer*, *g1*, **, *Robbie G2*, *Agentless*, *merlinn*, *smol developer*, *vectorlm*, *hackingBuddyGPT*, *cover-agent*, *fuzz4all*, *coverup*, *SWE-agent*, *RepoUnderstander*, *repo2txt*, *DevOpsGPT*, *OpenCopilot*, *DemoGPT*, *GeniA*, *AutoDev*, *Open-Assistant*, *Open Interpreter*, *Self-Operating Computer Framework*, *GPT4All*, *LocalAI*, *danielmiessler/fabric*, *chatbox*, *torchchat*, *TinyLLM*, *Jan*, *leon*, *screenpipe*, *TinyAgent*, *OpenOpenAI*, *speech-to-speech*, *Open-Sora*, *Mochi*, *Pyramid Flow SD3*, *VideoCrafter*, *CogVideo*, *open-chat-video-editor*, *imaginAIry*, *VGen*, *Tune-A-Video*, *mmaction2*, *VADER*, *promptify*, *promptfoo*, *SoM*, *AI Test Kitchen*, *AnySolve*, *betterprompt*, *ChatGPT Prompt Generator*, *ClickPrompt*, *DreamStudio*, *Dify*, *TaskingAI*, *Dust*, *IX*, *Dyno*, *EmergentMind*, *EveryPrompt*, *FlowGPT*, *fastRAG*, *GPT Index*, GPTTools, hwchase17/adversarial-prompts, Interactive Composition Explorer, Knit, *LangBear*, *Lexica*, *LMFlow*, *loom*, *Metaprompt*, *OpenAI Playground*, *OpenICL*, *OpenPrompt*, *OpenPlayground*, *OptimusPrompt*, *Outlines*, *Faster-Outlines*, *instructor*, *lm-format-enforcer*, *Artificial Intelligence Controller Interface (AICI)*, *StrictJSON*, Playground*, *Portkey AI*, *Prodia*, *Prompt Apps*, *PromptAppGPT*, *Prompt Base*, *Prompt Engine*, *prompted.link*, *Prompter*, *PromptInject*, *Prompts.ai*, *Promptmetheus*, *PromptPerfect*, *Promptly*, *PromptSource*, *PromptTools*, *Scale SpellBook*, *sharegpt*, *SmartGPT*, *ThoughtSource*, *Visual Prompt Builder*, *YiVal*, *MLFlow Prompt Engineering UI*, *frugal*, *FLAML*, *NNI*, *AutoGluon*, *AutoTS*, *AI Scientist*, *RD-Agent*, *Vision Agent*, *StatsForecast*, *beta-recsys*, *metarank*, *kusion*, *rig*, *dyrectorio*, *Azure DevOps*, *DevOpsBox*, *OpsLevel*, *cortex*, *telepresence*, *Argonaut*, *Mia Platform*, *Shipa*, *Port*, *Upbound*, *gimlet*, *nautes*, *Crossplane*, *Backstage*, *Spinnaker*, *sheperd*, *Teller*, *Hashicorp Vault*, *Sops*, *Infisical*, *external-secrets*, *keycloak*, *Zitadel*, *ory*, *supertokens*, *OKTA*, *Auth0*, *authelia*, *defguard*, *Stack Auth*, *OPA*, *keto*, *spicedb*, *permify*, *casbin*, *Teleport*, *openfga*, *warrant*, *topaz*, *Ory Kratos*, *Ory Hydra*, *dex*, *OneLogin*, *Ping Identity*, *WSO2 Identity Server*, *Duo Security*, *bytebase*, *cloudnative-pg*, *kubeblocks*, *Gaphor*, *Archi*, *Icepanel*, *Jira*, *Backlog*, *Trello*, *plane*, *Openproject*, *Actionview*, *cloudcustodian*, *xterm.js*, *sshuttle*, *Ayup*, *gliderlabs/ssh*, *sshfs*, *ssh3*, *ssh-audit*, *team-viewer*, *rustdesk*, *Cookiecutter*, *copier*, *Craft*, *copier*, *Yeoman*, *mlops-python-package*, *AgentStack*, *Self-hosted AI starter kit*, *OPEA*, *llama-stack*, *AgentGenesis*, *Apollo*, *NACOS*, *Salt*, *Configu*, *OmegaConf*, *Hydra, *DynaConf*, *RSS Guard*, *rss-bridge*, *FreshRSS*, *Follow*, *rudder-server*, *next-cloud*, *Meilisearch*, *typesense*, *ElasticSearch*, *MobileAgent*, *transformers.js*, *llama-cpp-python*, *llm.c*, *llama2.c*, *nanoGPT*, *nanoGPT-mup*, *kat*, *nano-llama31*, *MobiLlama*, *Ollama*, *LM studio*, *ExLlamaV2*, *koboldcpp*, *unilm*, *Dalai*, *BigDL-LLM*, *argilla*, *bonito*, *DataDreamer*, *airoboros*, *textbook_quality*, *NeMo-Curator*, *distilabel*, *lilac*, *llm-data-creation*, *pluto*, *LLama-index*, *mem0*, *zep*, *Letta*, *LLamalab*, *NeMo-Guardrails*, *guardrails*, *Purple Llama*, *LLaMA-Factory*, *JAX*, *FLAX*, *TRAX*, *optax*, *Mctx*, *AXLearn*, *GGML*, *KitOps*, *valor*, *llamafile*, *ctransformers*, *GGUF*, *STAX*, *Objax*, *Haiku*, *Elegy*, *Ray Core*, *Kuberay*, *SciML*, *pysindy*, *neuromancer*, *deepmd-kit*, *PyDMD*, *PyKoopman*, *PyNumDiff*, *PySensors*, *deepxde*, *FluidX3D*, *SU2*, *FreeCAD*, *openscad*, *drake*, *Seldon Core*, *BentoML*, *Ray Serve*, *KServe*, *Cortex*, *Truss*, *MLEM*, *OctoML*, *HippoML*, *NVIDIA DALI, *NVIDIA Triton Inference Server*, *TorchServe*, *exo*, *Vitis*, *ONNX Runtime*, *deepsparse*, *PPLNN*, *NVIDIA TensorRT*, *NVIDIA TensorRT-LLM*, *Intel Extension for Transformers*, *TensorRT Polygraphy*, *TensorRT onnx-graphsurgeon*, *TensorRT*, *pytorch-quantization*, *ao*, *torchao*, *BlindAI*, *Streamlit*, *Gradio*, *text-generation-webui*, *Shiny*, *Dash*, *Voila*, *nextpy*, *PyWebIO*, *mesop*, *reflex*, *nicegui*, *appsmith*, *ToolJet*, *illa-builder*, *budibase*, *nocobase*, *Retool*, *Chainlit*, *LMFlow*, *Simple LLM Finetuner*, *Axolotl*, *unsloth*, *xTuring*, *langdrive*, *mistral-finetune*, *xtuner*, *LLM Finetuning Toolkit*, *OpenPipe*, *xTuring*, *LLaMA-Adapter*, *multimodal-maestro*, *ms-swift*, *torchtune*, *HF trl*, *trlx*, *OpenRLHF*, *DistillKit*, *Marvin*, Marvin, *TypeChat*, *Vercel AI SDK*, *text-generation-web-ui*, *AnythingLLM*, *snipe-it*, *glpi*, *Zendesk*, *ZohoDesk*, *Inkeep*, FreshDesk*, *Zammad*, *osTicket*, *FreeScout*, *Peppermint*, *Trudesk*, *Faveo Helpdesk*, *Pagerduty*, *chatwoot*, *papercups*, *chaskiq*, *helpy*, *ort*, *OpenSCA*, *QEMU*, *Firecracker*, *katacontainers*, *Chatbot Arena*, *WindowsAgentArena*, *Radon*, *Bandit*, *Snyk*, *Intruder*, *Splunk SOAR*, *Immuniweb*, *OpenDSR*, *Drata*, *Cymulate*, *SOPHOS*, *Snyk*, *FOSSA*, *What the Diff*, *Github Dependabot*, *super-linter*, *Bump My Version*, *addlicense*, *ModelScan*, *Github Code Scanning*, *AI Reviewer*, *Codeball*, *Codacy*, IaaS (e.g., (1) Open Source: *OpenStack*, *Cloudstack*, *Cozystack*, *clutch*, *cluster-health*; (2) Managed: *NVIDIA DGX Datacenter*, *AWS EC2*, *AWS ECS*, *AWS EKS*, *AWS Fargate*, *Google GKE*, *cluster-toolkit*, *ECR Container Registry*, *genesiscloud*; AI Paas/FaaS (e.g., GPUs: FaaS: (1) they own the machines: *Lambda GPU Cloud*, *Fluidstack*, *mfem*, *CoreWeave*, *HF GPU Spaces*, *Crusoe.ai, *LambdaLabs*, *JarvisLabs*, *SambaNova*, *Juice*, *Super Micro*, *TensorDock*, *Modal*; *Shadeform*; (1.1) GPU FaaS Clients: *Moonglow*; (2) Normal People rent their machines to others: *salad*, *vast.ai*; PaaS: *Anyscale*, *Lepton AI*, *Fireworks AI*, *Groq*, *Paperspace*, *run:ai*, *Runpod*, *Radium*, *AWS bedrock*, *replicate*, *Nebius AI*; IaaS: *San Francisco Compute*; Other: PaaS: *Graphcore*)) Serverless managed offerings (e.g., *AWS Lambda*, *Azure functions*, *Baseten*, *Inferless*, *Banana*, *Pipeline*, *Slai.io*, *inferrd*, *replicate*), IT PaaS/FaaS: run easily workloads (e.g., Open Source: *Supabase*, *NVIDIA DGX SuperPod*, *AWS EKS*, *GCP GKE*, *fly.io*, *coolify*, *dokploy*, *Qovery Engine*, *langrunner*, *OpenFaaS*, *OpenWhisk*, *KNative*, *Nuclio*, *Backend.AI*, *OpenFunction*, *Fission*, *tsuru*, *CDS: Continuous Delivery Service*, *Encore*, *PipeCD*, *Dokku*, *KubeVela*, *shuttle*, *Porter*, *piku*, *OTOMI*, *rack*, *kubero*, *kopf*, *PaaSTA*, *kapp*, *dyrectorio*, *Rig.dev*, AI-focused: *Skypilot*; Managed: *Firebase*, *Heroku*, *Netlify*), SaaS offerings (e.g., *AWS SNS*), *Django*, *frappe*, *fasthtml*, *htmgo*, *gin*, *Spring*, *dubbo*, *Laralevel*, *Sveltekit*, *xyflow*, *redwood*, *Voyager*, *Wave*, *Laralevel Spark*, *Genesis*, *Nextjs*, *fragments*, *Vite*, *Astro*, *remix*, *perseus*, *caprover*, *FastAPI*, *litestar*, *Gunicorn*, *Uvicorn*, *starlette*, *Caddy*, *NGINX*, *haproxy*, *workerd*, *ModSecurity*, *Bunkerweb*, *Podman*, *Docker*, *Apptainer*, *containerd*, *runc*, *buildah*, *Moby*, *pack*, *ko*, *Porter*, *Kaniko*, *Shipwright*, *contaiNERD CTL*, *Slim*, *cadvisor*, *virtualenv*, *pex*, *Github packages*, *SLURM*, *volcano*, *Nomad*, *Harbor*, *distribution*, *cri-o*, *stackrox*, *strelka*, *trow*, *Kubernetes*, *k8s-device-plugin*, *CRI-O*, *kubectl-cost*, *kubebuilder*, *operator-sdk*, *operator-lifecycle-manager*, *testcontainers-python*, *dockertest*, *Docker-Android*, *ContainerSSH*, *Docker-OSX*, *kubernetes in docker (kind)*, *minikube*, *k3d*, *mirrord*, *vcluster*, *K3S*, *Kubeedge*, *baetyl*, *openyurt*, *shifu*, *EdgeX*, *fledge*, *thingsboard-gateway*, *Microk8s*, *ekuiper*, *Helm*, *Kustomize*, *timoni*, *cdk8s*, *kpt*, *k9s*, *OKD*, *Kubesphere*, *kluctl*, *zadig*, *cds*, *devtron*, *Lens*, *Kubeapps*, *porter-archive*, *capsule*, *Rancher*, *kubermatic*, *Karmada*, *Skaffold*, *werf*, *Flux2*, *ketch*, *sablier*, *dapr*, *Carvel*, *Garden*, *Velero*, *stash*, *OPA*, *Kubearmor*, *cert-manager*, *in-toto*, *kubecost*, *opencost*, *kube-prometheus*, *scope*, *kdash*, *skooner*, *KEDA*, *Karpenter*, *Sealed Secrets*, *Kubernetes Secrets Store CSI Driver*, *External Secrets*, *k8sgpt*, *PentestGPT*, *LaVague*, *Agent-E*, *Huginn*, *Fuji-Web*, *zapier*, *sonobuoy*, *robusta*, *preevy*, *Metacontroller*, *Twisted*, *tornado*, *asyncio*, *Celery*, *RQ*, *kueue*, *fabric*, *plural*, *Run:ai*, *Cloudflare*, *Fastly*, *Quarto*, *Hugo*, *Gatsby*, *Jekyll*, *hexo*, *tailwind-nextjs-starter-blog*, *BigQuery*, *AWS RedShift*, *Doris(, *Hive*, *Snowflake*, *Coalesce*, *Fivetran*, *Stich*, *velox*, *dbt*, *dlt*, *piperider*, *Snowpark*, *Tecton*, *dotData*, *Molecula*, *Hopsworks*, *Feast*, *Apache Arrow*, *TorchArrow*, *substrait*, *spark*, *GraphScope*, *koalas*, *RabbitMQ*, *NATS*, *cloudevents*, *ActiveMQ*, *ZeroMQ*, *Kafka*, *strimzi*, *cruise-control*, *GStreamer*, *NNStreamer*, *Pulsar*, *Redpanda*, *Pravega*, *Kinesis*, *RocketMQ*, *Brooklin*, *fireworq*, *Storm*, *Flink*, *Kafka Streams*, *Spark Structured Streaming*, *Beam*, *Pathway*, *Impala*, *NiFi*, *Benthos*, *Apache NiFi*, *Numaflow*, *KSQL*, *Materialize*, *Decodable*, *quix streams*, *hazelcast*, *bytewax*, *community-skeleton*, *danswer*, *gerev*, *mlflow-kernel*, *Sphinx*, *Graphviz*, *pygraphistry*, *MkDocs*, *mkdocstrings*, *Material for MKDocs*, *gitbook*, *Read the Docs*, *github pages*, *lightdash*, *blazer*, *evidence*, *Salesforce*, *Power BI*, *Tableau*, *Google Analytics*, *umami*, *plausible*, *Mixpanel*, *GoReplay*, *rrweb*, *keep*, *Nagios*, *wireshark*, *sniffnet*, *GoodbyeDPI*, *SREWorks*, *zabbix*, *netdata*, *CyberChef*, *Prometheus*, *Thanos*, *VictoriaMetrics*, *Nightingale*, *Ddosify*, *fleet*, *OpenObserve*, *highlight.io*, *hyperdx*, *pixie*, *Retina*, *skywalking*, *OpenTelemetry*, (Grafana Agent*, *OpenMetadata*, *atlas*, *collectd*, *Open metrics*, *Telegraf*, *OpenLineage*, *Marquez*, *Datahub*, *Egeria*, *Aligned*, *Beats*, *coroot*, *Cilium*, *Hubble*, *Grafana Pyroscope*, *envoy*, *Istio*, *Kiali*, *Consul*, *kuma*, *linkerd2*, *flannel*, *kubeshark*, *hertzbeat*, *openclarity*, *Keptn*, *FastNetMon*, *akvorado*, *librenms*, *ThingsBoard*, *web-check*, *entef*, *Datadog*, *Sentry*, *Honeycomb*, *SignalFx*, *CloudWatch*, *New Relic*, *Librato*, *Algolia*, *Splunk*, *BigPanda*, *Sensu*, *Middleware*, *AppDynamics*, *Raygun*, *Splunk Cloud*, *eG Enterprise*, *metabase*, *plotly*, *graphana*, *Perspective*, *unitycatalo*, *superset*, *amundsen*, *redash*, *ckan*, *magda*, *Genie*, *open data discovery (odd)*, *Chat2DB*, *ClickHouse*, *Apache Pinot*, *DuckDB*, *StarRocks*, *Druid*, *Materialize*, *Trino*, *presto*, *Impala*, *Apache Drill*, *EvaDB*, *Alluxio*, *Delta Lake*, *LakeSoul*, *paimon*, *Kylo*, *Apache Hudi*, *Apache Iceberg*, *PyIceberg*, *Apache Parquet*, *h5py*, *Apache Avro*, *Deep Lake*, *AIStore*, *Debezium*, *Zepellin*, *marimo*, *positron*, *runme*, *Jupyter Lab*, *Jupyterlab-requirements*, *ipyflow*, *Papermill*, *Ploomber*, *jupysql*, *jupyter-ai*, *pyparallel*, *parakeet*, *testbook*, *nbdev*, *nbdime*, *elyra*, *jupytext*, *ReviewNB*, *NBQA*, *QAnything*, *paper-qa*, *lmk*, *lineapy*, *HF Evaluate*, *TF Model Analysis*, *TF Embedding Projector*, *ZenoML*, *AI Verify*, *TF Responsible AI Toolkit*, *Microsoft Responsible AI Toolkit (RAI)*, *Fairlearn*, *AI Fairness 360 (AIF360)*, *Sagemaker Clarify*, *SHAP*, *InterpretML*, *Alibi Explain*, *AI Explainability 360*, *TF What-If*, *interpret*, *Captum*, *TF Lattice*, *nnsight*, *gemma-scope*, *OmniXAI*, *TF language interpretability*, *ecco*, *Pythia*, *maia*, *sae-auto-interp*, *automated-interpretability*, *DeepCausality*, *Causal ML*, *dowhy*, *causalnex*, *Learning Interpretability Tool (LIT)*, *PiML*, *Adversarial Robustness Toolbox (ART)*, *Foolbox*, *Giskard*, *XAI Toolbox*, *trustyai-explainability*, *Pysift*, *tf federated*, *flower*, *nvidia clara*, *substra*, *OpenFL*, *FATE*, *FedML*, *PipelineDP*, *OpenCV*, *SuperGradients*, *NVIDIA DeepStream SDK*, *Savant*, *espnet*, *Mermaid*, *Icevision*, *detectotron2*, *PaddleDetection*, *Segmentation Models*, *Grounding DINO*, *segment-anything*, *co-tracker*, *mmsegmentation*, *Kornia*, *ocrpy*, *faceswap*, *GPT-SoVITS*, *Behave*, *Lettuce*, *Robot*, *Scalene*, *Pytest*, *Unittest*, *Coverage*, *Codecov*, *JaCoCo*, *Hypothesis*, *JUnit*, *pycodestyle*, *moto*, *ruff*, *pyright*, *yapf*, *pylint*, *sqlfluff*, *Black*, *flake8*, *MyPy*, *returns*, *injector*, *mock*, *faker*, *pyre-check*, *shellcheck*, *MonkeyType*, *beartype*, *Pydantic*, *jaxtyping*, *schema*, *pandera*, *deequ*, *TF Data Validation*, *DVT*, *data-diff*, *cerberus*, *ydata-profiling*, *unstructured*, *omniparse*, *unstract*, *docetl*, *DataTrove*, *docling*, *sparrow*, *ryoma*, *orjson*, *marker*, *pycln*, *pyupgrade*, *Bandit*, *cloudpathlib*, *SonarQube*, *Nessus*, *SpotBugs*, *PMD*, *gosec*, *codeql*, *gitleaks*, *nodejsscan*, *pino*, *bearer*, *scorecard*, *criticality_score*, *semgrep*, *webhint*, *BinAbsInspector*, *reko*, *ImHex*, *jpexs-decompiler*, *python-decompile3*, *LLM4Decompile*, *Recaf*, *decompiler-explorer*, *compiler-explorer*, *trivy*, *grype*, *clair*, *neuvector*, *Anchore Engine*, *Sysdig*, *Dagda*, *isort*, *Airbyte*, *syncthing*, *SeaTunnel*, *skyplane*, *Fivetran*, *Stitch*, *ingestr*, *lineapy*, *cog*, *chassis*, *chitra*, *crane*, *finetuner*, *Notion*, *notion-clone*, *Coda*, *siyuan*, *super-productivity*, *platform*, *papermark*, *reor*, *Logseq*, *dendron*, *AppFlowy*, *AFFiNE*, *plane*, *TVM*, *iree*, *HF Optimum*, *GPTFast*, *FlexiGen*, *XLA*, *voltaML*, *TF Model Optimization Toolkit*, *TF Lite*, *executorch*, *uTensor*, *Intel Neural Compressor*, *Adlik*, *AITemplate*, *MLC LLM*, *mnn-llm*, *Hidet*, *distiller*, *sparsify*, *OnnxSlim*, *sparseML*, *AIMET*, *TinyNeuralNetwork*, *HAWQ*, *quanto*, *AWQ*, *SmoothQuant*, *VPTQ*, *AutoGPTQ*, *cold-compress*, *Encord Active*, *modAL*, *libact*, *ALiPy*, *Baal*, *TenSEAL*, *google/differential-privacy*, *TF Privacy*, *SEAL*, *HElib*, *tf-encrypted*, *HEFlow*, *concrete-ml* *Presidio*, *molfeat*, *AWS EC2 Inf2*, *botui*, *bottender*, *pandas*, *pingouin*, *pandas-ai*, *WrenAI*, *quivr*, *localGPT*, *kotaemon*, *DocsGPT*, *KnowledgeCanvas/knowledge*, *pdftochat*, *Modin*, *Polars*, *vaex*, *ibis*, *Dask*, *Modin*, *mars*, *cuDF*, *Vaex*, *Daft*, *winglang*, *Odigos*, *Jaeger*, *Zipkin*, *Elastic APM*, *py2cfg*, *gensim*, *PyOD*, *Darts*, *Anomalib*, *Anomstack*, *Snorkel*, *Compose*, *Autolabel*, *Adala*, *vectorflow*, *superlinked*, *Text Embeddings Inference*, *infinity*, *pykeen*, *pgvector*, *Weaviate*, *Chroma*, *Milvus*, *Qdrant*, *HNSWLib*, *NMBSLib*, *Active Loop*, *lancedb*, *Marqo*, *Faiss*, *semantra*, *annoy*, *pyserinim*, *vearch*, *Vald*, *indexify*, *docarray*, *Argo Rollouts*, *flagger*, *Posthog*, *Growthbook*, *Flipt*, *Flagr*, *flagsmith*, *Optimizely*, *AB Tasty*, *Apptimize*; *Google Optimize*, *Stumpy*, *InfluxDB*, *TDengine*, *TimescaleDB*, *FiloDB*, *FlashDB*, *opentsdb*, *Prophet*, *Grafana Loki*, *Greylog*, *Logstash*, *spdlog*, *vector*, *monolog*, *FluentD*, *loguru*, *quill*, *structlog*, *flume*, *goaccess*, *Logseq*, *logparser*, *Pyomo*, *openblocks*, *Screenshot-to-code*, *draw-a-ui*, *memray*, *py-spy*, *pprof*, *coz*, *Bytehound*, *Stopwatch*, *async-profiler*, *gradle-profiler*, *line_profiler*, *orbit*, *hotspot*, *easy_profiler*, *puffin*, *Wordpress, Strapi*, *Ghost*, *Decap*, *wagtail*, *Keystone*, *Payload*, *Chromium*, *Publii, Drupal*, *Drupal*, *agentlabs*, *OpenCLIP*, *CLAP*, *ImageBind*, *AnyGPT*, *stable-diffusion*, *fastsdcpu*, *mmagic*, *SDXL-Turbo*, *StableStudio*, *Flux*, *DiffSynth-Studio*, *ComfyUI*, *SillyTavern*, *chathub*, *tldraw*, *IOPaint*, *diffusion-forcing*, *servo*, *OnionBrowser*, *Tor*, *ladybird*, *filebrowser*, *Cypress*, *Selenium*, *Playwright*, *Taxy AI Full Browser Automation*, *webdriverio*, *Testcomplete*, *Airtest*, *momentic*, *openv0*, *Langui*, *AI Spend*, *Swagger UI*, *Github Actions*, *Jenkins*, *gocd*, *woodpecker*, *CircleCI*, *Bamboo*, *Travis CI*, *Buddy*, *Buildbot*, *Bitbucket Pipelines*, *AWS CodePipeline*, *Tekton*, *TeamCity*, *ArgoCD*, *ArgoCD*, *Spinnaker*, *Buck*, *pygradle*, *python-fire*, *argparse*, *Typer*, *sqlmodel*, *ELK on Docker*, *OpenSearch*, *Solr*, *Sphinx Search*, *Xapian*, *Nutch*, *bm25s*, *datasketch*, *git-code-debt*, *Sandstorm*, *zuul*, *Kong*, *Traefik*, *higress*, *SafeLine*, *SafeLine*, *Unkey*, *unicorn*, *capstone*, *reconftw*, *OWASP Nettacker*, *BlackWidow*, *retire.js*, *minisearch*, *WhiteSource Bolt*, *Dependency-Track*, *OSSIndex*, *System Informer*, *BinAbsInspector*, *x64dbg*, *Santa*, *nuclei*, *flan*, *checkov*, *Vuls*, *Tsunami*, *grype*, *VeraCrypt*, *cryptomator*, *gophish*, *URH - Universal Radio Hacker*, *Aircrack-ng*, *WireGuard*, *tailscale*, *openvpn*, *amnezia-client*, *nebula*, *IPsec VPN Server on Docker*, *netmaker*, *MVT - Mobile Verification Toolkit*, *Kubescape*, *Gatekeeper*, *Kyverno*, *kube-score*, *yamllint*, *TOML*, *Carvel*, *kubesec*, *kubeaudit*, *kubeconform*, *kube-linter*, *tflint*, *polaris*, *conftest*, *datree*, *kubevious*, *Datashim*, *OSS-Fuzz*, *ClusterFuzz*, *prowler*, *Docker Bench for Security*, *nmap*, *vulscan*, *IVRE*, *Wazuh*, *OpenVAS*, *ThreatMapper*, *CrowSec*, *ossec-hids*, *Sn1per*, *secretive*, *Falco*, *IntelOwl*, *Watcher*, *metlo*, *hackingtool*, *it-tools*, *securityonion*, *Pacu*, *capa*, *cve-bin-tool*, *cve*, *tfscan*, *terrascan*, *ggshield*, *CloudSploit*, *kube-bench*, *pyWhat*, *Arkime*, *steampipe*, *cloudmapper*, *ntopng*, *systeminformer*, *osquery*, *Zeek*, *Dependency-Check*, *maltrail*, *x11docker*, *authentik*, *Calico*, *Osmedeus Core Engine*, *MISP - Threat Intelligence Sharing Platform*, *Faraday*, *TheHive*, *OWASP DefectDojo*, *OpenCTI*, *Ockam*, *cameradar*, *Suricata*, *Arachni*, *Meshbird*, *ufw-docker*, *CDK - Zero Dependency Container Penetration Toolkit*, *pocsuite3*, *Step CLI*, *Oso*, *Seatbelt*, *drozer*, *DefectDojo*, *SSLyze*, *tracee*, *parca*, *Interactsh.*, *Chef InSpec*, *CHIPSEC*, *Lynis*, *OpenSCAP*, *ScoutSuite*, *node-rate-limiter-flexible*, *OWASP Zed Attack Proxy (ZAP)*, *Nikto*, *Wapiti*, *Grabber*, *mitmproxy*, *Algo VPN*, *IPsec VPN Server Auto Setup Scripts*, *NGINX Config*, *bettercap*, *cutter*, *wifiphisher*, *JavaScript obfuscator*, *DOMPurify*, *RustScan*, *dirsearch*, *Vuls*, *Caldera*, *Shuffle*, *PhoneSploit Pro*, *shodan*, *keeweb*, *Protobuff*, *Prisma*, *pgroll*, *goose*, *gorm*, *typeorm*, *Sequelize*, *mongoose*, *sqitch*, *flyway*, *Pyrseas*, *liquibase*, *Planetscale*, *cibuildwheel*, *Poetry*, *rye*, *pyo3*, *Maturin*, *Twine*, *PySnooper*, *coremltools*, *ncnn*, *ShaderNN*, *mediapipe*, *HyperOpt*, *Optuna*, *SigOpt*, *RayTune*, *Katib*, *Overleaf*, *Stencila*, *novel*, *vnote*, *Notable*, *Joplin*, *memos*, *Laverna*, *Notesnook*, *MarkText*, *Stripe*, *hyperswitch*, *Checkout.com*, *browserify*, *Storybook*, *One*, *htmx*, *solidjs*, *mitosis*, *Lucide*, *React*, *react-starter-kit*, *openv0*, *open-saas*, *Preact*, *Bulletproof React*, *nextui*, *Radix Primitive*, *react-figma*, *mui-x*, *intro.js*, *kivy*, *React Native*, *Hippy*, *reactotron*, *lit*, *shadcn/ui*, *shoelace*, *biome*, *Vue*, *Svelte*, *flipper*, *Ionic*, *capacitor*, *Expo*, *Electron*, *Tauri*, **dioxus*, *sycamore*, *leptos*, *Pake*, *Acorn*, *OpenUI*, *tiptap*, *Tailwind*, *headlessui*, *vegeta*, *locust*, *gatling*, *k6*, *jmeter*, *Chaos Monkey*, *chaos-mesh*, *chaosblade*, *lLitmusChaos*, *kube-monkey*, *gum*, *go-jsonnet*, *CUE*, *LibreTranslate*, *Argos Translate*, *upscayl*, *yake*, *tesseract*, *Umi-OCR*, *EasyOCR*, *OCRmyPDF*, *PaddleOCR*, *zerox*, *surya*, *VERBI*, *tts*, *fish-speech*, *IMS-Toucan*, *ChatTTS*, *Parler-TTS*, *F5-TTS*, *GPT-SoVITS*, *EmotiVoice*, *MARS5*, *MetaVoice*, *Deepspeech*, *riffusion*, *muzic*, *magenta*, *riffusion-hobby*, *riffusion-app-hobby*, *AudioLDM2*, *musegan*, *Suno-API*, *Amphion*, *audiocraft*, *spleeter*, *voice-changer*, *Retrieval-based-Voice-Conversion-WebUI*, *open-musiclm*, *musiclm-pytorch*, *Ultralytics YOLOv8*, *yolov10*, *Github Copilot*, *cody*, *fauxpilot*, *claude-dev*, *continue*, *privy*, *cline*, *cursor*, *void*, *coffee*, *melty*, *zed*, *tabby*, *potpie*, *LSP-AI*, *claude-engineer*, *StarCoder*, *Granite*, *Yi-Coder*, *Toolformer*, *ToolBench*, *AgentCoder*, *OpenCodeInterpreter*, *AlphaCodium*, *pr-agent*, *Sweep*, *magnet*, *unblocked*, *Onboard*, *aider*, *Butterfish*, *Second*, *TFLite*, *MLKit*, *CoreML*, *Pytorch Mobile*, *TF.js*, *ai-jsx*, *WebAssembly*, *Pyodide*, *WebGL*, *WebGPU*, *Rive*, *WebSocket*, *WebRTC*, *LiveKit*, *Edge Impulse*, *EdgeCloudSim*, *EnvisEdge*, *Auptimizer*, *firesim*, *OpenFPGA*, *apio*, *icestorm*, *yosys*, *nextpnr*, *Logisim-evolution*, *Digital-Logic-Sim*, *Amaranth*, *PlatformIO*, *LiteX*, *LGN*, *whisper.cpp*, *whisper-diarization*, *WhisperKit*, *RealtimeSTT*, *WhisperLive*, *moonshine*, *LLaMA-Omni*, *SpeechGPT*, *bark*, *wavify-sdks*, *gpt-aria*, *TimesFM*, *chronos-forecasting*, *seamless_communication*, *NLLB/OpenNLLB*, *llama.cpp*, *bitnet.cpp*, *gpt-fast*, *codellama*, *ml-design-doc*, *Youtube Transcript API*, *OutfitAnyone*, *adr-tools*, *postal*, *EasyEdit*, *mergekit*, *FlexGen*, *Medusa*, *LookaheadDecoding*, *einops*, *safetensors*, *Diataxis*, *ROS2*, *home-robot*, *OpenBot*, *curobo*, *IsaacLab*, *jhonny-five*, *gobot*, *MuJoCo*, *robosuite*, *gz-sim*, *Godot*, *GDevelop*, *bevy*, *Babylon.js*, *cocos-engine*, *libgdx*, *MonoGame*, *o3de*, *Unreal Engine*, *MindMaker AI Plugin for Unreal Engine*, *Unity*, *Unity ML-Agents Toolkit*, *Huggy*, *AnimateAnyone*, *Swirl*, *Devv*, *Algolia*, *Coveo*, *searxng*, *SolidGPT*, *youtube-dl*, *Qt*, *gz-gui*, *Airtable*, *NocoDB*, *teable*, *aframe*, *univer*, *quadratic*, *sheetjs*, *visidata*, *Perplexity*, *Rubik's AI*, *You*, *Capitol AI*, *Perplexica*, *morphic*, *FreeAskInternet*, *MindSearch*, *OpenPlexity-Pages*, *stanford-oval/storm*, *farfalle*, *Noi*, *cvxpy*, *pulp*, *BayesianOptimization*, *ceres-solver*, *timefold-solver*, *osqp*, *nlopt*, *ScrapeGraphAI*, *Lumos*, *firecrawl*, *scrapy*, *Crawlee*, *crawl4ai*, *EasySpider*, *maxun*, *parsera*, *beatifull soup*, *colly*, *cheerio*, *orbitdb*, *ipfs*, *etherium*, *PySR*, *pystruct*, *neurosym*, *alpha-beta-CROWN*, *nnenum*, *VeriNet*, *Lyapunov_Stable_NN_Controllers*, *Verified Software Toolchain*, *pysmt*, *fastsmt*, *Gradient Free Optimizers*, *or-tools*, *sympy*, *langdiversity*, *PyReason*, *LNN*, *Problog*, *DeepProbLog*, *SATNet*, Unique3D*, *Meshroom*, *invesalius3*, *Open3D*, *Online3DViewer*, *nerfstudio*, *yt-dlp*, *convex_adversarial*, *Energy-Languages*, *torch2chip*, *TF-Agents*, *ReAgent*, *OpenSpiel*, *OpenAI Gym*, *Gymnasium*, *poppy-humanoid*, *Isaac Sim*, *humanoid-gym*, *arcle*, *GRUtopia*, *mesa*, *iGibson*, *ai2thor*, *Dopamine*, *dm_control*, *keras-rl*, *ray rllib*, *Coach*, *Huskarl*, *Stirling-PDF*, *MinerU*, *pdfminer.six*, *ivy*, *haxe*, *c2rust*, *Transcrypt*, *c2go*, *SQLGlot*, *sqlalchemy*, *DBeaver*, *sqlx*, *sqlmap*, *Insomnia*, *bruno*, *keploy*, *Scalar*, *hoppscotch*, *Lean4*, *LeanDojo*, *dns0.eu*, *libredirect*, *AirSim*, *simulator*, *carla*, *HighwayEnv*, **, *MotionPlanning*, *UniAD*, *ApolloAuto/apollo*, *autoware*, *ardupilot*, *openpilot*, *End-to-end-Autonomous-Driving*, *SMARTS*, *SensorsCalibration*, *SVGDreamer*, *NoLabs*, *Evo*, *poly*, *REINVENT4*, *sherlock*, *LocalSend*, *drawio-desktop*, *Lean*, *Lean Dojo*, *llmlean*, *slack*, *discord*, *Vencord*, *Baileys*, *Zulip*, *OpenStreetMap*, *spotube*, *roop*, *Frigate*, *python-tuf*, *ERPNext*, *Score Specification*, *PowerToys*, *linutil*, *Microsoft-Activation-Scripts, *immich*, *ente*, *graphcast*, *WRF*, *open-meteo*, *core*, *formbricks*, *twenty*, *latex*, *typst*, *dub*, *fingerprintjs*, *deepface*, *openpyxl*, *jinja*, *nodemailer*, *novu*, etc
-
-*__Note:__ Freelunch can be using purely open-source (with only open-source tool backends), but you might want to consider managed backends for reasons like: simplicity gain, integration with your existing infrastructure, previous experience with the tool, unique capabilities not present in open source and lower costs compared to implementing open source naively. On the other hand, you can use open source to: cut down costs, give you more flexibility, can give higher quality solutions, avoid relying on vendors (not shutting down, lacking documentation/support or raising prices), developing your team (which can lead to solving other problems) and can avoid private data leaving your org. Generally you want to start with many managed tools, and as your team gains experience and expertise, slowly substitute managed for open source, until you feel that open source cannot boost you anymore. Note: managed tools have to develop Freelunch plugins as to maintain a single dashboard for the MLOps platform user (instead of having to look at multiple dashoboards from different managed tools).*
+*__Note:__ Pizza can be using purely open-source (with only open-source tool backends), but you might want to consider managed backends for reasons like: simplicity gain, integration with your existing infrastructure, previous experience with the tool, unique capabilities not present in open source and lower costs compared to implementing open source naively. On the other hand, you can use open source to: cut down costs, give you more flexibility, can give higher quality solutions, avoid relying on vendors (not shutting down, lacking documentation/support or raising prices), developing your team (which can lead to solving other problems) and can avoid private data leaving your org. Generally you want to start with many managed tools, and as your team gains experience and expertise, slowly substitute managed for open source, until you feel that open source cannot boost you anymore. Note: managed tools have to develop Pizza plugins as to maintain a single dashboard for the ML platform user (instead of having to look at multiple dashoboards from different managed tools).*
 </details>
 
 <details>
@@ -1603,7 +851,7 @@ The MLOps tool landscape is huge. I will just leave here some pointers (without 
 
 ##### __Proprietary (usually managed) MLOps tools__
 
-1. __MLOps platforms__
+1. __ML platforms__
     1. From Major Cloud Hardware Providers (e.g., *AWS Sagemaker*, *Vertex AI*, *Azure ML*)
     2. Cloud Hardware Provider Agnostic
         1. No-code 
@@ -1847,9 +1095,9 @@ Yes, because of the following reasons:
 
 3. If you have internal heavy services (e.g., internal LLM API or Data lake) that would be too costly to replicate in the background cluster and/or you don't care much about experimenting with their code and intra-service tracing, you can just emulate it via a service that simply calls the actual service's API, where you can still experiment with different configurations. Of course, this heavy service is then scaled according to the increase in load.
     
-4. You don't need a large physical cluster. You can use a small physical cluster, an existing one (e.g., using vcluster to create a cluster in a k8s namespace) or even choose a virtual cluster running on a single pysical machine (e.g., using kind (kubernetes in docker (kind), minikube, k3d)). This of course will impact the speed at which you get evaluation results and observability analysis. However, you are safe since the MLOps platform itself is deployed in your fast production cluster.
+4. You don't need a large physical cluster. You can use a small physical cluster, an existing one (e.g., using vcluster to create a cluster in a k8s namespace) or even choose a virtual cluster running on a single pysical machine (e.g., using kind (kubernetes in docker (kind), minikube, k3d)). This of course will impact the speed at which you get evaluation results and observability analysis. However, you are safe since the ML platform itself is deployed in your fast production cluster.
 
-5. The evaluation and observability benefits you gain from having a sandbox environment for your whole MLOps platform are huge. You can do production-grade: debugging, system improvements, engineer training and responsible deployments; without breaking your production system and directly impacting users; or overloading your CI/CD. As MLOps platforms get more and more complex, this becomes more and more important.
+5. The evaluation and observability benefits you gain from having a sandbox environment for your whole ML platform are huge. You can do production-grade: debugging, system improvements, engineer training and responsible deployments; without breaking your production system and directly impacting users; or overloading your CI/CD. As ML platforms get more and more complex, this becomes more and more important.
 </details>
 
 <details>
@@ -1857,16 +1105,16 @@ Yes, because of the following reasons:
 
 ### __In-depth capabilities__
 
-#### 1. Capabilities of Freelunch
+#### 1. Capabilities of Pizza
 
 * __Managers/Leads__ can:
 
-    1. __Set goals: align MLOps platform and system KPI goals with Business KPI goals__ (change evaluation function that works on top of benchmarks) based on data (by connecting with your business analytics tool & Ml System/MLOps platform evaluation tool). The goal here is to find a single metric that if the MLOps platform team or applied ML team maximizes it, it maximizes the most the business' KPIs. (e.g., this could work by doing the causal estimation P(BUSINEES_METRIC == business_metric | do(EVALUATIONS == evaluations) where each evaluation metric is first normalized to be within [0,1] and then all benchamrks are layer normalized to sum to 1 (softmax applied to input)) and then doing optimization on top of it to find argmax of the expected value of (P(BUSINEES_METRIC == business_metric | do(EVALUATIONS == evaluations))), to get the ideal weights for each evaluation metric on a linear evaluation function.)
+    1. __Set goals: align ML platform and system KPI goals with Business KPI goals__ (change evaluation function that works on top of benchmarks) based on data (by connecting with your business analytics tool & Ml System/ML platform evaluation tool). The goal here is to find a single metric that if the ML platform team or applied ML team maximizes it, it maximizes the most the business' KPIs. (e.g., this could work by doing the causal estimation P(BUSINEES_METRIC == business_metric | do(EVALUATIONS == evaluations) where each evaluation metric is first normalized to be within [0,1] and then all benchamrks are layer normalized to sum to 1 (softmax applied to input)) and then doing optimization on top of it to find argmax of the expected value of (P(BUSINEES_METRIC == business_metric | do(EVALUATIONS == evaluations))), to get the ideal weights for each evaluation metric on a linear evaluation function.)
 
 * __ML Engineers & Managers/Leads__ get:
 
     1. __ML System Design (Architecture)__ (engineers can sample ml design patterns, use our drawing tool to make awesome diagrams & collaborate on a same diagram with multiple colleagues, versions your diagrams and formally verifiy them agaist specifications.)
-    2. __Hot-start: Declarative API for building MLOps platforms__ (Models/Prompts + Runtimes + Infrastructure + Data + Config) with a lower-level layer (plugins and/or edit repo directly) for hacking. Allows you to leverage domain & ML expertise knowledge while making use of Freelunch to do most of the work of setting up the architecture and implementing it, according to your requirements & preferences. It auto-generates documentation and is interactive, allowing you to edit the ML Sytem automatically built by Freelunch. If you want to implement custom integrations and optimizations you can use the lower-level layer (plugins and/or edit repo directly) to hack it from the ground up.
+    2. __Hot-start: Declarative API for building ML platforms__ (Models/Prompts + Runtimes + Infrastructure + Data + Config) with a lower-level layer (plugins and/or edit repo directly) for hacking. Allows you to leverage domain & ML expertise knowledge while making use of Pizza to do most of the work of setting up the architecture and implementing it, according to your requirements & preferences. It auto-generates documentation and is interactive, allowing you to edit the ML Sytem automatically built by Pizza. If you want to implement custom integrations and optimizations you can use the lower-level layer (plugins and/or edit repo directly) to hack it from the ground up.
     3. __System-wide Experimentation__ (e.g., an ml team wants to experiment with federated learning)
         1. __Experiment Management__ (You can do experiments on: codebase, production configuration and/or artifacts (code, config, data, schema (backards-compatible), html, prompts, compute artifacts (e.g. functions, elt, pipelines, models, ensembles, pre/post processors (input, prediction and/or data filters))). Experiments also carry along more data that enables you to reproduce it (e.g., branch/commit of the experiment and command to run). And of course, experiments have metrics attached to them: evaluation results (e.g., ML metrics, performance metrics, statistical tests) and specifications (e.g specific system config)). 
         
@@ -1913,7 +1161,7 @@ Yes, because of the following reasons:
                 3. __Compliance__
                     1. __Functional Compliance__ (test for functional compliance (e.g., data privacy: role-based access control, GDPR, sensitive data handling; or cybersecurity: encryted data at rest, in transit & maybe even in-memory, and defense & remdiation automated protocols), manage regulations, certificates and agreements, configure & schedule report generation; manage & share reports)
                     2. __IP/Licence Compliance__
-                        1. __Dangerous Code Copy/Paste__ (Our VSCode extension works together with our Chrome Extension to detect risky code copy/paste. If risky code is detected, *Freelunch* generates alternative free-to-use code that does the same thing as the original copyleft code. This way, Engineers can be free to do what they like most: copy/paste code :joy:.)
+                        1. __Dangerous Code Copy/Paste__ (Our VSCode extension works together with our Chrome Extension to detect risky code copy/paste. If risky code is detected, *Pizza* generates alternative free-to-use code that does the same thing as the original copyleft code. This way, Engineers can be free to do what they like most: copy/paste code :joy:.)
                         2. __IP/Licence Scanning__ Explicit declaration of third-party dependencies & their licences (a simple file where you organize from where you got your third-party code, data & models that we use to verify if you are adhering to their licences. We help you build this file: we scan your repo in an attempt to find dependencies you missed mentioning there or detect licences that got updated; automatically generate a PR with updated dependency declaration file). Plus, automatic scanning of the dependency tree of these dependencies to try to find violations.
                         3. __Compliance support 4 AI generated code__ is checking with the training code data to see any matches, if there is very similar code (of singificant complexity), the licence of that code is linked to it; also: you can ask for the AI Assistant to generate free-to-use code that does the same thing as the original copyleft code.
                 4. __Non-crucial unit and integration tests__ (because when they are crucial, they need to be inside CI/CD)
@@ -2414,7 +1662,7 @@ Yes, because of the following reasons:
                     2. Networking Infrastructure
                 2. PaaS (per/usage, per/time, per/users)
                 3. SaaS (per/usage, per/time, per/users)
-            2. __Our Cloud__ (measuring _Freelunch's_ costs (most useful when using per/usage plan))
+            2. __Our Cloud__ (measuring _Pizza's_ costs (most useful when using per/usage plan))
         3. __Build vs Buy Cost Analysis__ (experiments with self-hosted and managed to decide which one is cheaper)
         4. __Engineer Cost Optimization__ (we try to identify cost reduction opportunies in personal, by detecting low production/salary ratios of engineers & opportunities to replace their work with third-party software (e.g., data preparation and/or infra maintanance) that abstracts it away from the team & in the end becomes cheaper than the engineer)
 
@@ -2431,7 +1679,7 @@ Yes, because of the following reasons:
             2. Vestige resources
             3. IP Whitelisting
 
-#### 2. Capabilities of a Platform built with Freelunch
+#### 2. Capabilities of a Platform built with Pizza
 
 * __Manager/Leads__ can:
 
@@ -2440,7 +1688,7 @@ Yes, because of the following reasons:
             1. __Code Quality__
                 1. __Code Review Space__ (better interface than github's interface for annotating and starting threads on how to improve the quality of a commit)
                 2. __Special UI for teaching Code Quality Standards__ (instead of reading these in a doc, we provide nice UI where engineers can see examples of low quality code & high quality code in the MLOps context, search best ptractices guidelines according to their subject of interest (e.g. best practices for pandas))
-            2. __Handbook__ (create an MLOps platform handbook which documents everything a new member needs to know when joining the team)
+            2. __Handbook__ (create an ML platform handbook which documents everything a new member needs to know when joining the team)
         2. __Role-based Access Control (RBAC)__ (roles/groups per ML project (e.g., can be manager/leads, Data Engineer, ML Engineer, Data Scientist, subject matter expert, Stakeholder, Lawyer) where each role has its own access rules; and we provide our own secrets manager for engineers or integrate with cloud secrets managers (e.g., Azure Key Vault, AWS Secrets Manager, GCP Secret Manager) which are central authentication tools that manage all secrets owned by engineers. Each role or specific engineer has responsabilities, owning some part of the ML lifecycle (these can change over time) so that any bug can have at least 1 engineer held accountable for it at any point in time. Also, each part of the ML Operations can have an admin that sets which types of actions he wants to receive notifications before they are performed (he can choose to reject these actions). Note: people can have more than 1 role and different roles can be assigned to people manually or on a schedule)
         3. __Daily Operations__ (this involves things as organizing which ML engineers will operate which parts of the ML System & be responsible for fixing it & reporting all of this. We provde capabilities for organizing these schedules, enforcing them by sending alerts/notifications to the manager/lead if the engineer is not on-call, automatically generating reports of the operations of specific engineers & keeping track of a production bugs queue where bugs can be added, removed, edited, handled and resolved via a ticketing system. Also, each bug has a priority label. Additionally, letting coworkers B, C, D... etc comment on how good is to work with engineer A; for the sake of engineer A to get feedback and improve and also for the manager to see if engineer A is worth the cost.)
         4. __Checklists__ (can configure checklists to spawn when some event happens (e.g., CI aproves PR, which now needs code review). The action only takes place after the engineer confirms that he/her checked it all.)
@@ -2536,7 +1784,7 @@ Yes, because of the following reasons:
             
             _Note:_ when deploying your Ml System to the background cluster (actual cluster or virtual (simulated) cluster) you might ask, wont my external services (e.g., Storage (data lake, wharehouse, S3, etc) & Processing (any SaaS)), which will be used by both production & background cluster (actual cluster or virtual (simulated) cluster), be overloaded? 
 
-                1. If these services are public services: as part of Freelunch specific configuration you should write scaling config for your external public services and leave it to our autoscaler (that will listen to production use, determine the production performance, then deploy to the background cluster (actual cluster or virtual (simulated) cluster), listen to prod performance again, determine the gap in performance, then scale & verify performance...until the performance matches the origianal prod performance)
+                1. If these services are public services: as part of Pizza specific configuration you should write scaling config for your external public services and leave it to our autoscaler (that will listen to production use, determine the production performance, then deploy to the background cluster (actual cluster or virtual (simulated) cluster), listen to prod performance again, determine the gap in performance, then scale & verify performance...until the performance matches the origianal prod performance)
 
                 2. If these services are private services: then you need to include a copy of the service inside the ML System, so that it can be deployed together.
             3. __State System__ (makes it possible to recover any past state of the production system, making it possible to do replays)
@@ -2560,7 +1808,7 @@ Yes, because of the following reasons:
 
     4. __Dynamic Enforcement of communication rules between services__ (when a service/task asks KMS for a secret to be able to communicate with service B through requests, KMS checks its rules for this specific communication and decides if it will grant service/task A the secret. These rules can be dynamic, meaning, that you can make any rule that depends on the _state of the system_. The rules can be defined via diagrams. The state of the system is <configurations, artifacts> and is modified in response to external events (data ingestion or requests) triggering execution of several components in pipeline fashion. And you can monitor this to see when service/task that got rejected and what was their rejection handling procedure. These rejections can indicate that you havent coded the rules correctly, but the real goal is to identify implementations outside permissions & attackers.)
 
-#### 3. Capabilities present both in Freelunch and the Platform built with Freelunch
+#### 3. Capabilities present both in Pizza and the Platform built with Pizza
 
 * __Managers/Leads__ can:
 
@@ -2568,14 +1816,14 @@ Yes, because of the following reasons:
         1. __High Level:__ help with project selection, do project resource estimation, manage project roadmaps/milestones, schedule meetings with Zoom/Meets API, see developer/data scientist/engineer productivity (based on their repo contributions, artifact production, bug detection, config/monitoring actions, integration setup and anonymous coworker comments data), setup developer/data scientist/engineer onboarding steps, get anonymous feedback from your ml engineers (important to address reasons making them unhappy).
         2. __Low Level (like Jira):__ manage state of features (todo/in-progress/done), issue tracking & branch visualizations, highlight release (PR to release branch)s & link to their CI/CD report and check code reviews.
 
-    2. __Track Project History (Activity Logs)__: the history of all Evaluations, metrics reaching tresholds (production bugs), Automated & User actions (actions that modify the ML System (acompanies notes) and internal Freelunch actions. Also contain metadata such as user ID, role, project, IP adress, Authentication method used) can be retrieved, exported, downloaded & stored in external storage. The history of the project is usefull for: plotting the evolution of the project; measuring the amount of manual & automated operation actions; see who did what; undo operation actions (before action & after action have the same commit, so git/github/gitlab/gitea (self-hosted) alone wont be able to solve our problem
+    2. __Track Project History (Activity Logs)__: the history of all Evaluations, metrics reaching tresholds (production bugs), Automated & User actions (actions that modify the ML System (acompanies notes) and internal Pizza actions. Also contain metadata such as user ID, role, project, IP adress, Authentication method used) can be retrieved, exported, downloaded & stored in external storage. The history of the project is usefull for: plotting the evolution of the project; measuring the amount of manual & automated operation actions; see who did what; undo operation actions (before action & after action have the same commit, so git/github/gitlab/gitea (self-hosted) alone wont be able to solve our problem
 
 * __ML Engineers & Managers/Leads__ get:
 
     1. __AI-assisted MLOps: *MLOPs Copilot*__
         1. __Development__
             1. __High Level Assistance__ 
-                1. Question-aswering. About: mlops in general, your project, your codebase, design patterns or how to use Freelunch.
+                1. Question-aswering. About: mlops in general, your project, your codebase, design patterns or how to use Pizza.
                 2. Help with being up-to-date with new research papers & tools, by searching new rising tools/data/models/papers, filtering and summarizing them for you; via something like a RSS feed. 
             2. __Low-level Assistance__ 
                 1. Setups (e.g., "give me a spark/koalas cluster setup with enough computing power to make x featured datapoints/second, given my spark/koalas script" or "give me minimal instance that can solely run my model with x amount of latency"); 
@@ -2586,7 +1834,7 @@ Yes, because of the following reasons:
                 4. Codebase Migrations
                     1. Language migrations (e.g., from java to python)
                     2. Tools migrations (e.g., from pandas to ibis)
-                    3. Custom migrations (e.g., migrating an existing MLOPs platform codebase to a Freelunch MLOPs platform codebase)
+                    3. Custom migrations (e.g., migrating an existing ML platform codebase to a Pizza ML platform codebase)
                 5. Autonomous pushes to the repo (can push data, config, code, docs) based on:
                     * Following the company's SOPs: explanation given to ML Engineers on how to use the repo
                     * Lerning by example and previous experiments: previous pushes and evaluation suite results (we want to improve the ML system by using better tools, already used tools in a better way, wirint stuff from scratch)
@@ -2616,7 +1864,7 @@ Yes, because of the following reasons:
                     2. Suggestions (e.g. how to improve a prompt)
 
                     3. Interactive instruction (interactive) following for ML system changes (e.g., "change my ML System as to enforce schema checks & default imputation" and it might respond (this is a nice visualization of your ML System, please write the chema checks & default imputation that you want in this format... and I will implement them, show you the actions I took (push to codebase and/or prod config actions) show you that is is working in the background cluster (actual cluster or virtual (simulated) cluster)))
-                        1. Conversion between patterns: converting your MLOps platform implemented using pattern A to another implementation using pattern B; where A and B can be any pattern (Note: if B needs things A doesnt provide then you will end up with an implementation template
+                        1. Conversion between patterns: converting your ML platform implemented using pattern A to another implementation using pattern B; where A and B can be any pattern (Note: if B needs things A doesnt provide then you will end up with an implementation template
                     
         2. __Operations (AIOps)__
             1. __Monitoring: detecting problems__
@@ -2832,7 +2080,7 @@ _Note:_ __these are all automated benchmarks, no humans involved__. In stages wh
                 2. __Observability__ (Monitoring/Versioning Coverage)
                     1. __Level 1: Transparent (component-complete) Observability__ (All outputs, performance metrics of your components and traces are being sent to the Operations Center)
                     2. __Level 2: Lineage-complete Observability__ (traces are used to build strctured lineages for each artifact generate in history, these lineages are stored in a lineage store controlled by the Observability System)
-                    3. __Level 3: Replayable Observability__ (System can be replayed from any point in time to produce point-in-time correct artifacts. Too get his you need: (1) store all ci/cd data; (2) store <data backups + data patches> of statefull components; (3) link these data to a mlops platform version (meta pipeline version); (4) you then need a reaply job that is able to deploy the MLOps platform, restore the ML System to an initial state and trigger replay events.)
+                    3. __Level 3: Replayable Observability__ (System can be replayed from any point in time to produce point-in-time correct artifacts. Too get his you need: (1) store all ci/cd data; (2) store <data backups + data patches> of statefull components; (3) link these data to a ml platform version (meta pipeline version); (4) you then need a reaply job that is able to deploy the ML platform, restore the ML System to an initial state and trigger replay events.)
             5. __System scalability__ (how the system responds to more traffic and larger datasets/models.)
             6. __IP/Licence Compliant Outputs__ (Avoid Outputs that violates IP/Licence Compliance)
             7. __Training-Serving Skew due to:__ (unwanted differences in how the model is trained and how it is doing inference)
@@ -2846,7 +2094,7 @@ _Note:_ __these are all automated benchmarks, no humans involved__. In stages wh
         1. __System__
             1. __Efficiency__ (here hardware is not fixed, choosing hardware type & amount is part of the problem for ml engineers)
                 1. __Compute Costs__ (This involves infrastrcture, training, tuning and inference costs)
-                    1. __Cloud Costs__ (cloud costs related to IaaS, PaaS & SaaS for a given MLOps platform configuration (e.g., retraining weekly on some specific machine + certain experimentation budget/engineer))
+                    1. __Cloud Costs__ (cloud costs related to IaaS, PaaS & SaaS for a given ML platform configuration (e.g., retraining weekly on some specific machine + certain experimentation budget/engineer))
                     2. __Premise Costs__ (energy consumption)
                 2. __System Performance Profiling__
                     1. __Coarse-grained: Component-level profiling__ (of all components)  (e.g., feature store latency) (can be calculated from IO of components/subsystems)
@@ -2888,12 +2136,12 @@ _Note:_ __these are all automated benchmarks, no humans involved__. In stages wh
 ## :performing_arts: Similar tools 
 
 <details>
-    <summary><b>Tools similar to <i>Freelunch OSS</i></b></summary>
+    <summary><b>Tools similar to <i>Pizza OSS</i></b></summary>
 
-### __Tools similar to *Freelunch OSS*__
+### __Tools similar to *Pizza OSS*__
 
 1. __MLOps__
-    1. ___Proprietary (usually managed) MLOps platforms__
+    1. ___Proprietary (usually managed) ML platforms__
         1. From Major Cloud Providers (e.g., *AWS Sagemaker*, *Vertex AI*)
         2. From other vendors
             1. No-code 
@@ -2929,7 +2177,7 @@ _Note:_ __these are all automated benchmarks, no humans involved__. In stages wh
 
     These products typically help you with all the steps in the ML lifecyle in an easy way. __Problems:__ (1) they lock you in too much, killing your flexibility; (2) they are slow to change because they are not tool integrators; (3) they are expensive; (4) they dont offer improtant capabilities we do (e.g., Platform-level Experiment Tracking & Evaluation, and Simulation-based Observability)
 
-    2. __Open-source MLOPs all-in-ones__ (if you consider them as a whole, they are competitiors. However, Freelunch makes use of components of them as interchangable tool backends (e.g., Kubeflow pipelines, MLFlow tracking and NVIDIA Triton))
+    2. __Open-source MLOPs all-in-ones__ (if you consider them as a whole, they are competitiors. However, Pizza makes use of components of them as interchangable tool backends (e.g., Kubeflow pipelines, MLFlow tracking and NVIDIA Triton))
         1. General Purpose
             1. Set of Workload Components
                 1. *TFX* (all of the components are tasks except for tf serving which is a service)
@@ -2992,9 +2240,9 @@ _Note:_ __these are all automated benchmarks, no humans involved__. In stages wh
 </details>
 
 <details>
-    <summary><b>Tools similar to paid <i>Freelunch MLOps Copilot</i></b></summary>
+    <summary><b>Tools similar to paid <i>Pizza MLOps Copilot</i></b></summary>
 
-### __Products similar to *Freelunch MLOps Copilot*__
+### __Products similar to *Pizza MLOps Copilot*__
 
 1. __Research Copilots__
     1. *AI-Scientist*
@@ -3117,7 +2365,7 @@ _Note:_ __these are all automated benchmarks, no humans involved__. In stages wh
 
 ### :microscope: __Our users__
 
-Our focus is with __companies with ML maturity (generally big non-tech comapnies, medium-to-big tech companies and AI companies)__. Companies that fit this description want to solve multiple ML production problems, not just predictive power. They also value software engineering best practices. Therefore they tend to build their own MLOps platforms to improve ML infrastructure. __We help them to continuously improve their MLOps platforms and use their platforms to continously improve their ML Systems.__
+Our focus is with __companies with ML maturity (generally big non-tech comapnies, medium-to-big tech companies and AI companies)__. Companies that fit this description want to solve multiple ML production problems, not just predictive power. They also value software engineering best practices. Therefore they tend to build their own ML platforms to improve ML infrastructure. __We help them to continuously improve their ML platforms and use their platforms to continously improve their ML Systems.__
 </details>
 
 <details>
@@ -3498,7 +2746,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                     1. Offline Workloads Physical Cluster
                         1. Always up Clusters
                             1. Dev Logical Cluster (Where people will be coding are run things locally fast). _Note: this cluster should always be up but should scale (downscale or upscale) according to usage patterns_
-                            2. Background Logical Cluster (Similar to Integration Testing & Staging Clusters (mimicks production cluster & does a lot of tests), but used when: (1) doing risky experiments, in which case you need a big suite of evaluations (which can be long-running), but if these were done in Integration Testing Logical Cluster it would slow your CI/CD too much; (2) proactively detecting production bugs/failure modes before they appear; (3) Undertanding better your MLOps platform and Improvement Opportunities; (4) Penetration Testing.
+                            2. Background Logical Cluster (Similar to Integration Testing & Staging Clusters (mimicks production cluster & does a lot of tests), but used when: (1) doing risky experiments, in which case you need a big suite of evaluations (which can be long-running), but if these were done in Integration Testing Logical Cluster it would slow your CI/CD too much; (2) proactively detecting production bugs/failure modes before they appear; (3) Undertanding better your ML platform and Improvement Opportunities; (4) Penetration Testing.
                             
                             All Ml System changes (debugging/solid changes or experiments) go through integrates testing & staging, and then: (1) if debugging/solid changes: deployed to production & backgorund clusters; (2) elsif experiments: deploed only to background cluster) 
                             
@@ -3944,7 +3192,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                     1. Fixing Service bugs. Requirement baseline for this should offset by how critical a wrong prediction is to the client apps (how long can a bug last in prod and not causa a massive impact. And this is already optimistic because you would have to include the time to find the bug also)
                                     2. Fixing Non-availability of the Service. Requirement baseline for this should offset by how critical unavailability of the service is to the client apps
                                 4. % of changes leading to a worse system
-                                    1. Level 2 - MLOps platforms: worse system is measured by the above metrics, operational metrics, model decay relative relative to no retraining, etc
+                                    1. Level 2 - ML platforms: worse system is measured by the above metrics, operational metrics, model decay relative relative to no retraining, etc
                                     2. Level 3 - Inference Services (Models): is measured by corrected predictive power metric os models in production data (often proxied with by soft labels) and subsequent user actions/time spent in the app
                                 5. % of tests that passed. (Should be around 60-70%)
                         3. Sources of data:
@@ -4330,7 +3578,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                         1. Build boilerplate code according to the api specification in all endpoints (e.g., client and server)
                                         2. Integrate Boilerplate code into the endpoints
                                     2. CD: Make a push to the feature branch with the result of CI
-                            2. Services CI/CD (Tools: Helm, Kustomize, timoni, JuJu, cdk8s, kpt). Runtime, Infrastructure (MLOps platform) & Generalized CI/CD code. (Workflow Orchestrator or Main Pipeline) code. IT Infrastructure & MLOps platform CI/CD (itegrates changes and deploys infrastructure as pods in a cloud cluster) (Tools: (1) DevOps CI/CD like Github Actions, Jenkins, CircleCI, Travis CI, Buddy, Tekton, Bamboo, gocd, woodpecker, Atlantis.
+                            2. Services CI/CD (Tools: Helm, Kustomize, timoni, JuJu, cdk8s, kpt). Runtime, Infrastructure (ML platform) & Generalized CI/CD code. (Workflow Orchestrator or Main Pipeline) code. IT Infrastructure & ML platform CI/CD (itegrates changes and deploys infrastructure as pods in a cloud cluster) (Tools: (1) DevOps CI/CD like Github Actions, Jenkins, CircleCI, Travis CI, Buddy, Tekton, Bamboo, gocd, woodpecker, Atlantis.
                                 1. CI (Tools: Buildbot, pr-agent, Bitbucket Pipelines, AWS CodePipeline)
                                     1. Local Repo Stage:
                                         1. Pre-commit (tools: git pre-commmit hooks) (Note: you ight want to trigger pre-commit hook at every x commits instead of for every commit, to avoid slowing down your dev cycle too much)
@@ -6840,7 +6088,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                                     1. Fixing Service bugs. Requirement baseline for this should offset by how critical a wrong prediction is to the client apps (how long can a bug last in prod and not causa a massive impact. And this is already optimistic because you would have to include the time to find the bug also)
                                                     2. Fixing Non-availability of the Service. Requirement baseline for this should offset by how critical unavailability of the service is to the client apps
                                                 4. % of changes leading to a worse system
-                                                    1. Level 2 - MLOps platforms: worse system is measured by the above metrics, operational metrics, model decay relative relative to no retraining, etc
+                                                    1. Level 2 - ML platforms: worse system is measured by the above metrics, operational metrics, model decay relative relative to no retraining, etc
                                                     2. Level 3 - Inference Services (Models): is measured by corrected predictive power metric os models in production data (often proxied with by soft labels) and subsequent user actions/time spent in the app
                                                 5. % of evals that passed. (Should be around 60-70%)
                                 4. Monitoring actions. 
@@ -6989,7 +6237,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                 9. Who was resposinble to deal with it or who dealt with it (if resolved)
                                 10. Actions took to resolve it (if resolved)
                                 11. Lessons learned to avoid similar problems in the future
-                    3. ML Project Management (Governances) (Tools: (1) Open source: Kubeflow, MLFlow; (2) Managed: W&B, Comet ML, Arize AI, DasgHub, all MLOps platforms)
+                    3. ML Project Management (Governances) (Tools: (1) Open source: Kubeflow, MLFlow; (2) Managed: W&B, Comet ML, Arize AI, DasgHub, all ML platforms)
                         1. Responsabilities: who is responsible for e;ach subsytem or subtasks in the MLOPs project
                         2. Actions: who did what
                         3. Contacts: enable any person to reach an expert on a topic
@@ -7336,8 +6584,8 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                     3. Elif using a FM:
                         1. Automatic Training procedure generation (refer to Training procedure specification Interface in MLOps Setup) (which triggers ML Training CI/CD)
                     4. Reconfigure Monitoring: send/stream to monitoring system a reconfiguration request (directly or through the state store that distributes configurations) to change the reference data distribution it using for detecting Data Distribution shift (Note: sudden shifts are often indicative of data bugs)s in this model. Send a pointer to training data that was used in training this model.
-            2. MLOps platform CI/CD
-        2. ML Product (works on top of MLOps platform)
+            2. ML platform CI/CD
+        2. ML Product (works on top of ML platform)
             1. ML Frontend (UI/UX) (Tools: Marvin, TypeChat, Vercel AI SDK, text-generation-web-ui)
                 1. Development (output is changed repository)
                     1. Principles
@@ -8094,7 +7342,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                 3. Apply pipeline/function to larger entire dataset with large scale training configuration
                             2. Generate "production-going experiment" to the experiment tracking system, these are the only type of experiments that are used for Inference Service ci/cd.
 
-            4. MLOps platform Development (output is push or PR that triggers MLOps platform (level 1) CI/CD)
+            4. ML platform Development (output is push or PR that triggers ML platform (level 1) CI/CD)
                 1. Dev-ML-Platform-Experimentation Environment (Tools: devspace, okteto, telepresence, gitpod, Tilt, coder, che)
                     1. Local: ML Engineer's Logical Machine
                         1. Setup (Tools: envd)
@@ -8448,7 +7696,7 @@ _Note_: all the solutions to problems below would have to maintain performance h
 
 10. __Faster deployment cycles__
     * 10.1 __Monitoring__. What to monitor:
-        * 10.1.1 __MLOps platform (Processing Pipelines + Specialized Systems)__
+        * 10.1.1 __ML platform (Processing Pipelines + Specialized Systems)__
         * 10.1.2 __Inference Services__
     * 10.2 __Debugging__
         * 10.2.1 __Auditability/Metadata Management__
@@ -8477,7 +7725,7 @@ _Note_: all the solutions to problems below would have to maintain performance h
             * 10.2.3.5 __Human Effort__ (e.g., amount of hyperparameter optimization necessary)
             * 10.2.3.6 __Level of Knolowledge Required to Operate__ (e.g., expert knowledge for EDA)
     * 10.3 __Re-deploying__. What to re-deploy:
-        * 10.2.1 __MLOps platform (Processing Pipelines + Specialized Systems)__
+        * 10.2.1 __ML platform (Processing Pipelines + Specialized Systems)__
         * 10.2.2 __Inference Services__
         * 10.2.3 __Model files__
 
@@ -8844,158 +8092,19 @@ _These show, respectively, that:_
 4. ML problems are getting harder to solve due to increasing complexity on the ML side and performance & scalability requirements imposed by Generative AI.
 </details>
 
-<details>
-  <summary><b>Path to AGI</b></summary>
+1. Equity-free Accelerators: [Arch Giants](https://lootstrap.com/arch-grants), [Tech Founders](https://lootstrap.com/techfounders-equity-free-startup-accelerator), [Lighhouse Labs](https://lootstrap.com/lighthouse-labs-equity-free-startup-accelerator), [Fit 4 Start](https://lootstrap.com/fit-for-start-equity-free-startup-accelerator), [Merk Accelerator Darmstadt](https://lootstrap.com/merck-accelerator-darmstadt/), [Grand Central Tech](https://lootstrap.com/grand-central-tech/), [INiTS](https://lootstrap.com/inits-innovation-into-business/), [K-Startup Grand Challenge](https://lootstrap.com/k-startup-grand-challenge), [Google Launchpad Accelerator](https://lootstrap.com/google-launchpad-accelerator/), [Hot DesQ](https://lootstrap.com/hot-desq), [European Data Incubator](https://edincubator.eu/), [Spinlab](https://www.spinlab.co/), [Startup Hub](http://startuphub.pl/), [The Stable Fund](https://stable.fund/), [Catalyst NYC](https://futurelabs.nyc/programs/catalyst-nyc/), [Orange Fab](https://www.orangefab.com/for-startups/), [Grid 110](https://www.grid110.org/), [Cary Cofounders Lab](http://cofounderscapital.com/free-lab/), [Innovators Program](http://www.innovatorsprogram.co/), (Arch Grants Global Startup Competition)[https://archgrants.org/competition/], (MassChallenge Texas)[https://masschallenge.org/programs-texas], (The summer institute)[https://www.summerinst.com/], [Startup Boost Toronto](https://startupboost.org/toronto), [German Accelerator](https://www.germanaccelerator.com/).
 
-## Path to AGI
+2. Equity-full Accelerators: [Y Combinator](https://www.ycombinator.com/), [AI2 Incubator](ai2incubator), [NVIDIA Inception](https://www.nvidia.com/en-us/startups/), [Next AI](https://www.nextcanada.com/next-ai/), [Microsoft for Startups Founders Hub](https://www.microsoft.com/en-us/startups?rtc=1), [Fdounders Factory Accelerator](https://foundersfactory.com/accelerator/), [Digital Catapult](https://www.digicatapult.org.uk/expertise/technologies/artificial-intelligence/), [The Hive](https://hivedata.com/), [AI Fund](https://aifund.ai/), [43North](https://lootstrap.com/43north)[Open AI Converge](https://openai.fund/news/introducing-converge) & [Stability AI's AI Grant](https://aigrant.org/), [Campus Founders - AI Founders](https://campusfounders.de/startups/aifounders/?utm_campaign=aif&utm_source=mlopscommunity&utm_medium=email), [AI Startup Incubator](https://www.suincubator.ai/), [Rockstart Accelerator](https://incubatorlist.com/rockstart-accelerator/), [Google for Startups Accelerator](https://incubatorlist.com/google-for-startups-accelerator-canada/), [Product 10x Build](https://incubatorlist.com/product10x-build/), [SKL.vc](https://incubatorlist.com/sklvc/), [Zero-to-one](https://incubatorlist.com/zero-to-one/), [Founders Factory](https://foundersfactory.com/), [Cubo Itaú](https://cubo.network/go/processo-selecao?hsLang=pt-br)
 
-With a good enough copilot, a recursive self-improvement feedback loop can be started where the Copilot indirectly improve's itself indefinetely:
-
-1. Good enough ML Engineering Agent
-2. Loop
-    1. ML Engineer Agent is finetuned to build:
-        1. ML Researcher Agent: develops ML research
-        2. ML Revisor Agent: revises ML research developed by the ML Researcher Agent
-        3. ML Tool Builder Agent: builds MLOps tools based on approved ML research done by the ML Researcher and revised by the Revisor Agent
-    2. ML Engineering Agent is finetuned with new ML research and MLOps tools
+3. Check out these:
+    1. [Funding guide for OSS startups](https://jordansegall.substack.com/p/so-how-many-stars-is-enough-a-data)
 
 </details>
 
 <details>
-  <summary><b>Major Challenges in building  <i>Freelunch</i></b></summary>
+  <summary><b>Some ideas</b></summary>
 
-## __Major Challenges in building *Freelunch*__
-
-Besides building the product, there are some other challenges involved that need to be solved:
-
-1. __Adoption is tricky__
-
-__Question:__ How to make companies/ml teams adopt our tool? We are not making a narrow plug-and-play tool that teams can try very easily without having to commit too much for it; we are making a tool in which teams have to change a lot the way they are doing things to adopt us, which becomes riskier for them. 
-
-__Aswer:__ Having great docs with examples is a prerequisite. __The key differential I think can be a Youtube Channel with two playlists: (1) explaining MLOps visually; (2) building end-to-end MLOps platforms using *Freelunch*. These 2 types of contents would be very usefull and currently dont exist on Youtube.__ It's also important like: having a blog with relevant MLOPs content; making open MLOps learning material (whitepaper, book, course, etc); hosting and attending MLOps events; hosting and being part of hackathons and workshops; interacting with the community via all main channels (twitter, linkedin, slack/discord, hacker news, reddit, email, youtube, medium, dev community, zoom, instagram, product hunt, press); shameless posts. asking for the communities' feedback; podcasts; meet the team/office hours; engaging in discussions; posting memes; encouraging people starting with MLOps to gain practical expertise by contributing to *Freelunch* OSS.
-
-2. __We don't suffer the problem (currently)__
-
-__Question:__ We are making a product that helps building and improving MLOps platforms. How are we going to do this, if we dont have this problem ourselves? 
-
-__Answer:__ We use Design Partners. Design Partners helps us shape our product providing feedback and in return they get guaranteed future discount on the paid offering.
-</details>
-
-<details>
-  <summary><b>Strategy</b></summary>
-
-## :chart_with_upwards_trend: __Strategy__
-
-Things we need to solve in order to build this company.
-
-* __Organize Team__
-    1. Who does what?
-    2. Bring in more Co-founders?
-    3. Amount of work expectations, do we take some day off?
-    4. Equity/Vesting paperwork done in the beggining
-    5. How do we organize ourselves about milestones and communicate?
-    6. Are we going to live together?
-    7. Are we going to move to another place/country?
-    8. When will we hire people?
-* __Build product__
-    1. __Define our Roadmap__: e.g., prototype in x days --> register company, domain, name and logo --> raise in y days --> get design partners in w days --> mvp in z days --> open source the mvp in zeta days --> define specific job positions and start hiring 
-    2. __Protype and MVP concerns__
-        1. Which are the milestones (with deadlines)?
-        2. Which tech stack will we use?
-        3. What will it have?
-        4. How we evaluate sucess?
-    3. __If Open Source__
-        1. When will we Open Source our code?
-        2. How much of it will be Open Sourced?
-        3. We need to always be top contributors to the repo. Should we hire top contributors? How will the hiring process be?
-        4. Which licence will we use? Confluent Community Licence seems like a good one, because it protects against other Clouds offering the same SaaS under their name and competing against our SaaS. AGPL is good because oblies people that you use the code to make it AGPL aswell.
-* __Customer feedback__
-    1. __Interviews__
-        1. Which people we will interview? How Often? Remote Interviews?
-        2. Which questions will we ask? Are they going to be recorded?
-        3. Write hypothesis (expectations) of how we think people will say, to test our hypotheses
-        4. How do we act on difference between expectations and what people said?
-    2. __Design Partners__
-        1. Design Partner Guides
-            1. [Commonpaper](https://commonpaper.com/blog/design-partner/)
-            2. [Andressen Horowitz](https://a16z.com/a-framework-for-finding-a-design-partner/)
-            3. [F2VC](https://www.f2vc.com/blog-posts/the-design-partner-journey)
-            4. [Entree Capital](https://entreecap.com/blog/11-tips-for-effective-design-partnerships)
-            5. [Venture Inside](https://ventureinside.com/from-solving-your-problem-to-solving-our-problem-the-value-of-design-partners-6890b5483619)
-            6. [Anecdotes](https://www.anecdotes.ai/post/mastering-design-partnerships)
-            7. [Garuda](https://garuda.substack.com/p/design-partner)
-        2. Design Partner Contracts 
-            1. [Commonpaper](https://commonpaper.com/standards/design-partner-agreement/)
-    3. __Production feedbacks__
-        1. How can users contact us? Email? Whatsapp? Calling? In-app messaging?
-        2. Is there going to be a product feature specific to get feedback?
-* __Analytics: Metrics/KPIs__
-    1. __Operations__
-        1. How will we get, store, and visualize them?
-        2. Will we use free tools like Google Analysitcs? open source tools? Custom solution? Paid ones?
-    2. __What to track__
-        1. Financial metrics: revenue plot, burn plot, runway & default dead/alive; MRR & net dollar retention plots; gross margin plot
-        2. User metrics: active users plot, retention plot
-        3. OSS-specific metrics: stars plot, forks plot, issues plot, downloads plot, PRs plot, contributors plot, PRs p/contributor plot, watchers plot, slack members plot, citations in other repos plot, traffic/doc visitors plot, company/external contributor ratio plot.
-        4. Design partners
-* __Aquire users/Sales/Marketing__
-    1. How we talk about/pitch the Company for different types of people?
-    2. Are we going to pay for Ads? At which point?
-    3. How do we screen fast companies that will not close a deal?
-    4. How to make first contact with potential customer? Cold email?
-    5. Do we approach competitor users?
-    6. Define an register company's name, web domain and visual identity (name, main logo, standard logo variations). Requiremts: easy to say and spell for (even for non-native english speakers), nothing relevant appears when you google it, no similar name in the ML space, avalaible <name>.ai domain. Preferences: name that can link to a fun logo.
-    7. Will we have a blog?
-* __Legal/Accounting__
-    1. Incorporate the company. Will we hire a company for this? Will be incorporated in whihc country?
-    2. Create bank account and credit card for the company
-    3. Get an accountant. Which company will we hire to do the accounting?
-    4. Register company name, logo, buy the web/http domain & email domain
-* __Funding/Help__
-    1. When will we try to get funding?
-    2. From which people we want funding?
-    3. How much equity will we give?
-    4. At which valuation?
-    5. How will we use the money?
-    6. Apply to/Check Out: 
-        1. Equity-free Accelerators: [Arch Giants](https://lootstrap.com/arch-grants), [Tech Founders](https://lootstrap.com/techfounders-equity-free-startup-accelerator), [Lighhouse Labs](https://lootstrap.com/lighthouse-labs-equity-free-startup-accelerator), [Fit 4 Start](https://lootstrap.com/fit-for-start-equity-free-startup-accelerator), [Merk Accelerator Darmstadt](https://lootstrap.com/merck-accelerator-darmstadt/), [Grand Central Tech](https://lootstrap.com/grand-central-tech/), [INiTS](https://lootstrap.com/inits-innovation-into-business/), [K-Startup Grand Challenge](https://lootstrap.com/k-startup-grand-challenge), [Google Launchpad Accelerator](https://lootstrap.com/google-launchpad-accelerator/), [Hot DesQ](https://lootstrap.com/hot-desq), [European Data Incubator](https://edincubator.eu/), [Spinlab](https://www.spinlab.co/), [Startup Hub](http://startuphub.pl/), [The Stable Fund](https://stable.fund/), [Catalyst NYC](https://futurelabs.nyc/programs/catalyst-nyc/), [Orange Fab](https://www.orangefab.com/for-startups/), [Grid 110](https://www.grid110.org/), [Cary Cofounders Lab](http://cofounderscapital.com/free-lab/), [Innovators Program](http://www.innovatorsprogram.co/), (Arch Grants Global Startup Competition)[https://archgrants.org/competition/], (MassChallenge Texas)[https://masschallenge.org/programs-texas], (The summer institute)[https://www.summerinst.com/], [Startup Boost Toronto](https://startupboost.org/toronto), [German Accelerator](https://www.germanaccelerator.com/).
-
-        2. Equity-full Accelerators: [Y Combinator](https://www.ycombinator.com/), [AI2 Incubator](ai2incubator), [NVIDIA Inception](https://www.nvidia.com/en-us/startups/), [Next AI](https://www.nextcanada.com/next-ai/), [Microsoft for Startups Founders Hub](https://www.microsoft.com/en-us/startups?rtc=1), [Fdounders Factory Accelerator](https://foundersfactory.com/accelerator/), [Digital Catapult](https://www.digicatapult.org.uk/expertise/technologies/artificial-intelligence/), [The Hive](https://hivedata.com/), [AI Fund](https://aifund.ai/), [43North](https://lootstrap.com/43north)[Open AI Converge](https://openai.fund/news/introducing-converge) & [Stability AI's AI Grant](https://aigrant.org/), [Campus Founders - AI Founders](https://campusfounders.de/startups/aifounders/?utm_campaign=aif&utm_source=mlopscommunity&utm_medium=email), [AI Startup Incubator](https://www.suincubator.ai/), [Rockstart Accelerator](https://incubatorlist.com/rockstart-accelerator/), [Google for Startups Accelerator](https://incubatorlist.com/google-for-startups-accelerator-canada/), [Product 10x Build](https://incubatorlist.com/product10x-build/), [SKL.vc](https://incubatorlist.com/sklvc/), [Zero-to-one](https://incubatorlist.com/zero-to-one/), [Founders Factory](https://foundersfactory.com/), [Cubo Itaú](https://cubo.network/go/processo-selecao?hsLang=pt-br)
-    7. Check out these:
-        1. [Funding guide for OSS startups](https://jordansegall.substack.com/p/so-how-many-stars-is-enough-a-data)
-
-</details>
-
-<details>
-  <summary><b>Resources</b></summary>
-
-## :books: __Resources__
-
-Some resource sources that you might find usefull, in the context of ML Systems and Startups.
-
-1. __ML Systems__
-    1. __ML Engineering__
-        1. __My AI folder:__ (Go to "Computer Science & Engineering\CS - Applied CS\Artificial Intelligence (AI)\Machine Learning (ML)\ML (Child)\_ML Engineering")
-        2. __Stanford Dawn__ (ML systems group where MLPerf was born)
-        3. __RISE Lab__ (ML systems lab from Berkeley)
-
-        4. __ML System benchmarking__ (Go to "Computer Science & Engineering\CS - Applied CS\Artificial Intelligence (AI)\Machine Learning (ML)\ML (Child)\_ML Engineering\Benchmarking ML Systems")
-    2. __AutoML__
-        1. __My AI folder:__ (Go to "Computer Science & Engineering\CS - Applied CS\Artificial Intelligence (AI)\Machine Learning (ML)\ML (Child)\Beyond Narrow ML\AutoML")
-        2. __Catalyst Lab__ (CMU lab that studies automation of ML Systems)
-
-2. __Startups__
-    1. __My AI folder__ (Go to "\__Miscellaneous\MISC - Startups")
-    2. __Y Combinator__ (Youtube channel mainly)
-
-</details>
-
-<details>
-  <summary><b>Subideas</b></summary>
-
-## :mailbox_with_mail: __Subideas__
-
-These are ideas that can be embedded within *Freelunch*.
+## :mailbox_with_mail: __Some Ideas__
 
 1. __Scientific ML Framework:__ [Uli](D:\Google%20Drive\Outroscomputadores\Meulaptop\AI2\__Miscellaneous\MISC%20-%20__My%20Stuff\My%20Ideas\Current\Non-profits\Projects\Developer%20Tools\AI\Non-diff%20ML%20Framework\Uli.html)
 
