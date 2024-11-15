@@ -1595,7 +1595,7 @@ Yes, because of the following reasons:
                                     (2) Declarative (AutoRAG): AutoRAG
                                 (3) LLM Frameworks (mUltiple calls orchestrated)
                                     (1) Types
-                                        (1) Agent-less Frameworks: DSPy, Guidance, genaiscript, mirascope, spring-ai,
+                                        (1) Agent-less Frameworks: DSPy, Guidance, genaiscript, mirascope, spring-ai, AdalFlow
                                         (2) Agent-full Frameworks: AutoGen, Llama-index, Langchain, haystack, Semantic Kernel, Dust, IX, MemGPT, BondAI, OpenAgents, SuperAGI, Agent Pilot, griptape, phidata, LLMCompiler, ragapp, CopilotKit, agentkit, gptscript, TaskGen, AgentJo, AdalFlow, KaibanJS, Bee, Agience
                                             (1) Multi-Agent Frameworks: MetaGPT, ChatDev, Langroid, crewAI, langgraph, ControlFlow, agent-zero, AgentVerse, swarm, TapeAgents
                                             (2) No-code Agent-full Frameworks: LLMStack, Magick, Rivet, Tribe AI, PraisonAI
@@ -6842,7 +6842,7 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                                         (1) Can take screenrecord as input: screenpipe
                             (2) LLM Orchestrators (mUltiple calls and context construction (RAG) orchestrated)
                                 (1) Types
-                                    (1) Agent-less Orchestrators: DSPy, Guidance, mirascope
+                                    (1) Agent-less Orchestrators: DSPy, Guidance, genaiscript, mirascope, spring-ai, AdalFlow
                                     (2) Agent-full Orchestrators: AutoGen, Llama-index, Langchain, haystack, Semantic Kernel, Dust, IX, BondAI, OpenAgents, SuperAGI, Agent Pilot, griptape, phidata, LLMCompiler, ragapp, CopilotKit, agentkit, gptscript, ten_framework, TaskGen, AgentJo, AdalFlow, KaibanJS, Bee, Agience, dynamiq
                                         (1) Multi-Agent Orchestrators: MetaGPT, ChatDev, Langroid, crewAI, ControlFlow, agent-zero, AgentVerse
                                             (1) Agent Communication: Camel
