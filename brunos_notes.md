@@ -690,11 +690,11 @@ The stages of ci/cd are depicted below:
                     4. Data Extraction (aka Generalized OCR) (e.g., NuExtract)
                     5. Math (e.g., MathCoder)
                     6. Dynamical System Modellig (e.g., Oasis)
-                2. SLMs: (e.g., SMOL LM, Qwen, Llama, Phi-3, Mixtral, Gemma, etc)
+                2. SLMs: (e.g., SMOL LM, Qwen, Llama, Phi-3, Mixtral, Gemma, OmniVision-968M, etc)
             2. Audio2Text: (e.g., Whisper, SpeechGPT)
             3. Text2Audio: (e.g., bark)
             4. Audio2Audio: (e.g., VALL-E)
-            5. Text&Image&Video2Text: (e.g., Vitron, Pixtral, MiniCPM, X-LLM, BakLLaVA, CogVLM, Qwen-VL, MiniGPT-4, NExT-GPT, PALM-E, OpenFlamingo, Video-LLaMA, Otter, Multimodal-GPT, AnyGPT, Orca, Phi, Macaw, Grok, VILA, Show-o, VMamba, LWM)
+            5. Text&Image&Video2Text: (e.g., OmniVision-968M, Vitron, Pixtral, MiniCPM, X-LLM, BakLLaVA, CogVLM, Qwen-VL, MiniGPT-4, NExT-GPT, PALM-E, OpenFlamingo, Video-LLaMA, Otter, Multimodal-GPT, AnyGPT, Orca, Phi, Macaw, Grok, VILA, Show-o, VMamba, LWM)
             6. Observation&Goal2Action: (e.g., octo, openvla)
 )
         2. Image output: reiceves images and/or text and input and output images (e.g., StableDiffusion)
@@ -1602,7 +1602,7 @@ Yes, because of the following reasons:
                                                 (1) Automatic Agent Building: AgentK, ADAS, AutoAgents
                                             (3) Mobile Agent-full Frameworks: AppAgent
                                             (4) Web Agent-full Frameworks: Huginn, LaVague, Agent-E, AgentGPT, skyvern, webllama, robotframework
-                                                (1) GUI-parsers: OmniParser
+                                                (1) GUI-parsers: OmniParser, Ferret-UI
                                                 (2) AI Browsers: (1) open source: pinokio; (2) proprietery: kura
                                             (5) Data Enginering Agent-full Frameworks: Sparrow, ryoma
                                             (6) Agents as Graphs: langgraph, GPTSwarm
