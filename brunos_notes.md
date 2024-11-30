@@ -44,7 +44,7 @@
             4. By property
                 1. Privacy-preserving: *heflow*, *concrete-ml*
             5. By method
-                1. Generative ML/LLMs: *axflow*, *agenta*, *DB-GPT*, *Dify*, *llmware*, *langfuse*, *pezzo*, *bisheng*
+                1. Generative ML/LLMs: *axflow*, *agenta*, *DB-GPT*, *Dify*, *llmware*, *langfuse*, *pezzo*, *bisheng*, *opik*
                     1. RAG:
                         1. Low-code: *GenAIStudio*, *raggenie*, *create-tsi*
                     1. Agents: *AGiXT*, *TaskingAI*
@@ -2218,8 +2218,10 @@ _Note:_ __these are all automated benchmarks, no humans involved__. In stages wh
             4. By property
                 1. Privacy-preserving: *heflow*
             5. By method
-                1. Generative ML/LLMs: *axflow*, *agenta*, *DB-GPT*, *Dify*, *llmware*, *langfuse*, *pezzo*, *bisheng*, *haystack*
-                    1. Agents: *AGiXT*, *TaskingAI*
+                1. Generative ML/LLMs: *axflow*, *agenta*, *DB-GPT*, *Dify*, *llmware*, *langfuse*, *pezzo*, *bisheng*, *opik*, *haystack*
+                    1. RAG:
+                        1. Low-code: *GenAIStudio*, *raggenie*, *create-tsi*
+                    2. Agents: *AGiXT*, *TaskingAI*
 
     These products typically help you with all the steps in the ML lifecyle in an easy way. __Problems:__ they dont offer improtant capabilities we do (e.g., Platform-level Experiment Tracking & Evaluation, and Simulation-based Observability)
 
