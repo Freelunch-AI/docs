@@ -2,7 +2,7 @@
 
 ## About
 
-Freelunch is an early-stage startup 10xing the ML Engineer. We make open source MLOps tools and sell a Copilot for ML Engineering teams.
+Freelunch is an early-stage startup making the best IDE for building modern backends — powered by microservices, data, and AI.
 
 ## Docs
 
