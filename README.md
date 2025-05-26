@@ -13,5 +13,3 @@ You can checkout our docs in this repository to understand better our vision for
 - Checkout our [high-maturity AI-in-production diagrams](https://excalidraw.com/#json=HIP3BwjNGdeD6a55m5vfA,dtFvst72qyAUUnElHeAUZg) for a visual understanding of how different components of high-maturity produciton AI interact.
 
 - Checkout [Bruno's Notes](brunos_notes.md) for an in-depth explanation of AI in Production.
-
-The slides are way smaller, easier to understand, and more polished. The Notes have way more stuff with more deetails, but are kinda clunky.
