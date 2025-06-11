@@ -567,6 +567,7 @@ Yes, because of the following reasons:
                                         2. Text&Image2Image (Image Editing)
                                         3. Tex2Video (Video Generation)
                                         4. TexVideo2Video (Video Editing)
+                                        5. Text&Image2Action (Robot Policy)
                                     2. NLP
                                         1. Text2Text (LLM Generated Data)
                                             1. NL2SQL (Tools: PremSQL)
@@ -2831,22 +2832,22 @@ Our focus is with __companies with ML maturity (generally big non-tech comapnies
                             2. Domain-specific:
                                 1. NL2SQL
                                 2. NL2Latex
-                                3. Coding
-                                4. Robotics (Models: SmolVLA, NVIDIA Gr00t, openpi)
+                                3. NL2Code
                             3. Format structurer (Models: Osmosis-Structure-0.6B)
                         2. Text2Image (Models: DALL-E, Midjourney)
                         3. Text&Image2Image (Image Editing) (Models: InfiniteYou, Flux Kontext)
-                        4. Text2Video (Models: Sora, LTX-Video, MoneyPrinterTurbo)
-                        5. Text&Video2Video (Video Editing)
-                        6. Speech2Text (Models: Whisper, SpeechGPT, Kimi-Audio, Parakeet)
-                        7. Audio&Text2Audio (Audio Editing) (Models: )
-                        8. Text2Speech (Models: TTS, SeamlessM4T, OpenAI Audio API, IMS-Toucan, Parler-TTS, GPT-SoVITS, Orpheus TTS, MegaTTS, Chatterbox TTS)
-                        9. Speech2Speech (Tools: Moshi)
-                        10. Text&Speech2Speech
+                        5. text&Image2Action (Robotics) (Models: SmolVLA, NVIDIA Gr00t, openpi, Embodied-CoT))
+                        6. Text2Video (Models: Sora, LTX-Video, MoneyPrinterTurbo)
+                        7. Text&Video2Video (Video Editing)
+                        8. Speech2Text (Models: Whisper, SpeechGPT, Kimi-Audio, Parakeet)
+                        9. Audio&Text2Audio (Audio Editing) (Models: )
+                        10. Text2Speech (Models: TTS, SeamlessM4T, OpenAI Audio API, IMS-Toucan, Parler-TTS, GPT-SoVITS, Orpheus TTS, MegaTTS, Chatterbox TTS)
+                        11. Speech2Speech (Tools: Moshi)
+                        12. Text&Speech2Speech
                             1. Voice Cloning (Models: Chatterbox TTS)
                             2. Speech Edtiting (Models: PlayDiffusion)
-                        11. Any2Text
-                        12. Any2Any (Models: gemini, BAGEL, Unmute)
+                        13. Any2Text
+                        14. Any2Any (Models: gemini, BAGEL, Unmute)
                     2. Embeddings (Encoders for generative embeddings from data & decoders for generating data from embeddings (e.g., some transfomer decoder variant or stable diffusion decoder)) (Tools: Qwen3 Embedding, finetuner, LASER, fastText, sentence-transformers, clip-as-service, mmpretrain, model2vec)
                         1. By task
                             1. Text2Embedding & reverse
