@@ -2,7 +2,9 @@
 
 ## About
 
-Freelunch is an early-stage startup making the best platform for building end-to-end modern backends — powered by microservices, data, and AI.
+*Freelunch* is a making an ecossystem of platforms that enables 2-person startup unicorns to become a reality.
+
+We are starting with the backend platform. We are currently making the best all-in-one/end-to-end platform for startups post-MVP to build modern backends — powered by microservices, data, and AI.
 
 ## Docs
 
