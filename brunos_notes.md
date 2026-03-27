@@ -43,7 +43,7 @@
         4. By property
             1. Privacy-preserving: *heflow*, *concrete-ml*
         5. By method
-            1. Generative ML/LLMs: *axflow*, *agenta*, *DB-GPT*, *Dify*, *llmware*, *langfuse*, *pezzo*, *bisheng*, *LangWatch*, *ScalarLM*
+            1. Generative ML/LLMs: *NeMO*, *axflow*, *agenta*, *DB-GPT*, *Dify*, *llmware*, *langfuse*, *pezzo*, *bisheng*, *LangWatch*, *ScalarLM*
                 1. RAG:
                     1. Low-code: *GenAIStudio*, *raggenie*, *create-tsi*
                 1. Agents: *AGiXT*, *TaskingAI*
@@ -930,7 +930,7 @@ Yes, because of the following reasons:
                                             (3) Proactive Agent that sees ans listens to evything you do: (1) open-source glass; (2) paid: cluely
                                         (3) training + inference apps:
                                             (1) Just Chatbot: Unsloth Studio, 
-                                            (2) Chatbots/RAG/Agents: transformerlab-app
+                                            (2) Chatbots/RAG/Agents: transformerlab-app, NVIDIA NeMO
                                     (2) RAG:
                                         (1) Imperative: Llama-index, modelcontextprotocol, Haystack, Verba, Anything LLM, Neum AI, gorilla, graphRAG, fast-graphrag, Cohere Toolkit, R2R, clip-retrieval, HippoRAG, ragbuilder, cognita, KAG, morphik-core, ragbits, autollm
                                             (1) RAG for Tool Use: composio
@@ -2917,7 +2917,7 @@ Companies building scalable backends without a dedicated platform team (excludes
                                     1. Structure Enforcement: Guidance, genaiscript, promptify, lmql, pipelex, poml
                                         1. Prompt Structure Enforcement:
                                         2. Output Structure Enforcement: guardrails, outlines, Faster-Outlines, instructor, lm-format-enforcer, Artificial Intelligence Controller Interface (AICI)
-                                    2. Semantic Guardrails:vex, guardrails, promptfoo, fiddler-auditor, trulens
+                                    2. Semantic Guardrails: vex, NeMO guardrails, promptfoo, fiddler-auditor, trulens
                                 3. Single-interface to multiple LLM Providers: aisuite, simonw/llm
                             3. Multi-call enhancers (tools: optillm)
                         2. LLM Orchestrators
@@ -6157,8 +6157,13 @@ Companies building scalable backends without a dedicated platform team (excludes
                                                 (1) Single-machine or Cluster:
                                                     (1) Your cluster:
                                                         (1) Any model
-                                                            (1) Framework-agnostic: Ray Train, Horovod, NVIDIA NeMo, Analytics Zoo, MosaiCML Composer, spark/koalas MLib, Dask Distributed Training, Petastorm, FedML, Kubeflow Model Training Operator
-                                                        (1) LLMs: trlx, Megatron, verl
+                                                            (1) Framework-agnostic: 
+                                                                - on Ray: Ray Train
+                                                                - on K8s: NeMo AutoModel, Kubeflow Trainer, Horovod, Analytics Zoo, MosaiCML Composer, Petastorm, FedML
+                                                                - on Dask: Dask Distributed Training
+                                                        (2) LLMs: trlx, Megatron, verl
+                                                        (3) Traditional ML:
+                                                            - On spark: spark/koalas MLib
                                                     (2) P2P: Hivemind
                                             (2) Distributed Training and Inference: Colossal AI, DeepSpeed, Paddle, Ray, Apache Singa, FlagAI
                                                 (1) LLMs: BigDL
