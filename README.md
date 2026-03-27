@@ -2,9 +2,11 @@
 
 ## About
 
-*Freelunch* is building a suite software platforms that enable **startups to become unicorns without hiring**.
+*Freelunch* is the **operating system for scaling startups**.
 
-The core platform is an open **Developer Platform** for streamlining the entire SDLC.
+A suite of software platforms that enable **startups to become unicorns without hiring**.
+
+The core platform is an **open source developer platform** for streamlining the entire SDLC.
 
 ## Docs
 
@@ -14,6 +16,6 @@ You can checkout our docs in this repository to understand better our vision for
 
 - Checkout our [AI Infra Slides](https://docs.google.com/presentation/d/1i1LpFHaQkJGOm5y5rqf80hTKu9EE53hl/edit?usp=sharing&ouid=114266237528985699122&rtpof=true&sd=true) for a concise and visual explanation of AI-powered Systems.
 
-- Checkout our [High-maturity AI-in-production Diagrams](https://excalidraw.com/#json=HIP3BwjNGdeD6a55m5vfA,dtFvst72qyAUUnElHeAUZg) for a visual understanding of how different components of high-maturity production AI-powered Systems interact.
+- Checkout our [High-maturity Production Diagrams](https://excalidraw.com/#json=HIP3BwjNGdeD6a55m5vfA,dtFvst72qyAUUnElHeAUZg) for a visual understanding of how different components of high-maturity production AI-powered Systems interact.
 
 - Checkout [Bruno's Notes](brunos_notes.md) for an in-depth explanation of AI-powered Systems in Production and where each tool fits.
