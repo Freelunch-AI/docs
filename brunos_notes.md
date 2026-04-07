@@ -9519,7 +9519,7 @@ My thoughs?
 
 Make a service if: (1) module has special hardware needs, (2) module has storage or memory requirement that doesnt fit into a single machine, (3) 2 or more existing services depend on it, (4) ; . 
 
-Real reasons should treat modules as separate pod service (else: make a library): 
+Real reasons should treat modules as separate pod service: 
 - different scaling patterns (e.g., serving 2 types of users that do different stuff) 
 - modules with special hardware needs (e.g., ML inference) 
 - modules with storage or memory requirement that doesnt fit into a single machine (e.g., distributed DBs) 
@@ -9531,13 +9531,13 @@ Real reasons should treat modules as separate pod service (else: make a library)
 
 Real reson shuld treat modules as same pod service but separate containers:
 - critical modules that cant crash because of other modules
-- latency-sensitive modules that can become slow because the neighbour process conusmed too much resources unexpectedly.
+- latency-sensitive modules that can become slow because the neighbour module is slow or spawned threads that are consume too much resources unexpectedly.
 - ready-made sidecar
 
-Else: single-pod, single-container, single-process.
+Else: single-pod, single-container, single-process. Modules are either imported code (light logic) or libraries (heavy logic).
 
-Else
-
-note: deploys should deploy 1 risky change + N non-risky changes at a time.
+Notes: 
+- deploys should deploy 1 risky change + N non-risky changes at a time.
+- CI only tests modules that are within the blast-radius of the PR.
 
 </details>
