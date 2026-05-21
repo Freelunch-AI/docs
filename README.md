@@ -6,7 +6,7 @@
 
 A suite of software platforms that enable **startups to become unicorns without hiring**.
 
-The core platform is an **open source developer platform** for streamlining the entire SDLC.
+The core platform is a **developer platform** for streamlining the entire SDLC.
 
 ## Docs
 
