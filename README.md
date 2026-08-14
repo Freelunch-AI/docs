@@ -4,9 +4,9 @@
 
 *Freelunch* is the **operating system for scaling startups**.
 
-A suite of software platforms that enable **startups to become unicorns without hiring**.
+A suite of software platforms that enable **startups to become unicorns without hiring more engineers**.
 
-The core platform is a **developer platform** for streamlining the entire SDLC.
+The core platform is a **developer platformas as an IDE** for streamlining the entire SDLC.
 
 ## Docs
 
