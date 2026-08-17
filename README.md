@@ -4,15 +4,13 @@
 
 *Freelunch* is the **operating system for scaling startups**.
 
-A suite of software platforms that enable **startups to become unicorns without hiring**.
+A suite of software platforms that enable **startups to become unicorns without hiring more engineers**.
 
-The core platform is an **open source developer platform** for streamlining the entire SDLC.
+The core platform is a **developer platformas as an IDE** for streamlining the entire SDLC.
 
 ## Docs
 
 You can checkout our docs in this repository to understand better our vision for the evolution of DevOps/MLOps in the context of platform engineering, in the era of AI-powered Systems.
-
-- Checkout our [Developer Platform Design Doc](https://sly-fernleaf-cd2.notion.site/FreeLunch-Open-Developer-Platform-We-give-Scaleups-Google-level-Developer-Tech-All-in-one-No--27e6e257a4ce80b69bbdd70d73abf1e9?source=copy_link) for a detailed explanation of the Developer Platform we are building.
 
 - Checkout our [AI Infra Slides](https://docs.google.com/presentation/d/1i1LpFHaQkJGOm5y5rqf80hTKu9EE53hl/edit?usp=sharing&ouid=114266237528985699122&rtpof=true&sd=true) for a concise and visual explanation of AI-powered Systems.
 
